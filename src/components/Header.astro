@@ -1,5 +1,5 @@
 ---
-import { categories, games } from '../lib/catalog.mjs';
+import { categories, games, gamePath } from '../lib/catalog.mjs';
 import SportIcon from './SportIcon.astro';
 const path = Astro.url.pathname;
 ---
@@ -12,5 +12,5 @@ const path = Astro.url.pathname;
       <a class="nav-all" href="/games" aria-current={path === '/games' ? 'page' : undefined}>All Games <span aria-hidden="true">→</span></a>
     </nav>
   </div>
-  <div class="quick-links container"><span>Explore games</span>{games.slice(0, 4).map(game => <a href={`/${game.slug}`}>{game.title}<span aria-hidden="true">→</span></a>)}</div>
+  <div class="quick-links container"><span>Explore games</span>{games.slice(0, 4).map(game => <a href={gamePath(game.slug)}>{game.title}<span aria-hidden="true">→</span></a>)}</div>
 </header>

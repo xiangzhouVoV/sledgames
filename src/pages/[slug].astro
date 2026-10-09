@@ -3,11 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import AdSlot from '../components/AdSlot.astro';
 import GameStage from '../components/GameStage.astro';
 import GameGrid from '../components/GameGrid.astro';
+import GameGuide from '../components/GameGuide.astro';
 import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
-import { games, categories, relatedGames, gameFaqs, gameSchema, faqSchema, hasSource } from '../lib/catalog.mjs';
+import { games, categories, relatedGames, gameFaqs, gameSchema, faqSchema, hasSource, gamePath } from '../lib/catalog.mjs';
 import type { Game } from '../lib/types';
-export function getStaticPaths() { return games.map(game => ({ params: { slug: game.slug }, props: { game } })); }
+export function getStaticPaths() { return games.filter(game => gamePath(game.slug) !== '/').map(game => ({ params: { slug: game.slug }, props: { game } })); }
 interface Props { game: Game }
 const { game } = Astro.props;
 const related = relatedGames(game);
@@ -21,9 +22,7 @@ const number = new Intl.NumberFormat('en-US');
   <GameStage game={game} eager />
   {(game.rating !== null || game.playCount !== null) && <div class="info-bar">{game.rating && <span>Rating: {game.rating.value}/5 · {number.format(game.rating.count)} votes</span>}{game.playCount !== null && <span>{number.format(game.playCount)} plays</span>}</div>}
   <AdSlot position="below" />
-  {game.intro && hasSource(game, 'intro') && <section class="content-section prose"><h2>What is {game.title}?</h2><p>{game.intro}</p>{game.developer && <p>Developer: {game.developer}</p>}{game.released && <p>Released: {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(`${game.released}T00:00:00Z`))}</p>}{game.genres.length > 0 && <p>Genres: {game.genres.join(', ')}</p>}</section>}
-  {game.howToPlay.length > 0 && hasSource(game, 'howToPlay') && <section class="content-section prose"><h2>How to Play</h2><ol>{game.howToPlay.map(step => <li>{step}</li>)}</ol></section>}
-  {game.tips.length > 0 && hasSource(game, 'tips') && <section class="content-section prose"><h2>Pro Tips &amp; Tricks</h2><ul>{game.tips.map(tip => <li>{tip}</li>)}</ul></section>}
+  <GameGuide game={game} />
   {game.items.length > 0 && hasSource(game, 'items') && <section class="content-section prose"><h2>Items and prices</h2><div class="table-scroll"><table><thead><tr><th scope="col">Item</th><th scope="col">Price</th></tr></thead><tbody>{game.items.map(item => <tr><td>{item.name}</td><td>{item.price}</td></tr>)}</tbody></table></div></section>}
   {related.length > 0 && <section class="content-section"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2>Explore Other {category?.title}</h2></div></div><GameGrid games={related} /></section>}
   <Faq faqs={faqs} />

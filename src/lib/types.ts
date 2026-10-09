@@ -10,6 +10,7 @@ export interface Game {
   intro: string;
   howToPlay: string[];
   tips: string[];
+  controls?: { action: string; input: string }[];
   faqs: { q: string; a: string }[];
   similar: string[];
   rating: { value: number; count: number } | null;

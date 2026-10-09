@@ -37,9 +37,10 @@ test('only approved publisher hosts can be embedded', () => {
 });
 
 test('unverified game details fail the build instead of being published', () => {
-  for (const [field, value] of Object.entries({ intro: 'An unsupported claim', tips: ['Invented tip'], howToPlay: ['Invented controls'], items: [{ name: 'A sled', price: '100' }], rating: { value: 5, count: 100 }, playCount: 100 })) {
+  for (const [field, value] of Object.entries({ intro: 'An unsupported claim', tips: ['Invented tip'], howToPlay: ['Invented controls'], controls: [{ action: 'Jump', input: 'Invented key' }], items: [{ name: 'A sled', price: '100' }], rating: { value: 5, count: 100 }, playCount: 100 })) {
     const game = fixture();
     game[field] = value;
+    game.sources[field] = '';
     assert.throws(() => validateGames([game]), /needs a source/);
   }
 });

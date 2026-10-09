@@ -2,7 +2,7 @@
 
 ## 0. 项目定义
 
-英文**雪橇/雪上浏览器小游戏聚合站**，目标市场**美国**，主攻 Google 自然搜索。内容全部「一游戏一页面」，游戏通过**发行平台官方 iframe 代码**嵌入。变现 =「游戏区内平台广告分成 + 游戏区外自有 AdSense」。
+英文**雪橇/雪上浏览器小游戏聚合站**，目标市场**美国**，主攻 Google 自然搜索。内容全部「一游戏一页面」，Sled Rider 的页面即首页 `/`，游戏通过**发行平台官方 iframe 代码**嵌入。变现 =「游戏区内平台广告分成 + 游戏区外自有 AdSense」。
 
 **v1 交付目标**：1 首页 + 2 品类页 + 7 游戏页 + 1 总览页 + 5 合规页，全部服务端预渲染、可被 Google 完整抓取。
 
@@ -25,10 +25,9 @@
 ## 3. 路由与目标词（v1 范围）
 
 | 优先级 | URL | 类型 | 目标词 | 月搜索量(US) | KD |
-
-|---|---|---|---|---|---|---|
-| P0 | `/` | 首页 | sled games | 27,100 | 33.2 |
-| P0 | `/sled-rider` | 游戏页 | sled rider | 49,500 | 32.9 |
+|---|---|---|---|---|---|
+| P0 | `/` | 首页 / Sled Rider 游戏页 | sled games / sled rider | 27,100 / 49,500 | 33.2 / 32.9 |
+| — | `/sled-rider` | 旧地址，301 跳转到 `/` | — | — | — |
 | P0 | `/snowboard-games` | 品类页 | snowboard games | 18,100 | 27.2 |
 | P0 | `/games` | 全站总览 | — | — | — |
 | P1 | `/snowball-io` | 游戏页 | snowball io | 9,900 | 48.7 |
@@ -40,7 +39,9 @@
 | P2 | `/ski-simulator` | 游戏页 | ski simulator | 1,600 | 33.1 |
 | P2 | `/snowboard-simulator` | 游戏页 | snowboard simulator | 720 | 25.7 |
 
-**URL 规则**：游戏页 = `/游戏名-kebab-case`，**不带 `/games/` 前缀**（与对手 sledrider.io 首页打法一致）；品类页 = `/xxx-games`。
+**最新页面合并决定**：Sled Rider 与首页为同一页面，完整游戏介绍、玩法、技巧和 FAQ 都放在 `/`，保留首页冰蓝渐变及飘雪 UI。所有 Sled Rider 内链指向 `/`；旧 `/sled-rider` 只做永久跳转，不进入 sitemap。此决定覆盖下方原模板中有关 Sled Rider 独立详情页的描述。
+
+**URL 规则**：其他游戏页 = `/游戏名-kebab-case`，**不带 `/games/` 前缀**（与对手 sledrider.io 首页打法一致）；品类页 = `/xxx-games`。
 
 **v1 禁入**：`snow games`（6,600 但 KD 62.9 倒挂）、`snow rider`（183 万/月，KD 78.3，5 个 EMD 首页正面争夺）、`slope rider`（20.1 万/月，KD 57.3）、`snow rider 3d unblocked`（9.05 万/月，KD 80.5）。
 
@@ -95,7 +96,7 @@
 14. <Footer>  About Us / Contact Us / Privacy Policy / Terms of Use / Copyright + 全站游戏链接
 ```
 
-**首页差异**：H1 = `Sled Games`，游戏区放主推游戏（sled rider）可玩 iframe，下方接「全部游戏」网格。
+**首页 / Sled Rider 页面**：H1 = `Sled Games`，仅对屏幕阅读器显示。导航下直接加载 Sled Rider 可玩 iframe；广告位于游戏及工具栏之后，下方接「全部游戏」网格、完整游戏指南、5 条 FAQ、分类导航与页脚。不再创建另一份 Sled Rider 详情页。
 **品类页差异**：H1 = 品类词，无 iframe，改为该品类游戏网格 + 150~250 词品类介绍 + FAQ。
 
 ## 6. TDK 规则
@@ -105,9 +106,9 @@
 | Title | 游戏页 = **纯游戏名**；首页/品类页 = `{词} - Free Online {品类} Games` | `Sled Rider` |
 | Description | 完整句 + 动作词，含核心词 1 次，140~160 字符 | `Play Sled Rider, a 3D endless sled-driving game full of obstacles! Control a sled, dodge trees and rocks, and unlock new sleds for free online.` |
 | H1 | 与目标词一致，只出现一次 | `Sled Rider` |
-| canonical | 自指绝对 URL | `https://sledgames.com/sled-rider` |
+| canonical | 自指绝对 URL | `https://sledgames.com/`（Sled Rider 即首页） |
 
-**结构化数据**：首页 `WebSite`（可含 SearchAction）；游戏页 `VideoGame`（name / applicationCategory: Game / operatingSystem: Web Browser / offers:{price:0}）；FAQ 区块同步挂 `FAQPage`。
+**结构化数据**：首页同时包含 `WebSite` 和 Sled Rider 的 `VideoGame`；游戏页 `VideoGame`（name / applicationCategory: Game / operatingSystem: Web Browser / offers:{price:0}）；FAQ 区块同步挂 `FAQPage`。
 
 ## 7. 内链规则（三张网都要建）
 

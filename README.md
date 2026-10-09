@@ -26,9 +26,9 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 
 按需求第 13 节，先跑通 **Sled Rider 单页模板**，待检查确认后批量加入其他游戏。
 
-- 已生成首页、`/sled-rider`、`/games`、两个品类页、五个合规页、404、robots.txt 和 sitemap.xml。
+- 已生成首页、`/games`、两个品类页、五个合规页、404、robots.txt 和 sitemap.xml。
 - Header、Footer、官方 iframe 游戏区、广告占位、卡片、FAQ、分类入口复用同一套组件。
-- 首页与游戏页采用首屏游玩布局：导航下直接加载游戏，移除可见标题和介绍，广告位于游戏和工具栏之后；页面标题保留给屏幕阅读器，无来源的资料区块不显示。
+- Sled Rider 与首页合为同一个页面，采用首屏游玩布局：导航下直接加载游戏，移除可见标题和介绍，广告位于游戏和工具栏之后；页面标题保留给屏幕阅读器，无来源的资料区块不显示。
 - JSON-LD：WebSite / VideoGame / FAQPage。FAQ 数据和可见问答使用同一来源；未配置 iframe 时不声明可免费游玩的 Offer。
 - 游戏内链来自 `similar`，页脚自动列出全部游戏；新增条目后无需新增页面文件。
 - Sled Rider 已接入 AZGames 托管的游戏专用 iframe；支持全屏和重新加载。未启用 AdSense，联系邮箱待配置，其他游戏尚未批量加入。
@@ -44,6 +44,7 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 - 游戏卡片优先展示图片、名称、类别和可玩状态；未获授权的截图使用通用雪景插画。
 - 桌面四列、手机通常两列、窄屏单列；手机主导航可横向滑动，主要操作目标至少 44px 高。
 - FAQ 使用原生折叠交互，保留键盘焦点、跳过导航入口和减少动态效果的偏好支持。
+- 首页使用明亮冰蓝渐变背景和白色 CSS 飘雪，背景上的文字使用深蓝，卡片保持清晰；手机减少雪花数量，雪层不接收鼠标或触摸事件，游戏和导航显示在雪层上方，系统开启减少动态效果时自动关闭飘雪。
 
 ## 数据与内容
 
@@ -51,12 +52,12 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 
 新增游戏时：
 
-1. 使用唯一 kebab-case `slug`，页面自动生成为 `/{slug}`。
+1. 使用唯一 kebab-case `slug`，其他游戏页面自动生成为 `/{slug}`；Sled Rider 固定使用首页 `/`，由 `gamePath` 统一生成链接。
 2. `category` 使用 `sledding-games`、`snowboard-games` 或 `ski-games`。Sled Games 分类入口为首页。
 3. 使用 140–160 字符英文 `description`；Title 和 H1 使用纯游戏名。
 4. 将平台提供的官方 iframe **src 地址**填入 `embed.iframeSrc`，并填写正确 `provider`。不要填写整段 HTML 或复制对手网站地址。
 5. `gamedistribution` 允许 `https://html5.gamedistribution.com/…`；`gamemonetize` 允许 `https://html5.gamemonetize.com/…`。`azgames` 仅允许已核验的 `https://gamea.azgame.io/sled-rider/`，其他路径会被构建拒绝。
-6. `{{PAGE_URL}}` 替换为编码后的当前页面 canonical；GameDistribution 的 `gd_sdk_referrer_url` 会自动设置。首页与游戏页分别使用自己的 URL。
+6. `{{PAGE_URL}}` 替换为编码后的当前页面 canonical；GameDistribution 的 `gd_sdk_referrer_url` 会自动设置。Sled Rider 使用首页 URL，其他游戏使用各自的页面 URL。
 7. 填写 `intro`、`howToPlay`、`tips`、`items`、`rating`、`playCount` 前，在对应 `sources` 字段记录真实来源链接。资料没有确认就留空。
 8. `rating` 格式为 `{ "value": 4.2, "count": 123 }`（仅结构说明，不能使用示例数字作为实际数据）；`playCount` 为整数或 `null`。
 9. `items` 格式为 `{ "name": "…", "price": "…" }` 数组；货币由内容明确写为美式格式，游戏内虚拟货币须保留实际单位。
@@ -64,6 +65,10 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 11. 可选 `thumbnail` 使用有授权的图片 URL 或 `public` 内图片路径。未配置时显示通用图形。
 
 空 `embed.iframeSrc` 显示待开放提示，不加载第三方内容。构建会阻止非法 slug、分类、关联链接、未注明来源的游戏资料，以及非官方/非 HTTPS 游戏嵌入。
+
+Sled Rider 正文参考 `https://sledrider.io/` 的玩法资料，按本站实际嵌入重新组织为原创英文；不复制参考站评分、游玩次数或道具价格。`sources` 记录参考链接，`controls` 使用 `{ "action": "…", "input": "…" }` 数组并需填写 `sources.controls`。
+
+`GameGuide` 在首页渲染 Sled Rider 的完整介绍、操作表、玩法和技巧，并显示全部 FAQ；游戏窗口始终位于指南之前，指南及目录无需 JavaScript。Sled Rider 的卡片和导航统一链接到 `/`，`/sled-rider` 仅用于永久跳转，sitemap 不包含旧地址。首页同时输出 WebSite、VideoGame 和 FAQPage 结构化数据，游戏 URL 统一为 `https://sledgames.com/`。
 
 站点分类介绍位于 `src/lib/category-content.mjs`；站点合规说明位于 `src/lib/legal.mjs`。它们描述网站本身，不存储游戏资料。
 
@@ -81,14 +86,14 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 - 保存发行平台对本站的出版商许可记录；Sled Rider 已配置发行方游戏托管地址，后续游戏仍需逐一确认来源及可玩性。
 - 根据真实来源补齐玩法资料和其他游戏，检查相关游戏数量及分类归属。
 - 需求总述写 7 游戏页，路由表实际列出 **8 个游戏**；批量阶段需确认最终范围。当前上线检查以路由表的 8 个为准。
-- Sled Rider FAQ 已更新为游玩、全屏和加载帮助；其他游戏上线时按真实玩法补齐问答。
+- Sled Rider 已补齐原创介绍、键位表、5 步玩法、5 条技巧和 5 条玩法 FAQ；其他游戏上线时按真实玩法补齐问答。
 - 申请 AdSense 后再接入获批的广告代码、实际广告位和适用的隐私/同意管理。本阶段只有固定高度占位，不加载广告网络。
 - 核验 5 个合规页与真实运营一致，运行性能检查，完成 LCP、实际第三方游戏与广告的 CLS 验收。
 - 绑定域名、强制 HTTPS、提交 GSC 和 sitemap。
 
 ## 部署
 
-Cloudflare Pages：构建命令 `npm run build`，输出目录 `dist`，设置合适 Node.js 版本及 `PUBLIC_CONTACT_EMAIL`。`public/_headers` 提供静态资源安全响应头。
+Cloudflare Pages：构建命令 `npm run build`，输出目录 `dist`，设置合适 Node.js 版本及 `PUBLIC_CONTACT_EMAIL`。`public/_headers` 提供静态资源安全响应头，`public/_redirects` 将 `/sled-rider`（含尾斜杠）以 301 跳转到首页，适用于 Cloudflare Pages / Workers 静态资源。Astro 静态构建还生成旧地址的 HTML 跳转兜底。
 
 Vercel：导入仓库，使用 Astro 静态构建；仓库内 `vercel.json` 定义构建输出、无尾斜杠路由与响应头。
 

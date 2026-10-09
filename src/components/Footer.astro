@@ -1,12 +1,12 @@
 ---
-import { games } from '../lib/catalog.mjs';
+import { games, gamePath } from '../lib/catalog.mjs';
 import SportIcon from './SportIcon.astro';
 const links = [['about', 'About Us'], ['contact', 'Contact Us'], ['privacy-policy', 'Privacy Policy'], ['terms-of-use', 'Terms of Use'], ['copyright', 'Copyright']];
 ---
 <footer class="site-footer">
   <div class="container footer-top">
     <div><a class="brand" href="/" aria-label="Sled Games home"><span class="brand-mark"><SportIcon /></span>sled<span>games</span></a><p>Your next winter game starts here.</p></div>
-    <nav aria-label="Game links"><span class="eyebrow">THE COLLECTION</span><a href="/games">All Games</a>{games.map(game => <a href={`/${game.slug}`}>{game.title}</a>)}</nav>
+    <nav aria-label="Game links"><span class="eyebrow">THE COLLECTION</span><a href="/games">All Games</a>{games.map(game => <a href={gamePath(game.slug)}>{game.title}</a>)}</nav>
     <nav aria-label="Site information"><span class="eyebrow">THE DETAILS</span>{links.map(([slug, label]) => <a href={`/${slug}`}>{label}</a>)}</nav>
   </div>
   <div class="container footer-bottom"><span>© {new Date().getUTCFullYear()} Sled Games</span><span>Games belong to their respective owners.</span><a href="#main">Back to top ↑</a></div>

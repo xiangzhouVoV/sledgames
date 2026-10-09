@@ -33,6 +33,23 @@
 @layer layout {
   .container { width: min(1200px, calc(100% - 48px)); margin-inline: auto; }
   .site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+  .has-snow {
+    isolation: isolate;
+    min-height: 100svh;
+    background:
+      radial-gradient(ellipse at 15% 0%, #ffffff30, transparent 55%),
+      radial-gradient(ellipse at 90% 35%, #d7f0ff30, transparent 60%),
+      linear-gradient(180deg, #73aee0, #94c6e9 50%, #badff4);
+    background-attachment: fixed;
+  }
+  .has-snow .site-header, .has-snow .game-stage { position: relative; z-index: 3; }
+  .has-snow .site-header {
+    background: linear-gradient(180deg, #f5faff 0%, #f5faffb3 45%, #f5faff00 100%);
+    border-bottom: 0;
+  }
+  .has-snow .section-heading h2 { color: #172d50; }
+  .has-snow .section-heading p,
+  .has-snow .game-toolbar p, .has-snow .game-tool-status, .has-snow .game-script-note { color: #294768; }
   .header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
   .header-inner nav { display: flex; gap: 4px; align-items: center; font-size: .875rem; font-weight: 650; }
   .header-inner nav a { min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 9px; white-space: nowrap; }
@@ -83,6 +100,7 @@
   .ad-slot span { font-size: .625rem; letter-spacing: .06em; }
   .ad-slot--top { margin-bottom: 12px; }
   .ad-slot--below { max-width: 728px; margin-top: 12px; }
+  .has-snow .ad-slot { background: #eff8ff55; border-color: #f2faff88; color: #294768; }
   .game-stage { height: 600px; border: 1px solid #b8cee8; border-radius: 14px; overflow: hidden; background: #13294b; box-shadow: 0 8px 24px #182f5010; }
   .game-stage iframe { display: block; width: 100%; height: 100%; border: 0; background: #13294b; }
   .play-first .game-stage { height: clamp(300px, calc(100svh - 160px), 600px); }
@@ -110,6 +128,7 @@
   .stage-caption .button { margin-top: 24px; }
   .text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: .875rem; font-weight: 650; color: #1559b3; }
   .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .has-snow .section-heading .text-link { color: #164e83; }
   .game-card { display: block; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); transition: transform .18s, box-shadow .18s; }
   .game-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px #173b6512; }
   .card-art { position: relative; aspect-ratio: 16/10; background: #cee7ff; overflow: hidden; }
@@ -141,6 +160,27 @@
   .prose p + p { margin-top: 16px; }
   .prose li { color: var(--muted); margin-top: 12px; }
   .prose a { color: #1559b3; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .game-guide { max-width: 920px; padding: 32px; background: #ffffffed; border: 1px solid #d1e1ef; border-radius: 16px; }
+  .guide-heading h2 { margin-top: 6px; font-size: clamp(1.35rem, 2.5vw, 1.75rem); }
+  .guide-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .guide-nav a { display: flex; align-items: center; min-height: 44px; padding: 8px 14px; border: 1px solid #d1e1ef; border-radius: 8px; background: #edf5fe; color: #1559b3; font-size: .8125rem; font-weight: 650; }
+  .guide-nav a:hover { background: #dfeeff; }
+  .guide-section { margin-top: 30px; scroll-margin-top: 24px; }
+  .guide-section h3 { margin-bottom: 14px; font-size: 1.2rem; }
+  .guide-section p { font-size: .9375rem; line-height: 1.8; }
+  .guide-section .guide-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: .8125rem; }
+  .guide-steps { margin: 20px 0 0; padding-left: 24px; }
+  .guide-steps li { margin-top: 18px; padding-left: 6px; }
+  .guide-steps li::marker { color: #176dde; font-weight: 750; }
+  .guide-steps strong, .guide-tips strong { display: block; color: var(--ink); margin-bottom: 5px; }
+  .guide-tips { list-style: none; padding: 0; margin: 0; }
+  .guide-tips li { padding-top: 16px; border-top: 1px solid #e1eaf3; }
+  .guide-controls table { font-size: .875rem; }
+  .guide-controls caption { text-align: left; color: var(--muted); font-size: .8125rem; padding-bottom: 8px; }
+  .guide-controls th, .guide-controls td { padding: 10px 14px; }
+  .guide-controls thead { background: #edf5fe; }
+  .guide-controls tbody th { font-weight: 600; }
+  .game-guide > .text-link { margin-top: 20px; }
   .legal-content { padding-bottom: 10px; }
   .legal-content > section { margin-block: 32px; }
   .contact-box { padding: 26px; border: 1px solid #c5d7ee; background: #e6effc; border-radius: 12px; }
@@ -210,6 +250,10 @@
     .category-card > div { flex: 1; }
     .category-arrow { display: inline; }
     .empty-state, .editorial-note { padding: 22px; }
+    .game-guide { padding: 20px; border-radius: 12px; }
+    .guide-nav { gap: 6px; }
+    .guide-nav a { padding: 8px 10px; font-size: .75rem; }
+    .guide-controls th, .guide-controls td { padding: 10px 8px; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
     .footer-top > div { grid-column: 1 / -1; }
     .footer-top nav a { display: flex; align-items: center; min-height: 44px; font-size: .8125rem; }

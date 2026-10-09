@@ -1,0 +1,48 @@
+---
+// Stable variation keeps the snowfall evenly spread without client-side setup.
+const flakes = Array.from({ length: 36 }, (_, index) => ({
+  left: (index * 47 + 13) % 100,
+  size: 3 + (index * 7) % 5,
+  duration: 12 + (index * 3) % 13,
+  delay: -((index * 17) % 29),
+  drift: ((index * 11) % 15) - 7,
+  opacity: 0.6 + (index % 5) * 0.1,
+}));
+---
+<div class="snowfall" aria-hidden="true">
+  {flakes.map(flake => <span class="snowflake" style={`left:${flake.left}%;--size:${flake.size}px;--duration:${flake.duration}s;--delay:${flake.delay}s;--drift:${flake.drift}vw;--opacity:${flake.opacity}`} />)}
+</div>
+<style>
+  .snowfall {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    contain: strict;
+    pointer-events: none;
+    user-select: none;
+  }
+  .snowflake {
+    position: absolute;
+    top: -12px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff 35%, #e3f1fc 85%);
+    box-shadow: 0 1px 4px #246fae55;
+    opacity: var(--opacity);
+    animation: snow-fall var(--duration) var(--delay) linear infinite;
+  }
+  @keyframes snow-fall {
+    0% { transform: translate3d(0, -12px, 0); }
+    50% { transform: translate3d(var(--drift), 50vh, 0); }
+    100% { transform: translate3d(0, calc(100vh + 24px), 0); }
+  }
+  @media (max-width: 600px) {
+    .snowflake:nth-child(n + 19) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .snowfall { display: none; }
+    .snowflake { animation: none; }
+  }
+</style>

@@ -13,31 +13,46 @@
     },
     "developer": "AZGames",
     "released": "",
-    "genres": [],
-    "intro": "",
+    "genres": [
+      "Endless runner",
+      "Sledding"
+    ],
+    "intro": "Sled Rider is a browser-based downhill game from AZGames. Your sled moves forward automatically while you choose a path through a snowy 3D course. Steer around obstacles, jump when a gap blocks your route, and collect presents along the way. The challenge is to keep the run alive as the pace increases, rather than reach a finish line.\n\nDistance and gift collecting give you two different goals. A longer ride tests your reactions; presents give you something to work toward in the sled shop. When the next obstacle leaves little room to maneuver, staying on a clear route matters more than reaching one extra box.\n\nThe controls are simple, but the terrain asks you to make quick decisions. Trees, rocks, snowmen, and gaps demand different responses, and a crash ends the current attempt. Each restart is a chance to try a more controlled approach: notice the next hazard sooner, make a smaller turn, or leave a tempting present behind.",
     "description": "Play Sled Rider online for free. Load the game right here in your browser, ride the snowy slopes, and enjoy a winter adventure without downloading an app.",
-    "howToPlay": [],
-    "tips": [],
+    "howToPlay": [
+      "Start in the game window: Wait for the game menu, then click or tap its play prompt. On a keyboard, Space starts a run. Click inside the player first if your keys are still controlling the surrounding page.",
+      "Choose a clear route: Use the left and right arrows, or A and D, to steer. Move toward open snow before an obstacle reaches you, rather than waiting until it is directly in front of the sled.",
+      "Jump with a landing in mind: Use the up arrow or W when the route calls for a jump. Look at the space beyond the hazard as well as the hazard itself; you still need a clear path when you land.",
+      "Collect gifts along safe lines: Pick up presents when they fit the route you have already chosen. Between runs, open the in-game shop to see the sleds and their current gift requirements.",
+      "Review the crash, then retry: A collision or fall ends the attempt. Before starting again, decide whether the problem was a late turn, a poor landing, or an unnecessary detour. Change that one habit on the next run."
+    ],
+    "tips": [
+      "Watch the route, not the sled: Keep your attention on the next stretch of snow. Spotting a blocked route early gives you time to choose another line, instead of making several hurried corrections at the last moment.",
+      "Make smaller steering inputs: As the game gets faster, a long key hold can carry you farther sideways than you intended. Use brief inputs when you only need a small correction, then reassess the next obstacle.",
+      "Treat presents as optional: A gift is worth collecting when the approach and exit both look clear. If it pulls you toward an obstacle or a gap, stay on your current line and keep the run going.",
+      "Separate distance practice from gift collecting: For a distance-focused attempt, prioritize open routes and controlled movement. When collecting gifts, make deliberate choices about which ones are reachable. Switching goals at the last second often creates an avoidable detour.",
+      "Use one crash as one lesson: Repeatedly restarting without changing anything can repeat the same mistake. Identify the decision that ended the run and focus on improving it. If your inputs become rushed, pause before another attempt."
+    ],
     "faqs": [
       {
-        "q": "Where can I play Sled Rider?",
-        "a": "Play directly in the game window at the top of this page. The game loads automatically; follow its on-screen instructions to begin."
+        "q": "Can I play Sled Rider for free without downloading it?",
+        "a": "Yes. You can play in the window above without installing an app or creating a Sled Games account. The game needs JavaScript and an internet connection to load its browser version."
       },
       {
-        "q": "Do I need to download Sled Rider?",
-        "a": "No. The game runs in your web browser. Keep JavaScript enabled and allow the game to finish loading."
+        "q": "Which keys control the sled in Sled Rider?",
+        "a": "Use Left and Right, or A and D, to steer. Use Up or W to jump, and Space to start a run. Click inside the game window if the keyboard is moving the page instead of the sled."
       },
       {
-        "q": "Is Sled Rider free to play on Sled Games?",
-        "a": "Yes. Sled Games does not charge for access to this game or require a website account."
+        "q": "Why does Sled Rider get faster, and can I brake?",
+        "a": "The pace increases as the run continues. There is no brake to slow the sled down, so plan a clear route earlier and use controlled steering rather than relying on a last-second stop."
       },
       {
-        "q": "How do I play in fullscreen?",
-        "a": "Use the Fullscreen button below the game on supported browsers. Press Escape to return to the page on a computer."
+        "q": "How do I unlock another sled?",
+        "a": "Collect gift boxes during your runs, then check the in-game shop for available sleds and their gift costs. Use the requirements shown in the current game build when choosing what to save for."
       },
       {
-        "q": "What can I do if the game does not load?",
-        "a": "Use Reload below the game to try again. Check your connection and keep JavaScript enabled. Loading time depends on your device and network."
+        "q": "What should I do if Sled Rider is loading or not responding?",
+        "a": "Allow the game to finish loading, keep JavaScript enabled, and click inside the player before using the keyboard. If it remains stuck, use Reload below the window and check your connection. Fullscreen can make the play area easier to see on supported browsers."
       }
     ],
     "similar": [],
@@ -45,15 +60,35 @@
     "playCount": null,
     "items": [],
     "sources": {
-      "intro": "",
-      "howToPlay": "",
-      "tips": "",
+      "intro": "https://sledrider.io/",
+      "howToPlay": "https://sledrider.io/",
+      "tips": "https://sledrider.io/",
       "items": "",
       "rating": "",
       "playCount": "",
       "embed": "https://gamea.azgame.io/sled-rider/",
-      "thumbnail": "https://gamea.azgame.io/sled-rider/25111403/loading.png"
+      "thumbnail": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+      "controls": "https://sledrider.io/",
+      "faqs": "https://sledrider.io/"
     },
-    "thumbnail": "https://gamea.azgame.io/sled-rider/25111403/loading.png"
+    "thumbnail": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+    "controls": [
+      {
+        "action": "Start a run",
+        "input": "Space, or the in-game play prompt"
+      },
+      {
+        "action": "Steer left",
+        "input": "Left arrow / A"
+      },
+      {
+        "action": "Steer right",
+        "input": "Right arrow / D"
+      },
+      {
+        "action": "Jump",
+        "input": "Up arrow / W"
+      }
+    ]
   }
 ]

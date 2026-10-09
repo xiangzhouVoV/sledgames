@@ -1,6 +1,9 @@
 import rawGames from '../../data/games.json' with { type: 'json' };
 
 export const SITE = 'https://sledgames.com';
+export const HOME_GAME_SLUG = 'sled-rider';
+/** @param {string} slug */
+export const gamePath = slug => slug === HOME_GAME_SLUG ? '/' : `/${slug}`;
 export const legalRoutes = ['about', 'contact', 'privacy-policy', 'terms-of-use', 'copyright'];
 export const categories = [
   { slug: 'sledding-games', path: '/', title: 'Sled Games', label: 'Sledding', symbol: '01', description: 'A little snow. A lot of momentum.' },
@@ -54,8 +57,8 @@ export function validateGames(entries) {
       throw new Error(`${game.slug}: unknown category`);
     }
     if (!(game.embed?.width > 0 && game.embed?.height > 0)) throw new Error(`${game.slug}: invalid embed dimensions`);
-    embedUrl(game, canonical(`/${game.slug}`));
-    for (const field of ['intro', 'howToPlay', 'tips', 'items', 'rating', 'playCount']) {
+    embedUrl(game, canonical(gamePath(game.slug)));
+    for (const field of ['intro', 'howToPlay', 'tips', 'controls', 'items', 'rating', 'playCount']) {
       const value = game[field];
       const populated = Array.isArray(value) ? value.length > 0 : value != null && value !== '';
       if (populated && !hasSource(game, field)) throw new Error(`${game.slug}: ${field} needs a source`);
@@ -76,7 +79,7 @@ export function validateGames(entries) {
 
 /** @type {import('./types').Game[]} */
 export const games = validateGames(rawGames);
-export const allPaths = ['/', '/games', ...categories.filter(c => c.path !== '/').map(c => c.path), ...games.map(g => `/${g.slug}`), ...legalRoutes.map(slug => `/${slug}`)];
+export const allPaths = [...new Set(['/', '/games', ...categories.filter(c => c.path !== '/').map(c => c.path), ...games.map(g => gamePath(g.slug)), ...legalRoutes.map(slug => `/${slug}`)])];
 /** @param {import('./types').Game} game */
 export const relatedGames = game => game.similar.map(slug => games.find(g => g.slug === slug)).filter(entry => entry !== undefined);
 export const categoryGames = slug => games.filter(game => game.category.includes(slug));
@@ -85,7 +88,7 @@ export const gameFaqs = game => game.faqs.filter(faq => faq.q?.trim() && faq.a?.
 export function gameSchema(game) {
   return {
     '@context': 'https://schema.org', '@type': 'VideoGame', name: game.title,
-    url: canonical(`/${game.slug}`), applicationCategory: 'Game', operatingSystem: 'Web Browser',
+    url: canonical(gamePath(game.slug)), applicationCategory: 'Game', operatingSystem: 'Web Browser',
     ...(game.intro ? { description: game.intro } : {}),
     ...(game.developer ? { author: { '@type': 'Organization', name: game.developer } } : {}),
     ...(game.released ? { datePublished: game.released } : {}),
