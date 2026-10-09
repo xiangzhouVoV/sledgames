@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { load } from 'cheerio';
 import { allPaths, canonical, games, gameFaqs, gamePath } from '../src/lib/catalog.mjs';
+import astroConfig from '../astro.config.mjs';
 
 const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
 
@@ -94,4 +95,9 @@ test('Sled Rider is served only on the homepage with a permanent legacy redirect
   const redirects = readFileSync('dist/_redirects', 'utf8');
   assert.match(redirects, /^\/sled-rider \/ 301$/m);
   assert.match(redirects, /^\/sled-rider\/ \/ 301$/m);
+  // Cloudflare adapters append configured Astro redirects to this file.
+  // Validate the combined rules, including duplicates across both sources.
+  const sources = redirects.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#')).map(line => line.split(/\s+/)[0]);
+  sources.push(...Object.keys(astroConfig.redirects ?? {}));
+  assert.equal(new Set(sources).size, sources.length, 'Cloudflare redirect sources must be unique, including adapter-generated rules');
 });

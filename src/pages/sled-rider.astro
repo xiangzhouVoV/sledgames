@@ -1,0 +1,19 @@
+---
+import { canonical } from '../lib/catalog.mjs';
+// Cloudflare's HTTP redirect lives only in public/_redirects. A normal static
+// page keeps local previews working without an adapter adding the rule again.
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting to Sled Games</title>
+    <script is:inline>
+      window.location.replace('/' + window.location.search + window.location.hash);
+    </script>
+    <meta http-equiv="refresh" content="1;url=/" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonical('/')} />
+  </head>
+  <body><a href="/">Continue to Sled Games</a></body>
+</html>

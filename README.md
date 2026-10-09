@@ -93,7 +93,7 @@ Sled Rider 正文参考 `https://sledrider.io/` 的玩法资料，按本站实�
 
 ## 部署
 
-Cloudflare Pages：构建命令 `npm run build`，输出目录 `dist`，设置合适 Node.js 版本及 `PUBLIC_CONTACT_EMAIL`。`public/_headers` 提供静态资源安全响应头，`public/_redirects` 将 `/sled-rider`（含尾斜杠）以 301 跳转到首页，适用于 Cloudflare Pages / Workers 静态资源。Astro 静态构建还生成旧地址的 HTML 跳转兜底。
+Cloudflare Pages：构建命令 `npm run build`，输出目录 `dist`，设置合适 Node.js 版本及 `PUBLIC_CONTACT_EMAIL`。`public/_headers` 提供静态资源安全响应头，`public/_redirects` 将 `/sled-rider`（含尾斜杠）以 301 跳转到首页，适用于 Cloudflare Pages / Workers 静态资源。`src/pages/sled-rider.astro` 提供本地预览的 HTML 跳转兜底；不要在 `astro.config.mjs` 的 `redirects` 中再次声明同一路径，否则 Cloudflare 自动适配时追加规则会造成重复并拒绝部署。
 
 Vercel：导入仓库，使用 Astro 静态构建；仓库内 `vercel.json` 定义构建输出、无尾斜杠路由与响应头。
 
