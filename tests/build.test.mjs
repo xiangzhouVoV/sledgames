@@ -23,7 +23,7 @@ test('all pages have static content, unique metadata, and working internal links
     descriptions.add(description);
     assert.equal($('link[rel="canonical"]').attr('href'), canonical(path));
     assert.ok($('main').text().trim().length > 100, `${path}: missing static content`);
-    assert.equal($('script:not([type="application/ld+json"])').length, 0, `${path}: initial pages should not need client scripts`);
+    if (!$('iframe').length) assert.equal($('script:not([type="application/ld+json"])').length, 0, `${path}: content pages should not need client scripts`);
     assert.ok($('[data-ad-slot]').length <= 3);
     $('a[href^="/"]').each((_, link) => {
       const target = $(link).attr('href').split('#')[0];
@@ -39,10 +39,14 @@ test('sitemap lists every public page and excludes the 404 page', () => {
   assert.match(readFileSync('dist/robots.txt', 'utf8'), /Sitemap: https:\/\/sledgames\.com\/sitemap\.xml/);
 });
 
-test('the initial game has no fabricated embed, rating, instructions, or prices', () => {
+test('Sled Rider uses its verified player without fabricated ratings or prices', () => {
   const $ = load(readFileSync('dist/sled-rider/index.html', 'utf8'));
   assert.equal($('title').text(), 'Sled Rider');
-  assert.equal($('iframe').length, 0);
+  assert.equal($('iframe').length, 1);
+  assert.equal($('iframe').attr('src'), 'https://gamea.azgame.io/sled-rider/');
+  assert.equal($('iframe').attr('loading'), 'eager');
+  assert.equal($('.game-pending').length, 0);
+  assert.doesNotMatch($('main').text(), /coming soon/i);
   assert.equal($('.info-bar, table').length, 0);
   assert.doesNotMatch($('main').text(), /How to Play|Pro Tips & Tricks/);
   const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
@@ -53,7 +57,20 @@ test('the initial game has no fabricated embed, rating, instructions, or prices'
     assert.ok($('details p').toArray().some(p => $(p).text() === entry.acceptedAnswer.text));
   }
   const schema = schemas.find(schema => schema['@type'] === 'VideoGame');
-  assert.ok(!schema.aggregateRating && !schema.offers);
+  assert.ok(!schema.aggregateRating);
+  assert.equal(schema.offers.price, 0);
+});
+
+test('home and game pages put the eager player before every ad', () => {
+  for (const path of ['/', '/sled-rider']) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    assert.equal($('iframe').attr('src'), games[0].embed.iframeSrc);
+    assert.equal($('iframe').attr('loading'), 'eager');
+    assert.equal($('body.play-first').length, 1);
+    assert.equal($('.game-stage [data-ad-slot]').length, 0);
+    assert.equal($('.game-stage').prevAll('[data-ad-slot]').length, 0);
+    assert.equal($('.game-stage').nextAll('[data-ad-slot]').length, $('[data-ad-slot]').length);
+  }
 });
 
 test('each game is reachable from at least three different existing pages', () => {

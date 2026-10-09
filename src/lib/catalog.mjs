@@ -11,6 +11,7 @@ export const categories = [
 const hosts = {
   gamedistribution: new Set(['html5.gamedistribution.com']),
   gamemonetize: new Set(['html5.gamemonetize.com']),
+  azgames: new Set(['gamea.azgame.io']),
 };
 
 export function canonical(path = '/') {
@@ -26,6 +27,10 @@ export function embedUrl(game, pageUrl) {
   }
   if (provider === 'gamedistribution') {
     url.searchParams.set('gd_sdk_referrer_url', pageUrl);
+  }
+  // Only the verified Sled Rider player is enabled for this publisher.
+  if (provider === 'azgames' && url.pathname !== '/sled-rider/') {
+    throw new Error(`${game.slug}: unverified AZGames player path`);
   }
   return url.href;
 }

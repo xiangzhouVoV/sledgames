@@ -8,8 +8,9 @@ interface Props {
   description: string;
   schema?: Record<string, unknown>[];
   noindex?: boolean;
+  playFirst?: boolean;
 }
-const { title, description, schema = [], noindex = false } = Astro.props;
+const { title, description, schema = [], noindex = false, playFirst = false } = Astro.props;
 const url = canonical(Astro.url.pathname);
 ---
 <!doctype html>
@@ -29,7 +30,7 @@ const url = canonical(Astro.url.pathname);
     <meta property="og:type" content="website" />
     {schema.map(item => <script type="application/ld+json" set:html={serializeSchema(item)} />)}
   </head>
-  <body>
+  <body class:list={{ 'play-first': playFirst }}>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header />
     <main id="main" class="container"><slot /></main>

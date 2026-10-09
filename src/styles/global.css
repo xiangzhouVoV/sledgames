@@ -22,7 +22,7 @@
   html { scroll-behavior: smooth; }
   body { min-width: 280px; line-height: 1.6; }
   a { color: inherit; text-decoration: none; }
-  a:focus-visible, summary:focus-visible { outline: 3px solid #176dde; outline-offset: 4px; }
+  a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #176dde; outline-offset: 4px; }
   h1, h2, h3 { line-height: 1.2; letter-spacing: -.025em; }
   h1 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; }
   h2 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); font-weight: 750; }
@@ -50,13 +50,12 @@
   .footer-top nav a:hover { text-decoration: underline; }
   .footer-top nav .eyebrow { margin-bottom: 10px; }
   .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-block: 18px; border-top: 1px solid #cdd9e9; font-size: .75rem; color: var(--muted); }
-  .home-intro { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 26px 22px; }
-  .home-intro h1 { margin-block: 5px; }
-  .home-intro p { font-size: .9375rem; }
   .page-intro { padding-block: 28px 22px; }
   .page-intro h1 { margin-block: 8px; }
   .page-intro p { max-width: 660px; font-size: .9375rem; }
   .page-intro .button { margin-top: 20px; }
+  .play-first .quick-links { display: none; }
+  .play-first main { padding-top: 12px; }
   .content-section { margin-top: 36px; }
   .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
   .section-heading h2 { margin-top: 4px; }
@@ -65,6 +64,7 @@
   .category-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 }
 @layer components {
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
   .skip-link { position: absolute; z-index: 10; left: 16px; top: -80px; padding: 12px 20px; background: var(--ink); color: white; }
   .skip-link:focus { top: 8px; }
   .brand { display: inline-flex; align-items: center; color: #183052; font-size: 1.55rem; font-weight: 850; letter-spacing: -.065em; line-height: 1; }
@@ -85,6 +85,17 @@
   .ad-slot--below { max-width: 728px; margin-top: 12px; }
   .game-stage { height: 600px; border: 1px solid #b8cee8; border-radius: 14px; overflow: hidden; background: #13294b; box-shadow: 0 8px 24px #182f5010; }
   .game-stage iframe { display: block; width: 100%; height: 100%; border: 0; background: #13294b; }
+  .play-first .game-stage { height: clamp(300px, calc(100svh - 160px), 600px); }
+  .play-first .game-stage:fullscreen { width: 100%; height: 100%; aspect-ratio: auto; border: 0; border-radius: 0; }
+  .game-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; padding-block: 8px; }
+  .game-toolbar p { font-size: .8125rem; }
+  .game-actions { display: flex; gap: 8px; }
+  .game-actions button { cursor: pointer; min-height: 44px; padding: 8px 14px; border: 1px solid #c5d7ee; border-radius: 8px; background: var(--surface); color: #1559b3; font-size: .8125rem; font-weight: 650; }
+  .game-actions button:hover { background: #eaf3ff; }
+  .game-actions button[hidden] { display: none; }
+  .game-tool-status { font-size: .8125rem; color: var(--muted); }
+  .game-tool-status:empty { display: none; }
+  .game-script-note { font-size: .8125rem; padding-bottom: 8px; }
   .game-pending { position: relative; height: 100%; isolation: isolate; overflow: hidden; display: flex; align-items: center; background: #4092e3; }
   .stage-scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
   .game-pending::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #112747ed 0%, #152f50be 36%, #142f5020 73%, transparent); }
@@ -167,10 +178,6 @@
     .nav-all { margin-left: 4px; }
     .quick-links { gap: 12px; min-height: 40px; overflow-x: auto; }
     .quick-links a { flex-shrink: 0; }
-    .home-intro { padding-block: 20px 18px; }
-    .home-intro h1 { font-size: 2rem; }
-    .home-intro p { font-size: .875rem; }
-    .home-intro > .button { display: none; }
     .page-intro { padding-block: 22px 18px; }
     .page-intro .eyebrow { font-size: .625rem; }
     .stage-heading { margin-bottom: 10px; }
@@ -179,6 +186,9 @@
     .featured-label { font-size: .6875rem; padding: 4px 7px; }
     .stage-label { display: none; }
     .game-stage { height: auto; aspect-ratio: 16/10; border-radius: 10px; }
+    .play-first .game-stage { height: auto; }
+    .play-first main { padding-top: 8px; }
+    .game-toolbar p { flex-basis: 100%; font-size: .75rem; }
     .game-pending { height: 100%; justify-content: center; }
     .game-pending::before { background: #122d53bb; }
     .stage-caption { padding: 12px; text-align: center; max-width: 100%; }

@@ -27,6 +27,13 @@ test('only approved publisher hosts can be embedded', () => {
   game.embed.provider = 'gamemonetize';
   game.embed.iframeSrc = 'https://html5.gamemonetize.com/test-id/';
   assert.equal(embedUrl(game, canonical('/sled-rider')), game.embed.iframeSrc);
+  game.embed.provider = 'azgames';
+  game.embed.iframeSrc = 'https://gamea.azgame.io/sled-rider/';
+  assert.equal(embedUrl(game, canonical('/sled-rider')), game.embed.iframeSrc);
+  for (const src of ['https://gamea.azgame.io/another-game/', 'https://gamea.azgame.io.attacker.test/sled-rider/']) {
+    game.embed.iframeSrc = src;
+    assert.throws(() => embedUrl(game, canonical('/sled-rider')));
+  }
 });
 
 test('unverified game details fail the build instead of being published', () => {

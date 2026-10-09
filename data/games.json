@@ -2,26 +2,43 @@
   {
     "slug": "sled-rider",
     "title": "Sled Rider",
-    "category": ["sledding-games"],
+    "category": [
+      "sledding-games"
+    ],
     "embed": {
-      "provider": "",
-      "iframeSrc": "",
+      "provider": "azgames",
+      "iframeSrc": "https://gamea.azgame.io/sled-rider/",
       "width": 960,
       "height": 600
     },
-    "developer": "",
+    "developer": "AZGames",
     "released": "",
     "genres": [],
     "intro": "",
-    "description": "Explore Sled Rider on Sled Games. Find its browser game page, browse our winter game collection, and check back for the official playable version.",
+    "description": "Play Sled Rider online for free. Load the game right here in your browser, ride the snowy slopes, and enjoy a winter adventure without downloading an app.",
     "howToPlay": [],
     "tips": [],
     "faqs": [
-      { "q": "Where can I play Sled Rider on this website?", "a": "Use the game window at the top of this page when the official playable version is available. If it is marked as coming soon, the game has not been added yet." },
-      { "q": "Do I need to download an app to use this website?", "a": "No. You can browse our game pages in your web browser without installing an app." },
-      { "q": "Does Sled Games charge for access to its pages?", "a": "No. Our website does not charge an access fee or sell subscriptions." },
-      { "q": "Is this page an unofficial or modified version of the game?", "a": "We do not host modified game files. Only an authorized platform embed will be added to this page." },
-      { "q": "Where can I find other winter game categories?", "a": "Use the Snowboard Games and Ski Games links, or visit All Games to browse the current collection." }
+      {
+        "q": "Where can I play Sled Rider?",
+        "a": "Play directly in the game window at the top of this page. The game loads automatically; follow its on-screen instructions to begin."
+      },
+      {
+        "q": "Do I need to download Sled Rider?",
+        "a": "No. The game runs in your web browser. Keep JavaScript enabled and allow the game to finish loading."
+      },
+      {
+        "q": "Is Sled Rider free to play on Sled Games?",
+        "a": "Yes. Sled Games does not charge for access to this game or require a website account."
+      },
+      {
+        "q": "How do I play in fullscreen?",
+        "a": "Use the Fullscreen button below the game on supported browsers. Press Escape to return to the page on a computer."
+      },
+      {
+        "q": "What can I do if the game does not load?",
+        "a": "Use Reload below the game to try again. Check your connection and keep JavaScript enabled. Loading time depends on your device and network."
+      }
     ],
     "similar": [],
     "rating": null,
@@ -33,7 +50,10 @@
       "tips": "",
       "items": "",
       "rating": "",
-      "playCount": ""
-    }
+      "playCount": "",
+      "embed": "https://gamea.azgame.io/sled-rider/",
+      "thumbnail": "https://gamea.azgame.io/sled-rider/25111403/loading.png"
+    },
+    "thumbnail": "https://gamea.azgame.io/sled-rider/25111403/loading.png"
   }
 ]

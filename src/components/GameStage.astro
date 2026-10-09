@@ -13,3 +13,38 @@ const src = embedUrl(game, canonical(Astro.url.pathname));
       <div class="stage-caption"><span class="pill">Coming soon</span><h2>{game.title}</h2><p>The official game is on its way.<br />Browse the collection while you wait.</p><a class="button" href="/games">Browse games <span aria-hidden="true">→</span></a></div>
     </div>}
 </section>
+{src && <div class="game-toolbar" data-game-tools>
+  <p>Click inside the game to use keyboard controls.</p>
+  <div class="game-actions">
+    <button type="button" data-game-reload aria-label={`Reload ${game.title}`}>Reload</button>
+    <button type="button" data-game-fullscreen aria-label={`Play ${game.title} in fullscreen`}>Fullscreen <span aria-hidden="true">⛶</span></button>
+  </div>
+  <span class="game-tool-status" role="status" aria-live="polite"></span>
+</div>}
+{src && <noscript><p class="game-script-note">Enable JavaScript in your browser to play {game.title}.</p></noscript>}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-game-tools]').forEach(tools => {
+    const stage = tools.previousElementSibling as HTMLElement;
+    const frame = stage.querySelector('iframe');
+    const reload = tools.querySelector<HTMLButtonElement>('[data-game-reload]');
+    const fullscreen = tools.querySelector<HTMLButtonElement>('[data-game-fullscreen]');
+    const status = tools.querySelector<HTMLElement>('[role="status"]');
+    if (!frame || !reload || !fullscreen || !status) return;
+    reload.addEventListener('click', () => {
+      frame.src = frame.src;
+      status.textContent = 'Reloading game…';
+    });
+    frame.addEventListener('load', () => { status.textContent = ''; });
+    if (!document.fullscreenEnabled) {
+      fullscreen.hidden = true;
+    } else {
+      fullscreen.addEventListener('click', async () => {
+        try {
+          if (document.fullscreenElement) await document.exitFullscreen();
+          else await stage.requestFullscreen();
+          frame.focus();
+        } catch { status.textContent = 'Fullscreen is unavailable. You can still play here.'; }
+      });
+    }
+  });
+</script>

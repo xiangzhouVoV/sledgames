@@ -23,8 +23,8 @@ test('configured official embeds render different home/game referrers with sibli
       assert.equal($('iframe').length, 1);
       assert.equal(new URL($('iframe').attr('src')).searchParams.get('gd_sdk_referrer_url'), canonical(path));
       const stage = $('iframe').parent();
-      assert.ok(stage.prev().is('[data-ad-slot="top"]'));
-      assert.ok(stage.next().is('[data-ad-slot="below"]'));
+      assert.equal(stage.prevAll('[data-ad-slot]').length, 0);
+      assert.ok(stage.nextAll('[data-ad-slot="below"]').length);
       assert.equal(stage.find('[data-ad-slot]').length, 0);
       assert.equal($('iframe').attr('loading'), 'eager');
     }
