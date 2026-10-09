@@ -1,0 +1,5 @@
+---
+import { categories } from '../lib/catalog.mjs';
+import SportIcon from './SportIcon.astro';
+---
+<section class="content-section"><div class="section-heading"><div><h2>Browse by category</h2><p>Choose your way down the mountain.</p></div></div><div class="category-grid">{categories.map(category => <a class:list={['category-card', `category-card--${category.slug}`]} href={category.path}><span class="category-icon"><SportIcon sport={category.slug} /></span><div><h3>{category.title}</h3><p>{category.description}</p></div><span class="category-arrow" aria-hidden="true">→</span></a>)}</div></section>

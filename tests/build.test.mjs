@@ -1,0 +1,64 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
+import { load } from 'cheerio';
+import { allPaths, canonical, games, gameFaqs } from '../src/lib/catalog.mjs';
+
+const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
+
+test('all pages have static content, unique metadata, and working internal links', () => {
+  const titles = new Set();
+  const descriptions = new Set();
+  for (const path of [...allPaths, '/404']) {
+    assert.ok(existsSync(pageFile(path)), `Missing ${path}`);
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    assert.equal($('html').attr('lang'), 'en');
+    assert.equal($('h1').length, 1, `${path}: exactly one H1`);
+    const title = $('title').text();
+    assert.ok(!titles.has(title), `Duplicate title: ${title}`);
+    titles.add(title);
+    const description = $('meta[name="description"]').attr('content');
+    assert.ok(description.length >= 140 && description.length <= 160, `${path}: description has ${description.length} characters`);
+    assert.ok(!descriptions.has(description), `${path}: duplicate description`);
+    descriptions.add(description);
+    assert.equal($('link[rel="canonical"]').attr('href'), canonical(path));
+    assert.ok($('main').text().trim().length > 100, `${path}: missing static content`);
+    assert.equal($('script:not([type="application/ld+json"])').length, 0, `${path}: initial pages should not need client scripts`);
+    assert.ok($('[data-ad-slot]').length <= 3);
+    $('a[href^="/"]').each((_, link) => {
+      const target = $(link).attr('href').split('#')[0];
+      assert.ok(allPaths.includes(target), `${path}: broken internal link ${target}`);
+    });
+  }
+});
+
+test('sitemap lists every public page and excludes the 404 page', () => {
+  const $ = load(readFileSync('dist/sitemap.xml', 'utf8'), { xml: true });
+  assert.deepEqual($('loc').map((_, item) => $(item).text()).get().sort(), allPaths.map(canonical).sort());
+  assert.match(readFileSync('dist/robots.txt', 'utf8'), /Allow: \/\n/);
+  assert.match(readFileSync('dist/robots.txt', 'utf8'), /Sitemap: https:\/\/sledgames\.com\/sitemap\.xml/);
+});
+
+test('the initial game has no fabricated embed, rating, instructions, or prices', () => {
+  const $ = load(readFileSync('dist/sled-rider/index.html', 'utf8'));
+  assert.equal($('title').text(), 'Sled Rider');
+  assert.equal($('iframe').length, 0);
+  assert.equal($('.info-bar, table').length, 0);
+  assert.doesNotMatch($('main').text(), /How to Play|Pro Tips & Tricks/);
+  const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+  const faq = schemas.find(schema => schema['@type'] === 'FAQPage');
+  assert.equal(faq.mainEntity.length, gameFaqs(games[0]).length);
+  for (const entry of faq.mainEntity) {
+    assert.ok($('summary').toArray().some(summary => $(summary).text().startsWith(entry.name)));
+    assert.ok($('details p').toArray().some(p => $(p).text() === entry.acceptedAnswer.text));
+  }
+  const schema = schemas.find(schema => schema['@type'] === 'VideoGame');
+  assert.ok(!schema.aggregateRating && !schema.offers);
+});
+
+test('each game is reachable from at least three different existing pages', () => {
+  for (const game of games) {
+    const sources = allPaths.filter(path => path !== `/${game.slug}` && load(readFileSync(pageFile(path), 'utf8'))(`a[href="/${game.slug}"]`).length);
+    assert.ok(sources.length >= 3, `${game.slug}: only ${sources.length} incoming pages`);
+  }
+});

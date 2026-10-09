@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameGrid from '../components/GameGrid.astro';
+import Faq from '../components/Faq.astro';
+import CategoryLinks from '../components/CategoryLinks.astro';
+import { categories, categoryGames, faqSchema } from '../lib/catalog.mjs';
+import { categoryContent } from '../lib/category-content.mjs';
+export function getStaticPaths() {
+  return categories.filter(category => category.path !== '/').map(category => ({ params: { category: category.slug.replace(/-games$/, '') }, props: { category, content: categoryContent[category.slug as keyof typeof categoryContent] } }));
+}
+interface Props {
+  category: (typeof categories)[number];
+  content: (typeof categoryContent)['ski-games'];
+}
+const { category, content } = Astro.props;
+const games = categoryGames(category.slug);
+---
+<Layout title={`${category.title} - Free Online ${category.label} Games`} description={content.description} schema={[faqSchema(content.faqs)]}>
+  <section class="page-intro"><span class="eyebrow">PICK YOUR PATH / {category.label}</span><h1>{category.title}</h1><p>{category.description}</p></section>
+  <section class="content-section"><GameGrid games={games} /></section>
+  <section class="content-section prose"><h2>Explore {category.title}</h2>{content.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>
+  <Faq faqs={content.faqs} />
+  <CategoryLinks />
+</Layout>

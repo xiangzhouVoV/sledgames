@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameGrid from '../components/GameGrid.astro';
+import { games } from '../lib/catalog.mjs';
+---
+<Layout title="Page Not Found - Sled Games" description="This trail does not lead to a page. Head back to Sled Games, browse the winter game collection, and discover another adventure from our game recommendations." noindex>
+  <section class="page-intro"><span class="eyebrow">404 / OFF THE TRAIL</span><h1>A fresh start?</h1><p>We couldn't find that page. There's still plenty to explore.</p><a class="button" href="/">Back to Sled Games ↗</a></section>
+  <section class="content-section"><h2>Try another trail</h2><GameGrid games={games} /></section>
+</Layout>

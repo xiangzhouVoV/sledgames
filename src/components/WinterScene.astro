@@ -1,0 +1,25 @@
+---
+interface Props { id: string; class?: string }
+const { id, class: className } = Astro.props;
+---
+<svg class={className} viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id={`${id}-sky`} x2="0" y2="1"><stop stop-color="#277ad2" /><stop offset="1" stop-color="#bfe9ff" /></linearGradient>
+    <linearGradient id={`${id}-snow`} x2=".3" y2="1"><stop stop-color="#fff" /><stop offset="1" stop-color="#b2ddff" /></linearGradient>
+    <symbol id={`${id}-pine`} viewBox="0 0 100 180"><path d="M46 150h8v30h-8z" fill="#385b7c" /><path d="m50 0 26 53H65l27 53H75l25 52H0l25-52H8l27-53H24z" fill="#234b76" /><path d="m50 0 26 53H24zM35 65l-16 32h21l10-16 10 16h21L65 65zM28 120l-15 29h74l-15-29-22 15z" fill="#e9f8ff" /></symbol>
+  </defs>
+  <path fill={`url(#${id}-sky)`} d="M0 0h1200v640H0z" />
+  <circle cx="980" cy="128" r="52" fill="#fff1bd" />
+  <path fill="#d6eaff" d="m0 370 230-235 164 157L643 70l230 265 172-192 155 180v317H0z" />
+  <path fill="#7eb4e8" d="m643 70 83 222-61-32 62 122-187-176zM230 135l61 188-92-61zM1045 143l62 235-108-72z" />
+  <path fill="#fff" d="m643 70 71 82-65-20-28 27-18-39-63 86zM230 135l60 59-42-12-24 18-24-33-37 37zM1045 143l44 51-43-15-47 45z" />
+  <path fill={`url(#${id}-snow)`} d="M0 402c225-115 398 112 622-7 235-125 391-61 578 20v225H0z" />
+  <path d="M936 358c-200 135 106 149-177 282M967 367c-162 110 136 162-161 273" fill="none" stroke="#93c7f0" stroke-width="7" opacity=".65" />
+  <path d="M940 360c-204 139 132 170-146 280" fill="none" stroke="#fff" stroke-width="26" opacity=".7" />
+  <use href={`#${id}-pine`} x="77" y="313" width="120" height="216" />
+  <use href={`#${id}-pine`} x="210" y="380" width="77" height="139" />
+  <use href={`#${id}-pine`} x="1025" y="282" width="92" height="166" />
+  <use href={`#${id}-pine`} x="1102" y="365" width="120" height="216" />
+  <g transform="translate(840 427) rotate(-15)"><ellipse cx="16" cy="67" rx="62" ry="13" fill="#6497c5" opacity=".22" /><path d="M-35 18h97L50 45h-97z" fill="#ff7546" /><path d="m-35 18 20-12h88L62 18z" fill="#ffae82" /><path d="m-33 32-18 21h97c14 0 20-6 19-16M-13 42l-8 10m55-10-3 10" fill="none" stroke="#304b79" stroke-width="7" stroke-linecap="round" /><path d="m-14 15 64 0" stroke="#e35735" stroke-width="3" /></g>
+  <g fill="#fff" opacity=".8"><circle cx="380" cy="85" r="3" /><circle cx="95" cy="135" r="4" /><circle cx="804" cy="154" r="3" /><circle cx="530" cy="260" r="3" /><circle cx="1075" cy="90" r="3" /><circle cx="420" cy="180" r="2" /></g>
+</svg>

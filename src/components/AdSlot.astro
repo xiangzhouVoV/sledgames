@@ -1,0 +1,5 @@
+---
+interface Props { position: 'top' | 'below' | 'content' }
+const { position } = Astro.props;
+---
+<aside class:list={['ad-slot', `ad-slot--${position}`]} data-ad-slot={position} aria-label="Advertisement space"><span>ADVERTISEMENT</span></aside>

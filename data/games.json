@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "sled-rider",
+    "title": "Sled Rider",
+    "category": ["sledding-games"],
+    "embed": {
+      "provider": "",
+      "iframeSrc": "",
+      "width": 960,
+      "height": 600
+    },
+    "developer": "",
+    "released": "",
+    "genres": [],
+    "intro": "",
+    "description": "Explore Sled Rider on Sled Games. Find its browser game page, browse our winter game collection, and check back for the official playable version.",
+    "howToPlay": [],
+    "tips": [],
+    "faqs": [
+      { "q": "Where can I play Sled Rider on this website?", "a": "Use the game window at the top of this page when the official playable version is available. If it is marked as coming soon, the game has not been added yet." },
+      { "q": "Do I need to download an app to use this website?", "a": "No. You can browse our game pages in your web browser without installing an app." },
+      { "q": "Does Sled Games charge for access to its pages?", "a": "No. Our website does not charge an access fee or sell subscriptions." },
+      { "q": "Is this page an unofficial or modified version of the game?", "a": "We do not host modified game files. Only an authorized platform embed will be added to this page." },
+      { "q": "Where can I find other winter game categories?", "a": "Use the Snowboard Games and Ski Games links, or visit All Games to browse the current collection." }
+    ],
+    "similar": [],
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "sources": {
+      "intro": "",
+      "howToPlay": "",
+      "tips": "",
+      "items": "",
+      "rating": "",
+      "playCount": ""
+    }
+  }
+]

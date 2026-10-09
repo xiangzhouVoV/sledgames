@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameGrid from '../components/GameGrid.astro';
+import CategoryLinks from '../components/CategoryLinks.astro';
+import { games } from '../lib/catalog.mjs';
+---
+<Layout title="All Games - Free Online Winter Games" description="Browse all games in our winter collection. Explore sledding, snowboard, and ski game pages, find your next browser adventure, and see the latest additions.">
+  <section class="page-intro"><span class="eyebrow">THE WHOLE MOUNTAIN</span><h1>All Games</h1><p>Every adventure, in one place. Pick your next stop.</p></section>
+  <section class="content-section"><GameGrid games={games} /></section>
+  <CategoryLinks />
+</Layout>

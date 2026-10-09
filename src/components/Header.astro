@@ -1,0 +1,16 @@
+---
+import { categories, games } from '../lib/catalog.mjs';
+import SportIcon from './SportIcon.astro';
+const path = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Sled Games home"><span class="brand-mark"><SportIcon /></span>sled<span>games</span></a>
+    <nav aria-label="Main navigation">
+      <a href="/" aria-current={path === '/' ? 'page' : undefined}>Home</a>
+      {categories.map(category => <a href={category.path} aria-current={category.path !== '/' && path === category.path ? 'page' : undefined}>{category.title}</a>)}
+      <a class="nav-all" href="/games" aria-current={path === '/games' ? 'page' : undefined}>All Games <span aria-hidden="true">→</span></a>
+    </nav>
+  </div>
+  <div class="quick-links container"><span>Explore games</span>{games.slice(0, 4).map(game => <a href={`/${game.slug}`}>{game.title}<span aria-hidden="true">→</span></a>)}</div>
+</header>
