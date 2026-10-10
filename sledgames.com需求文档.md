@@ -194,7 +194,7 @@
 
 ## 本轮品类增补（2026-10-10）
 
-本轮先补两个品类：`/snowboard-games` 加入 Downhill Snowboard、SnowBoard Game；`/ski-games` 加入 Ski King、Ski Rush。四个游戏页共用现有模板，均配置官方封面、介绍、操作表、玩法、技巧、5 条 FAQ 及同品类内链。首页与 `/games` 自动展示全部游戏。
+本轮先补两个品类：`/snowboard-games` 加入 Downhill Snowboard、SnowBoard Game；`/ski-games` 加入 Ski King、Ski Rush。四个游戏页共用现有模板及首页的冰蓝渐变背景、动态飘雪，均配置官方封面、介绍、操作表、玩法、技巧、5 条 FAQ 及同品类内链。首页与 `/games` 自动展示全部游戏。
 
 游戏使用 GameMonetize 详情页公开提供的 `html5.gamemonetize.co` 官方 iframe，不下载或改写游戏资源。详情页、封面和资料来源记录在 `data/games.json` 的 `sources` 字段中；出版商收益需按[官方 FAQ](https://gamemonetize.com/faq)注册账号并添加本站域名。
 

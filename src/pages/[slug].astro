@@ -17,7 +17,7 @@ const category = categories.find(category => category.slug === game.category[0])
 const schema = [gameSchema(game), ...(faqs.length ? [faqSchema(faqs)] : [])];
 const number = new Intl.NumberFormat('en-US');
 ---
-<Layout playFirst title={game.title} description={game.description} schema={schema}>
+<Layout playFirst snowfall title={game.title} description={game.description} schema={schema}>
   <h1 class="sr-only">{game.title}</h1>
   <GameStage game={game} eager />
   {(game.rating !== null || game.playCount !== null) && <div class="info-bar">{game.rating && <span>Rating: {game.rating.value}/5 · {number.format(game.rating.count)} votes</span>}{game.playCount !== null && <span>{number.format(game.playCount)} plays</span>}</div>}
