@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "downhill-snowboard",
+    "source": "https://gamemonetize.com/downhill-snowboard-game",
+    "title": "Downhill Snowboard",
+    "developer": "Renan Games",
+    "description": "Downhill Snowboard it is a very challenging game.\nThe objective of the game is to go down the slope and accumulate the highest score you can, collect coins to unlock new characters and snowboards.",
+    "instructions": "Use the mouse or touch to interact\nA,D or Arrows",
+    "size": "800 X 600",
+    "published": "Fri Jul 25 2025",
+    "embedCode": "<iframe src=\"https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/\" width=\"800\" height=\"600\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+      "width": 800,
+      "height": 600
+    },
+    "thumbnail": "https://img.gamemonetize.com/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/512x384.jpg"
+  },
+  {
+    "slug": "snowboard-game",
+    "title": "SnowBoard Game",
+    "source": "https://gamemonetize.com/snowboard-game-game",
+    "developer": "Quantum Studio",
+    "description": "Welcome to SnowBoard Game, an exciting winter sports adventure where you ride down snowy slopes, avoid obstacles, and perform smooth moves to reach the finish line. Experience the thrill of snowboarding as you glide through icy tracks, dodge barriers, and test your reflexes in a fast-paced environment.\nThis addictive snowboarding game combines smooth controls, exciting challenges, and beautiful snowy environments to create a fun and immersive gameplay experience. Whether you enjoy sports games, winter adventures, or fast-paced action gameplay, SnowBoard Game offers endless excitement.",
+    "instructions": "- To click any button use mouse",
+    "size": "800 X 600",
+    "published": "Wed Feb 18 2026",
+    "embedCode": "<iframe src=\"https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/\" width=\"800\" height=\"600\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+      "width": 800,
+      "height": 600
+    },
+    "thumbnail": "https://img.gamemonetize.com/4jlpcom1sy0z4thlimget2ew3z6ow05d/512x384.jpg"
+  },
+  {
+    "slug": "ski-king",
+    "source": "https://gamemonetize.com/ski-king-game",
+    "title": "Ski King",
+    "developer": "Inlogic Software s.r.o.",
+    "description": "Carve your way through mountains. Avoid trees and rocks and skid over icy snow. Explore every slope and find the shortest way down the hill. Finish with best times to complete this skiing adventure.",
+    "instructions": "Find the shortest track down and try to avoid all obstacles in your way. Level resets if you pass a flag from the wrong side. Use upgrade points to improve your skills. Each skill affects your skiing style differently.",
+    "size": "600 X 800",
+    "published": "Fri Mar 12 2021",
+    "embedCode": "<iframe src=\"https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/\" width=\"600\" height=\"800\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+      "width": 600,
+      "height": 800
+    },
+    "thumbnail": "https://img.gamemonetize.com/220zq0t2ac34j1ghs7gsmtvb8pawcepf/512x384.jpg"
+  },
+  {
+    "slug": "ski-rush",
+    "source": "https://gamemonetize.com/ski-rush-game",
+    "title": "Ski Rush",
+    "developer": "Gameotoria",
+    "description": "Ski down the mountain as long as possible avoiding obstacles. Collect flags to increase your score!",
+    "instructions": "Touch or mouse",
+    "size": "970 X 960",
+    "published": "Wed Apr 05 2023",
+    "embedCode": "<iframe src=\"https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/\" width=\"970\" height=\"960\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+      "width": 970,
+      "height": 960
+    },
+    "thumbnail": "https://img.gamemonetize.com/qhm0nbxkucx74gkbrix22wywohn2lwrz/512x384.jpg"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-10",
+  "environment": {
+    "browser": "headless Google Chrome",
+    "login": "none",
+    "cache": "disabled via CDP",
+    "origin": "http://127.0.0.1:4322",
+    "viewport": "1280x800"
+  },
+  "scope": "Official catalog embeds and artwork, local category/detail navigation, responsive layout, and entering gameplay. Not a production deployment, revenue-share activation, mobile gameplay or full death/retry acceptance.",
+  "games": [
+    {
+      "slug": "downhill-snowboard",
+      "officialSource": "https://gamemonetize.com/downhill-snowboard-game",
+      "embed": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+      "gameplayEntered": true,
+      "evidence": "downhill-snowboard-input-after-preroll.png"
+    },
+    {
+      "slug": "snowboard-game",
+      "officialSource": "https://gamemonetize.com/snowboard-game-game",
+      "embed": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+      "gameplayEntered": true,
+      "evidence": "snowboard-game-input-final-play.png"
+    },
+    {
+      "slug": "ski-king",
+      "officialSource": "https://gamemonetize.com/ski-king-game",
+      "embed": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+      "gameplayEntered": true,
+      "evidence": "ski-king-input-final-play.png"
+    },
+    {
+      "slug": "ski-rush",
+      "officialSource": "https://gamemonetize.com/ski-rush-game",
+      "embed": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+      "gameplayEntered": true,
+      "evidence": "ski-rush-input-final-play.png"
+    }
+  ],
+  "notes": [
+    "GameMonetize advertisements were retained and only normal visible skip controls were used.",
+    "Multiple ads appeared during Ski King menu/language/course navigation.",
+    "Ski Rush needed more than the initial 16-second loading window; its menu was visible at the later 30-second snapshot.",
+    "No top-level redirect or popup was observed during these short local checks.",
+    "The earlier AZGames Sled Rider permission and full production-session audit is separate and remains pending."
+  ]
+}

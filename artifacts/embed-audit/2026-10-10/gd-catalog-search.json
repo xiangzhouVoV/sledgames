@@ -1,0 +1,13 @@
+{
+  "searched": "Sled Rider",
+  "url": "https://gamedistribution.com/games/",
+  "results": [
+    {
+      "endpoint": "https://gd-website-api.gamedistribution.com/graphql",
+      "status": 200,
+      "nbHits": 0,
+      "hits": []
+    }
+  ],
+  "note": "Queries made through the official public catalog; no account used."
+}

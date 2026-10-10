@@ -90,5 +90,341 @@
         "input": "Up arrow / W"
       }
     ]
+  },
+  {
+    "slug": "downhill-snowboard",
+    "title": "Downhill Snowboard",
+    "category": [
+      "snowboard-games"
+    ],
+    "genres": [
+      "Snowboarding",
+      "Endless runner"
+    ],
+    "description": "Play Downhill Snowboard online for free. Ride the snowy slope, collect coins, and unlock new characters and boards in this browser snowboarding challenge.",
+    "intro": "Downhill Snowboard is a snowboarding score challenge from Renan Games. Ride down the slope, keep your run alive, and collect coins along the way.\n\nBetween attempts, use those coins to unlock characters and snowboards. Try to improve your route before chasing another collectible.",
+    "howToPlay": [
+      "Start: Choose play inside the game window.",
+      "Steer: Use A and D or the arrow keys.",
+      "Collect: Pick up coins along a clear route.",
+      "Unlock: Check the game menu for new characters and boards."
+    ],
+    "tips": [
+      "Look ahead: Choose your next turn early.",
+      "Keep control: Make small steering corrections.",
+      "Skip risky coins: Keep the run alive first."
+    ],
+    "controls": [
+      {
+        "action": "Steer left / right",
+        "input": "A / D or arrow keys"
+      },
+      {
+        "action": "Menus / touch controls",
+        "input": "Mouse or touch"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is it free?",
+        "a": "Yes, play in the game window above."
+      },
+      {
+        "q": "Which keys steer the board?",
+        "a": "Use A and D or the arrow keys."
+      },
+      {
+        "q": "What are coins for?",
+        "a": "They unlock characters and snowboards."
+      },
+      {
+        "q": "Do I need to install it?",
+        "a": "No, it runs in your browser."
+      },
+      {
+        "q": "Who publishes this version?",
+        "a": "The official catalog lists Renan Games."
+      }
+    ],
+    "similar": [
+      "snowboard-game"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+      "width": 800,
+      "height": 600
+    },
+    "developer": "Renan Games",
+    "released": "2025-07-25",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/downhill-snowboard-game",
+      "howToPlay": "https://gamemonetize.com/downhill-snowboard-game",
+      "tips": "https://gamemonetize.com/downhill-snowboard-game",
+      "controls": "https://gamemonetize.com/downhill-snowboard-game",
+      "faqs": "https://gamemonetize.com/downhill-snowboard-game",
+      "embed": "https://gamemonetize.com/downhill-snowboard-game",
+      "developer": "https://gamemonetize.com/downhill-snowboard-game",
+      "released": "https://gamemonetize.com/downhill-snowboard-game",
+      "thumbnail": "https://img.gamemonetize.com/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "snowboard-game",
+    "title": "SnowBoard Game",
+    "category": [
+      "snowboard-games"
+    ],
+    "genres": [
+      "Snowboarding",
+      "Racing"
+    ],
+    "description": "Play SnowBoard Game online for free. Ride snowy slopes, dodge barriers, and find your route to the finish in a winter sports challenge right in your browser.",
+    "intro": "SnowBoard Game is a winter sports game from Quantum Studio. Guide your snowboarder down snowy tracks, avoid barriers, and work toward the finish line.\n\nThe challenge is choosing a clear route while reacting to the course. Start with the in-game controls, then practice making smooth adjustments.",
+    "howToPlay": [
+      "Start: Click GO inside the game window and allow the course to load.",
+      "Move: Use W, A, S, D or the arrow keys shown in the game’s controls.",
+      "Navigate: Keep your board clear of barriers.",
+      "Finish: Follow the snowy course toward the finish line."
+    ],
+    "tips": [
+      "Look ahead: Read the next obstacle before turning.",
+      "Keep control: Make smooth adjustments to your route.",
+      "Learn the course: Remember the hazard that ended your attempt."
+    ],
+    "controls": [
+      {
+        "action": "Menus / start",
+        "input": "Mouse click / GO button"
+      },
+      {
+        "action": "Move",
+        "input": "W / A / S / D or arrow keys"
+      },
+      {
+        "action": "Grab",
+        "input": "V"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is it free?",
+        "a": "Yes, play in the browser window above."
+      },
+      {
+        "q": "What is the objective?",
+        "a": "Avoid barriers and reach the finish line."
+      },
+      {
+        "q": "How do I start?",
+        "a": "Click GO in the game window, wait for the course to load, then use W, A, S, D or the arrow keys to move."
+      },
+      {
+        "q": "Do I need a download?",
+        "a": "No separate app installation is needed."
+      },
+      {
+        "q": "Who made this game?",
+        "a": "The official catalog lists Quantum Studio."
+      }
+    ],
+    "similar": [
+      "downhill-snowboard"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+      "width": 800,
+      "height": 600
+    },
+    "developer": "Quantum Studio",
+    "released": "2026-02-18",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/4jlpcom1sy0z4thlimget2ew3z6ow05d/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/snowboard-game-game",
+      "howToPlay": "https://gamemonetize.com/snowboard-game-game",
+      "tips": "https://gamemonetize.com/snowboard-game-game",
+      "controls": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+      "faqs": "https://gamemonetize.com/snowboard-game-game",
+      "embed": "https://gamemonetize.com/snowboard-game-game",
+      "developer": "https://gamemonetize.com/snowboard-game-game",
+      "released": "https://gamemonetize.com/snowboard-game-game",
+      "thumbnail": "https://img.gamemonetize.com/4jlpcom1sy0z4thlimget2ew3z6ow05d/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "ski-king",
+    "title": "Ski King",
+    "category": [
+      "ski-games"
+    ],
+    "genres": [
+      "Skiing",
+      "Time trial"
+    ],
+    "description": "Play Ski King online for free. Pass course flags on the correct side, dodge trees and rocks, and improve your skiing skills while chasing faster finish times.",
+    "intro": "Ski King is a downhill course game from Inlogic Software. Avoid trees and rocks, cross icy ground, and find a fast route through the mountain.\n\nPass every course flag on the correct side: a wrong pass resets the level. Upgrade points improve your skills between attempts.",
+    "howToPlay": [
+      "Choose: Select a language, open Play, and start the first available course.",
+      "Navigate: Use the left and right arrow keys to carve, and pass flags on the marked side.",
+      "Avoid: Keep your skier clear of trees and rocks.",
+      "Improve: Spend upgrade points and try for a faster finish."
+    ],
+    "tips": [
+      "Read flags early: Prepare the correct side before turning.",
+      "Stay safe: A shortcut is useless if it resets the level.",
+      "Practice the route: Improve one difficult turn at a time."
+    ],
+    "controls": [
+      {
+        "action": "Steer",
+        "input": "Left / Right arrow keys"
+      },
+      {
+        "action": "Menus / upgrades",
+        "input": "Mouse or touch"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is it free?",
+        "a": "Yes, play in the window above."
+      },
+      {
+        "q": "Why did my level reset?",
+        "a": "Passing a flag on the wrong side resets it."
+      },
+      {
+        "q": "What do upgrade points do?",
+        "a": "They improve skiing skills."
+      },
+      {
+        "q": "What is the goal?",
+        "a": "Finish the course with a fast time."
+      },
+      {
+        "q": "Do I need to install it?",
+        "a": "No, it runs in your browser."
+      }
+    ],
+    "similar": [
+      "ski-rush"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+      "width": 600,
+      "height": 800
+    },
+    "developer": "Inlogic Software s.r.o.",
+    "released": "2021-03-12",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/220zq0t2ac34j1ghs7gsmtvb8pawcepf/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/ski-king-game",
+      "howToPlay": "https://gamemonetize.com/ski-king-game",
+      "tips": "https://gamemonetize.com/ski-king-game",
+      "controls": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+      "faqs": "https://gamemonetize.com/ski-king-game",
+      "embed": "https://gamemonetize.com/ski-king-game",
+      "developer": "https://gamemonetize.com/ski-king-game",
+      "released": "https://gamemonetize.com/ski-king-game",
+      "thumbnail": "https://img.gamemonetize.com/220zq0t2ac34j1ghs7gsmtvb8pawcepf/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "ski-rush",
+    "title": "Ski Rush",
+    "category": [
+      "ski-games"
+    ],
+    "genres": [
+      "Skiing",
+      "Endless runner"
+    ],
+    "description": "Play Ski Rush online for free. Ski down the mountain, avoid obstacles, and collect flags for extra points using mouse or touch controls in your browser.",
+    "intro": "Ski Rush is a downhill survival game. Keep skiing for as long as possible, steer clear of obstacles, and collect flags to increase your score.\n\nIts mouse and touch controls offer a different feel from a keyboard snowboarding game. Learn the steering before taking risks for extra points.",
+    "howToPlay": [
+      "Begin: Click or tap the play button.",
+      "Steer: Use the game’s mouse or touch controls.",
+      "Score: Collect flags when your route is clear.",
+      "Retry: After a crash, start another downhill attempt."
+    ],
+    "tips": [
+      "Look downhill: Spot obstacles before they reach you.",
+      "Keep space: Leave room for another turn.",
+      "Choose safe flags: Avoid detours into hazards."
+    ],
+    "controls": [
+      {
+        "action": "Steer / interact",
+        "input": "Mouse or touch"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is it free?",
+        "a": "Yes, use the browser player above."
+      },
+      {
+        "q": "How do I steer?",
+        "a": "Use mouse or touch controls inside the game."
+      },
+      {
+        "q": "What increases my score?",
+        "a": "Collect flags while skiing."
+      },
+      {
+        "q": "How long does a run last?",
+        "a": "Keep going until you hit an obstacle."
+      },
+      {
+        "q": "Do I need a download?",
+        "a": "No app installation is required."
+      }
+    ],
+    "similar": [
+      "ski-king"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+      "width": 970,
+      "height": 960
+    },
+    "developer": "",
+    "released": "2023-04-05",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/qhm0nbxkucx74gkbrix22wywohn2lwrz/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/ski-rush-game",
+      "howToPlay": "https://gamemonetize.com/ski-rush-game",
+      "tips": "https://gamemonetize.com/ski-rush-game",
+      "controls": "https://gamemonetize.com/ski-rush-game",
+      "faqs": "https://gamemonetize.com/ski-rush-game",
+      "embed": "https://gamemonetize.com/ski-rush-game",
+      "developer": "https://gamemonetize.com/ski-rush-game",
+      "released": "https://gamemonetize.com/ski-rush-game",
+      "thumbnail": "https://img.gamemonetize.com/qhm0nbxkucx74gkbrix22wywohn2lwrz/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
   }
 ]

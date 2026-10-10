@@ -1,0 +1,242 @@
+[
+  {
+    "game": "ski-rush",
+    "label": "final-menu-loaded",
+    "page": "http://127.0.0.1:4322/ski-rush",
+    "frame": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "canvas",
+          "cls": "ani_hack",
+          "text": "",
+          "rect": {
+            "x": 352.9375,
+            "y": 0,
+            "width": 492.09375,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-rush",
+    "label": "final-instructions",
+    "page": "http://127.0.0.1:4322/ski-rush",
+    "frame": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "canvas",
+          "cls": "ani_hack",
+          "text": "",
+          "rect": {
+            "x": 352.9375,
+            "y": 0,
+            "width": 492.09375,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-rush",
+    "label": "final-play",
+    "page": "http://127.0.0.1:4322/ski-rush",
+    "frame": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "canvas",
+          "cls": "ani_hack",
+          "text": "",
+          "rect": {
+            "x": 352.9375,
+            "y": 0,
+            "width": 492.09375,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-rush",
+    "label": "final-steering",
+    "page": "http://127.0.0.1:4322/ski-rush",
+    "frame": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "canvas",
+          "cls": "ani_hack",
+          "text": "",
+          "rect": {
+            "x": 352.9375,
+            "y": 0,
+            "width": 492.09375,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  }
+]

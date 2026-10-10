@@ -10,11 +10,11 @@ const src = embedUrl(game, canonical(Astro.url.pathname));
   {src ? <iframe src={src} title={`Play ${game.title}`} width={game.embed.width} height={game.embed.height} loading={eager ? 'eager' : 'lazy'} allow="fullscreen; autoplay; gamepad" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" /> :
     <div class="game-pending">
       <WinterScene id={`stage-${game.slug}`} class="stage-scene" />
-      <div class="stage-caption"><span class="pill">Coming soon</span><h2>{game.title}</h2><p>The official game is on its way.<br />Browse the collection while you wait.</p><a class="button" href="/games">Browse games <span aria-hidden="true">→</span></a></div>
+      <div class="stage-caption"><h2>{game.title}</h2><a class="button" href="/games">Browse games <span aria-hidden="true">→</span></a></div>
     </div>}
 </section>
 {src && <div class="game-toolbar" data-game-tools>
-  <p>Click inside the game to use keyboard controls.</p>
+  <p>Click or tap inside the game to use its controls.</p>
   <div class="game-actions">
     <button type="button" data-game-reload aria-label={`Reload ${game.title}`}>Reload</button>
     <button type="button" data-game-fullscreen aria-label={`Play ${game.title} in fullscreen`}>Fullscreen <span aria-hidden="true">⛶</span></button>

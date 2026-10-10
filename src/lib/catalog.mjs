@@ -13,7 +13,7 @@ export const categories = [
 
 const hosts = {
   gamedistribution: new Set(['html5.gamedistribution.com']),
-  gamemonetize: new Set(['html5.gamemonetize.com']),
+  gamemonetize: new Set(['html5.gamemonetize.com', 'html5.gamemonetize.co', 'html5.gamemonetize.games']),
   azgames: new Set(['gamea.azgame.io']),
 };
 

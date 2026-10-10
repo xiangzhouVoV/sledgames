@@ -1,0 +1,2884 @@
+[
+  {
+    "game": "snowboard-game",
+    "label": "final-menu",
+    "page": "http://127.0.0.1:4322/snowboard-game",
+    "frame": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "unity-canvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "unity-loading-bar",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 522,
+            "y": 220,
+            "width": 154,
+            "height": 158
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "snowboard-game",
+    "label": "final-start",
+    "page": "http://127.0.0.1:4322/snowboard-game",
+    "frame": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "unity-canvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "unity-loading-bar",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 522,
+            "y": 220,
+            "width": 154,
+            "height": 158
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "snowboard-game",
+    "label": "final-loaded",
+    "page": "http://127.0.0.1:4322/snowboard-game",
+    "frame": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "unity-canvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "unity-loading-bar",
+          "cls": "",
+          "text": "\n        \n        \n          \n        \n      ",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "snowboard-game",
+    "label": "final-course",
+    "page": "http://127.0.0.1:4322/snowboard-game",
+    "frame": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "SKIP\nAd will be closed in 22 secs\nPowered by\nPowered by",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "unity-canvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "unity-loading-bar",
+          "cls": "",
+          "text": "\n        \n        \n          \n        \n      ",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "preroll_banner_ad_1791628047154",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "google_ads_iframe_/21739493398/AdExchange-300x250-9_0__container__",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "promo-button",
+          "cls": "",
+          "text": "SKIP",
+          "rect": {
+            "x": 1048,
+            "y": 555,
+            "width": 150,
+            "height": 31
+          },
+          "display": "inline-block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 570,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 570,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "snowboard-game",
+    "label": "final-play",
+    "page": "http://127.0.0.1:4322/snowboard-game",
+    "frame": "https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "Powered by\nPowered by",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "unity-canvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "unity-loading-bar",
+          "cls": "",
+          "text": "\n        \n        \n          \n        \n      ",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 570,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 570,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-menu",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "SKIP\nAd will be closed in 31 secs",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "preroll_banner_ad_1791628089583",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "google_ads_iframe_/21739493398/AdExchange-300x250-Games-Intro_0__container__",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "promo-button-new2",
+          "cls": "",
+          "text": "SKIP",
+          "rect": {
+            "x": 1048,
+            "y": 555,
+            "width": 150,
+            "height": 31
+          },
+          "display": "inline-block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-language",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "You can skip this in 6 secs",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "preroll_banner_ad_1791628106582",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "google_ads_iframe_/21739493398/AdExchange-300x250-Fluid_0__container__",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "promo-button-new",
+          "cls": "",
+          "text": "You can skip this in 6 secs",
+          "rect": {
+            "x": 953.53125,
+            "y": 555,
+            "width": 244.46875,
+            "height": 31
+          },
+          "display": "inline-block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-english",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "SKIP\nAd will be closed in 14 secs",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "preroll_banner_ad_1791628106582",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "google_ads_iframe_/21739493398/AdExchange-300x250-Fluid_0__container__",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "promo-button-new",
+          "cls": "",
+          "text": "SKIP",
+          "rect": {
+            "x": 1048,
+            "y": 555,
+            "width": 150,
+            "height": 31
+          },
+          "display": "inline-block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-language-ready",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-english-ready",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "SKIP\nAd will be closed in 24 secs\nPowered by\nPowered by",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "preroll_banner_ad_1791628152482",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "google_ads_iframe_/21739493398/AdExchange-300x250-9_0__container__",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "promo-button",
+          "cls": "",
+          "text": "SKIP",
+          "rect": {
+            "x": 1048,
+            "y": 555,
+            "width": 150,
+            "height": 31
+          },
+          "display": "inline-block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-play-menu",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "Powered by\nPowered by",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-levels",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "You can skip this in 4 secs\nPowered by\nPowered by\nPowered by",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "preroll_banner_ad_1791628182353",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "google_ads_iframe_/21739493398/AdExchange-300x250-9_1__container__",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "promo-button",
+          "cls": "",
+          "text": "You can skip this in 4 secs",
+          "rect": {
+            "x": 953.53125,
+            "y": 555,
+            "width": 244.46875,
+            "height": 31
+          },
+          "display": "inline-block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-courses",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "Powered by\nPowered by\nPowered by",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-course-start",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "SKIP\nAd will be closed in 25 secs\nPowered by\nPowered by\nPowered by\nPowered by",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "preroll_banner_ad_1791628224047",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "google_ads_iframe_/21739493398/AdExchange-300x250-9_2__container__",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 449,
+            "y": 275.5,
+            "width": 300,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "promo-button",
+          "cls": "",
+          "text": "SKIP",
+          "rect": {
+            "x": 1048,
+            "y": 555,
+            "width": 150,
+            "height": 31
+          },
+          "display": "inline-block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by\nPowered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-instructions",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "Powered by\nPowered by\nPowered by\nPowered by",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by\nPowered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-king",
+    "label": "final-play",
+    "page": "http://127.0.0.1:4322/ski-king",
+    "frame": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "Powered by\nPowered by\nPowered by\nPowered by",
+      "elements": [
+        {
+          "tag": "SCRIPT",
+          "id": "gamemonetize-preload-api",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "display": "none",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "ads",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "font_preload",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1198,
+            "height": 0
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "Powered by\nPowered by\nPowered by\nPowered by",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "gmLoadingText",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9999,
+            "y": 562,
+            "width": 1198,
+            "height": 36
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 566,
+            "width": 208.109375,
+            "height": 27.703125
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "SPAN",
+          "id": "loading-text-gm",
+          "cls": "",
+          "text": "Powered by",
+          "rect": {
+            "x": -9014.109375,
+            "y": 573,
+            "width": 77.109375,
+            "height": 15
+          },
+          "display": "inline",
+          "pointer": "auto"
+        },
+        {
+          "tag": "CANVAS",
+          "id": "gameCanvas",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": 338,
+            "y": 0,
+            "width": 522,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  },
+  {
+    "game": "ski-rush",
+    "label": "final-menu",
+    "page": "http://127.0.0.1:4322/ski-rush",
+    "frame": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+    "box": {
+      "x": 41,
+      "y": 90,
+      "width": 1198,
+      "height": 598
+    },
+    "dom": {
+      "text": "",
+      "elements": [
+        {
+          "tag": "CANVAS",
+          "id": "canvas",
+          "cls": "ani_hack",
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        },
+        {
+          "tag": "DIV",
+          "id": "sdk__advertisement_slot",
+          "cls": "",
+          "text": "",
+          "rect": {
+            "x": -9999,
+            "y": 0,
+            "width": 1198,
+            "height": 598
+          },
+          "display": "block",
+          "pointer": "auto"
+        }
+      ]
+    },
+    "popups": []
+  }
+]

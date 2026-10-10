@@ -25,8 +25,12 @@ test('only approved publisher hosts can be embedded', () => {
     assert.throws(() => embedUrl(game, canonical('/sled-rider')));
   }
   game.embed.provider = 'gamemonetize';
-  game.embed.iframeSrc = 'https://html5.gamemonetize.com/test-id/';
-  assert.equal(embedUrl(game, canonical('/sled-rider')), game.embed.iframeSrc);
+  for (const host of ['html5.gamemonetize.com', 'html5.gamemonetize.co', 'html5.gamemonetize.games']) {
+    game.embed.iframeSrc = `https://${host}/test-id/`;
+    assert.equal(embedUrl(game, canonical('/sled-rider')), game.embed.iframeSrc);
+    game.embed.iframeSrc = `https://${host}.attacker.test/test-id/`;
+    assert.throws(() => embedUrl(game, canonical('/sled-rider')));
+  }
   game.embed.provider = 'azgames';
   game.embed.iframeSrc = 'https://gamea.azgame.io/sled-rider/';
   assert.equal(embedUrl(game, canonical('/sled-rider')), game.embed.iframeSrc);

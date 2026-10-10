@@ -10,7 +10,7 @@ const controls = hasSource(game, 'controls') ? game.controls ?? [] : [];
 const sections = [
   ...(paragraphs.length ? [{ id: 'about-game', label: 'About the game' }] : []),
   ...(steps.length || controls.length ? [{ id: 'how-to-play', label: 'How to play' }] : []),
-  ...(tips.length ? [{ id: 'game-tips', label: 'Tips for longer runs' }] : []),
+  ...(tips.length ? [{ id: 'game-tips', label: 'Tips and strategy' }] : []),
 ];
 const split = (text: string) => {
   const divider = text.indexOf(': ');
@@ -22,8 +22,8 @@ const split = (text: string) => {
   <nav class="guide-nav" aria-label="Game guide sections">{sections.map(section => <a href={`#${section.id}`}>{section.label}</a>)}</nav>
   {paragraphs.length > 0 && <section id="about-game" class="guide-section prose"><h3>What is {game.title}?</h3>{paragraphs.map(paragraph => <p>{paragraph}</p>)}<p class="guide-meta">{game.developer && <>Developer: <strong>{game.developer}</strong></>}{game.genres.length > 0 && <span>{game.genres.join(' · ')}</span>}{game.released && <span>Released: {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(`${game.released}T00:00:00Z`))}</span>}</p></section>}
   {(steps.length > 0 || controls.length > 0) && <section id="how-to-play" class="guide-section prose"><h3>How to play {game.title}</h3>
-    {controls.length > 0 && <div class="table-scroll guide-controls"><table><caption>Keyboard controls</caption><thead><tr><th scope="col">Action</th><th scope="col">Input</th></tr></thead><tbody>{controls.map(control => <tr><th scope="row">{control.action}</th><td>{control.input}</td></tr>)}</tbody></table></div>}
+    {controls.length > 0 && <div class="table-scroll guide-controls"><table><caption>Game controls</caption><thead><tr><th scope="col">Action</th><th scope="col">Input</th></tr></thead><tbody>{controls.map(control => <tr><th scope="row">{control.action}</th><td>{control.input}</td></tr>)}</tbody></table></div>}
     <ol class="guide-steps">{steps.map(step => { const { title, body } = split(step); return <li>{title && <strong>{title}</strong>}<p>{body}</p></li>; })}</ol>
   </section>}
-  {tips.length > 0 && <section id="game-tips" class="guide-section prose"><h3>Tips for longer runs</h3><ul class="guide-tips">{tips.map(tip => { const { title, body } = split(tip); return <li>{title && <strong>{title}</strong>}<p>{body}</p></li>; })}</ul></section>}
+  {tips.length > 0 && <section id="game-tips" class="guide-section prose"><h3>Tips and strategy</h3><ul class="guide-tips">{tips.map(tip => { const { title, body } = split(tip); return <li>{title && <strong>{title}</strong>}<p>{body}</p></li>; })}</ul></section>}
 </article>}

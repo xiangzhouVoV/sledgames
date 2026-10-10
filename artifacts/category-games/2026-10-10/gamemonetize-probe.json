@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "downhill-snowboard",
+    "player": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+    "parent": "https://sledgames.com/",
+    "popups": [],
+    "failures": [],
+    "page": "https://sledgames.com/",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+        "text": "",
+        "canvas": 1
+      }
+    ],
+    "otherFrameCount": 5
+  },
+  {
+    "slug": "snowboard-game-party",
+    "player": "https://html5.gamemonetize.co/e60tb5zjmg6wfnkaddqv8bji60h8gx50/",
+    "parent": "https://sledgames.com/",
+    "popups": [],
+    "failures": [],
+    "page": "https://sledgames.com/",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/e60tb5zjmg6wfnkaddqv8bji60h8gx50/",
+        "text": "Loading...82%(8.4/10.2M)",
+        "canvas": 2
+      }
+    ],
+    "otherFrameCount": 7
+  },
+  {
+    "slug": "ski-rush",
+    "player": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+    "parent": "https://sledgames.com/",
+    "popups": [],
+    "failures": [],
+    "page": "https://sledgames.com/",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+        "text": "",
+        "canvas": 1
+      }
+    ],
+    "otherFrameCount": 5
+  }
+]

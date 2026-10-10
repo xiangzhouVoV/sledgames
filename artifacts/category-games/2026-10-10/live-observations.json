@@ -1,0 +1,632 @@
+[
+  {
+    "slug": "downhill-snowboard",
+    "page": "http://127.0.0.1:4321/downhill-snowboard",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/downhill-snowboard-menu.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 336,
+            "height": 598,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "snowboard-game-party",
+    "page": "http://127.0.0.1:4321/snowboard-game-party",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/snowboard-game-party-menu.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/e60tb5zjmg6wfnkaddqv8bji60h8gx50/",
+        "text": "Loading...63%(6.5/10.2M)",
+        "canvases": [
+          {
+            "width": 2672,
+            "height": 1334,
+            "display": "block"
+          },
+          {
+            "width": 1024,
+            "height": 512,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "ski-king",
+    "page": "http://127.0.0.1:4321/ski-king",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/ski-king-menu.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+        "text": "You can skip this in 0 secs\nSKIP\nAd will be closed in 31 secs",
+        "canvases": [
+          {
+            "width": 480,
+            "height": 550,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://cm.g.doubleclick.net/partnerpixels?url=https%3A%2F%2Fhtml5.gamemonetize.co%2F220zq0t2ac34j1ghs7gsmtvb8pawcepf%2F",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://www.google.com/recaptcha/api2/aframe",
+        "text": "/** Anti-fraud and anti-abuse applications only. See google.com/recaptcha */ try{var clients={'sodar':'https://pagead2.googlesyndication.com/pagead/sodar?'};window.addEventListener(\"message\",function(a){try{if(a.source===window.parent){var b=JSON.parse(a.data);var c=clients[b['id']];if(c){var d=document.createElement('img');d.src=c+b['params']+'&rc='+(localStorage.getItem(\"rc::a\")?sessionStorage.getItem(\"rc::b\"):\"\");window.document.body.appendChild(d);sessionStorage.setItem(\"rc::e\",parseInt(sessionStorage.getItem(\"rc::e\")||0)+1);localStorage.setItem(\"rc::h\",'1791626559050');}}}catch(b){}});window.parent.postMessage(\"_grecaptcha_ready\", \"*\");}catch(b){}",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "ski-rush",
+    "page": "http://127.0.0.1:4321/ski-rush",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/ski-rush-menu.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 790,
+            "height": 960,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "ski-rush",
+    "page": "http://127.0.0.1:4321/ski-rush",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/ski-rush-start.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 790,
+            "height": 960,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "ski-king",
+    "page": "http://127.0.0.1:4321/ski-king",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/ski-king-ready.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+        "text": "SKIP\nAd will be closed in 30 secs",
+        "canvases": [
+          {
+            "width": 480,
+            "height": 550,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://cm.g.doubleclick.net/partnerpixels?url=https%3A%2F%2Fhtml5.gamemonetize.co%2F220zq0t2ac34j1ghs7gsmtvb8pawcepf%2F",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://www.google.com/recaptcha/api2/aframe",
+        "text": "/** Anti-fraud and anti-abuse applications only. See google.com/recaptcha */ try{var clients={'sodar':'https://pagead2.googlesyndication.com/pagead/sodar?'};window.addEventListener(\"message\",function(a){try{if(a.source===window.parent){var b=JSON.parse(a.data);var c=clients[b['id']];if(c){var d=document.createElement('img');d.src=c+b['params']+'&rc='+(localStorage.getItem(\"rc::a\")?sessionStorage.getItem(\"rc::b\"):\"\");window.document.body.appendChild(d);sessionStorage.setItem(\"rc::e\",parseInt(sessionStorage.getItem(\"rc::e\")||0)+1);localStorage.setItem(\"rc::h\",'1791626559050');}}}catch(b){}});window.parent.postMessage(\"_grecaptcha_ready\", \"*\");}catch(b){}",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "downhill-snowboard",
+    "page": "http://127.0.0.1:4321/downhill-snowboard",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/downhill-snowboard-ready.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 336,
+            "height": 598,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "snowboard-game-party",
+    "page": "http://127.0.0.1:4321/snowboard-game-party",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/snowboard-game-party-ready.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/e60tb5zjmg6wfnkaddqv8bji60h8gx50/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 2672,
+            "height": 1334,
+            "display": "block"
+          },
+          {
+            "width": 1024,
+            "height": 512,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "ski-king",
+    "page": "http://127.0.0.1:4321/ski-king",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/ski-king-after-ad.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/220zq0t2ac34j1ghs7gsmtvb8pawcepf/",
+        "text": "SKIP\nAd will be closed in 30 secs",
+        "canvases": [
+          {
+            "width": 480,
+            "height": 550,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://cm.g.doubleclick.net/partnerpixels?url=https%3A%2F%2Fhtml5.gamemonetize.co%2F220zq0t2ac34j1ghs7gsmtvb8pawcepf%2F",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://www.google.com/recaptcha/api2/aframe",
+        "text": "/** Anti-fraud and anti-abuse applications only. See google.com/recaptcha */ try{var clients={'sodar':'https://pagead2.googlesyndication.com/pagead/sodar?'};window.addEventListener(\"message\",function(a){try{if(a.source===window.parent){var b=JSON.parse(a.data);var c=clients[b['id']];if(c){var d=document.createElement('img');d.src=c+b['params']+'&rc='+(localStorage.getItem(\"rc::a\")?sessionStorage.getItem(\"rc::b\"):\"\");window.document.body.appendChild(d);sessionStorage.setItem(\"rc::e\",parseInt(sessionStorage.getItem(\"rc::e\")||0)+1);localStorage.setItem(\"rc::h\",'1791626559050');}}}catch(b){}});window.parent.postMessage(\"_grecaptcha_ready\", \"*\");}catch(b){}",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "downhill-snowboard",
+    "page": "http://127.0.0.1:4321/downhill-snowboard",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/downhill-snowboard-start.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 336,
+            "height": 598,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "snowboard-game-party",
+    "page": "http://127.0.0.1:4321/snowboard-game-party",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/snowboard-game-party-start.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/e60tb5zjmg6wfnkaddqv8bji60h8gx50/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 2672,
+            "height": 1334,
+            "display": "block"
+          },
+          {
+            "width": 1024,
+            "height": 512,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  },
+  {
+    "slug": "ski-rush",
+    "page": "http://127.0.0.1:4321/ski-rush",
+    "screenshot": "/Users/zhouxiang/code/GTS/sledgames/artifacts/category-games/2026-10-10/ski-rush-play.png",
+    "frames": [
+      {
+        "url": "https://html5.gamemonetize.co/qhm0nbxkucx74gkbrix22wywohn2lwrz/",
+        "text": "",
+        "canvases": [
+          {
+            "width": 790,
+            "height": 960,
+            "display": "block"
+          }
+        ]
+      },
+      {
+        "url": "https://imasdk.googleapis.com/js/core/bridge3.792.0_en.html",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      },
+      {
+        "url": "about:blank",
+        "text": "",
+        "canvases": []
+      }
+    ],
+    "popups": [],
+    "failed": []
+  }
+]

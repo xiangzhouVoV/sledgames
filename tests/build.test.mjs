@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { load } from 'cheerio';
-import { allPaths, canonical, games, gameFaqs, gamePath } from '../src/lib/catalog.mjs';
+import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categoryGames } from '../src/lib/catalog.mjs';
 import astroConfig from '../astro.config.mjs';
 
 const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
@@ -24,6 +24,8 @@ test('all pages have static content, unique metadata, and working internal links
     descriptions.add(description);
     assert.equal($('link[rel="canonical"]').attr('href'), canonical(path));
     assert.ok($('main').text().trim().length > 100, `${path}: missing static content`);
+    const visibleText = $('body').clone().find('script, style').remove().end().text();
+    assert.doesNotMatch(visibleText, /coming[-\s]+soon|getting\s+ready|\bempty\b|on\s+(?:the|its)\s+way|being\s+prepared|while\s+you\s+wait/i, `${path}: placeholder copy`);
     if (!$('iframe').length) assert.equal($('script:not([type="application/ld+json"])').length, 0, `${path}: content pages should not need client scripts`);
     assert.ok($('[data-ad-slot]').length <= 3);
     $('a[href^="/"]').each((_, link) => {
@@ -42,7 +44,11 @@ test('sitemap lists every public page and excludes the 404 page', () => {
 
 test('Sled Rider uses its verified player without fabricated ratings or prices', () => {
   const $ = load(readFileSync('dist/index.html', 'utf8'));
-  assert.equal($('title').text(), 'Sled Games - Free Online Sledding Games');
+  assert.equal($('title').text(), 'Sled Games - Play Sled Rider Online Free | Sledding Games');
+  assert.equal($('meta[property="og:title"]').attr('content'), $('title').text());
+  assert.equal($('h1').text(), 'Play Sled Rider');
+  assert.ok(!$('h1').hasClass('sr-only'));
+  assert.equal($('.game-stage').prev().get(0), $('h1').get(0));
   assert.equal($('iframe').length, 1);
   assert.equal($('iframe').attr('src'), 'https://gamea.azgame.io/sled-rider/');
   assert.equal($('iframe').attr('loading'), 'eager');
@@ -69,14 +75,42 @@ test('Sled Rider uses its verified player without fabricated ratings or prices',
 });
 
 test('home and game pages put the eager player before every ad', () => {
-  for (const path of [...new Set(games.map(game => gamePath(game.slug)))]) {
+  for (const game of games) {
+    const path = gamePath(game.slug);
     const $ = load(readFileSync(pageFile(path), 'utf8'));
-    assert.equal($('iframe').attr('src'), games[0].embed.iframeSrc);
+    assert.equal($('iframe').attr('src'), embedUrl(game, canonical(path)));
     assert.equal($('iframe').attr('loading'), 'eager');
     assert.equal($('body.play-first').length, 1);
     assert.equal($('.game-stage [data-ad-slot]').length, 0);
     assert.equal($('.game-stage').prevAll('[data-ad-slot]').length, 0);
     assert.equal($('.game-stage').nextAll('[data-ad-slot]').length, $('[data-ad-slot]').length);
+  }
+});
+
+test('snowboard and ski categories link to their playable games with matching official artwork', () => {
+  for (const category of ['snowboard-games', 'ski-games']) {
+    const entries = categoryGames(category);
+    assert.ok(entries.length >= 2, `${category}: at least two games`);
+    const $ = load(readFileSync(pageFile(`/${category}`), 'utf8'));
+    assert.equal($('.game-card').length, entries.length);
+    for (const game of entries) {
+      const card = $(`.game-card[href="${gamePath(game.slug)}"]`);
+      assert.equal(card.length, 1);
+      assert.equal(card.find('img').attr('src'), game.thumbnail);
+      assert.equal(card.find('.card-badge').text(), 'Play now');
+      const detail = load(readFileSync(pageFile(gamePath(game.slug)), 'utf8'));
+      const player = new URL(detail('iframe').attr('src'));
+      assert.equal(player.href, embedUrl(game, canonical(gamePath(game.slug))));
+      assert.equal(player.hostname, 'html5.gamemonetize.co');
+      assert.equal(player.pathname, new URL(game.embed.iframeSrc).pathname);
+      assert.ok(!player.href.includes('{{PAGE_URL}}'));
+      assert.ok(detail('#about-game p').length > 0);
+      assert.ok(detail('.guide-steps li').length >= 3);
+      assert.ok(detail('.guide-tips li').length >= 3);
+      assert.ok(detail('.guide-controls tbody tr').length > 0);
+      assert.equal(detail('details').length, 5);
+      assert.ok(entries.some(other => other.slug !== game.slug && detail(`.game-card[href="${gamePath(other.slug)}"]`).length));
+    }
   }
 });
 

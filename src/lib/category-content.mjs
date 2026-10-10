@@ -1,32 +1,62 @@
 export const categoryContent = {
-  'snowboard-games': {
-    description: 'Explore snowboard games in our winter browser collection. Browse dedicated game pages, discover new additions, and find another adventure on the snowy slopes.',
-    paragraphs: [
-      'Snowboard games bring the idea of a winter ride to your browser. This category is a place to find the snowboarding titles in our collection, with a separate page for each game. You can browse the collection on a phone, tablet, or computer without creating an account. As new titles are added, their pages appear here so you can return to the same category and discover another ride.',
-      'Before choosing a game, check its page for the available description and instructions. Different games can use different controls, and a keyboard game may play differently from one designed for a touch screen. We include game-specific details when a reliable source is available. The game window is supplied by an authorized publishing platform, while the surrounding page helps you navigate our collection.',
-      'The collection is still growing. If this category has no playable titles yet, try the All Games page to see what is currently listed. You can also visit Sled Games or Ski Games for a different route through the winter collection. A page marked as coming soon does not have a playable game window yet; check back when its official version is ready.',
+  "snowboard-games": {
+    "description": "Play snowboard games online for free. Try Downhill Snowboard and SnowBoard Game, explore snowy courses, and find controls and tips for your next run.",
+    "paragraphs": [
+      "Pick a board and head downhill. Our snowboard games include Downhill Snowboard and SnowBoard Game, with different ways to tackle the mountain. Open a game card to load its player, then use the guide below the game for controls, instructions, and practical tips. You can browse and play without creating a Sled Games account or installing an app.",
+      "Downhill Snowboard is a score challenge: keep your run alive, collect coins, and unlock characters and snowboards between attempts. SnowBoard Game focuses on navigating snowy tracks and avoiding barriers as you work toward the finish. Check its in-game controls, then practice smooth adjustments instead of making a late turn beside a hazard.",
+      "Give yourself space to react. Look beyond the rider toward the next gap, and skip a collectible when reaching it would leave you beside an obstacle. Check the controls before switching titles: Both support keyboard movement; SnowBoard Game shows WASD or arrow keys and V for a grab in its start screen. For another way down the mountain, visit Ski Games; for a sledding run, play Sled Rider on our homepage."
     ],
-    faqs: [
-      { q: 'Where can I find the snowboard game collection?', a: 'The game cards on this page list the snowboard titles currently added to our collection.' },
-      { q: 'Can I browse snowboard games without an account?', a: 'Yes. You do not need to register to browse Sled Games or its categories.' },
-      { q: 'Will every snowboard game work on my phone?', a: 'Controls and device support depend on the individual game. Check its instructions and the platform game window before playing.' },
-      { q: 'Why are there no game cards in this category yet?', a: 'The category is ready for new additions. Cards appear here when snowboard titles are added to our collection.' },
-      { q: 'Where should I look for other winter game categories?', a: 'Visit Sled Games or Ski Games, or use All Games to browse every listed game.' },
-    ],
+    "faqs": [
+      {
+        "q": "Which snowboard games can I play here?",
+        "a": "Choose Downhill Snowboard or SnowBoard Game from the cards above. Each opens a page with its player and playing guide."
+      },
+      {
+        "q": "Are these snowboard games free to play?",
+        "a": "Yes. Open a game in your browser without buying an app or creating a Sled Games account. The game platform may show advertisements."
+      },
+      {
+        "q": "Which controls do these snowboard games use?",
+        "a": "Downhill Snowboard lists A and D or the arrow keys for steering. SnowBoard Game shows WASD or arrow keys for movement and V for a grab. Click inside the player to give it keyboard focus."
+      },
+      {
+        "q": "Which game has a finish-line objective?",
+        "a": "SnowBoard Game asks you to reach the finish while avoiding barriers on snowy tracks. Check the instructions inside its player before starting."
+      },
+      {
+        "q": "Can I unlock another board or character?",
+        "a": "In Downhill Snowboard, collected coins unlock characters and snowboards. Open its game menu to check the current options."
+      }
+    ]
   },
-  'ski-games': {
-    description: 'Explore ski games in our winter browser collection. Browse dedicated game pages, discover new additions, and find your next adventure along the snowy slopes.',
-    paragraphs: [
-      'Ski games offer a different way to explore a winter game collection. This page gathers the skiing titles added to Sled Games, giving each one a direct link to its own game page. Browse the category to find a title, then open its page for the details that are available. You can explore the website from your browser without registering or installing a separate application.',
-      'Each game has its own approach to the slopes. Read the instructions on its page when they are available, and check the game window for its controls. Some browser games use a keyboard, while others may include touch controls. We do not assume that every title works on every device. Descriptions and playing advice are included only when supported by a reliable source, so an empty information section is left out.',
-      'Our skiing collection is being prepared for more additions. Game cards will appear here as titles are added, and a coming-soon page will become playable once its authorized platform version is ready. For the current collection, visit All Games. For another winter category, browse Sled Games or Snowboard Games. These links keep the next game page close, whether you are returning to a favorite category or trying a new one.',
+  "ski-games": {
+    "description": "Play ski games online for free. Try Ski King and Ski Rush, dodge mountain obstacles, learn the controls, and find guides and tips for your next browser run.",
+    "paragraphs": [
+      "Choose your skiing challenge. Ski King is a mountain course game where passing flags correctly and finishing quickly matter. Ski Rush is about surviving a downhill run and collecting flags for extra points. The cards above lead straight to each game page, where the player comes before the introduction, controls, playing guide, and FAQ.",
+      "For a timed course with progression between attempts, try Ski King. Avoid trees and rocks, read the course markers, and pass each flag on the correct side. A wrong pass resets the level. Upgrade points improve your skills as you work on a faster route. Ski Rush uses mouse or touch controls for a continuing downhill run: steer around obstacles and choose which scoring flags you can safely reach.",
+      "The two games ask for different habits. In Ski King, cutting a corner only helps if you still follow the marked course. In Ski Rush, a clear line gives you room to react to the next hazard. Read each game’s instructions instead of assuming the same controls work everywhere. You can also explore Snowboard Games or return to the homepage for Sled Rider."
     ],
-    faqs: [
-      { q: 'Where are the ski games listed on this website?', a: 'Ski titles added to our collection appear as game cards on this category page.' },
-      { q: 'Do I need an app to browse the ski game pages?', a: 'No. The website and its game pages can be opened directly in your browser.' },
-      { q: 'Are all ski games controlled with the same keys?', a: 'No. Controls depend on the game. Use its instructions or the information shown inside the game window.' },
-      { q: 'Why is this skiing collection empty?', a: 'This category is ready for its first titles. Visit All Games to see the current collection while more games are prepared.' },
-      { q: 'Can I switch from ski games to another winter category?', a: 'Yes. Use the Sled Games and Snowboard Games links in the navigation or at the bottom of this page.' },
-    ],
-  },
+    "faqs": [
+      {
+        "q": "Which ski games are available here?",
+        "a": "You can play Ski King and Ski Rush. Choose a card above to open the game and its controls."
+      },
+      {
+        "q": "Do these ski games cost money?",
+        "a": "The browser games are free to play without buying an app or creating a Sled Games account. The game platform may show advertisements."
+      },
+      {
+        "q": "Which game uses mouse or touch controls?",
+        "a": "Ski Rush lists mouse and touch controls. Follow its in-game instructions before beginning your downhill run."
+      },
+      {
+        "q": "Why does Ski King restart a level?",
+        "a": "Passing a course flag on the wrong side resets the level. Read the markers and prepare your turn before reaching them."
+      },
+      {
+        "q": "Do I need to install an app?",
+        "a": "No. Both games run in the browser player on their game pages. Enable JavaScript and allow the game to finish loading."
+      }
+    ]
+  }
 };

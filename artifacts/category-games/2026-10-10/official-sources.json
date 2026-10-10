@@ -1,0 +1,450 @@
+[
+  {
+    "slug": "snowboard-king-2024",
+    "source": "https://gamedistribution.com/games/snowboard-king-2024/",
+    "game": {
+      "title": " Snowboard King 2024",
+      "developer": "Inlogic Software",
+      "id": "ce6797fbf599415fa270487c9a384001",
+      "width": 800,
+      "height": 600,
+      "release": "2023-08-24T00:00:02.030Z",
+      "description": "Are you ready for a challenge? Zip down the snowy slopes. Avoid trees and rocks and skid over icy snow. Explore every slope and find the shortest way down the hill. Can you also escape the avalanche?\n",
+      "instructions": "Run down the slope and try to avoid all obstacles in your way. Follow the arrows for the perfect path. Use collected coins to upgrade your skills. There's also a boost button for acceleration.\n"
+    },
+    "embedCodes": [
+      "<iframe src=\"https://html5.gamedistribution.com/ce6797fbf599415fa270487c9a384001/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}\" width=\"800\" height=\"600\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+      "https://html5.gamedistribution.com/ce6797fbf599415fa270487c9a384001/?gd_sdk_referrer_url=https://gamedistribution.com/games/snowboard-king-2024/",
+      "Ads should be requested from the game's page url to avoid loss of ads performance. To make this happen please adjust your game frame request url as follows: gd_sdk_referrer_url should be added to the request url . To do that please modify your request url as:",
+      "https://html5.gamedistribution.com/GAME_ID/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL",
+      "https://html5.gamedistribution.com/ce6797fbf599415fa270487c9a384001/?gd_sdk_referrer_url=https://www.example.com/games"
+    ],
+    "images": [
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-mark.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://img.gamedistribution.com/d295ac2f20aa4eafa9a78e25f11b8656-512x384.jpg",
+        "alt": "Snow Rider Neo"
+      },
+      {
+        "src": "https://img.gamedistribution.com/ac7c68ff82a9413197db6b99a8452c10-512x384.jpg",
+        "alt": "Frost Defense"
+      },
+      {
+        "src": "https://img.gamedistribution.com/76c614d8563843d1853f7628eabf69b3-512x384.jpg",
+        "alt": "Winter Wonderland Mahjong"
+      },
+      {
+        "src": "https://img.gamedistribution.com/a9fdba41525b438baed7ba8b2c842110-512x384.jpg",
+        "alt": "Snow Road Puzzle"
+      },
+      {
+        "src": "https://img.gamedistribution.com/df8a3f16d8f546b8b607dfa38d856478-512x384.jpg",
+        "alt": "Vikings: An Archer's Journey"
+      },
+      {
+        "src": "https://img.gamedistribution.com/e1e32230bdf040d69f4e367015e1c527-512x384.jpg",
+        "alt": "Snow Rush 3D"
+      },
+      {
+        "src": "https://img.gamedistribution.com/ce6797fbf599415fa270487c9a384001-512x384.jpg",
+        "alt": "ce6797fbf599415fa270487c9a384001-512x384.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/ce6797fbf599415fa270487c9a384001-512x512.jpg",
+        "alt": "ce6797fbf599415fa270487c9a384001-512x512.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/ce6797fbf599415fa270487c9a384001-1280x550.jpg",
+        "alt": "ce6797fbf599415fa270487c9a384001-1280x550.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/ce6797fbf599415fa270487c9a384001-1280x720.jpg",
+        "alt": "ce6797fbf599415fa270487c9a384001-1280x720.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/6e2789cf2cb7475db8d50654f49c7cb8-512x384.jpg",
+        "alt": "Exclusive"
+      },
+      {
+        "src": "https://img.gamedistribution.com/8960e51fca4740e9b3fe072022c22c18-512x384.jpg",
+        "alt": "Hot"
+      },
+      {
+        "src": "https://img.gamedistribution.com/5eebb19f0fcd43849721b95ecf53a700-512x384.jpg",
+        "alt": "Brain Teasers"
+      },
+      {
+        "src": "https://img.gamedistribution.com/0523d5b3721f4878a784fe30f4067c2d-512x384.jpg",
+        "alt": "In-Game Purchase"
+      },
+      {
+        "src": "https://img.gamedistribution.com/4a0b780699b44c9cac8dfbda58a0dd04-512x384.jpg",
+        "alt": "Best New"
+      },
+      {
+        "src": "https://img.gamedistribution.com/7356de5842a94c8a8039530624e496db-512x384.jpg",
+        "alt": "Halloween"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution by Azerion"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/location.svg",
+        "alt": "location-icon"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/social-link.svg",
+        "alt": "linkedin"
+      }
+    ],
+    "publisherTerms": [
+      "https://static.gamedistribution.com/terms/publisher.html"
+    ],
+    "playerFrames": [
+      "https://html5.gamedistribution.com/ce6797fbf599415fa270487c9a384001/?gd_sdk_referrer_url=https://gamedistribution.com/games/snowboard-king-2024/"
+    ]
+  },
+  {
+    "slug": "snowboard-hero",
+    "source": "https://gamedistribution.com/games/snowboard-hero/",
+    "game": {
+      "title": "Snowboard Hero",
+      "developer": "MarketJS",
+      "id": "716194ae04b34da6830eff3043d2af87",
+      "width": 540,
+      "height": 960,
+      "release": "2019-03-19T10:12:14.963Z",
+      "description": "Snowboard your way down the mountain, while avoiding the obstacles. Don't crash!\n\nFeatures:\n\n- Interactive tutorial. Anyone can play this game!\n- Fast, pumping music suitable for X sports.\n- Beautiful winter christmas landscape.\n- Collect banners to earn extra points.\n- Fans of winter skifree xmas or snowboarding will love this game.",
+      "instructions": "Snowboard your way down the mountain, while avoiding the obstacles. Don't crash!"
+    },
+    "embedCodes": [
+      "<iframe src=\"https://html5.gamedistribution.com/716194ae04b34da6830eff3043d2af87/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}\" width=\"540\" height=\"960\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+      "https://html5.gamedistribution.com/716194ae04b34da6830eff3043d2af87/?gd_sdk_referrer_url=https://gamedistribution.com/games/snowboard-hero/",
+      "Ads should be requested from the game's page url to avoid loss of ads performance. To make this happen please adjust your game frame request url as follows: gd_sdk_referrer_url should be added to the request url . To do that please modify your request url as:",
+      "https://html5.gamedistribution.com/GAME_ID/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL",
+      "https://html5.gamedistribution.com/716194ae04b34da6830eff3043d2af87/?gd_sdk_referrer_url=https://www.example.com/games"
+    ],
+    "images": [
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-mark.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://img.gamedistribution.com/e344e37a4df544f7b196caf0f624acac-512x384.jpg",
+        "alt": "Hot & Cold Winter Style"
+      },
+      {
+        "src": "https://img.gamedistribution.com/2ec03a5bbb8e47b8bdb5b12ebad61ac5-512x384.jpg",
+        "alt": "Mission Santa: Deliver the Gifts"
+      },
+      {
+        "src": "https://img.gamedistribution.com/057dd7f60aa34e498092c4a92c640b9d-512x384.jpg",
+        "alt": "Pixel Destroyer"
+      },
+      {
+        "src": "https://img.gamedistribution.com/4f5403c2c71c40848305a962ec21aaac-512x384.jpg",
+        "alt": "Winter Tetrix Trails"
+      },
+      {
+        "src": "https://img.gamedistribution.com/f2b313196a8a405bbb4a9307d444fd6d-512x384.jpg",
+        "alt": "Pixel Number - DIY Coloring"
+      },
+      {
+        "src": "https://img.gamedistribution.com/0c249ace577243eebdef01ea2691cff5-512x384.jpg",
+        "alt": "Winter Hexa Stack"
+      },
+      {
+        "src": "https://img.gamedistribution.com/716194ae04b34da6830eff3043d2af87-1280x550.jpeg",
+        "alt": "716194ae04b34da6830eff3043d2af87-1280x550.jpeg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/716194ae04b34da6830eff3043d2af87-512x512.jpeg",
+        "alt": "716194ae04b34da6830eff3043d2af87-512x512.jpeg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/716194ae04b34da6830eff3043d2af87-512x384.jpeg",
+        "alt": "716194ae04b34da6830eff3043d2af87-512x384.jpeg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/716194ae04b34da6830eff3043d2af87-1280x720.jpeg",
+        "alt": "716194ae04b34da6830eff3043d2af87-1280x720.jpeg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/c45a9d1bd22c42aea4b974ca598dfb07-512x384.jpg",
+        "alt": "Exclusive"
+      },
+      {
+        "src": "https://img.gamedistribution.com/4fd719ef94a1477d95e578da2c97088e-512x384.jpg",
+        "alt": "Hot"
+      },
+      {
+        "src": "https://img.gamedistribution.com/87950d31e22149b0a7ad8abd27832778-512x384.jpg",
+        "alt": "Brain Teasers"
+      },
+      {
+        "src": "https://img.gamedistribution.com/9cb561d461fe4c3c919e949633e546da-512x384.jpeg",
+        "alt": "In-Game Purchase"
+      },
+      {
+        "src": "https://img.gamedistribution.com/dab0bbeebecf4025bbd0da9425ec2b65-512x384.jpeg",
+        "alt": "Best New"
+      },
+      {
+        "src": "https://img.gamedistribution.com/8db72850c3d645ab83cd8012bf24da1a-512x384.jpg",
+        "alt": "Halloween"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution by Azerion"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/location.svg",
+        "alt": "location-icon"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/social-link.svg",
+        "alt": "linkedin"
+      }
+    ],
+    "publisherTerms": [
+      "https://static.gamedistribution.com/terms/publisher.html"
+    ],
+    "playerFrames": [
+      "https://html5.gamedistribution.com/716194ae04b34da6830eff3043d2af87/?gd_sdk_referrer_url=https://gamedistribution.com/games/snowboard-hero/"
+    ]
+  },
+  {
+    "slug": "ski-king-2024",
+    "source": "https://gamedistribution.com/games/ski-king-2024/",
+    "game": {
+      "title": "Ski King 2024",
+      "developer": "Inlogic Software",
+      "id": "f27ca832c25944d49509cc9c5429689a",
+      "width": 800,
+      "height": 600,
+      "release": "2023-12-04T08:59:59.030Z",
+      "description": "Your favorite slopes have finally opened. So don't hesitate and run down the slope, collect the coins, improve your skills and become the king of skiing. Can you also escape the avalanche?\n",
+      "instructions": "Run down the slope and try to avoid all obstacles in your way. Follow the arrows for the perfect path. Use collected coins to upgrade your skills. Each skill affects your skiing style differently. There's also a boost button for acceleration.\n"
+    },
+    "embedCodes": [
+      "<iframe src=\"https://html5.gamedistribution.com/f27ca832c25944d49509cc9c5429689a/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}\" width=\"800\" height=\"600\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+      "https://html5.gamedistribution.com/f27ca832c25944d49509cc9c5429689a/?gd_sdk_referrer_url=https://gamedistribution.com/games/ski-king-2024/",
+      "Ads should be requested from the game's page url to avoid loss of ads performance. To make this happen please adjust your game frame request url as follows: gd_sdk_referrer_url should be added to the request url . To do that please modify your request url as:",
+      "https://html5.gamedistribution.com/GAME_ID/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL",
+      "https://html5.gamedistribution.com/f27ca832c25944d49509cc9c5429689a/?gd_sdk_referrer_url=https://www.example.com/games"
+    ],
+    "images": [
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-mark.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://img.gamedistribution.com/f27ca832c25944d49509cc9c5429689a-512x384.jpg",
+        "alt": "Ski King 2024"
+      },
+      {
+        "src": "https://img.gamedistribution.com/79bd176d6c854d8e870c3bd7740993fb-512x384.jpg",
+        "alt": "Ski Jump Challenge"
+      },
+      {
+        "src": "https://img.gamedistribution.com/173e41a4dbe94130a937bc382f4aacd0-512x384.jpeg",
+        "alt": "Ski King 2022"
+      },
+      {
+        "src": "https://img.gamedistribution.com/ab2e57ce6ff94c21a0b2cfa6c1f12ee2-512x384.jpeg",
+        "alt": "IMPOSTOR SKY SKI"
+      },
+      {
+        "src": "https://img.gamedistribution.com/60793b63fad2419d9b19d8ae53f7768f-512x384.jpeg",
+        "alt": "Ski King"
+      },
+      {
+        "src": "https://img.gamedistribution.com/ed080dc2762e444385274d875eae5dd8-512x384.jpeg",
+        "alt": "Ski Jump"
+      },
+      {
+        "src": "https://img.gamedistribution.com/f27ca832c25944d49509cc9c5429689a-512x512.jpg",
+        "alt": "f27ca832c25944d49509cc9c5429689a-512x512.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/f27ca832c25944d49509cc9c5429689a-512x384.jpg",
+        "alt": "f27ca832c25944d49509cc9c5429689a-512x384.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/f27ca832c25944d49509cc9c5429689a-1280x550.jpg",
+        "alt": "f27ca832c25944d49509cc9c5429689a-1280x550.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/f27ca832c25944d49509cc9c5429689a-1280x720.jpg",
+        "alt": "f27ca832c25944d49509cc9c5429689a-1280x720.jpg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/c89cf76cc0804e51a12259a9e1e1f09f-512x384.jpg",
+        "alt": "Exclusive"
+      },
+      {
+        "src": "https://img.gamedistribution.com/5370293cd9434e4abe9084397f091ed6-512x384.jpg",
+        "alt": "Hot"
+      },
+      {
+        "src": "https://img.gamedistribution.com/5c4854dee2144254a9ce876df5e164b6-512x384.jpg",
+        "alt": "Brain Teasers"
+      },
+      {
+        "src": "https://img.gamedistribution.com/9bf2e82f7c684bdcb0a8f4fa3ec0ecd6-512x384.jpeg",
+        "alt": "In-Game Purchase"
+      },
+      {
+        "src": "https://img.gamedistribution.com/740fca628f4e499d95084c2d3c935acb-512x384.jpg",
+        "alt": "Best New"
+      },
+      {
+        "src": "https://img.gamedistribution.com/62e4e7134be5426e9daf69ed7d037040-512x384.jpg",
+        "alt": "Halloween"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution by Azerion"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/location.svg",
+        "alt": "location-icon"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/social-link.svg",
+        "alt": "linkedin"
+      }
+    ],
+    "publisherTerms": [
+      "https://static.gamedistribution.com/terms/publisher.html"
+    ],
+    "playerFrames": [
+      "https://html5.gamedistribution.com/f27ca832c25944d49509cc9c5429689a/?gd_sdk_referrer_url=https://gamedistribution.com/games/ski-king-2024/"
+    ]
+  },
+  {
+    "slug": "ski-rush-3d",
+    "source": "https://gamedistribution.com/games/ski-rush-3d/",
+    "game": {
+      "title": "Ski Rush 3D",
+      "developer": "BPTop",
+      "id": "a466ab2324df4f78b20d1b5acdd3d376",
+      "width": 800,
+      "height": 600,
+      "release": "2022-03-22T10:42:30.622Z",
+      "description": "Ski Rush 3D is an interesting and very entertaining lite game.Drag right and left to move your legs out of the way and choose the right path to reach the destination. Be careful of the obstacles on your way.",
+      "instructions": "\nDrag right and left to move your legs out of the way"
+    },
+    "embedCodes": [
+      "<iframe src=\"https://html5.gamedistribution.com/a466ab2324df4f78b20d1b5acdd3d376/?gd_sdk_referrer_url=https://www.example.com/games/{game-path}\" width=\"800\" height=\"600\" scrolling=\"none\" frameborder=\"0\"></iframe>",
+      "https://html5.gamedistribution.com/a466ab2324df4f78b20d1b5acdd3d376/?gd_sdk_referrer_url=https://gamedistribution.com/games/ski-rush-3d/",
+      "Ads should be requested from the game's page url to avoid loss of ads performance. To make this happen please adjust your game frame request url as follows: gd_sdk_referrer_url should be added to the request url . To do that please modify your request url as:",
+      "https://html5.gamedistribution.com/GAME_ID/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL",
+      "https://html5.gamedistribution.com/a466ab2324df4f78b20d1b5acdd3d376/?gd_sdk_referrer_url=https://www.example.com/games"
+    ],
+    "images": [
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-mark.svg",
+        "alt": "Game Distribution"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/icons/dimond-blue-icon.svg",
+        "alt": "GD Exclusive Game"
+      },
+      {
+        "src": "https://img.gamedistribution.com/0df4c3adb032460791d0ca844d09313d-512x384.jpg",
+        "alt": "DESCENT"
+      },
+      {
+        "src": "https://img.gamedistribution.com/d295ac2f20aa4eafa9a78e25f11b8656-512x384.jpg",
+        "alt": "Snow Rider Neo"
+      },
+      {
+        "src": "https://img.gamedistribution.com/882cf81453de4aaeaf15ef29dff43a62-512x384.jpg",
+        "alt": "Big Smash"
+      },
+      {
+        "src": "https://img.gamedistribution.com/a422e51f37b14e0aaeed75d555053775-512x384.jpg",
+        "alt": "Cosmic Ace"
+      },
+      {
+        "src": "https://img.gamedistribution.com/cba165a88b174bc794235c9d6d651c58-512x384.jpg",
+        "alt": "Cube Snake 2048"
+      },
+      {
+        "src": "https://img.gamedistribution.com/500476821acf49d89fcdb425cbf48b81-512x384.jpg",
+        "alt": "Marble Maze"
+      },
+      {
+        "src": "https://img.gamedistribution.com/a466ab2324df4f78b20d1b5acdd3d376-512x384.jpeg",
+        "alt": "a466ab2324df4f78b20d1b5acdd3d376-512x384.jpeg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/a466ab2324df4f78b20d1b5acdd3d376-512x512.jpeg",
+        "alt": "a466ab2324df4f78b20d1b5acdd3d376-512x512.jpeg"
+      },
+      {
+        "src": "https://img.gamedistribution.com/c89cf76cc0804e51a12259a9e1e1f09f-512x384.jpg",
+        "alt": "Exclusive"
+      },
+      {
+        "src": "https://img.gamedistribution.com/5370293cd9434e4abe9084397f091ed6-512x384.jpg",
+        "alt": "Hot"
+      },
+      {
+        "src": "https://img.gamedistribution.com/5c4854dee2144254a9ce876df5e164b6-512x384.jpg",
+        "alt": "Brain Teasers"
+      },
+      {
+        "src": "https://img.gamedistribution.com/9bf2e82f7c684bdcb0a8f4fa3ec0ecd6-512x384.jpeg",
+        "alt": "In-Game Purchase"
+      },
+      {
+        "src": "https://img.gamedistribution.com/740fca628f4e499d95084c2d3c935acb-512x384.jpg",
+        "alt": "Best New"
+      },
+      {
+        "src": "https://img.gamedistribution.com/62e4e7134be5426e9daf69ed7d037040-512x384.jpg",
+        "alt": "Halloween"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/logos/logo-2line.svg",
+        "alt": "Game Distribution by Azerion"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/location.svg",
+        "alt": "location-icon"
+      },
+      {
+        "src": "https://gamedistribution.com/assets/social-link.svg",
+        "alt": "linkedin"
+      }
+    ],
+    "publisherTerms": [
+      "https://static.gamedistribution.com/terms/publisher.html"
+    ],
+    "playerFrames": [
+      "https://html5.gamedistribution.com/a466ab2324df4f78b20d1b5acdd3d376/?gd_sdk_referrer_url=https://gamedistribution.com/games/ski-rush-3d/"
+    ]
+  }
+]

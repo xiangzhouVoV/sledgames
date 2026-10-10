@@ -96,7 +96,7 @@
 14. <Footer>  About Us / Contact Us / Privacy Policy / Terms of Use / Copyright + 全站游戏链接
 ```
 
-**首页 / Sled Rider 页面**：H1 = `Sled Games`，仅对屏幕阅读器显示。导航下直接加载 Sled Rider 可玩 iframe；广告位于游戏及工具栏之后，下方接「全部游戏」网格、完整游戏指南、5 条 FAQ、分类导航与页脚。不再创建另一份 Sled Rider 详情页。
+**首页 / Sled Rider 页面**：H1 = `Play Sled Rider`，可见并紧邻游戏区上方；字号 `clamp(1.25rem, 2.5vw, 1.75rem)`，上下 margin 均不超过 12px。首页 Title / og:title = `Sled Games - Play Sled Rider Online Free | Sledding Games`。导航下加载 Sled Rider 可玩 iframe，游戏保持首屏可见；广告位于游戏及工具栏之后，下方接「全部游戏」网格、完整游戏指南、5 条 FAQ、分类导航与页脚。不再创建另一份 Sled Rider 详情页。
 **品类页差异**：H1 = 品类词，无 iframe，改为该品类游戏网格 + 150~250 词品类介绍 + FAQ。
 
 ## 6. TDK 规则
@@ -145,7 +145,7 @@
 ## 11. 上线后立刻做（不属开发）
 
 1. 提交 GSC + sitemap；
-2. 注册 GameMonetize（45% 分成，NET 30、$30 起付）和 GameDistribution（50% Net Revenue，EUR 50 起付）**两家出版商账号** → 后台逐个核可嵌版本（`sled rider` 公开目录未确认，需后台搜）→ 代码回填 `games.json`；
+2. 注册 GameMonetize（45% 分成，NET 30、$30 起付）和 GameDistribution（按 2025-06-19 出版商条款为 33% Net Revenue、EUR 100 起付；[官方条款](https://static.gamedistribution.com/terms/publisher.html)）**两家出版商账号** → 后台逐个核可嵌版本（`sled rider` 公开目录未确认，需后台搜）→ 代码回填 `games.json`；
 3. 申请 AdSense（内容齐了就申请，前置审核周期）；
 4. 外链按 A 方案节奏走。
 
@@ -163,8 +163,8 @@
 - 赛道存在成熟的「EMD 单游戏站矩阵」（sledrider.io / slope-rider.io / sloperider.org / sloperider2.io / slopegame-2.io 等），全是用域名直拼游戏名、首页押一个游戏，多数注册不满 18 个月。
 
 **变现结构（重要纠正）**
-- 官方发行网络的游戏区内广告**按分成给站长**（GameMonetize 45% / GameDistribution 50% Net Revenue），不是「拿不到」；游戏区外的 AdSense 100% 自留。
-- 走官方嵌法 = 有授权（签出版商许可协议），避开了扒文件自托管的版权风险。
+- 官方发行网络的游戏区内广告**按分成给站长**（GameMonetize 45% / GameDistribution 33% Net Revenue（[2025-06-19 出版商条款](https://static.gamedistribution.com/terms/publisher.html)）），不是「拿不到」；游戏区外的 AdSense 100% 自留。
+- 使用官方嵌入方式，并完成出版商许可协议，才形成本站的授权依据；公开 iframe 地址本身不等于已完成授权。不得扒文件自托管。
 - 因此本项目的「版权风险」这层已基本消除，代价是 eCPM 由平台定、不能做订阅/原生 App。
 
 **方案选择：走 A（正面打成熟词 + 外链碾压）**
@@ -190,3 +190,12 @@
 - 游戏区内的收益不靠「搬文件」变成自己的；自托管不改变产权，只改变谁付服务器钱，且法律责任更重。
 - 平台广告可能展示不出来：GameMonetize 自己的出版商指南说后台 AD Impressions 为 0 时建议去申请 AdSense → 所以 AdSense 那条线照样要申请，别只押一边。
 - 参考站 sledrider.io 走的是「扒文件自托管 + 自己 AdSense」，**我们只抄它的页面区块结构，不抄它的技术实现**。
+
+
+## 本轮品类增补（2026-10-10）
+
+本轮先补两个品类：`/snowboard-games` 加入 Downhill Snowboard、SnowBoard Game；`/ski-games` 加入 Ski King、Ski Rush。四个游戏页共用现有模板，均配置官方封面、介绍、操作表、玩法、技巧、5 条 FAQ 及同品类内链。首页与 `/games` 自动展示全部游戏。
+
+游戏使用 GameMonetize 详情页公开提供的 `html5.gamemonetize.co` 官方 iframe，不下载或改写游戏资源。详情页、封面和资料来源记录在 `data/games.json` 的 `sources` 字段中；出版商收益需按[官方 FAQ](https://gamemonetize.com/faq)注册账号并添加本站域名。
+
+GameDistribution 候选在 `gd_sdk_referrer_url` 指向真实 sledgames.com 游戏页时返回 `unregistered=true`，因此暂不作为这两个分类的实际游戏源。它的参数替换逻辑和验证仍保留。Sled Rider 的 AZGames 授权核实属于此前独立验收，不能由本轮新增游戏的来源代替。

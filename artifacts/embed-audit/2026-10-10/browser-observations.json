@@ -1,0 +1,325 @@
+{
+  "startedAt": "2026-10-10T09:32:10.036Z",
+  "freshContext": true,
+  "cacheDisabled": true,
+  "noLogin": true,
+  "events": [
+    {
+      "time": "2026-10-10T09:32:11.197Z",
+      "type": "response",
+      "url": "https://sledgames.com/",
+      "status": 200,
+      "cached": false
+    },
+    {
+      "time": "2026-10-10T09:32:11.200Z",
+      "type": "navigation",
+      "main": true,
+      "url": "https://sledgames.com/"
+    },
+    {
+      "time": "2026-10-10T09:32:12.126Z",
+      "type": "response",
+      "url": "https://gamea.azgame.io/sled-rider/",
+      "status": 200,
+      "cached": false
+    },
+    {
+      "time": "2026-10-10T09:32:12.128Z",
+      "type": "navigation",
+      "main": false,
+      "url": "https://gamea.azgame.io/sled-rider/"
+    },
+    {
+      "time": "2026-10-10T09:32:15.506Z",
+      "type": "response",
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.loader.js",
+      "status": 200,
+      "cached": false
+    },
+    {
+      "time": "2026-10-10T09:32:16.271Z",
+      "type": "response",
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.wasm.unityweb",
+      "status": 200,
+      "cached": false
+    },
+    {
+      "time": "2026-10-10T09:32:16.272Z",
+      "type": "response",
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.data.unityweb",
+      "status": 200,
+      "cached": false
+    },
+    {
+      "time": "2026-10-10T09:32:17.290Z",
+      "type": "response",
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.framework.js.unityweb",
+      "status": 200,
+      "cached": false
+    },
+    {
+      "time": "2026-10-10T09:32:46.650Z",
+      "type": "console-error",
+      "message": "Recursive Serialization is not supported. You can't dereference a PPtr while loading. (Constructors of C# classes may not load objects either. See stacktrace.)\n"
+    },
+    {
+      "time": "2026-10-10T09:32:49.081Z",
+      "type": "console-error",
+      "message": "Fullscreen is not supported on this browser.\n"
+    },
+    {
+      "time": "2026-10-10T09:32:53.596Z",
+      "type": "interactive-ready",
+      "ready": true
+    },
+    {
+      "time": "2026-10-10T09:33:34.657Z",
+      "type": "command",
+      "id": 1,
+      "action": "click",
+      "x": 350,
+      "y": 290,
+      "wait": 2000,
+      "name": "03-first-start"
+    },
+    {
+      "time": "2026-10-10T09:34:19.899Z",
+      "type": "command",
+      "id": 2,
+      "action": "hold",
+      "key": "ArrowLeft",
+      "wait": 8000,
+      "name": "04-first-game-over"
+    },
+    {
+      "time": "2026-10-10T09:35:29.162Z",
+      "type": "command",
+      "id": 3,
+      "action": "snapshot",
+      "name": "05-game-over-result"
+    },
+    {
+      "time": "2026-10-10T09:37:01.530Z",
+      "type": "command",
+      "id": 4,
+      "action": "press",
+      "key": "Space",
+      "wait": 1500,
+      "name": "06-restart"
+    },
+    {
+      "time": "2026-10-10T09:44:58.955Z",
+      "type": "command",
+      "id": 99,
+      "action": "stop"
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "01-home-loading",
+      "time": "2026-10-10T09:32:11.894Z",
+      "mainUrl": "https://sledgames.com/",
+      "pages": [
+        "https://sledgames.com/"
+      ],
+      "frames": [
+        {
+          "url": "https://sledgames.com/",
+          "title": "Sled Games - Free Online Sledding Games",
+          "referrer": "",
+          "canvas": [],
+          "unityReady": false,
+          "loadingVisible": null,
+          "bodyText": "Skip to content\nsled\ngames\nHome\nSled Games\nSnowboard Games\nSki Games\nAll Games\n→\nSled Games\n\nClick inside the game to use keyboard controls.\n\nReload\nFullscreen ⛶\nADVERTISEMENT\nAll games\n\nExplore the winter collection.\n\nView all games\n→\nPlay now\nSled Rider\n→\nSledding\n\nSled Rider is a browser-based downhill game from AZGames. Your sled moves forward automatically while you choose a path through a snowy 3D course. Steer around obstacles, jump when a gap blocks your route, and collect presents along"
+        },
+        {
+          "url": "",
+          "title": "",
+          "referrer": "https://sledgames.com/",
+          "canvas": [],
+          "unityReady": false,
+          "loadingVisible": null
+        }
+      ]
+    },
+    {
+      "name": "02-game-menu",
+      "time": "2026-10-10T09:32:53.461Z",
+      "mainUrl": "https://sledgames.com/",
+      "pages": [
+        "https://sledgames.com/"
+      ],
+      "frames": [
+        {
+          "url": "https://sledgames.com/",
+          "title": "Sled Games - Free Online Sledding Games",
+          "referrer": "",
+          "canvas": [],
+          "unityReady": false,
+          "loadingVisible": null,
+          "bodyText": "Skip to content\nsled\ngames\nHome\nSled Games\nSnowboard Games\nSki Games\nAll Games\n→\nSled Games\n\nClick inside the game to use keyboard controls.\n\nReload\nFullscreen ⛶\nADVERTISEMENT\nAll games\n\nExplore the winter collection.\n\nView all games\n→\nPlay now\nSled Rider\n→\nSledding\n\nSled Rider is a browser-based downhill game from AZGames. Your sled moves forward automatically while you choose a path through a snowy 3D course. Steer around obstacles, jump when a gap blocks your route, and collect presents along"
+        },
+        {
+          "url": "https://gamea.azgame.io/sled-rider/",
+          "title": "Sled Rider",
+          "referrer": "https://sledgames.com/",
+          "canvas": [
+            {
+              "id": "unity-canvas",
+              "width": 1198,
+              "height": 598
+            }
+          ],
+          "unityReady": true,
+          "loadingVisible": false,
+          "progress": "Downloading file: 100%",
+          "bodyText": ""
+        }
+      ]
+    },
+    {
+      "name": "03-first-start",
+      "time": "2026-10-10T09:33:36.715Z",
+      "mainUrl": "https://sledgames.com/",
+      "pages": [
+        "https://sledgames.com/"
+      ],
+      "frames": [
+        {
+          "url": "https://sledgames.com/",
+          "title": "Sled Games - Free Online Sledding Games",
+          "referrer": "",
+          "canvas": [],
+          "unityReady": false,
+          "loadingVisible": null,
+          "bodyText": "Skip to content\nsled\ngames\nHome\nSled Games\nSnowboard Games\nSki Games\nAll Games\n→\nSled Games\n\nClick inside the game to use keyboard controls.\n\nReload\nFullscreen ⛶\nADVERTISEMENT\nAll games\n\nExplore the winter collection.\n\nView all games\n→\nPlay now\nSled Rider\n→\nSledding\n\nSled Rider is a browser-based downhill game from AZGames. Your sled moves forward automatically while you choose a path through a snowy 3D course. Steer around obstacles, jump when a gap blocks your route, and collect presents along"
+        },
+        {
+          "url": "https://gamea.azgame.io/sled-rider/",
+          "title": "Sled Rider",
+          "referrer": "https://sledgames.com/",
+          "canvas": [
+            {
+              "id": "unity-canvas",
+              "width": 1198,
+              "height": 598
+            }
+          ],
+          "unityReady": true,
+          "loadingVisible": false,
+          "progress": "Downloading file: 100%",
+          "bodyText": ""
+        }
+      ]
+    },
+    {
+      "name": "04-first-game-over",
+      "time": "2026-10-10T09:34:27.906Z",
+      "mainUrl": "https://sledgames.com/",
+      "pages": [
+        "https://sledgames.com/"
+      ],
+      "frames": [
+        {
+          "url": "https://sledgames.com/",
+          "title": "Sled Games - Free Online Sledding Games",
+          "referrer": "",
+          "canvas": [],
+          "unityReady": false,
+          "loadingVisible": null,
+          "bodyText": "Skip to content\nsled\ngames\nHome\nSled Games\nSnowboard Games\nSki Games\nAll Games\n→\nSled Games\n\nClick inside the game to use keyboard controls.\n\nReload\nFullscreen ⛶\nADVERTISEMENT\nAll games\n\nExplore the winter collection.\n\nView all games\n→\nPlay now\nSled Rider\n→\nSledding\n\nSled Rider is a browser-based downhill game from AZGames. Your sled moves forward automatically while you choose a path through a snowy 3D course. Steer around obstacles, jump when a gap blocks your route, and collect presents along"
+        },
+        {
+          "url": "https://gamea.azgame.io/sled-rider/",
+          "title": "Sled Rider",
+          "referrer": "https://sledgames.com/",
+          "canvas": [
+            {
+              "id": "unity-canvas",
+              "width": 1198,
+              "height": 598
+            }
+          ],
+          "unityReady": true,
+          "loadingVisible": false,
+          "progress": "Downloading file: 100%",
+          "bodyText": ""
+        }
+      ]
+    },
+    {
+      "name": "05-game-over-result",
+      "time": "2026-10-10T09:35:29.165Z",
+      "mainUrl": "https://sledgames.com/",
+      "pages": [
+        "https://sledgames.com/"
+      ],
+      "frames": [
+        {
+          "url": "https://sledgames.com/",
+          "title": "Sled Games - Free Online Sledding Games",
+          "referrer": "",
+          "canvas": [],
+          "unityReady": false,
+          "loadingVisible": null,
+          "bodyText": "Skip to content\nsled\ngames\nHome\nSled Games\nSnowboard Games\nSki Games\nAll Games\n→\nSled Games\n\nClick inside the game to use keyboard controls.\n\nReload\nFullscreen ⛶\nADVERTISEMENT\nAll games\n\nExplore the winter collection.\n\nView all games\n→\nPlay now\nSled Rider\n→\nSledding\n\nSled Rider is a browser-based downhill game from AZGames. Your sled moves forward automatically while you choose a path through a snowy 3D course. Steer around obstacles, jump when a gap blocks your route, and collect presents along"
+        },
+        {
+          "url": "https://gamea.azgame.io/sled-rider/",
+          "title": "Sled Rider",
+          "referrer": "https://sledgames.com/",
+          "canvas": [
+            {
+              "id": "unity-canvas",
+              "width": 1198,
+              "height": 598
+            }
+          ],
+          "unityReady": true,
+          "loadingVisible": false,
+          "progress": "Downloading file: 100%",
+          "bodyText": ""
+        }
+      ]
+    },
+    {
+      "name": "06-restart",
+      "time": "2026-10-10T09:37:03.034Z",
+      "mainUrl": "https://sledgames.com/",
+      "pages": [
+        "https://sledgames.com/"
+      ],
+      "frames": [
+        {
+          "url": "https://sledgames.com/",
+          "title": "Sled Games - Free Online Sledding Games",
+          "referrer": "",
+          "canvas": [],
+          "unityReady": false,
+          "loadingVisible": null,
+          "bodyText": "Skip to content\nsled\ngames\nHome\nSled Games\nSnowboard Games\nSki Games\nAll Games\n→\nSled Games\n\nClick inside the game to use keyboard controls.\n\nReload\nFullscreen ⛶\nADVERTISEMENT\nAll games\n\nExplore the winter collection.\n\nView all games\n→\nPlay now\nSled Rider\n→\nSledding\n\nSled Rider is a browser-based downhill game from AZGames. Your sled moves forward automatically while you choose a path through a snowy 3D course. Steer around obstacles, jump when a gap blocks your route, and collect presents along"
+        },
+        {
+          "url": "https://gamea.azgame.io/sled-rider/",
+          "title": "Sled Rider",
+          "referrer": "https://sledgames.com/",
+          "canvas": [
+            {
+              "id": "unity-canvas",
+              "width": 1198,
+              "height": 598
+            }
+          ],
+          "unityReady": true,
+          "loadingVisible": false,
+          "progress": "Downloading file: 100%",
+          "bodyText": ""
+        }
+      ]
+    }
+  ],
+  "initialCookies": 0,
+  "homeStatus": 200,
+  "endedAt": "2026-10-10T09:44:58.956Z"
+}
