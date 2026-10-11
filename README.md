@@ -28,7 +28,7 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 
 - 已生成首页、`/games`、三个品类页、五个合规页、404、robots.txt 和 sitemap.xml。
 - Header、Footer、官方 iframe 游戏区、广告占位、卡片、FAQ、分类入口复用同一套组件。
-- Sled Rider 与首页合为同一个页面，采用首屏游玩布局：首页在游戏正上方显示紧凑的 `Sled Games - Play Sled Rider` H1，导航下直接加载游戏，广告位于游戏和工具栏之后；其他游戏页的页面标题保留给屏幕阅读器，无来源的资料区块不显示。
+- Sled Rider 与首页合为同一个页面，采用首屏游玩布局：首页在游戏正上方显示紧凑的 `Sled Games - Play Sled Rider` H1，SnowBoard Game 页也显示紧凑的纯游戏名 H1。导航下直接加载游戏，广告位于游戏和工具栏之后；其余游戏页的页面标题保留给屏幕阅读器，无来源的资料区块不显示。
 - JSON-LD：WebSite / VideoGame / FAQPage。FAQ 数据和可见问答使用同一来源；未配置 iframe 时不声明可免费游玩的 Offer。
 - 游戏内链来自 `similar`，页脚自动列出全部游戏；新增条目后无需新增页面文件。
 - Sled Rider 使用 AZGames 托管的游戏 iframe；Snowboard、Ski 和 Christmas 品类包含 Downhill Snowboard、SnowBoard Game、Ski King、Ski Rush、Santa Collecting Gifts、Crazy Christmas Fun，使用 GameMonetize 官方 iframe。所有游戏支持全屏和重新加载；未启用 AdSense，联系邮箱待配置。
@@ -55,7 +55,7 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 
 1. 使用唯一 kebab-case `slug`，其他游戏页面自动生成为 `/{slug}`；Sled Rider 固定使用首页 `/`，由 `gamePath` 统一生成链接。
 2. `category` 使用 `sledding-games`、`snowboard-games`、`ski-games` 或 `christmas-games`。Sled Games 分类入口为首页。
-3. 使用 140–160 字符英文 `description`；Title 和 H1 使用纯游戏名。
+3. 使用 140–160 字符英文 `description`；数据中的 `title` 和游戏页 H1 使用纯游戏名。SnowBoard Game 页的 Title / og:title 按单页 SEO 要求使用 `SnowBoard Game - Play the Snowboarding Game Online Free`。
 4. 将平台提供的官方 iframe **src 地址**填入 `embed.iframeSrc`，并填写正确 `provider`。不要填写整段 HTML 或复制对手网站地址。
 5. `gamedistribution` 允许 `https://html5.gamedistribution.com/…`；`gamemonetize` 允许官方 `html5.gamemonetize.com`、`html5.gamemonetize.co` 和 `html5.gamemonetize.games` HTTPS 地址；后两个域名来自本轮核对的官方 EMBED 代码。`azgames` 仅允许已核验的 `https://gamea.azgame.io/sled-rider/`，其他路径会被构建拒绝。
 6. `{{PAGE_URL}}` 替换为编码后的当前页面 canonical；GameDistribution 的 `gd_sdk_referrer_url` 会自动设置。Sled Rider 使用首页 URL，其他游戏使用各自的页面 URL。

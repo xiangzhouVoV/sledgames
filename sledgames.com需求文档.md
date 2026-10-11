@@ -97,13 +97,16 @@
 ```
 
 **首页 / Sled Rider 页面**：H1 = `Sled Games - Play Sled Rider`，可见并紧邻游戏区上方；字号 `clamp(1.25rem, 2.5vw, 1.75rem)`，上下 margin 均不超过 12px。首页 Title / og:title = `Sled Games - Play Sled Rider Online Free | Sledding Games`。导航下加载 Sled Rider 可玩 iframe，游戏保持首屏可见；广告位于游戏及工具栏之后，下方接「全部游戏」网格、完整游戏指南、5 条 FAQ、分类导航与页脚。不再创建另一份 Sled Rider 详情页。
+
+**SnowBoard Game 页面（2026-10-11 更新）**：H1 = `SnowBoard Game`，去掉 `sr-only`，使用与首页相同的紧凑样式并放在游戏区正上方。Title / og:title = `SnowBoard Game - Play the Snowboarding Game Online Free`；Description = `Play SnowBoard Game online for free in your browser. Ride snowy slopes, dodge barriers, and find your route to the finish in a winter sports challenge.`。下方 `SnowBoard Game: how to play and improve` 保留 H2 层级。
+
 **品类页差异**：H1 = 品类词，无 iframe，改为该品类游戏网格 + 150~250 词品类介绍 + FAQ。
 
 ## 6. TDK 规则
 
 | 项 | 规则 | 示例（sled rider） |
 |---|---|---|
-| Title | 游戏页 = **纯游戏名**；首页/品类页 = `{词} - Free Online {品类} Games` | `Sled Rider` |
+| Title | 游戏页默认使用**纯游戏名**；首页/品类页及 SnowBoard Game 的单页 SEO 标题按对应更新要求执行 | `SnowBoard Game - Play the Snowboarding Game Online Free` |
 | Description | 完整句 + 动作词，含核心词 1 次，140~160 字符 | `Play Sled Rider, a 3D endless sled-driving game full of obstacles! Control a sled, dodge trees and rocks, and unlock new sleds for free online.` |
 | H1 | 与目标词一致，只出现一次 | `Sled Rider` |
 | canonical | 自指绝对 URL | `https://sledgames.com/`（Sled Rider 即首页） |
