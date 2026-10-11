@@ -46,7 +46,7 @@ test('Sled Rider uses its verified player without fabricated ratings or prices',
   const $ = load(readFileSync('dist/index.html', 'utf8'));
   assert.equal($('title').text(), 'Sled Games - Play Sled Rider Online Free | Sledding Games');
   assert.equal($('meta[property="og:title"]').attr('content'), $('title').text());
-  assert.equal($('h1').text(), 'Play Sled Rider');
+  assert.equal($('h1').text(), 'Sled Games - Play Sled Rider');
   assert.ok(!$('h1').hasClass('sr-only'));
   assert.equal($('.game-stage').prev().get(0), $('h1').get(0));
   assert.equal($('iframe').length, 1);
@@ -93,7 +93,7 @@ test('winter categories link to their playable games with matching official artw
     assert.ok(entries.length >= 2, `${category}: at least two games`);
     const $ = load(readFileSync(pageFile(`/${category}`), 'utf8'));
     assert.equal($(`header nav a[href="/${category}"][aria-current="page"]`).length, 1);
-    assert.equal($('h1').text(), category === 'christmas-games' ? 'Christmas Games' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
+    assert.equal($('h1').text(), category === 'christmas-games' ? 'Santa Sleigh Game' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
     assert.equal($('.game-card').length, entries.length);
     for (const game of entries) {
       const card = $(`.game-card[href="${gamePath(game.slug)}"]`);

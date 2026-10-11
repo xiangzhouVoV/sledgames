@@ -96,7 +96,7 @@
 14. <Footer>  About Us / Contact Us / Privacy Policy / Terms of Use / Copyright + 全站游戏链接
 ```
 
-**首页 / Sled Rider 页面**：H1 = `Play Sled Rider`，可见并紧邻游戏区上方；字号 `clamp(1.25rem, 2.5vw, 1.75rem)`，上下 margin 均不超过 12px。首页 Title / og:title = `Sled Games - Play Sled Rider Online Free | Sledding Games`。导航下加载 Sled Rider 可玩 iframe，游戏保持首屏可见；广告位于游戏及工具栏之后，下方接「全部游戏」网格、完整游戏指南、5 条 FAQ、分类导航与页脚。不再创建另一份 Sled Rider 详情页。
+**首页 / Sled Rider 页面**：H1 = `Sled Games - Play Sled Rider`，可见并紧邻游戏区上方；字号 `clamp(1.25rem, 2.5vw, 1.75rem)`，上下 margin 均不超过 12px。首页 Title / og:title = `Sled Games - Play Sled Rider Online Free | Sledding Games`。导航下加载 Sled Rider 可玩 iframe，游戏保持首屏可见；广告位于游戏及工具栏之后，下方接「全部游戏」网格、完整游戏指南、5 条 FAQ、分类导航与页脚。不再创建另一份 Sled Rider 详情页。
 **品类页差异**：H1 = 品类词，无 iframe，改为该品类游戏网格 + 150~250 词品类介绍 + FAQ。
 
 ## 6. TDK 规则
@@ -196,6 +196,8 @@
 
 本轮先补两个品类：`/snowboard-games` 加入 Downhill Snowboard、SnowBoard Game；`/ski-games` 加入 Ski King、Ski Rush。四个游戏页共用现有模板及首页的冰蓝渐变背景、动态飘雪，均配置官方封面、介绍、操作表、玩法、技巧、5 条 FAQ 及同品类内链。首页与 `/games` 自动展示全部游戏。
 
+2026-10-11 更新：`/snowboard-games`、`/ski-games` 两个品类页也共用首页的冰蓝渐变、顶部白色渐变过渡和动态飘雪，保留现有分类内容布局。
+
 游戏使用 GameMonetize 详情页公开提供的 `html5.gamemonetize.co` 官方 iframe，不下载或改写游戏资源。详情页、封面和资料来源记录在 `data/games.json` 的 `sources` 字段中；出版商收益需按[官方 FAQ](https://gamemonetize.com/faq)注册账号并添加本站域名。
 
 GameDistribution 候选在 `gd_sdk_referrer_url` 指向真实 sledgames.com 游戏页时返回 `unregistered=true`，因此暂不作为这两个分类的实际游戏源。它的参数替换逻辑和验证仍保留。Sled Rider 的 AZGames 授权核实属于此前独立验收，不能由本轮新增游戏的来源代替。
@@ -203,8 +205,10 @@ GameDistribution 候选在 `gd_sdk_referrer_url` 指向真实 sledgames.com 游�
 
 ## Christmas Games 品类（2026-10-10）
 
-新增 `/christmas-games`，H1 为 `Christmas Games`，展示 Santa Collecting Gifts 和 Crazy Christmas Fun 的官方封面及游戏入口，并提供原创分类介绍、5 条 FAQ、独立 TDK、canonical 和 FAQPage 结构化数据。主导航、分类入口和 sitemap 自动加入新路由。
+新增 `/christmas-games`，H1 为 `Santa Sleigh Game`，Title 及 og:title 为 `Santa Sleigh Game - Play Free Online | Christmas Games`，主词统一为 Santa Sleigh Game。展示 Santa Collecting Gifts 和 Crazy Christmas Fun 的官方封面及游戏入口，并提供原创分类介绍、5 条 FAQ、独立 TDK、canonical 和 FAQPage 结构化数据。主导航、分类入口和 sitemap 自动加入新路由。
 
-两款游戏分别使用 `/santa-collecting-gifts` 和 `/crazy-christmas-fun`，接入 GameMonetize 官方 iframe，沿用首屏游玩、冰蓝渐变及动态飘雪。详情页包含介绍、操作表、4 步玩法、3 条技巧、5 条 FAQ 及同品类游戏内链；发行方及封面来源保存在 `data/games.json`。
+2026-10-11 更新：品类页采用独立圣诞主题，以松绿冬夜、松林、圣诞红、暖金色和奶油白搭配原创圣诞树／礼物 SVG 插画。动态效果为柔和闪烁的灯串、树灯和金色星光；圣诞树上及周围加入错开节奏闪烁的小星星，树顶金星柔和发光。在品类页和两款游戏页的背景中加入红、绿、金色礼物盒缓慢下落与轻轻摇摆。下落礼物桌面 16 个、手机 6 个；装饰不遮挡点击，背景特效位于内容后方，手机减少动态元素，系统减少动态效果偏好开启时停止动画并隐藏下落礼物。游戏卡片、介绍、FAQ、分类入口和页脚统一节日配色。
+
+两款游戏分别使用 `/santa-collecting-gifts` 和 `/crazy-christmas-fun`，接入 GameMonetize 官方 iframe，保留首屏游玩布局。2026-10-11 更新：详情页与圣诞品类页统一使用松绿冬夜、松林和金色星光，工具按钮、玩法指南、操作表、FAQ 及页脚使用圣诞配色。详情页包含介绍、操作表、4 步玩法、3 条技巧、5 条 FAQ 及同品类游戏内链；发行方及封面来源保存在 `data/games.json`。
 
 Santa Collecting Gifts 使用方向键 / WASD，仅适合键盘设备；Crazy Christmas Fun 使用点击 / 触控，平台标为 mobile ready。分类页和玩法资料明确区分控制方式。候选 Santa Flight Game 在本轮本地浏览器实测中出现黑屏及启动错误，未加入当前可玩目录。

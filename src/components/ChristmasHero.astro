@@ -1,0 +1,25 @@
+---
+import ChristmasScene from './ChristmasScene.astro';
+interface Props { description: string }
+const { description } = Astro.props;
+const bulbs = Array.from({ length: 16 }, (_, index) => ({ color: ['#efd69a', '#df6860', '#a9cfa3'][index % 3], delay: -(index % 5) }));
+---
+<section class="page-intro christmas-hero">
+  <div class="holiday-lights" aria-hidden="true">{bulbs.map(bulb => <span style={`--bulb-color:${bulb.color};--bulb-delay:${bulb.delay}s`} />)}</div>
+  <div class="christmas-hero-copy">
+    <span class="eyebrow">A LITTLE CHRISTMAS MAGIC</span>
+    <h1>Santa <span>Sleigh Game</span></h1>
+    <p>{description}</p>
+    <a class="button christmas-play-link" href="#christmas-play">Let’s play <span aria-hidden="true">↓</span></a>
+    <span class="christmas-hero-note">Free to play. No download needed.</span>
+  </div>
+  <div class="christmas-hero-art"><ChristmasScene /></div>
+</section>
+<style>
+  .holiday-lights { position: absolute; top: 10px; inset-inline: 20px; display: flex; justify-content: space-around; height: 26px; border-top: 1px solid #be985c77; border-radius: 50% 50% 0 0; pointer-events: none; }
+  .holiday-lights span { position: relative; width: 7px; height: 11px; margin-top: 6px; background: var(--bulb-color); color: var(--bulb-color); border-radius: 50% 50% 45% 45%; box-shadow: 0 0 8px 2px currentColor; animation: bulb-glow 5s var(--bulb-delay) ease-in-out infinite; }
+  .holiday-lights span::before { content: ''; position: absolute; top: -6px; left: 2px; height: 6px; width: 3px; background: #b6a376; }
+  @keyframes bulb-glow { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+  @media (max-width: 600px) { .holiday-lights { inset-inline: 12px; } .holiday-lights span:nth-child(even) { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .holiday-lights span { animation: none; opacity: .8; } }
+</style>

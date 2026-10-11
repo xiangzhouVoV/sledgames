@@ -1,0 +1,65 @@
+---
+const sparkles = [
+  { x: 89, y: 67, size: 6 },
+  { x: 189, y: 98, size: 5 },
+  { x: 263, y: 112, size: 5 },
+  { x: 214, y: 155, size: 4 },
+  { x: 358, y: 104, size: 6 },
+  { x: 267, y: 216, size: 5 },
+  { x: 183, y: 231, size: 4 },
+  { x: 333, y: 57, size: 5 },
+  { x: 130, y: 114, size: 4 },
+  { x: 325, y: 201, size: 6 },
+  { x: 302, y: 79, size: 4 },
+  { x: 153, y: 183, size: 4 },
+].map((sparkle, index) => ({ ...sparkle, duration: 3.4 + (index % 6) * .35, delay: -index * .6 }));
+---
+<svg class="christmas-scene" viewBox="0 0 440 330" fill="none" aria-hidden="true">
+  <circle cx="241" cy="140" r="116" fill="#efcc7d" opacity=".07" />
+  <circle cx="241" cy="140" r="88" stroke="#efcc7d" stroke-opacity=".14" stroke-dasharray="2 9" />
+  <ellipse cx="222" cy="298" rx="177" ry="14" fill="#e7ead6" opacity=".1" />
+  <path d="M222 241h20v46h-20Z" fill="#805439" />
+  <path d="m231 62 53 81h-23l42 57h-29l50 63c-65 16-123 16-186 0l50-63h-29l42-57h-23Z" fill="#286047" stroke="#437557" stroke-width="2" stroke-linejoin="round" />
+  <path d="m231 69 42 67c-23 10-50 10-79 3Zm-15 85-40 39c23 5 44 5 64 1Zm-8 61-47 44c34 6 65 7 91 3Z" fill="#397853" opacity=".8" />
+  <path class="tree-top-star" d="m231 36 6 12 14 2-10 10 2 14-12-7-13 7 3-14-11-10 15-2Z" fill="#ffd98b" stroke="#e0ad56" stroke-width="2" />
+  <path d="M205 124c11 7 30 11 55 12m-67 30c20 15 48 22 87 21m-113 47c37 17 78 22 133 18" stroke="#d5ab63" stroke-width="3" stroke-linecap="round" />
+  <g fill="#ffd88a" class="tree-lights">
+    <circle cx="214" cy="129" r="3.5" /><circle cx="244" cy="136" r="3.5" /><circle cx="206" cy="174" r="3.5" /><circle cx="234" cy="184" r="3.5" /><circle cx="269" cy="186" r="3.5" /><circle cx="186" cy="241" r="3.5" /><circle cx="221" cy="250" r="3.5" /><circle cx="259" cy="253" r="3.5" /><circle cx="291" cy="252" r="3.5" />
+  </g>
+  <g fill="#be4142" stroke="#e67f69" stroke-width="2">
+    <circle cx="227" cy="109" r="7" /><circle cx="252" cy="158" r="8" /><circle cx="208" cy="213" r="8" /><circle cx="270" cy="229" r="7" />
+  </g>
+  <g fill="#ffe3a5">
+    {sparkles.map(sparkle => <g class="tree-sparkle-position" transform={`translate(${sparkle.x} ${sparkle.y})`}>
+      <path class="tree-sparkle" d={`M0 ${-sparkle.size} 1.6 -1.6 ${sparkle.size} 0 1.6 1.6 0 ${sparkle.size} -1.6 1.6 ${-sparkle.size} 0 -1.6 -1.6Z`} style={`--sparkle-time:${sparkle.duration}s;--sparkle-delay:${sparkle.delay}s`} />
+    </g>)}
+  </g>
+  <g transform="rotate(-12 114 231)">
+    <path d="M116 254V169c0-27-39-27-39-2" stroke="#fbf0d9" stroke-width="14" stroke-linecap="round" />
+    <path d="M116 254V169c0-27-39-27-39-2" stroke="#bb3c43" stroke-width="14" stroke-dasharray="11 13" />
+  </g>
+  <path d="M64 250h67v45H64Z" fill="#a72e3b" /><path d="M59 244h77v13H59Z" fill="#c4474a" />
+  <path d="M91 244h13v51H91Z" fill="#e6c583" />
+  <path d="M97 244c-29-1-33-24-18-20 11 3 18 20 18 20Zm0 0c28-1 34-24 19-20-11 3-19 20-19 20Z" stroke="#e6c583" stroke-width="5" />
+  <path d="M289 258h85v38h-85Z" fill="#e6c583" /><path d="M284 250h95v13h-95Z" fill="#f3d99c" />
+  <path d="M321 250h14v46h-14Z" fill="#ae3b42" />
+  <path d="M328 250c-32-1-37-24-22-21 14 3 22 21 22 21Zm0 0c32-1 38-24 22-21-14 3-22 21-22 21Z" stroke="#ae3b42" stroke-width="5" />
+  <path d="M259 277h43v21h-43Z" fill="#367a58" /><path d="M276 277h8v21h-8Z" fill="#ead7a3" />
+  <path d="M51 296c70 6 115 3 154 1m49 1c64 3 103 3 135-3" stroke="#f5ecd2" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" />
+</svg>
+<style>
+  .christmas-scene { width: 100%; height: auto; overflow: visible; pointer-events: none; }
+  .tree-lights { animation: tree-glow 4s ease-in-out infinite; }
+  .tree-sparkle, .tree-top-star { transform-box: fill-box; transform-origin: center; }
+  .tree-sparkle { filter: drop-shadow(0 0 3px #ffd88aaa); animation: tree-sparkle-twinkle var(--sparkle-time) var(--sparkle-delay) ease-in-out infinite; }
+  .tree-top-star { filter: drop-shadow(0 0 6px #ffd98baa); animation: tree-star-glow 4.8s ease-in-out infinite; }
+  @keyframes tree-glow { 0%, 100% { opacity: .65; } 50% { opacity: 1; } }
+  @keyframes tree-sparkle-twinkle { 0%, 100% { opacity: .15; transform: scale(.75); } 42% { opacity: 1; transform: scale(1.15); } 70% { opacity: .45; transform: scale(.9); } }
+  @keyframes tree-star-glow { 0%, 100% { opacity: .75; transform: scale(.97); } 50% { opacity: 1; transform: scale(1.04); } }
+  @media (max-width: 600px) { .tree-sparkle-position:nth-child(n + 9) { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .tree-lights, .tree-sparkle, .tree-top-star { animation: none; }
+    .tree-sparkle { opacity: .8; }
+    .tree-top-star { opacity: 1; }
+  }
+</style>

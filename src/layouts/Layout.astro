@@ -1,8 +1,10 @@
 ---
 import '../styles/global.css';
+import '../styles/christmas.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Snowfall from '../components/Snowfall.astro';
+import ChristmasAtmosphere from '../components/ChristmasAtmosphere.astro';
 import { canonical, serializeSchema } from '../lib/catalog.mjs';
 interface Props {
   title: string;
@@ -11,8 +13,9 @@ interface Props {
   noindex?: boolean;
   playFirst?: boolean;
   snowfall?: boolean;
+  theme?: 'christmas';
 }
-const { title, description, schema = [], noindex = false, playFirst = false, snowfall = false } = Astro.props;
+const { title, description, schema = [], noindex = false, playFirst = false, snowfall = false, theme } = Astro.props;
 const url = canonical(Astro.url.pathname);
 ---
 <!doctype html>
@@ -22,7 +25,7 @@ const url = canonical(Astro.url.pathname);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#13294b" />
+    <meta name="theme-color" content={theme === 'christmas' ? '#102e2b' : '#13294b'} />
     <link rel="canonical" href={url} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {noindex && <meta name="robots" content="noindex, follow" />}
@@ -32,8 +35,9 @@ const url = canonical(Astro.url.pathname);
     <meta property="og:type" content="website" />
     {schema.map(item => <script type="application/ld+json" set:html={serializeSchema(item)} />)}
   </head>
-  <body class:list={{ 'play-first': playFirst, 'has-snow': snowfall }}>
+  <body class:list={{ 'play-first': playFirst, 'has-snow': snowfall, 'christmas-page': theme === 'christmas' }}>
     {snowfall && <Snowfall />}
+    {theme === 'christmas' && <ChristmasAtmosphere />}
     <a class="skip-link" href="#main">Skip to content</a>
     <Header />
     <main id="main" class="container"><slot /></main>

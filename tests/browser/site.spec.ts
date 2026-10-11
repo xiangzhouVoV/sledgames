@@ -21,7 +21,7 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         await card.click();
         await expect(page).toHaveURL(`http://127.0.0.1:4321/${game.slug}`);
         await expect(page.locator('iframe')).toHaveAttribute('title', `Play ${game.title}`);
-        await expect(page.locator('body')).toHaveClass(/has-snow/);
+        await expect(page.locator('body')).toHaveClass(category === 'christmas-games' ? /christmas-page/ : /has-snow/);
         const src = new URL(await page.locator('iframe').getAttribute('src') as string);
         expect(src.href).toBe(game.embed.iframeSrc);
         expect(src.hostname).toBe('html5.gamemonetize.co');
@@ -43,7 +43,7 @@ for (const { width, height } of [{ width: 320, height: 568 }, { width: 390, heig
     const page = await context.newPage();
     await page.route('https://gamea.azgame.io/**', route => route.fulfill({ body: '<html><body>Game player fixture</body></html>', contentType: 'text/html' }));
     await page.goto('http://127.0.0.1:4321/');
-    await expect(page.locator('h1')).toHaveText('Play Sled Rider');
+    await expect(page.locator('h1')).toHaveText('Sled Games - Play Sled Rider');
     await expect(page.locator('h1')).toBeVisible();
     const heading = await page.locator('h1').boundingBox();
     const headingStyles = await page.locator('h1').evaluate(el => { const style = getComputedStyle(el); return { size: parseFloat(style.fontSize), top: parseFloat(style.marginTop), bottom: parseFloat(style.marginBottom) }; });
@@ -75,7 +75,7 @@ for (const { width, height } of [{ width: 320, height: 568 }, { width: 390, heig
 test('missing pages return a useful 404', async ({ page }) => {
   const response = await page.goto('/missing-game');
   expect(response!.status()).toBe(404);
-  await expect(page.locator('h1')).toHaveText('A fresh start?');
+  await expect(page.locator('main h1')).toHaveText('A fresh start?');
   await expect(page.locator('main .game-card[href="/"]')).toBeVisible();
 });
 
@@ -99,7 +99,7 @@ test('legacy game links and game cards lead to the same complete homepage', asyn
   await page.route('https://gamea.azgame.io/**', route => route.fulfill({ body: '<html><body>Game player fixture</body></html>', contentType: 'text/html' }));
   await page.goto('/sled-rider#about-game');
   await expect(page).toHaveURL('http://127.0.0.1:4321/#about-game');
-  await expect(page.locator('h1')).toHaveText('Play Sled Rider');
+  await expect(page.locator('h1')).toHaveText('Sled Games - Play Sled Rider');
   await expect(page.locator('body')).toHaveClass(/has-snow/);
   await expect(page.locator('.guide-steps li')).toHaveCount(5);
   await expect(page.locator('details')).toHaveCount(5);
