@@ -51,7 +51,7 @@ test('unverified game details fail the build instead of being published', () => 
 
 test('reserved routes, duplicates, and broken related links are rejected', () => {
   const game = fixture();
-  for (const slug of ['about', 'games', 'snowboard-games', 'Bad Slug']) {
+  for (const slug of ['about', 'games', 'snowboard-games', 'christmas-games', 'Bad Slug']) {
     assert.throws(() => validateGames([{ ...game, slug }]));
   }
   assert.throws(() => validateGames([game, game]), /duplicate/);

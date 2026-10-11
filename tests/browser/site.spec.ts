@@ -9,16 +9,19 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
     await page.route('https://html5.gamemonetize.co/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
     await page.route('https://img.gamedistribution.com/**', route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
     await page.route('https://img.gamemonetize.com/**', route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
-    for (const category of ['snowboard-games', 'ski-games']) {
+    for (const category of ['snowboard-games', 'ski-games', 'christmas-games']) {
       const entries = games.filter(game => game.category.includes(category));
       for (const game of entries) {
         await page.goto(`/${category}`);
+        await expect(page.locator(`header nav a[href="/${category}"]`)).toHaveAttribute('aria-current', 'page');
+        expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
         await expect(page.locator('main .game-card')).toHaveCount(entries.length);
         const card = page.locator(`main .game-card[href="/${game.slug}"]`);
         await expect(card.locator('img')).toHaveAttribute('src', game.thumbnail!);
         await card.click();
         await expect(page).toHaveURL(`http://127.0.0.1:4321/${game.slug}`);
         await expect(page.locator('iframe')).toHaveAttribute('title', `Play ${game.title}`);
+        await expect(page.locator('body')).toHaveClass(/has-snow/);
         const src = new URL(await page.locator('iframe').getAttribute('src') as string);
         expect(src.href).toBe(game.embed.iframeSrc);
         expect(src.hostname).toBe('html5.gamemonetize.co');

@@ -199,3 +199,12 @@
 游戏使用 GameMonetize 详情页公开提供的 `html5.gamemonetize.co` 官方 iframe，不下载或改写游戏资源。详情页、封面和资料来源记录在 `data/games.json` 的 `sources` 字段中；出版商收益需按[官方 FAQ](https://gamemonetize.com/faq)注册账号并添加本站域名。
 
 GameDistribution 候选在 `gd_sdk_referrer_url` 指向真实 sledgames.com 游戏页时返回 `unregistered=true`，因此暂不作为这两个分类的实际游戏源。它的参数替换逻辑和验证仍保留。Sled Rider 的 AZGames 授权核实属于此前独立验收，不能由本轮新增游戏的来源代替。
+
+
+## Christmas Games 品类（2026-10-10）
+
+新增 `/christmas-games`，H1 为 `Christmas Games`，展示 Santa Collecting Gifts 和 Crazy Christmas Fun 的官方封面及游戏入口，并提供原创分类介绍、5 条 FAQ、独立 TDK、canonical 和 FAQPage 结构化数据。主导航、分类入口和 sitemap 自动加入新路由。
+
+两款游戏分别使用 `/santa-collecting-gifts` 和 `/crazy-christmas-fun`，接入 GameMonetize 官方 iframe，沿用首屏游玩、冰蓝渐变及动态飘雪。详情页包含介绍、操作表、4 步玩法、3 条技巧、5 条 FAQ 及同品类游戏内链；发行方及封面来源保存在 `data/games.json`。
+
+Santa Collecting Gifts 使用方向键 / WASD，仅适合键盘设备；Crazy Christmas Fun 使用点击 / 触控，平台标为 mobile ready。分类页和玩法资料明确区分控制方式。候选 Santa Flight Game 在本轮本地浏览器实测中出现黑屏及启动错误，未加入当前可玩目录。

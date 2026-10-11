@@ -1,0 +1,28 @@
+{
+  "slug": "crazy-christmas-fun",
+  "page": "http://127.0.0.1:4322/crazy-christmas-fun",
+  "errors": [],
+  "popups": [],
+  "shots": [
+    {
+      "label": "level-select",
+      "frame": "https://html5.gamemonetize.co/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/",
+      "text": "SKIP\nAd will be closed in 21 secs\nPowered by\nPowered by",
+      "buttons": [
+        "SKIP"
+      ]
+    },
+    {
+      "label": "level-one",
+      "frame": "https://html5.gamemonetize.co/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/",
+      "text": "Powered by\nPowered by",
+      "buttons": []
+    },
+    {
+      "label": "flight",
+      "frame": "https://html5.gamemonetize.co/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/",
+      "text": "Powered by\nPowered by",
+      "buttons": []
+    }
+  ]
+}

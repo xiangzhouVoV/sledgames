@@ -9,6 +9,7 @@ export const categories = [
   { slug: 'sledding-games', path: '/', title: 'Sled Games', label: 'Sledding', symbol: '01', description: 'A little snow. A lot of momentum.' },
   { slug: 'snowboard-games', path: '/snowboard-games', title: 'Snowboard Games', label: 'Snowboarding', symbol: '02', description: 'Find your line down the mountain.' },
   { slug: 'ski-games', path: '/ski-games', title: 'Ski Games', label: 'Skiing', symbol: '03', description: 'Fresh tracks, right in your browser.' },
+  { slug: 'christmas-games', path: '/christmas-games', title: 'Christmas Games', label: 'Christmas', symbol: '04', description: 'Santa, reindeer, and a sky full of gifts. On mobile, try Crazy Christmas Fun.' },
 ];
 
 const hosts = {

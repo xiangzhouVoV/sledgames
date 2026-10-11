@@ -58,5 +58,35 @@ export const categoryContent = {
         "a": "No. Both games run in the browser player on their game pages. Enable JavaScript and allow the game to finish loading."
       }
     ]
+  },
+  "christmas-games": {
+    "description": "Play Christmas games online for free. Fly with Santa and his reindeer, collect gifts, dodge obstacles, and find controls and tips for each sleigh adventure.",
+    "paragraphs": [
+      "Take a festive trip with Santa. Choose Santa Collecting Gifts or Crazy Christmas Fun above to load a sleigh adventure in your browser. Each game page starts with the player and includes controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed.",
+      "Santa Collecting Gifts is a keyboard score challenge: catch falling presents, avoid bombs, and protect your three lives as the pace increases. Crazy Christmas Fun sends Santa and his reindeer through a sky full of balloons, collecting gifts as you work toward the Christmas tree and the next level. Use click or tap controls in Crazy Christmas Fun; Santa Collecting Gifts needs arrow keys or WASD on a computer.",
+      "A steady flight is easier to control than a hurried one. Look for the next clear opening, leave room to change height, and skip a gift when its exit is blocked. Prefer a snowy mountain run? Try our snowboard and ski games, or play Sled Rider on the homepage."
+    ],
+    "faqs": [
+      {
+        "q": "Which Christmas games are available here?",
+        "a": "Choose Santa Collecting Gifts or Crazy Christmas Fun from the cards above. Both feature Santa’s sleigh; Crazy Christmas Fun also includes his reindeer."
+      },
+      {
+        "q": "Are these Christmas games free?",
+        "a": "Yes. You can use the browser players without buying an app or creating a Sled Games account. The game platform may show advertisements."
+      },
+      {
+        "q": "How do I control Santa’s sleigh?",
+        "a": "Santa Collecting Gifts uses arrow keys or WASD. Crazy Christmas Fun uses a mouse click or tap. Read the in-game instructions before starting."
+      },
+      {
+        "q": "Which game has levels?",
+        "a": "Crazy Christmas Fun advances when you reach the Christmas tree. Santa Collecting Gifts shows a level counter as the falling objects speed up."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "For a phone, choose Crazy Christmas Fun, which the platform lists as mobile ready. Santa Collecting Gifts requires a keyboard and is intended for computer play."
+      }
+    ]
   }
 };

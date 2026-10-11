@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "santa-flight-game",
+    "page": "http://127.0.0.1:4322/santa-flight-game",
+    "errors": [
+      "abort({}) at Error\n    at Ra (https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/box2d.wasm.js:23:26)\n    at ta (https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/box2d.wasm.js:375:129)\n    at https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/box2d.wasm.js:35:114\nIf this abort() is unexpected, build with -s ASSERTIONS=1 which can give more information."
+    ],
+    "popups": [],
+    "shots": [
+      {
+        "label": "preloader",
+        "frame": "https://html5.gamemonetize.games/zxyubxptcimejvgebqja9oxjnxzr1tfu/",
+        "text": "PLAY GAME",
+        "buttons": [
+          "Play Game"
+        ]
+      },
+      {
+        "label": "backup-start",
+        "frame": "https://html5.gamemonetize.games/zxyubxptcimejvgebqja9oxjnxzr1tfu/",
+        "text": "",
+        "buttons": [
+          "Play Game"
+        ]
+      }
+    ]
+  }
+]

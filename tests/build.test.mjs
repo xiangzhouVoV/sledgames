@@ -87,11 +87,13 @@ test('home and game pages put the eager player before every ad', () => {
   }
 });
 
-test('snowboard and ski categories link to their playable games with matching official artwork', () => {
-  for (const category of ['snowboard-games', 'ski-games']) {
+test('winter categories link to their playable games with matching official artwork', () => {
+  for (const category of ['snowboard-games', 'ski-games', 'christmas-games']) {
     const entries = categoryGames(category);
     assert.ok(entries.length >= 2, `${category}: at least two games`);
     const $ = load(readFileSync(pageFile(`/${category}`), 'utf8'));
+    assert.equal($(`header nav a[href="/${category}"][aria-current="page"]`).length, 1);
+    assert.equal($('h1').text(), category === 'christmas-games' ? 'Christmas Games' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
     assert.equal($('.game-card').length, entries.length);
     for (const game of entries) {
       const card = $(`.game-card[href="${gamePath(game.slug)}"]`);

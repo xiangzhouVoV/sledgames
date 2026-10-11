@@ -426,5 +426,165 @@
       "publishing": "https://gamemonetize.com/faq",
       "terms": "https://gamemonetize.com/termofuse.php"
     }
+  },
+  {
+    "slug": "santa-collecting-gifts",
+    "title": "Santa Collecting Gifts",
+    "category": [
+      "christmas-games"
+    ],
+    "genres": [
+      "Christmas",
+      "Arcade"
+    ],
+    "description": "Play Santa Collecting Gifts online for free. Move Santa's sleigh with arrow keys or WASD, catch presents, avoid bombs, and beat your best Christmas score.",
+    "intro": "Guide Santa's sleigh across the snowy sky to catch falling presents. This keyboard game uses arrow keys or WASD, so play on a computer.\n\nBombs cost a life, and you have three lives per attempt. The falling objects get faster as you progress. Keep collecting gifts and try to improve your score.",
+    "howToPlay": [
+      "Start: Choose Play Game inside the player.",
+      "Move: Use arrow keys or WASD to guide Santa.",
+      "Collect: Catch falling presents while avoiding bombs.",
+      "Retry: After losing all three lives, start another attempt."
+    ],
+    "tips": [
+      "Look upward: Read the falling objects before moving beneath them.",
+      "Leave a safe route: Skip a present if a bomb blocks your escape.",
+      "Keep room to react: As objects speed up, make smaller, earlier adjustments."
+    ],
+    "controls": [
+      {
+        "action": "Move Santa",
+        "input": "Arrow keys or WASD (keyboard required)"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do I move Santa?",
+        "a": "Use arrow keys or WASD on a keyboard."
+      },
+      {
+        "q": "What gives me points?",
+        "a": "Catch the falling presents."
+      },
+      {
+        "q": "What happens when I hit a bomb?",
+        "a": "You lose a life. Losing all three lives ends the attempt."
+      },
+      {
+        "q": "Does the game get harder?",
+        "a": "Gifts and bombs fall faster as you progress."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "This game requires a keyboard. For click or tap controls, try Crazy Christmas Fun."
+      }
+    ],
+    "similar": [
+      "crazy-christmas-fun"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/9l3npfpud13rxnfixu6dx9yoojgw1tng/",
+      "width": 800,
+      "height": 600
+    },
+    "developer": "chaminda",
+    "released": "2025-12-17",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/9l3npfpud13rxnfixu6dx9yoojgw1tng/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "howToPlay": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "tips": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "controls": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "faqs": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "embed": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "developer": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "released": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "thumbnail": "https://img.gamemonetize.com/9l3npfpud13rxnfixu6dx9yoojgw1tng/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "crazy-christmas-fun",
+    "title": "Crazy Christmas Fun",
+    "category": [
+      "christmas-games"
+    ],
+    "genres": [
+      "Christmas",
+      "Flying"
+    ],
+    "description": "Play Crazy Christmas Fun online for free. Fly Santa's reindeer sleigh, avoid balloons, collect presents, and reach the Christmas tree to unlock the next level.",
+    "intro": "Crazy Christmas Fun is a flying sleigh challenge featuring Santa and his reindeer. Balloons fill the North Pole sky, and you must guide the sleigh around them while collecting gifts.\n\nClick to rise, then adjust your height to find a clear route. Reach the Christmas tree to advance to the next level.",
+    "howToPlay": [
+      "Start: Choose play in the game window.",
+      "Rise: Click to lift the sleigh.",
+      "Navigate: Adjust your height around balloons and collect gifts.",
+      "Advance: Reach the Christmas tree to move to the next level."
+    ],
+    "tips": [
+      "Read the gap: Pick a clear opening before changing height.",
+      "Make small changes: Correct your path before you reach a balloon.",
+      "Keep the exit clear: Look beyond a gift before moving toward it."
+    ],
+    "controls": [
+      {
+        "action": "Rise / interact",
+        "input": "Mouse click or tap"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do I raise the sleigh?",
+        "a": "Click inside the game to ascend."
+      },
+      {
+        "q": "What is the goal?",
+        "a": "Avoid obstacles, collect gifts, and reach the Christmas tree."
+      },
+      {
+        "q": "How do I reach the next level?",
+        "a": "Arrive at the Christmas tree."
+      },
+      {
+        "q": "Does the game include Santa and reindeer?",
+        "a": "Yes. You control their flying sleigh."
+      },
+      {
+        "q": "Is an app installation required?",
+        "a": "No. Play in the browser window; platform ads may appear."
+      }
+    ],
+    "similar": [
+      "santa-collecting-gifts"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/",
+      "width": 860,
+      "height": 480
+    },
+    "developer": "Immanitas",
+    "released": "2024-11-29",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "howToPlay": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "tips": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "controls": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "faqs": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "embed": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "developer": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "released": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "thumbnail": "https://img.gamemonetize.com/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
   }
 ]

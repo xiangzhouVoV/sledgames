@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-10",
+  "scope": "Local static preview at 127.0.0.1:4322; real GameMonetize sources, no login, fresh Chrome contexts with cache disabled for gameplay checks.",
+  "category": {
+    "path": "/christmas-games",
+    "verified": [
+      "Navigation, two game cards, official thumbnails, original introduction and FAQ, metadata, canonical, structured data and sitemap.",
+      "Final screenshots at 390 and 1280 pixels; both thumbnails loaded at 512x384 and no horizontal page overflow."
+    ],
+    "screenshots": [
+      "category-390.png",
+      "category-1280.png"
+    ],
+    "record": "final-source-check.json"
+  },
+  "games": [
+    {
+      "slug": "santa-collecting-gifts",
+      "source": "https://gamemonetize.com/santa-collecting-gifts-game",
+      "iframe": "https://html5.gamemonetize.co/9l3npfpud13rxnfixu6dx9yoojgw1tng/",
+      "verified": [
+        "Normal Play Game button starts gameplay.",
+        "Keyboard movement, score 10 and lives 2 observed.",
+        "No page errors, popup or top-level navigation observed in final bounded check."
+      ],
+      "screenshots": [
+        "santa-collecting-gifts-final-playing.png"
+      ],
+      "record": "final-source-check.json",
+      "device": "Keyboard required."
+    },
+    {
+      "slug": "crazy-christmas-fun",
+      "source": "https://gamemonetize.com/crazy-christmas-fun-game",
+      "iframe": "https://html5.gamemonetize.co/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/",
+      "verified": [
+        "Normal Play button and native platform ad flow retained.",
+        "First level entered; sleigh, reindeer, obstacle and reduced heart count visible.",
+        "No page errors, popup or top-level navigation observed in bounded check."
+      ],
+      "screenshots": [
+        "crazy-christmas-fun-menu.png",
+        "crazy-christmas-fun-level-one.png",
+        "crazy-christmas-fun-flight.png"
+      ],
+      "record": "crazy-christmas-fun-source-check.json",
+      "device": "Publisher lists mobile ready; touch gameplay not tested."
+    }
+  ],
+  "excludedCandidate": {
+    "title": "Santa Flight Game",
+    "source": "https://gamemonetize.com/santa-flight-game-game",
+    "reason": "Official direct source showed a black canvas and showBanner exception; the correctly clicked official .games backup remained at loading with a WebAssembly abort. Not included in published game data.",
+    "records": [
+      "santa-diagnostics.json",
+      "santa-play-check.json"
+    ]
+  },
+  "checks": {
+    "astroCheck": "0 errors, warnings or hints",
+    "build": "18 pages generated",
+    "staticTests": "13 passed",
+    "browserUiTests": "10 passed; publisher iframe and thumbnail fixtures used for these tests."
+  },
+  "limitations": [
+    "Local preview testing does not replace production-domain verification.",
+    "Mobile touch gameplay, full game-over/replay and ad revenue acceptance not completed.",
+    "Publisher account and domain registration are required for revenue participation; no revenue account was activated.",
+    "No Cloudflare deployment was performed in this task."
+  ]
+}

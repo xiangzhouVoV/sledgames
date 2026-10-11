@@ -1,0 +1,62 @@
+{
+  "diagnostics": {
+    "scripts": [
+      "https://s0.2mdn.net/instream/video/client.js",
+      "https://gamemonetize.com/ga.js",
+      "https://imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "https://api.gamemonetize.com/sdk.js",
+      "https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/scripts/c3runtime.js",
+      "https://www.googletagmanager.com/gtag/js?id=G-8SK3BC00X8",
+      "",
+      "https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/box2d.wasm.js",
+      "https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/scripts/supportcheck.js",
+      "https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/scripts/offlineclient.js",
+      "https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/scripts/main.js",
+      "https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/scripts/register-sw.js"
+    ],
+    "canvas": [
+      {
+        "width": 992,
+        "height": 558,
+        "css": ""
+      }
+    ],
+    "body": "",
+    "url": "https://html5.gamemonetize.co/zxyubxptcimejvgebqja9oxjnxzr1tfu/",
+    "secure": true
+  },
+  "records": [
+    {
+      "kind": "warning",
+      "text": "Allow attribute will take precedence over 'allowfullscreen'."
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x11c000cb400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x11c000d2c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x11c000d2c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x11c000d2c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "kind": "exception",
+      "text": "Cannot read properties of undefined (reading 'showBanner')"
+    },
+    {
+      "kind": "warning",
+      "text": "Handler scope is deprecated. Use arrow function or bind."
+    },
+    {
+      "kind": "warning",
+      "text": "Handler scope is deprecated. Use arrow function or bind."
+    }
+  ]
+}

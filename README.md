@@ -24,14 +24,14 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 
 ## 本次实现范围
 
-已跑通 Sled Rider 首页模板，并按最新要求为 Snowboard Games、Ski Games 各补入两款游戏。
+已跑通 Sled Rider 首页模板，Snowboard Games、Ski Games 各有两款游戏，并新增包含两款圣诞雪橇游戏的 `/christmas-games`。
 
-- 已生成首页、`/games`、两个品类页、五个合规页、404、robots.txt 和 sitemap.xml。
+- 已生成首页、`/games`、三个品类页、五个合规页、404、robots.txt 和 sitemap.xml。
 - Header、Footer、官方 iframe 游戏区、广告占位、卡片、FAQ、分类入口复用同一套组件。
 - Sled Rider 与首页合为同一个页面，采用首屏游玩布局：首页在游戏正上方显示紧凑的 `Play Sled Rider` H1，导航下直接加载游戏，广告位于游戏和工具栏之后；其他游戏页的页面标题保留给屏幕阅读器，无来源的资料区块不显示。
 - JSON-LD：WebSite / VideoGame / FAQPage。FAQ 数据和可见问答使用同一来源；未配置 iframe 时不声明可免费游玩的 Offer。
 - 游戏内链来自 `similar`，页脚自动列出全部游戏；新增条目后无需新增页面文件。
-- Sled Rider 使用 AZGames 托管的游戏 iframe；两个品类新增 Downhill Snowboard、SnowBoard Game、Ski King、Ski Rush，使用 GameMonetize 官方 iframe。所有游戏支持全屏和重新加载；未启用 AdSense，联系邮箱待配置。
+- Sled Rider 使用 AZGames 托管的游戏 iframe；Snowboard、Ski 和 Christmas 品类包含 Downhill Snowboard、SnowBoard Game、Ski King、Ski Rush、Santa Collecting Gifts、Crazy Christmas Fun，使用 GameMonetize 官方 iframe。所有游戏支持全屏和重新加载；未启用 AdSense，联系邮箱待配置。
 
 这是可运行的首阶段预览，**尚未达到正式上线验收**。
 
@@ -42,7 +42,7 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 - 雪白与冰蓝界面，深蓝文字，橙色主按钮；压缩首页介绍，让游戏窗口更早出现。
 - 根据“第一屏就能玩”的要求，首页和游戏页取消游戏上方的广告占位；保留下方固定占位，始终位于游戏区外。桌面游戏高度适应视口，手机保持 16:10。
 - 游戏卡片优先展示图片、名称、类别和可玩状态；未获授权的截图使用通用雪景插画。
-- 桌面四列、手机通常两列、窄屏单列；手机主导航可横向滑动，主要操作目标至少 44px 高。
+- 游戏卡片桌面四列、手机通常两列、窄屏单列；分类入口桌面四列、平板两列、手机单列。手机主导航可横向滑动，主要操作目标至少 44px 高。
 - FAQ 使用原生折叠交互，保留键盘焦点、跳过导航入口和减少动态效果的偏好支持。
 - 首页和各游戏页共用明亮冰蓝渐变背景和白色 CSS 飘雪，背景上的文字使用深蓝，卡片保持清晰；手机减少雪花数量，雪层不接收鼠标或触摸事件，游戏和导航显示在雪层上方，系统开启减少动态效果时自动关闭飘雪。
 
@@ -53,7 +53,7 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 新增游戏时：
 
 1. 使用唯一 kebab-case `slug`，其他游戏页面自动生成为 `/{slug}`；Sled Rider 固定使用首页 `/`，由 `gamePath` 统一生成链接。
-2. `category` 使用 `sledding-games`、`snowboard-games` 或 `ski-games`。Sled Games 分类入口为首页。
+2. `category` 使用 `sledding-games`、`snowboard-games`、`ski-games` 或 `christmas-games`。Sled Games 分类入口为首页。
 3. 使用 140–160 字符英文 `description`；Title 和 H1 使用纯游戏名。
 4. 将平台提供的官方 iframe **src 地址**填入 `embed.iframeSrc`，并填写正确 `provider`。不要填写整段 HTML 或复制对手网站地址。
 5. `gamedistribution` 允许 `https://html5.gamedistribution.com/…`；`gamemonetize` 允许官方 `html5.gamemonetize.com`、`html5.gamemonetize.co` 和 `html5.gamemonetize.games` HTTPS 地址；后两个域名来自本轮核对的官方 EMBED 代码。`azgames` 仅允许已核验的 `https://gamea.azgame.io/sled-rider/`，其他路径会被构建拒绝。
@@ -61,7 +61,7 @@ npm run release:check  # 检查上线所需的数据；当前阶段预计失败�
 7. 填写 `intro`、`howToPlay`、`tips`、`items`、`rating`、`playCount` 前，在对应 `sources` 字段记录真实来源链接。资料没有确认就留空。
 8. `rating` 格式为 `{ "value": 4.2, "count": 123 }`（仅结构说明，不能使用示例数字作为实际数据）；`playCount` 为整数或 `null`。
 9. `items` 格式为 `{ "name": "…", "price": "…" }` 数组；货币由内容明确写为美式格式，游戏内虚拟货币须保留实际单位。
-10. `similar` 填其他现有游戏 slug；正式上线要求 5–8 个；本轮每个新游戏先链接同品类另一款游戏，首页的 All Games 展示当前全部五款游戏。
+10. `similar` 填其他现有游戏 slug；正式上线要求 5–8 个；本轮每个新游戏先链接同品类另一款游戏，首页的 All Games 展示当前全部七款游戏。
 11. 可选 `thumbnail` 使用有授权的图片 URL 或 `public` 内图片路径。未配置时显示通用图形。
 
 空 `embed.iframeSrc` 不加载第三方内容，仅提供游戏名称和浏览入口；无数据的列表不显示占位文案。构建会阻止非法 slug、分类、关联链接、未注明来源的游戏资料，以及非官方/非 HTTPS 游戏嵌入。
@@ -88,6 +88,8 @@ Sled Rider 正文参考 `https://sledrider.io/` 的玩法资料，按本站实�
 | Snowboard Games | `/snowboard-game` | [SnowBoard Game](https://gamemonetize.com/snowboard-game-game) |
 | Ski Games | `/ski-king` | [Ski King](https://gamemonetize.com/ski-king-game) |
 | Ski Games | `/ski-rush` | [Ski Rush](https://gamemonetize.com/ski-rush-game) |
+| Christmas Games | `/santa-collecting-gifts` | [Santa Collecting Gifts](https://gamemonetize.com/santa-collecting-gifts-game) |
+| Christmas Games | `/crazy-christmas-fun` | [Crazy Christmas Fun](https://gamemonetize.com/crazy-christmas-fun-game) |
 
 官方 EMBED 地址为 `https://html5.gamemonetize.co/<游戏 ID>/`，封面来自 `img.gamemonetize.com`；完整 SDK、资源、平台品牌及广告保持由平台提供。资料来源记录在每个游戏的 `sources` 中，评分和游玩次数仍为空。
 
@@ -96,6 +98,8 @@ Sled Rider 正文参考 `https://sledrider.io/` 的玩法资料，按本站实�
 [GameMonetize FAQ](https://gamemonetize.com/faq) 说明公开目录的嵌入方式，以及注册后添加网站获得分成的流程；分成资格与本轮游戏加载测试是两个独立事项，当前未开通分成账号。
 
 本地无缓存、无登录的 Chrome 实测已进入四款游戏的游玩画面。平台广告保留，Ski King 在多个菜单步骤播放广告，Ski Rush 首次加载超过 16 秒。核验范围及截图索引见 `artifacts/category-games/2026-10-10/verification-summary.json`；这不代替生产域名、移动端游戏操作、完整死亡重开或广告收益验收。`npm run verify` 的 13 项检查和 10 项页面浏览器测试通过。
+
+Christmas 品类也已在本地 Chrome 中进入两款游戏的实际游玩画面。Santa Collecting Gifts 实测键盘移动、得分及生命减少，Crazy Christmas Fun 实测进入第一关并显示障碍；分类页在手机和桌面尺寸下的官方封面正常加载。Santa Collecting Gifts 需要键盘，手机用户引导至平台标为 mobile ready 的 Crazy Christmas Fun。候选 Santa Flight Game 的官方直连及备用入口出现黑屏或启动错误，因此未采用。记录见 `artifacts/christmas-games/2026-10-10/verification-summary.json`；本轮未核验生产域名、手机触控、完整死亡重开或广告分成，也未部署到 Cloudflare。
 
 ## 上线前待补项
 

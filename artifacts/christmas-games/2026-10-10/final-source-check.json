@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "images": [
+        {
+          "src": "https://img.gamemonetize.com/9l3npfpud13rxnfixu6dx9yoojgw1tng/512x384.jpg",
+          "width": 512,
+          "height": 384
+        },
+        {
+          "src": "https://img.gamemonetize.com/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/512x384.jpg",
+          "width": 512,
+          "height": 384
+        }
+      ],
+      "h1": "Christmas Games"
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "images": [
+        {
+          "src": "https://img.gamemonetize.com/9l3npfpud13rxnfixu6dx9yoojgw1tng/512x384.jpg",
+          "width": 512,
+          "height": 384
+        },
+        {
+          "src": "https://img.gamemonetize.com/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/512x384.jpg",
+          "width": 512,
+          "height": 384
+        }
+      ],
+      "h1": "Christmas Games"
+    }
+  ],
+  "santa": {
+    "page": "http://127.0.0.1:4322/santa-collecting-gifts",
+    "frame": "https://html5.gamemonetize.co/9l3npfpud13rxnfixu6dx9yoojgw1tng/",
+    "playing": "Use Arrow keys or WASD to move Santa\nScore: 10 • Lives: 2 • Level: 1 • Speed: 2.00",
+    "replay": "not observed within the bounded check",
+    "errors": [],
+    "popups": []
+  }
+}
