@@ -80,7 +80,7 @@
 顺序来自拆解 `sled rider` 现排第一的 sledrider.io 实际页面结构，**不要改顺序**：
 
 ```
-1. <Header>     Logo + 导航（Home / Sled Games / Snowboard Games / Ski Games）+ 3~4 个同类游戏直链
+1. <Header>     Logo + 导航（Sled Games / Snowboard Games / Ski Games / Christmas Games / All Games）+ 3~4 个同类游戏直链
 2. <H1>         游戏名（纯游戏名，不堆修饰）
 3. <AdSlot id="top">        自适应广告位（游戏区上方）
 4. <GameStage>  iframe 游戏区：宽 100%、高 600~631px；移动端按 16:10 缩放
@@ -115,7 +115,7 @@
 
 ## 7. 内链规则（三张网都要建）
 
-1. **导航栏**：Home + 3 品类页 + 3~4 重点游戏页直链（全站每页都有）。
+1. **导航栏**：Sled Games 指向首页，另有 Snowboard Games、Ski Games、Christmas Games 和 All Games 入口，不再单独提供重复的 Home 入口；保留 3~4 重点游戏页直链。
 2. **正文内链**：每个游戏页「Explore Other」区块链 5~8 个同类游戏页（由 `similar` 字段驱动）。
 3. **分类聚合**：`/games` 列全部游戏；品类页列该品类全部游戏；页脚再列一遍重点游戏。
 
