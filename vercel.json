@@ -3,7 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "redirects": [{ "source": "/sled-rider", "destination": "/", "permanent": true }],
   "headers": [
     { "source": "/(.*)", "headers": [

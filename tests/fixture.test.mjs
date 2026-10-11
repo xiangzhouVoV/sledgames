@@ -18,7 +18,7 @@ test('configured official embeds render different home/game referrers with sibli
     game.embed.iframeSrc = 'https://html5.gamedistribution.com/test-only-id/?gd_sdk_referrer_url={{PAGE_URL}}';
     writeFileSync(join(root, 'data/games.json'), JSON.stringify([game, { ...structuredClone(game), slug: 'fixture-game', title: 'Fixture Game' }]));
     execFileSync(process.execPath, [join(process.cwd(), 'node_modules/.bin/astro'), 'build'], { cwd: root, stdio: 'pipe', env: { ...process.env, ASTRO_TELEMETRY_DISABLED: '1' } });
-    for (const path of ['/', '/fixture-game']) {
+    for (const path of ['/', '/fixture-game/']) {
       const $ = load(readFileSync(join(root, 'dist', path === '/' ? 'index.html' : 'fixture-game/index.html'), 'utf8'));
       assert.equal($('iframe').length, 1);
       assert.equal(new URL($('iframe').attr('src')).searchParams.get('gd_sdk_referrer_url'), canonical(path));
@@ -28,5 +28,12 @@ test('configured official embeds render different home/game referrers with sibli
       assert.equal(stage.find('[data-ad-slot]').length, 0);
       assert.equal($('iframe').attr('loading'), 'eager');
     }
+    const $ = load(readFileSync(join(root, 'dist/games/index.html'), 'utf8'));
+    const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+    const list = schemas.find(schema => schema['@type'] === 'ItemList');
+    assert.deepEqual(list.itemListElement.map(item => item.url), [canonical('/'), canonical('/fixture-game/')]);
+    assert.equal($('main .game-card').length, 2);
+    assert.equal($('.quick-links a[href="/fixture-game/"]').length, 1);
+    assert.equal($('footer nav[aria-label="Game links"] a[href="/fixture-game/"]').length, 1);
   } finally { rmSync(root, { recursive: true, force: true }); }
 });

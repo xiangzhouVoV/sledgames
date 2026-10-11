@@ -2,10 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import GameGrid from '../components/GameGrid.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
-import { games } from '../lib/catalog.mjs';
+import { games, itemListSchema, breadcrumbSchema } from '../lib/catalog.mjs';
 ---
-<Layout title="All Games - Free Online Winter Games" description="Browse free winter games online. Explore sledding, snowboard, ski, and Christmas games, find controls and guides, and choose your next browser adventure.">
-  <section class="page-intro"><span class="eyebrow">THE WHOLE MOUNTAIN</span><h1>All Games</h1><p>Every adventure, in one place. Pick your next stop.</p></section>
+<Layout title={'All Winter Games - Play Free Sledding, Ski & Snowboard Games'} description="Browse free winter games online. Explore sledding, snowboard, ski, and Christmas games, find controls and guides, and choose your next browser adventure." schema={[itemListSchema(games), breadcrumbSchema([{ name: 'Winter Games', path: '/games/' }])]}>
+  <section class="page-intro"><span class="eyebrow">THE WHOLE MOUNTAIN</span><h1>All Winter Games</h1><p>Every adventure, in one place. Pick your next stop.</p></section>
   <section class="content-section"><GameGrid games={games} /></section>
+  <section class="content-section prose" aria-labelledby="winter-games-guide">
+    <h2 id="winter-games-guide">Find your next winter game</h2>
+    <p>Explore free winter games that bring snowy slopes, mountain courses, and festive sleigh adventures to your browser. This collection includes sledding, skiing, snowboarding, and Christmas games. Each card opens a game page with its player, an introduction, controls, instructions, tips, and answers to common questions. You can browse the collection without installing an app or creating a Sled Games account.</p>
+    <p>Choose a challenge that fits the way you like to play. Sled Rider, Downhill Snowboard, and Ski Rush reward keeping a downhill run alive while collecting presents, coins, or flags. For a course with a destination, try SnowBoard Game or Ski King. Read the guide before starting: reaching the finish and passing course flags correctly call for different decisions from chasing a survival score.</p>
+    <p>For a festive change of scenery, Santa Collecting Gifts asks you to catch falling presents while avoiding bombs. Crazy Christmas Fun sends Santa and his reindeer through balloon obstacles toward a Christmas tree. Check the controls when choosing a game for your device. Santa Collecting Gifts needs a keyboard, while Ski Rush offers mouse or touch steering and Crazy Christmas Fun uses clicks or taps.</p>
+    <p>We update this collection when a new game has been checked and added, rather than on a fixed daily or weekly schedule. New entries appear alongside the existing games here and in the navigation. Revisit the collection to see what is available, or use the category links below to focus on your favorite winter activity.</p>
+  </section>
   <CategoryLinks />
 </Layout>

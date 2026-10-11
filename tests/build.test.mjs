@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { load } from 'cheerio';
-import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categoryGames } from '../src/lib/catalog.mjs';
+import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categories, categoryGames } from '../src/lib/catalog.mjs';
 import astroConfig from '../astro.config.mjs';
 
 const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
@@ -23,6 +23,8 @@ test('all pages have static content, unique metadata, and working internal links
     assert.ok(!descriptions.has(description), `${path}: duplicate description`);
     descriptions.add(description);
     assert.equal($('link[rel="canonical"]').attr('href'), canonical(path));
+    assert.equal($('meta[property="og:url"]').attr('content'), canonical(path));
+    assert.equal($('meta[property="og:title"]').attr('content'), title);
     assert.ok($('main').text().trim().length > 100, `${path}: missing static content`);
     const visibleText = $('body').clone().find('script, style').remove().end().text();
     assert.doesNotMatch(visibleText, /coming[-\s]+soon|getting\s+ready|\bempty\b|on\s+(?:the|its)\s+way|being\s+prepared|while\s+you\s+wait/i, `${path}: placeholder copy`);
@@ -38,6 +40,10 @@ test('all pages have static content, unique metadata, and working internal links
 test('sitemap lists every public page and excludes the 404 page', () => {
   const $ = load(readFileSync('dist/sitemap.xml', 'utf8'), { xml: true });
   assert.deepEqual($('loc').map((_, item) => $(item).text()).get().sort(), allPaths.map(canonical).sort());
+  assert.equal(astroConfig.trailingSlash, 'always');
+  assert.equal(JSON.parse(readFileSync('vercel.json', 'utf8')).trailingSlash, true);
+  $('loc').each((_, item) => assert.ok($(item).text().endsWith('/')));
+  assert.ok(allPaths.every(path => path.endsWith('/')));
   assert.match(readFileSync('dist/robots.txt', 'utf8'), /Allow: \/\n/);
   assert.match(readFileSync('dist/robots.txt', 'utf8'), /Sitemap: https:\/\/sledgames\.com\/sitemap\.xml/);
 });
@@ -81,6 +87,8 @@ test('home and game pages put the eager player before every ad', () => {
     assert.equal($('iframe').attr('src'), embedUrl(game, canonical(path)));
     assert.equal($('iframe').attr('loading'), 'eager');
     assert.equal($('body.play-first').length, 1);
+    assert.equal($('h1.play-heading').length, 1, `${path}: visible game heading`);
+    assert.equal($('.game-stage').prev().get(0), $('h1').get(0));
     assert.equal($('.game-stage [data-ad-slot]').length, 0);
     assert.equal($('.game-stage').prevAll('[data-ad-slot]').length, 0);
     assert.equal($('.game-stage').nextAll('[data-ad-slot]').length, $('[data-ad-slot]').length);
@@ -92,8 +100,8 @@ test('winter categories link to their playable games with matching official artw
     const entries = categoryGames(category);
     assert.ok(entries.length >= 2, `${category}: at least two games`);
     const $ = load(readFileSync(pageFile(`/${category}`), 'utf8'));
-    assert.equal($(`header nav a[href="/${category}"][aria-current="page"]`).length, 1);
-    assert.equal($('h1').text(), category === 'christmas-games' ? 'Santa Sleigh Game' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
+    assert.equal($(`header nav a[href="/${category}/"][aria-current="page"]`).length, 1);
+    assert.equal($('h1').text(), category === 'christmas-games' ? 'Christmas Games' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
     assert.equal($('.game-card').length, entries.length);
     for (const game of entries) {
       const card = $(`.game-card[href="${gamePath(game.slug)}"]`);
@@ -124,7 +132,7 @@ test('each game is reachable from at least three different existing pages', () =
 });
 
 test('Sled Rider is served only on the homepage with a permanent legacy redirect', () => {
-  assert.ok(!allPaths.includes('/sled-rider'));
+  assert.ok(!allPaths.includes('/sled-rider/'));
   const $ = load(readFileSync('dist/sled-rider/index.html', 'utf8'));
   assert.equal($('iframe, .game-guide').length, 0);
   assert.match($('meta[http-equiv="refresh"]').attr('content'), /url=\/$/);
@@ -136,4 +144,68 @@ test('Sled Rider is served only on the homepage with a permanent legacy redirect
   const sources = redirects.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#')).map(line => line.split(/\s+/)[0]);
   sources.push(...Object.keys(astroConfig.redirects ?? {}));
   assert.equal(new Set(sources).size, sources.length, 'Cloudflare redirect sources must be unique, including adapter-generated rules');
+});
+
+test('SEO titles match the approved copy without changing the SnowBoard Game title', () => {
+  const expected = {
+    '/downhill-snowboard/': 'Downhill Snowboard - Play the Free Snowboarding Game Online',
+    '/ski-king/': 'Ski King - Play the Free Online Downhill Skiing Game',
+    '/ski-rush/': 'Ski Rush - Play the Free Online Ski Survival Game',
+    '/santa-collecting-gifts/': 'Santa Collecting Gifts - Play the Free Online Sleigh Game',
+    '/crazy-christmas-fun/': 'Crazy Christmas Fun - Play Free Santa & Reindeer Sleigh Game',
+    '/snowboard-game/': 'SnowBoard Game - Play the Snowboarding Game Online Free',
+    '/christmas-games/': 'Christmas Games - Play Free Santa & Sleigh Games Online',
+    '/games/': 'All Winter Games - Play Free Sledding, Ski & Snowboard Games',
+  };
+  for (const [path, title] of Object.entries(expected)) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    assert.equal($('title').text(), title, path);
+    assert.equal($('meta[property="og:title"]').attr('content'), title, path);
+  }
+});
+
+test('category and game breadcrumbs describe their real hierarchy with canonical URLs', () => {
+  const trails = [
+    ...categories.filter(category => category.path !== '/').map(category => [category.path, [{ name: category.title, path: category.path }]]),
+    ['/games/', [{ name: 'Winter Games', path: '/games/' }]],
+    ...games.filter(game => gamePath(game.slug) !== '/').map(game => {
+      const category = categories.find(category => category.slug === game.category[0]);
+      return [gamePath(game.slug), [{ name: category.title, path: category.path }, { name: game.title, path: gamePath(game.slug) }]];
+    }),
+  ];
+  for (const [path, trail] of trails) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    const schemas = $('head script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+    const breadcrumbs = schemas.filter(schema => schema['@type'] === 'BreadcrumbList');
+    assert.equal(breadcrumbs.length, 1, path);
+    assert.deepEqual(breadcrumbs[0].itemListElement, [{ name: 'Sled Games', path: '/' }, ...trail].map((entry, index) => ({
+      '@type': 'ListItem', position: index + 1, name: entry.name, item: canonical(entry.path),
+    })), path);
+    for (const item of breadcrumbs[0].itemListElement) assert.ok(allPaths.includes(new URL(item.item).pathname));
+  }
+});
+
+test('winter game list schema matches card order and includes a useful collection guide', () => {
+  const $ = load(readFileSync(pageFile('/games/'), 'utf8'));
+  const schemas = $('head script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+  const list = schemas.find(schema => schema['@type'] === 'ItemList');
+  assert.equal(list.name, 'Winter Games');
+  assert.equal(list.itemListElement.length, games.length);
+  const cards = $('main .game-card').toArray();
+  list.itemListElement.forEach((item, index) => {
+    assert.equal(item['@type'], 'ListItem');
+    assert.equal(item.position, index + 1);
+    assert.equal(item.name, games[index].title);
+    assert.equal(item.url, canonical($(cards[index]).attr('href')));
+  });
+  const words = $('section[aria-labelledby="winter-games-guide"] p').toArray().map(node => $(node).text()).join(' ').trim().split(/\s+/).length;
+  assert.ok(words >= 200 && words <= 300, `Collection guide has ${words} words`);
+});
+
+test('header shortcuts and footer game links include the full data-driven catalog on every page', () => {
+  for (const path of allPaths) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    assert.deepEqual($('.quick-links a').map((_, node) => $(node).attr('href')).get(), games.map(game => gamePath(game.slug)), path);
+    assert.deepEqual($('footer nav[aria-label="Game links"] a').slice(1).map((_, node) => $(node).attr('href')).get(), games.map(game => gamePath(game.slug)), path);
+  }
 });

@@ -2,14 +2,16 @@ import rawGames from '../../data/games.json' with { type: 'json' };
 
 export const SITE = 'https://sledgames.com';
 export const HOME_GAME_SLUG = 'sled-rider';
+/** @param {string} path */
+export const pagePath = path => path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
 /** @param {string} slug */
-export const gamePath = slug => slug === HOME_GAME_SLUG ? '/' : `/${slug}`;
+export const gamePath = slug => slug === HOME_GAME_SLUG ? '/' : pagePath(`/${slug}`);
 export const legalRoutes = ['about', 'contact', 'privacy-policy', 'terms-of-use', 'copyright'];
 export const categories = [
   { slug: 'sledding-games', path: '/', title: 'Sled Games', label: 'Sledding', symbol: '01', description: 'A little snow. A lot of momentum.' },
-  { slug: 'snowboard-games', path: '/snowboard-games', title: 'Snowboard Games', label: 'Snowboarding', symbol: '02', description: 'Find your line down the mountain.' },
-  { slug: 'ski-games', path: '/ski-games', title: 'Ski Games', label: 'Skiing', symbol: '03', description: 'Fresh tracks, right in your browser.' },
-  { slug: 'christmas-games', path: '/christmas-games', title: 'Christmas Games', label: 'Christmas', symbol: '04', description: 'Santa, reindeer, and a sky full of gifts. On mobile, try Crazy Christmas Fun.' },
+  { slug: 'snowboard-games', path: '/snowboard-games/', title: 'Snowboard Games', label: 'Snowboarding', symbol: '02', description: 'Find your line down the mountain.' },
+  { slug: 'ski-games', path: '/ski-games/', title: 'Ski Games', label: 'Skiing', symbol: '03', description: 'Fresh tracks, right in your browser.' },
+  { slug: 'christmas-games', path: '/christmas-games/', title: 'Christmas Games', label: 'Christmas', symbol: '04', description: 'Santa, reindeer, and a sky full of gifts. On mobile, try Crazy Christmas Fun.' },
 ];
 
 const hosts = {
@@ -19,7 +21,7 @@ const hosts = {
 };
 
 export function canonical(path = '/') {
-  return new URL(path, SITE).href;
+  return new URL(pagePath(path), SITE).href;
 }
 
 export function embedUrl(game, pageUrl) {
@@ -46,7 +48,7 @@ export function hasSource(game, field) {
 /** @param {import('./types').Game[]} entries */
 export function validateGames(entries) {
   const slugs = new Set();
-  const reserved = new Set(['games', '404', ...legalRoutes, ...categories.map(c => c.path.slice(1)).filter(Boolean)]);
+  const reserved = new Set(['games', '404', ...legalRoutes, ...categories.filter(c => c.path !== '/').map(c => c.slug)]);
   for (const game of entries) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(game.slug) || slugs.has(game.slug) || reserved.has(game.slug)) {
       throw new Error(`Invalid, duplicate, or reserved game slug: ${game.slug}`);
@@ -80,7 +82,7 @@ export function validateGames(entries) {
 
 /** @type {import('./types').Game[]} */
 export const games = validateGames(rawGames);
-export const allPaths = [...new Set(['/', '/games', ...categories.filter(c => c.path !== '/').map(c => c.path), ...games.map(g => gamePath(g.slug)), ...legalRoutes.map(slug => `/${slug}`)])];
+export const allPaths = [...new Set(['/', '/games/', ...categories.filter(c => c.path !== '/').map(c => c.path), ...games.map(g => gamePath(g.slug)), ...legalRoutes.map(slug => pagePath(`/${slug}`))])];
 /** @param {import('./types').Game} game */
 export const relatedGames = game => game.similar.map(slug => games.find(g => g.slug === slug)).filter(entry => entry !== undefined);
 export const categoryGames = slug => games.filter(game => game.category.includes(slug));
@@ -100,6 +102,26 @@ export function gameSchema(game) {
 
 export function faqSchema(faqs) {
   return { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })) };
+}
+
+/** @param {{ name: string, path: string }[]} trail */
+export function breadcrumbSchema(trail) {
+  return {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [{ name: 'Sled Games', path: '/' }, ...trail].map((entry, index) => ({
+      '@type': 'ListItem', position: index + 1, name: entry.name, item: canonical(entry.path),
+    })),
+  };
+}
+
+/** @param {import('./types').Game[]} entries */
+export function itemListSchema(entries) {
+  return {
+    '@context': 'https://schema.org', '@type': 'ItemList', name: 'Winter Games',
+    itemListElement: entries.map((game, index) => ({
+      '@type': 'ListItem', position: index + 1, name: game.title, url: canonical(gamePath(game.slug)),
+    })),
+  };
 }
 
 export function serializeSchema(data) {

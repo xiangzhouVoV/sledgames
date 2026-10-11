@@ -1,6 +1,7 @@
 export interface Game {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
   category: string[];
   embed: { provider: string; iframeSrc: string; width: number; height: number };

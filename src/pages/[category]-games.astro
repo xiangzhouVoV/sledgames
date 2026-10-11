@@ -4,7 +4,7 @@ import GameGrid from '../components/GameGrid.astro';
 import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
 import ChristmasHero from '../components/ChristmasHero.astro';
-import { categories, categoryGames, faqSchema } from '../lib/catalog.mjs';
+import { categories, categoryGames, faqSchema, breadcrumbSchema } from '../lib/catalog.mjs';
 import { categoryContent } from '../lib/category-content.mjs';
 export function getStaticPaths() {
   return categories.filter(category => category.path !== '/').map(category => ({ params: { category: category.slug.replace(/-games$/, '') }, props: { category, content: categoryContent[category.slug as keyof typeof categoryContent] } }));
@@ -17,9 +17,9 @@ const { category, content } = Astro.props;
 const games = categoryGames(category.slug);
 const snowfall = ['snowboard-games', 'ski-games'].includes(category.slug);
 const christmas = category.slug === 'christmas-games';
-const title = christmas ? 'Santa Sleigh Game - Play Free Online | Christmas Games' : `${category.title} - Free Online ${category.label} Games`;
+const title = christmas ? 'Christmas Games - Play Free Santa & Sleigh Games Online' : `${category.title} - Free Online ${category.label} Games`;
 ---
-<Layout snowfall={snowfall} theme={christmas ? 'christmas' : undefined} title={title} description={content.description} schema={[faqSchema(content.faqs)]}>
+<Layout snowfall={snowfall} theme={christmas ? 'christmas' : undefined} title={title} description={content.description} schema={[faqSchema(content.faqs), breadcrumbSchema([{ name: category.title, path: category.path }])]}>
   {christmas ? <ChristmasHero description={category.description} /> : <section class="page-intro"><span class="eyebrow">PICK YOUR PATH / {category.label}</span><h1>{category.title}</h1><p>{category.description}</p></section>}
   {games.length > 0 && <section class:list={['content-section', { 'christmas-collection': christmas }]} id={christmas ? 'christmas-play' : undefined}>
     {christmas && <div class="section-heading"><div><span class="eyebrow">UNWRAP A LITTLE FUN</span><h2>Choose your Christmas game</h2></div></div>}

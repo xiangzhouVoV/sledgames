@@ -11,6 +11,6 @@ if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('PUBLIC_
   <article class="legal-content prose">
     {page.slug === 'contact' && email && <section class="contact-box"><h2>Get in touch</h2><p>Email us at <a href={`mailto:${email}`}>{email}</a>.</p></section>}
     {page.sections.map(section => <section><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}
-    {page.slug !== 'contact' && <p><a class="text-link" href="/contact">Contact Us ↗</a></p>}
+    {page.slug !== 'contact' && <p><a class="text-link" href="/contact/">Contact Us ↗</a></p>}
   </article>
 </Layout>
