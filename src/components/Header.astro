@@ -11,5 +11,5 @@ const path = pagePath(Astro.url.pathname);
       <a class="nav-all" href="/games/" aria-current={path === '/games/' ? 'page' : undefined}>All Games <span aria-hidden="true">→</span></a>
     </nav>
   </div>
-  <nav class="quick-links container" aria-label="Explore games"><span>Explore games</span>{games.map(game => <a href={gamePath(game.slug)}>{game.title}<span aria-hidden="true">→</span></a>)}</nav>
+  <nav class="quick-links container" aria-label="Explore games"><span>Explore games</span>{games.map(game => <a href={gamePath(game.slug)} aria-current={path === gamePath(game.slug) ? 'page' : undefined}>{game.title}</a>)}</nav>
 </header>

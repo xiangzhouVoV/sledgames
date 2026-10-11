@@ -55,10 +55,10 @@
   .header-inner nav a { min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 9px; white-space: nowrap; }
   .header-inner nav a:hover { background: #f0f5fe; }
   .header-inner nav a[aria-current='page'] { color: #125abb; background: #eaf2ff; }
-  .quick-links { display: flex; align-items: center; gap: 18px; min-height: 44px; padding-block: 4px; border-top: 1px solid #edf1f7; font-size: .8rem; overflow-x: auto; }
+  .quick-links { display: flex; align-items: center; gap: 8px; min-height: 44px; padding-block: 4px; border-top: 1px solid #edf1f7; font-size: .8rem; overflow-x: auto; }
   .quick-links > span { color: var(--muted); font-size: .75rem; flex-shrink: 0; }
-  .quick-links a { display: flex; flex-shrink: 0; align-items: center; gap: 10px; padding: 6px 12px; border-radius: 6px; font-weight: 600; white-space: nowrap; }
-  .quick-links a:hover { color: var(--blue); background: #eff5ff; }
+  .quick-links a { display: inline-flex; flex-shrink: 0; align-items: center; padding: 6px 10px; border-radius: 6px; font-weight: 600; white-space: nowrap; }
+  .quick-links a:hover, .quick-links a[aria-current='page'] { color: var(--blue); background: #eff5ff; }
   .site-footer { margin-top: 56px; padding-top: 40px; background: #e6edf7; border-top: 1px solid #d4e0ef; }
   .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 32px; }
   .footer-top p { margin-top: 14px; font-size: .875rem; }
@@ -216,7 +216,7 @@
     .header-inner nav { gap: 2px; padding: 3px 4px 6px; margin-inline: -4px; width: calc(100% + 8px); font-size: .8125rem; }
     .header-inner nav a { padding-inline: 10px; }
     .nav-all { margin-left: 4px; }
-    .quick-links { gap: 12px; min-height: 40px; overflow-x: auto; }
+    .quick-links { gap: 6px; min-height: 40px; overflow-x: auto; }
     .quick-links a { flex-shrink: 0; }
     .page-intro { padding-block: 22px 18px; }
     .page-intro .eyebrow { font-size: .625rem; }

@@ -20,7 +20,7 @@
   .christmas-page .header-inner nav a[aria-current='page'] { color: #fff2d8; background: #9e303d; }
   .christmas-page .nav-all { border-color: #bb9d6266; }
   .christmas-page .quick-links { border-top-color: #bb9d6240; }
-  .christmas-page .quick-links a:hover { color: #fff2d8; background: #294a3a; }
+  .christmas-page .quick-links a:hover, .christmas-page .quick-links a[aria-current='page'] { color: #fff2d8; background: #294a3a; }
   .christmas-page .eyebrow { color: #ebca8b; letter-spacing: .12em; }
   .christmas-page .game-stage { position: relative; z-index: 1; border-color: #bd9b65; background: #102a25; box-shadow: 0 8px 28px #041b2544; }
   .christmas-page .game-stage iframe { background: #102a25; }
