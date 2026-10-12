@@ -6,6 +6,7 @@ import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categories, c
 import astroConfig from '../astro.config.mjs';
 
 const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
+const adSenseSrc = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598323555742768';
 
 test('all pages have static content, unique metadata, and working internal links', () => {
   const titles = new Set();
@@ -28,7 +29,12 @@ test('all pages have static content, unique metadata, and working internal links
     assert.ok($('main').text().trim().length > 100, `${path}: missing static content`);
     const visibleText = $('body').clone().find('script, style').remove().end().text();
     assert.doesNotMatch(visibleText, /coming[-\s]+soon|getting\s+ready|\bempty\b|on\s+(?:the|its)\s+way|being\s+prepared|while\s+you\s+wait/i, `${path}: placeholder copy`);
-    if (!$('iframe').length) assert.equal($('script:not([type="application/ld+json"])').length, 0, `${path}: content pages should not need client scripts`);
+    const adSense = $(`script[src="${adSenseSrc}"]`);
+    assert.equal(adSense.length, 1, `${path}: exactly one AdSense script with the configured publisher`);
+    assert.ok(adSense.parent().is('head'), `${path}: AdSense script belongs in the head`);
+    assert.ok(adSense.is('[async]'));
+    assert.equal(adSense.attr('crossorigin'), 'anonymous');
+    if (!$('iframe').length) assert.equal($('script:not([type="application/ld+json"])').not(adSense).length, 0, `${path}: content pages should not need other client scripts`);
     assert.ok($('[data-ad-slot]').length <= 3);
     $('a[href^="/"]').each((_, link) => {
       const target = $(link).attr('href').split('#')[0];

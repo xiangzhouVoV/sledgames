@@ -33,6 +33,11 @@ const url = canonical(Astro.url.pathname);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
+    <script
+      is:inline
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598323555742768"
+      crossorigin="anonymous"></script>
     {schema.map(item => <script type="application/ld+json" set:html={serializeSchema(item)} />)}
   </head>
   <body class:list={{ 'play-first': playFirst, 'has-snow': snowfall, 'christmas-page': theme === 'christmas' }}>
