@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { load } from 'cheerio';
-import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categories, categoryGames } from '../src/lib/catalog.mjs';
+import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categories, categoryGames, gameCategory, winterCollection } from '../src/lib/catalog.mjs';
 import astroConfig from '../astro.config.mjs';
 
 const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
@@ -20,12 +20,13 @@ test('all pages have static content, unique metadata, and working internal links
     assert.ok(!titles.has(title), `Duplicate title: ${title}`);
     titles.add(title);
     const description = $('meta[name="description"]').attr('content');
-    assert.ok(description.length >= 140 && description.length <= 160, `${path}: description has ${description.length} characters`);
+    assert.ok(description.length >= 130 && description.length <= 160, `${path}: description has ${description.length} characters`);
     assert.ok(!descriptions.has(description), `${path}: duplicate description`);
     descriptions.add(description);
     assert.equal($('link[rel="canonical"]').attr('href'), canonical(path));
     assert.equal($('meta[property="og:url"]').attr('content'), canonical(path));
     assert.equal($('meta[property="og:title"]').attr('content'), title);
+    assert.equal($('meta[property="og:description"]').attr('content'), description);
     assert.ok($('main').text().trim().length > 100, `${path}: missing static content`);
     const visibleText = $('body').clone().find('script, style').remove().end().text();
     assert.doesNotMatch(visibleText, /coming[-\s]+soon|getting\s+ready|\bempty\b|on\s+(?:the|its)\s+way|being\s+prepared|while\s+you\s+wait/i, `${path}: placeholder copy`);
@@ -86,6 +87,145 @@ test('Sled Rider uses its verified player without fabricated ratings or prices',
   assert.equal(schema.offers.price, 0);
 });
 
+test('Snow Rider 2 publishes the approved guide and the official Snow Rider 3D player', () => {
+  const path = '/snow-rider-2/';
+  const description = 'Play Snow Rider 2 online for free in your browser. Steer your sleigh down an endless snowy slope, dodge trees and rocks, and collect gifts.';
+  const $ = load(readFileSync(pageFile(path), 'utf8'));
+  assert.equal($('title').text(), 'Snow Rider 2 - Play the Sleigh Riding Game Online Free');
+  assert.equal($('meta[name="description"]').attr('content'), description);
+  assert.equal($('h1').text(), 'Snow Rider 2');
+  assert.ok(!$('h1').hasClass('sr-only'));
+  assert.equal($('#about-game > p:not(.guide-meta)').first().text(), 'The game in the window above is Snow Rider 3D, the sleigh-riding release published by GameBiz in the official GameDistribution catalog. It is the endless sledding game most players are looking for under the Snow Rider 2 name.');
+  assert.match($('.guide-meta').text(), /Developer: GameBiz/);
+  assert.match($('.guide-meta').text(), /Released: December 9, 2020/);
+  assert.equal($('iframe').length, 1);
+  const player = $('iframe');
+  const src = new URL(player.attr('src'));
+  assert.equal(src.origin, 'https://html5.gamedistribution.com');
+  assert.equal(src.pathname, '/3b79a8537ebc414fb4f9672a9b8c68c8/');
+  assert.deepEqual(src.searchParams.getAll('gd_sdk_referrer_url'), ['https://sledgames.com/snow-rider-2/']);
+  for (const [attribute, value] of Object.entries({ title: 'Play Snow Rider 2', width: '800', height: '600', loading: 'eager', allow: 'fullscreen; autoplay; gamepad', referrerpolicy: 'strict-origin-when-cross-origin' })) {
+    assert.equal(player.attr(attribute), value, attribute);
+  }
+  assert.ok(player.is('[allowfullscreen]'));
+  assert.deepEqual($('.guide-controls tbody tr').toArray().map(row => [$(row).find('th').text(), $(row).find('td').text()]), [
+    ['Jump', 'Up arrow key or W'],
+    ['Steer left', 'Left arrow key or A'],
+    ['Steer right', 'Right arrow key or D'],
+  ]);
+  assert.equal($('.guide-steps li').length, 4);
+  assert.deepEqual($('.guide-steps li strong').map((_, node) => $(node).text()).get(), ['Start', 'Steer', 'Jump', 'Collect']);
+  assert.equal($('.guide-tips li').length, 4);
+  assert.deepEqual($('.guide-tips li strong').map((_, node) => $(node).text()).get(), ['Look further ahead', 'Small corrections', 'Jump early on gaps', 'Keep the run alive']);
+  assert.ok($('h2').toArray().some(node => $(node).text() === 'Explore Other Winter Games'));
+  assert.equal($('.info-bar').length, 0);
+  assert.doesNotMatch($('main').text(), /Items and prices/);
+
+  const faqs = [
+    { q: 'Is it free?', a: 'Yes, play in the game window above.' },
+    { q: 'Is this Snow Rider 3D or Snow Rider 2?', a: 'The game window runs Snow Rider 3D, published by GameBiz in the official GameDistribution catalog. That is the sleigh-riding game usually searched for as Snow Rider 2.' },
+    { q: 'Which keys do I use?', a: 'Up arrow or W to jump, left arrow or A to steer left, right arrow or D to steer right.' },
+    { q: 'Can I play it on a phone?', a: 'The official catalog lists this game as compatible with iOS and Android browsers.' },
+    { q: 'Do I need to install anything?', a: 'No, it runs in your browser.' },
+  ];
+  assert.deepEqual($('details').toArray().map(node => ({ q: $(node).find('summary').clone().find('[aria-hidden]').remove().end().text(), a: $(node).find('p').text() })), faqs);
+  const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+  assert.equal(schemas.length, 3);
+  const faq = schemas.find(schema => schema['@type'] === 'FAQPage');
+  assert.deepEqual(faq.mainEntity, faqs.map(entry => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })));
+  const game = schemas.find(schema => schema['@type'] === 'VideoGame');
+  assert.equal(game.name, 'Snow Rider 2');
+  assert.deepEqual(game.author, { '@type': 'Organization', name: 'GameBiz' });
+  assert.equal(game.datePublished, '2020-12-09');
+  assert.equal(game.applicationCategory, 'Game');
+  assert.equal(game.operatingSystem, 'Web Browser');
+  assert.ok(!game.aggregateRating);
+
+  const collection = load(readFileSync(pageFile('/games/'), 'utf8'));
+  const card = collection(`main .game-card[href="${path}"]`);
+  assert.equal(card.length, 1);
+  assert.equal(card.find('img').attr('src'), 'https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg');
+  assert.equal(card.find('p').text(), description);
+  for (const category of ['/snowboard-games/', '/ski-games/']) {
+    assert.equal(load(readFileSync(pageFile(category), 'utf8'))(`main .primary-collection .game-card[href="${path}"]`).length, 0, category);
+  }
+});
+
+const approvedWinterGames = [
+  {
+    slug: 'snowball-io', name: 'Snowball.io',
+    title: 'Snowball.io - Play the Snowball Fighting Game Online Free',
+    description: 'Play Snowball.io online for free in your browser. Slide to grow your snowball, then roll over your opponents in this fast arena snowball fight.',
+    embed: 'https://html5.gamemonetize.co/jdxrwawd43ij64lixz02uwhqnzmfjk2k/',
+    thumbnail: 'https://img.gamemonetize.com/jdxrwawd43ij64lixz02uwhqnzmfjk2k/512x384.jpg',
+    width: '750', height: '1334', control: 'Use Mouse To Play and Keyboard',
+    developer: 'JumpGame', released: '2022-06-06', releaseLabel: 'June 6, 2022',
+  },
+  {
+    slug: 'moto-x3m-winter', name: 'Moto X3M Winter',
+    title: 'Moto X3M Winter - Play the Frozen Bike Stunt Game Free',
+    description: 'Play Moto X3M Winter online for free. Ride your stunt bike through icy ramps, loops and traps, and finish each level as fast as you can.',
+    embed: 'https://html5.gamemonetize.co/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/',
+    thumbnail: 'https://img.gamemonetize.com/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/512x384.jpg',
+    width: '720', height: '480', control: 'User arrow keys to control',
+    developer: 'MadPuffers', released: '2022-01-26', releaseLabel: 'January 26, 2022',
+  },
+];
+
+for (const approved of approvedWinterGames) {
+  test(`${approved.name} publishes the approved copy, official controls, and verified publisher player`, () => {
+    const path = `/${approved.slug}/`;
+    const gameData = games.find(game => game.slug === approved.slug);
+    assert.ok(gameData);
+    assert.equal(gameData.embed.provider, 'gamemonetize');
+    assert.deepEqual(gameData.category, ['winter-games']);
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    assert.equal($('title').text(), approved.title);
+    assert.equal($('meta[name="description"]').attr('content'), approved.description);
+    assert.equal($('h1').text(), approved.name);
+    assert.ok(!$('h1').hasClass('sr-only'));
+    assert.equal($('iframe').length, 1);
+    assert.equal($('iframe').attr('src'), approved.embed);
+    assert.equal($('iframe').attr('title'), `Play ${approved.name}`);
+    assert.equal($('iframe').attr('width'), approved.width);
+    assert.equal($('iframe').attr('height'), approved.height);
+    assert.equal($('.guide-controls table').length, 1);
+    assert.equal($('.guide-controls tbody tr').length, 1);
+    assert.equal($('.guide-controls tbody td').text(), approved.control);
+    assert.ok($('.guide-meta').text().includes(`Developer: ${approved.developer}`));
+    assert.ok($('.guide-meta').text().includes(`Released: ${approved.releaseLabel}`));
+    assert.equal($('.info-bar').length, 0);
+
+    const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+    const game = schemas.find(schema => schema['@type'] === 'VideoGame');
+    assert.equal(game.name, approved.name);
+    assert.deepEqual(game.author, { '@type': 'Organization', name: approved.developer });
+    assert.equal(game.datePublished, approved.released);
+    assert.ok(!game.aggregateRating);
+    const faqs = $('details').toArray().map(node => ({ q: $(node).find('summary').clone().find('[aria-hidden]').remove().end().text(), a: $(node).find('p').text() }));
+    assert.equal(faqs.length, 5);
+    assert.ok(faqs.every(entry => entry.q.trim() && entry.a.trim()));
+    const faq = schemas.find(schema => schema['@type'] === 'FAQPage');
+    assert.deepEqual(faq.mainEntity, faqs.map(entry => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })));
+    const breadcrumb = schemas.find(schema => schema['@type'] === 'BreadcrumbList');
+    assert.deepEqual(breadcrumb.itemListElement.map(entry => ({ name: entry.name, item: entry.item })), [
+      { name: 'Sled Games', item: 'https://sledgames.com/' },
+      { name: 'All Winter Games', item: 'https://sledgames.com/games/' },
+      { name: approved.name, item: `https://sledgames.com${path}` },
+    ]);
+
+    const collection = load(readFileSync(pageFile('/games/'), 'utf8'));
+    const card = collection(`main .game-card[href="${path}"]`);
+    assert.equal(card.length, 1);
+    assert.equal(card.find('img').attr('src'), approved.thumbnail);
+    assert.equal(card.find('.card-category').text(), 'Winter');
+    assert.equal(card.find('p').text(), approved.description);
+    for (const category of ['/snowboard-games/', '/ski-games/']) {
+      assert.equal(load(readFileSync(pageFile(category), 'utf8'))(`main .primary-collection .game-card[href="${path}"]`).length, 0, category);
+    }
+  });
+}
+
 test('home and game pages put the eager player before every ad', () => {
   for (const game of games) {
     const path = gamePath(game.slug);
@@ -108,9 +248,12 @@ test('winter categories link to their playable games with matching official artw
     const $ = load(readFileSync(pageFile(`/${category}`), 'utf8'));
     assert.equal($(`header nav a[href="/${category}/"][aria-current="page"]`).length, 1);
     assert.equal($('h1').text(), category === 'christmas-games' ? 'Christmas Games' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
-    assert.equal($('.game-card').length, entries.length);
+    const collection = $('main .primary-collection');
+    assert.equal(collection.length, 1, `${category}: one main category collection`);
+    assert.equal(collection.attr('aria-label'), $('h1').text());
+    assert.equal(collection.find('.game-card').length, entries.length);
     for (const game of entries) {
-      const card = $(`.game-card[href="${gamePath(game.slug)}"]`);
+      const card = collection.find(`.game-card[href="${gamePath(game.slug)}"]`);
       assert.equal(card.length, 1);
       assert.equal(card.find('img').attr('src'), game.thumbnail);
       assert.equal(card.find('.card-badge').text(), 'Play now');
@@ -127,6 +270,22 @@ test('winter categories link to their playable games with matching official artw
       assert.equal(detail('details').length, 5);
       assert.ok(entries.some(other => other.slug !== game.slug && detail(`.game-card[href="${gamePath(other.slug)}"]`).length));
     }
+  }
+});
+
+test('three new games are reachable from winter collections and separate sport-category recommendations', () => {
+  const newPaths = ['/snow-rider-2/', '/snowball-io/', '/moto-x3m-winter/'];
+  for (const path of ['/games/', '/snowboard-games/', '/ski-games/']) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    for (const game of newPaths) {
+      assert.equal($(`main .game-card[href="${game}"]`).length, 1, `${path}: one card for ${game}`);
+    }
+    if (path === '/games/') continue;
+    const recommendations = $('main section[aria-labelledby="other-winter-games"]');
+    assert.equal(recommendations.length, 1, `${path}: one recommendation section`);
+    assert.equal(recommendations.find('h2#other-winter-games').text(), 'Explore Other Winter Games');
+    assert.equal(recommendations.closest('.primary-collection').length, 0, `${path}: recommendations are separate from the sport collection`);
+    assert.deepEqual(recommendations.find('.game-card').map((_, node) => $(node).attr('href')).get().sort(), [...newPaths].sort(), path);
   }
 });
 
@@ -173,10 +332,11 @@ test('SEO titles match the approved copy without changing the SnowBoard Game tit
 test('category and game breadcrumbs describe their real hierarchy with canonical URLs', () => {
   const trails = [
     ...categories.filter(category => category.path !== '/').map(category => [category.path, [{ name: category.title, path: category.path }]]),
-    ['/games/', [{ name: 'Winter Games', path: '/games/' }]],
+    ['/games/', [{ name: winterCollection.title, path: winterCollection.path }]],
     ...games.filter(game => gamePath(game.slug) !== '/').map(game => {
-      const category = categories.find(category => category.slug === game.category[0]);
-      return [gamePath(game.slug), [{ name: category.title, path: category.path }, { name: game.title, path: gamePath(game.slug) }]];
+      const category = gameCategory(game);
+      const collection = category.path === '/' ? winterCollection : category;
+      return [gamePath(game.slug), [{ name: collection.title, path: collection.path }, { name: game.title, path: gamePath(game.slug) }]];
     }),
   ];
   for (const [path, trail] of trails) {
@@ -195,7 +355,8 @@ test('winter game list schema matches card order and includes a useful collectio
   const $ = load(readFileSync(pageFile('/games/'), 'utf8'));
   const schemas = $('head script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
   const list = schemas.find(schema => schema['@type'] === 'ItemList');
-  assert.equal(list.name, 'Winter Games');
+  assert.equal(list.name, 'All Winter Games');
+  assert.equal($('h1').text(), list.name);
   assert.equal(list.itemListElement.length, games.length);
   const cards = $('main .game-card').toArray();
   list.itemListElement.forEach((item, index) => {

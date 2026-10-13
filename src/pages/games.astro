@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import GameGrid from '../components/GameGrid.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
-import { games, itemListSchema, breadcrumbSchema } from '../lib/catalog.mjs';
+import { games, winterCollection, itemListSchema, breadcrumbSchema } from '../lib/catalog.mjs';
 ---
-<Layout title={'All Winter Games - Play Free Sledding, Ski & Snowboard Games'} description="Browse free winter games online. Explore sledding, snowboard, ski, and Christmas games, find controls and guides, and choose your next browser adventure." schema={[itemListSchema(games), breadcrumbSchema([{ name: 'Winter Games', path: '/games/' }])]}>
-  <section class="page-intro"><span class="eyebrow">THE WHOLE MOUNTAIN</span><h1>All Winter Games</h1><p>Every adventure, in one place. Pick your next stop.</p></section>
+<Layout title={'All Winter Games - Play Free Sledding, Ski & Snowboard Games'} description="Browse free winter games online. Explore sledding, snowboard, ski, and Christmas games, find controls and guides, and choose your next browser adventure." schema={[itemListSchema(games), breadcrumbSchema([{ name: winterCollection.title, path: winterCollection.path }])]}>
+  <section class="page-intro"><span class="eyebrow">THE WHOLE MOUNTAIN</span><h1>{winterCollection.title}</h1><p>Every adventure, in one place. Pick your next stop.</p></section>
   <section class="content-section"><GameGrid games={games} /></section>
   <section class="content-section prose" aria-labelledby="winter-games-guide">
     <h2 id="winter-games-guide">Find your next winter game</h2>

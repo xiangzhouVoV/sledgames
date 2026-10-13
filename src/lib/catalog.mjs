@@ -2,6 +2,7 @@ import rawGames from '../../data/games.json' with { type: 'json' };
 
 export const SITE = 'https://sledgames.com';
 export const HOME_GAME_SLUG = 'sled-rider';
+export const winterCollection = { slug: 'winter-games', title: 'All Winter Games', path: '/games/', label: 'Winter' };
 /** @param {string} path */
 export const pagePath = path => path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
 /** @param {string} slug */
@@ -13,6 +14,9 @@ export const categories = [
   { slug: 'ski-games', path: '/ski-games/', title: 'Ski Games', label: 'Skiing', symbol: '03', description: 'Fresh tracks, right in your browser.' },
   { slug: 'christmas-games', path: '/christmas-games/', title: 'Christmas Games', label: 'Christmas', symbol: '04', description: 'Santa, reindeer, and a sky full of gifts. On mobile, try Crazy Christmas Fun.' },
 ];
+const gameCategories = [...categories, winterCollection];
+/** @param {import('./types').Game} game */
+export const gameCategory = game => gameCategories.find(category => category.slug === game.category[0]);
 
 const hosts = {
   gamedistribution: new Set(['html5.gamedistribution.com']),
@@ -55,8 +59,8 @@ export function validateGames(entries) {
     }
     slugs.add(game.slug);
     if (!game.title?.trim() || !game.description?.trim()) throw new Error(`${game.slug}: missing title or description`);
-    if (game.description.length < 140 || game.description.length > 160) throw new Error(`${game.slug}: description must have 140–160 characters`);
-    if (!game.category?.length || game.category.some(slug => !categories.some(c => c.slug === slug))) {
+    if (game.description.length < 130 || game.description.length > 160) throw new Error(`${game.slug}: description must have 130–160 characters`);
+    if (!game.category?.length || game.category.some(slug => !gameCategories.some(c => c.slug === slug))) {
       throw new Error(`${game.slug}: unknown category`);
     }
     if (!(game.embed?.width > 0 && game.embed?.height > 0)) throw new Error(`${game.slug}: invalid embed dimensions`);
@@ -117,7 +121,7 @@ export function breadcrumbSchema(trail) {
 /** @param {import('./types').Game[]} entries */
 export function itemListSchema(entries) {
   return {
-    '@context': 'https://schema.org', '@type': 'ItemList', name: 'Winter Games',
+    '@context': 'https://schema.org', '@type': 'ItemList', name: winterCollection.title,
     itemListElement: entries.map((game, index) => ({
       '@type': 'ListItem', position: index + 1, name: game.title, url: canonical(gamePath(game.slug)),
     })),

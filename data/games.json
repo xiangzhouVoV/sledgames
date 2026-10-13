@@ -592,5 +592,270 @@
       "publishing": "https://gamemonetize.com/faq",
       "terms": "https://gamemonetize.com/termofuse.php"
     }
+  },
+  {
+    "slug": "snow-rider-2",
+    "title": "Snow Rider 2",
+    "seoTitle": "Snow Rider 2 - Play the Sleigh Riding Game Online Free",
+    "category": [
+      "sledding-games"
+    ],
+    "genres": [
+      "Sleigh riding",
+      "Endless runner"
+    ],
+    "description": "Play Snow Rider 2 online for free in your browser. Steer your sleigh down an endless snowy slope, dodge trees and rocks, and collect gifts.",
+    "intro": "The game in the window above is Snow Rider 3D, the sleigh-riding release published by GameBiz in the official GameDistribution catalog. It is the endless sledding game most players are looking for under the Snow Rider 2 name.\n\nYou steer a sleigh down a snowy track that keeps going. Trees, rocks, snowmen and rolling snowballs come at you, and you jump over logs and gaps. Gifts along the route can be collected as you go, and the further you ride the higher your score climbs.",
+    "howToPlay": [
+      "Start: Click play inside the game window.",
+      "Steer: Move toward the clear spaces on the snowy track.",
+      "Jump: Jump over logs and gaps.",
+      "Collect: Pick up gifts along a safe route."
+    ],
+    "tips": [
+      "Look further ahead: Read the next few obstacles before deciding which way to steer.",
+      "Small corrections: Tap the direction keys instead of holding them down.",
+      "Jump early on gaps: Leave enough room to land and straighten your route.",
+      "Keep the run alive: Riding further is worth more than risking a crash for one gift."
+    ],
+    "controls": [
+      {
+        "action": "Jump",
+        "input": "Up arrow key or W"
+      },
+      {
+        "action": "Steer left",
+        "input": "Left arrow key or A"
+      },
+      {
+        "action": "Steer right",
+        "input": "Right arrow key or D"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is it free?",
+        "a": "Yes, play in the game window above."
+      },
+      {
+        "q": "Is this Snow Rider 3D or Snow Rider 2?",
+        "a": "The game window runs Snow Rider 3D, published by GameBiz in the official GameDistribution catalog. That is the sleigh-riding game usually searched for as Snow Rider 2."
+      },
+      {
+        "q": "Which keys do I use?",
+        "a": "Up arrow or W to jump, left arrow or A to steer left, right arrow or D to steer right."
+      },
+      {
+        "q": "Can I play it on a phone?",
+        "a": "The official catalog lists this game as compatible with iOS and Android browsers."
+      },
+      {
+        "q": "Do I need to install anything?",
+        "a": "No, it runs in your browser."
+      }
+    ],
+    "similar": [
+      "sled-rider",
+      "downhill-snowboard",
+      "snowboard-game",
+      "ski-king",
+      "ski-rush"
+    ],
+    "embed": {
+      "provider": "gamedistribution",
+      "iframeSrc": "https://html5.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8/?gd_sdk_referrer_url=https://sledgames.com/snow-rider-2/",
+      "width": 800,
+      "height": 600
+    },
+    "developer": "GameBiz",
+    "released": "2020-12-09",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg",
+    "sources": {
+      "intro": "https://gamedistribution.com/games/snow-rider-3d/",
+      "howToPlay": "https://gamedistribution.com/games/snow-rider-3d/",
+      "tips": "https://gamedistribution.com/games/snow-rider-3d/",
+      "controls": "https://gamedistribution.com/games/snow-rider-3d/",
+      "faqs": "https://gamedistribution.com/games/snow-rider-3d/",
+      "embed": "https://gamedistribution.com/games/snow-rider-3d/",
+      "developer": "https://gamedistribution.com/games/snow-rider-3d/",
+      "released": "https://gamedistribution.com/games/snow-rider-3d/",
+      "thumbnail": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg"
+    }
+  },
+  {
+    "slug": "snowball-io",
+    "title": "Snowball.io",
+    "seoTitle": "Snowball.io - Play the Snowball Fighting Game Online Free",
+    "category": [
+      "winter-games"
+    ],
+    "genres": [
+      "3D",
+      "Arena",
+      "Fighting"
+    ],
+    "description": "Play Snowball.io online for free in your browser. Slide to grow your snowball, then roll over your opponents in this fast arena snowball fight.",
+    "intro": "Snowball.io is a 3D snowball-fighting game published by JumpGame in the official GameMonetize catalog. Slide to control your character, roll a bigger snowball, and eliminate opponents in the arena.\n\nThe longer you roll, the larger your snowball becomes. Read the in-game controls before starting, then choose your path while watching the opponents around you.",
+    "howToPlay": [
+      "Start: Open the game window and follow its start prompt.",
+      "Move: Follow the game's mouse and keyboard instructions to control your character.",
+      "Grow: Keep rolling to build a larger snowball.",
+      "Fight: Use your growing snowball to eliminate opponents in the arena."
+    ],
+    "tips": [
+      "Grow before engaging: Roll to increase the size of your snowball before approaching an opponent.",
+      "Watch the arena: Look at the opponents around you before changing your route.",
+      "Plan your approach: Choose a route that gives you time to build your snowball.",
+      "Check the controls: Follow the in-game prompts rather than assuming a particular keyboard shortcut."
+    ],
+    "controls": [
+      {
+        "action": "Control your character",
+        "input": "Use Mouse To Play and Keyboard"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is it free?",
+        "a": "Yes, play in the game window above."
+      },
+      {
+        "q": "Which controls do I use?",
+        "a": "The official catalog says: Use Mouse To Play and Keyboard. Follow the instructions in the game window for its controls."
+      },
+      {
+        "q": "What is the goal?",
+        "a": "Roll to grow your snowball and eliminate opponents in the arena."
+      },
+      {
+        "q": "Can I play it on a phone?",
+        "a": "The official GameMonetize catalog lists this game as mobile ready."
+      },
+      {
+        "q": "Do I need to install anything?",
+        "a": "No, it runs in your browser."
+      }
+    ],
+    "similar": [
+      "sled-rider",
+      "downhill-snowboard",
+      "snowboard-game",
+      "ski-king",
+      "ski-rush"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/jdxrwawd43ij64lixz02uwhqnzmfjk2k/",
+      "width": 750,
+      "height": 1334
+    },
+    "developer": "JumpGame",
+    "released": "2022-06-06",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/jdxrwawd43ij64lixz02uwhqnzmfjk2k/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/snowball-io-game-game",
+      "howToPlay": "https://gamemonetize.com/snowball-io-game-game",
+      "tips": "https://gamemonetize.com/snowball-io-game-game",
+      "controls": "https://gamemonetize.com/snowball-io-game-game",
+      "faqs": "https://gamemonetize.com/snowball-io-game-game",
+      "embed": "https://gamemonetize.com/snowball-io-game-game",
+      "developer": "https://gamemonetize.com/snowball-io-game-game",
+      "released": "https://gamemonetize.com/snowball-io-game-game",
+      "thumbnail": "https://img.gamemonetize.com/jdxrwawd43ij64lixz02uwhqnzmfjk2k/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "moto-x3m-winter",
+    "title": "Moto X3M Winter",
+    "seoTitle": "Moto X3M Winter - Play the Frozen Bike Stunt Game Free",
+    "category": [
+      "winter-games"
+    ],
+    "genres": [
+      "Racing",
+      "Sports"
+    ],
+    "description": "Play Moto X3M Winter online for free. Ride your stunt bike through icy ramps, loops and traps, and finish each level as fast as you can.",
+    "intro": "Moto X3M Winter is a winter motorcycle stunt game from MadPuffers. Ride through courses filled with ramps, traps, explosives and obstacles, and try to finish each level as quickly as you can.\n\nFast finishes earn stars that can unlock new riders. The official description also lists front and back flips as a way to earn a time bonus. Check the instructions in the game window before attempting a stunt.",
+    "howToPlay": [
+      "Start: Follow the prompts in the game window to begin a course.",
+      "Ride: Use the arrow keys according to the in-game control instructions.",
+      "Navigate: Guide your bike through ramps, traps, explosives and obstacles.",
+      "Finish: Reach the end as quickly as you can to earn stars."
+    ],
+    "tips": [
+      "Learn the course: Notice the ramps and obstacles before pushing for a faster finish.",
+      "Improve one section: Practice a difficult stretch before trying to shorten the whole run.",
+      "Use flips deliberately: Attempt a flip when the route gives you room. The official description lists front and back flips as a way to earn a time bonus.",
+      "Collect stars: Work on quicker finishes to earn stars and unlock new riders."
+    ],
+    "controls": [
+      {
+        "action": "Control the bike",
+        "input": "User arrow keys to control"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is it free?",
+        "a": "Yes, play in the game window above."
+      },
+      {
+        "q": "Which controls do I use?",
+        "a": "The official catalog says: User arrow keys to control. Follow the in-game instructions for each arrow key."
+      },
+      {
+        "q": "What are stars for?",
+        "a": "Stars earned from your runs can unlock new riders."
+      },
+      {
+        "q": "Can I play it on a phone?",
+        "a": "The official GameMonetize catalog lists this game as mobile ready."
+      },
+      {
+        "q": "Do I need to install anything?",
+        "a": "No, it runs in your browser."
+      }
+    ],
+    "similar": [
+      "sled-rider",
+      "downhill-snowboard",
+      "snowboard-game",
+      "ski-king",
+      "ski-rush"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/",
+      "width": 720,
+      "height": 480
+    },
+    "developer": "MadPuffers",
+    "released": "2022-01-26",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/moto-x3m-winter-game",
+      "howToPlay": "https://gamemonetize.com/moto-x3m-winter-game",
+      "tips": "https://gamemonetize.com/moto-x3m-winter-game",
+      "controls": "https://gamemonetize.com/moto-x3m-winter-game",
+      "faqs": "https://gamemonetize.com/moto-x3m-winter-game",
+      "embed": "https://gamemonetize.com/moto-x3m-winter-game",
+      "developer": "https://gamemonetize.com/moto-x3m-winter-game",
+      "released": "https://gamemonetize.com/moto-x3m-winter-game",
+      "thumbnail": "https://img.gamemonetize.com/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
   }
 ]

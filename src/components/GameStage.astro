@@ -2,11 +2,13 @@
 import { canonical, embedUrl } from '../lib/catalog.mjs';
 import type { Game } from '../lib/types';
 import WinterScene from './WinterScene.astro';
-interface Props { game: Game; eager?: boolean }
-const { game, eager = false } = Astro.props;
+interface Props { game: Game; eager?: boolean; fitAspectRatio?: boolean }
+const { game, eager = false, fitAspectRatio = false } = Astro.props;
 const src = embedUrl(game, canonical(Astro.url.pathname));
+const portrait = game.embed.height > game.embed.width;
+const fitted = portrait || fitAspectRatio;
 ---
-<section class="game-stage" aria-label={`${game.title} game window`}>
+<section class:list={['game-stage', { 'game-stage--portrait': portrait, 'game-stage--fitted': fitted }]} style={fitted ? `--game-ratio: ${game.embed.width / game.embed.height}` : undefined} aria-label={`${game.title} game window`}>
   {src ? <iframe src={src} title={`Play ${game.title}`} width={game.embed.width} height={game.embed.height} loading={eager ? 'eager' : 'lazy'} allow="fullscreen; autoplay; gamepad" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" /> :
     <div class="game-pending">
       <WinterScene id={`stage-${game.slug}`} class="stage-scene" />

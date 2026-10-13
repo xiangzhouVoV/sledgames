@@ -1,11 +1,11 @@
 ---
 import type { Game } from '../lib/types';
 import WinterScene from './WinterScene.astro';
-import { categories, gamePath } from '../lib/catalog.mjs';
+import { gameCategory, gamePath } from '../lib/catalog.mjs';
 interface Props { games: Game[] }
 const { games } = Astro.props;
 ---
 {games.length > 0 && <div class="game-grid">{games.map(game => <a class="game-card" href={gamePath(game.slug)}>
   <div class="card-art">{game.thumbnail ? <img src={game.thumbnail} width="480" height="300" loading="lazy" alt="" /> : <WinterScene id={`card-${game.slug}`} class="card-scene" />}{game.embed.iframeSrc && <span class="card-badge card-badge--available">Play now</span>}</div>
-  <div class="card-copy"><h3>{game.title}<span aria-hidden="true">→</span></h3><span class="card-category">{categories.find(category => category.slug === game.category[0])?.label}</span>{game.intro && <p>{game.intro}</p>}</div>
+  <div class="card-copy"><h3>{game.title}<span aria-hidden="true">→</span></h3><span class="card-category">{gameCategory(game)?.label}</span>{game.description && <p>{game.description}</p>}</div>
 </a>)}</div>}

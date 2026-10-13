@@ -1,0 +1,43 @@
+{
+  "checkedOn": "2026-10-13",
+  "scope": "Task B, local implementation only; not deployed",
+  "source": "https://gamedistribution.com/games/snow-rider-3d/",
+  "localHttpStatus": 200,
+  "title": "Snow Rider 2 - Play the Sleigh Riding Game Online Free",
+  "description": "Play Snow Rider 2 online for free in your browser. Steer your sleigh down an endless snowy slope, dodge trees and rocks, and collect gifts.",
+  "descriptionLength": 139,
+  "canonical": "https://sledgames.com/snow-rider-2/",
+  "h1Count": 1,
+  "iframeSrc": "https://html5.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8/?gd_sdk_referrer_url=https%3A%2F%2Fsledgames.com%2Fsnow-rider-2%2F",
+  "gdReferrerParameterCount": 1,
+  "adSenseScriptCount": 1,
+  "breadcrumbSchemaCount": 1,
+  "faqCount": 5,
+  "headerGameLinkCount": 8,
+  "footerGameLinkCount": 8,
+  "collectionCardCount": 1,
+  "sitemapUrlCount": 17,
+  "sitemapGameUrlCount": 1,
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "unitAndBuildTests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "realPlayerCheck": {
+    "context": "Chrome, real iframe within the local preview, with the requested production gd_sdk_referrer_url preserved",
+    "status": "blocked",
+    "redirectedTo": "https://html5.api.gamedistribution.com/blocked.html?domain=sledgames.com&id=3b79a8537ebc414fb4f9672a9b8c68c8&img=https%3A%2F%2Fimg.gamedistribution.com%2F3b79a8537ebc414fb4f9672a9b8c68c8-512x512.jpg&title=Snow%20Rider%203D&unregistered=true&utm_source=sledgames.com&utm_medium=snow-rider-3d&utm_campaign=block-and-redirect",
+    "domain": "sledgames.com",
+    "unregistered": true,
+    "gameplayVerified": false
+  },
+  "browserRegressionTests": {
+    "passed": 15,
+    "failed": 0,
+    "playerFixture": true
+  }
+}

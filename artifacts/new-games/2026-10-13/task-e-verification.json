@@ -1,0 +1,159 @@
+{
+  "checkedOn": "2026-10-13",
+  "scope": "Task E local links and sitemap complete; deployment and GSC submission pending",
+  "headerGameLinkCount": 10,
+  "footerGameLinkCount": 10,
+  "collections": [
+    {
+      "path": "/games/",
+      "title": "All Winter Games",
+      "primaryCards": [],
+      "recommendationCards": [],
+      "allMainCardCount": 10,
+      "newGameCardCounts": {
+        "snow-rider-2": 1,
+        "snowball-io": 1,
+        "moto-x3m-winter": 1
+      }
+    },
+    {
+      "path": "/snowboard-games/",
+      "title": "Snowboard Games",
+      "primaryCards": [
+        "/downhill-snowboard/",
+        "/snowboard-game/"
+      ],
+      "recommendationCards": [
+        "/snow-rider-2/",
+        "/snowball-io/",
+        "/moto-x3m-winter/"
+      ],
+      "allMainCardCount": 5,
+      "newGameCardCounts": {
+        "snow-rider-2": 1,
+        "snowball-io": 1,
+        "moto-x3m-winter": 1
+      }
+    },
+    {
+      "path": "/ski-games/",
+      "title": "Ski Games",
+      "primaryCards": [
+        "/ski-king/",
+        "/ski-rush/"
+      ],
+      "recommendationCards": [
+        "/snow-rider-2/",
+        "/snowball-io/",
+        "/moto-x3m-winter/"
+      ],
+      "allMainCardCount": 5,
+      "newGameCardCounts": {
+        "snow-rider-2": 1,
+        "snowball-io": 1,
+        "moto-x3m-winter": 1
+      }
+    }
+  ],
+  "sitemapUrlCount": 19,
+  "sitemapNewGameCounts": {
+    "snow-rider-2": 1,
+    "snowball-io": 1,
+    "moto-x3m-winter": 1
+  },
+  "sitemapTrailingSlashes": true,
+  "sitemapUniqueUrls": true,
+  "incomingPublicPages": {
+    "snow-rider-2": 18,
+    "snowball-io": 18,
+    "moto-x3m-winter": 18
+  },
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "unitAndBuildTests": {
+    "passed": 22,
+    "failed": 0
+  },
+  "browserRegressionTests": {
+    "passed": 21,
+    "failed": 0,
+    "playerFixture": true
+  },
+  "productionBeforeDeployment": [
+    {
+      "url": "https://sledgames.com/snow-rider-2/",
+      "status": 404
+    },
+    {
+      "url": "https://sledgames.com/snowball-io/",
+      "status": 404
+    },
+    {
+      "url": "https://sledgames.com/moto-x3m-winter/",
+      "status": 404
+    },
+    {
+      "url": "https://sledgames.com/sitemap.xml",
+      "status": 200,
+      "urlCount": 16,
+      "trailingSlashes": true,
+      "newGameUrlCount": 0
+    },
+    {
+      "url": "https://sledgames.com/ads.txt",
+      "status": 200,
+      "publisherLineMatches": true
+    },
+    {
+      "url": "https://sledgames.com/snowboard-games/",
+      "status": 200,
+      "winterRecommendationHeadingCount": 0
+    },
+    {
+      "url": "https://sledgames.com/ski-games/",
+      "status": 200,
+      "winterRecommendationHeadingCount": 0
+    }
+  ],
+  "deployment": {
+    "executed": false,
+    "cloudflareProject": "not supplied or identifiable from repository",
+    "githubCliAuthenticated": false,
+    "wranglerInstalled": false,
+    "cloudflareAccountAccess": "Auto-review rejected opening the dashboard; awaiting explicit read-only authorization",
+    "gscSubmitted": false
+  },
+  "releaseCheck": {
+    "passed": false,
+    "publicContactConfigured": false,
+    "missingLegacyGamesOutsideThisDocument": [
+      "snow-drift",
+      "slope-rider-2",
+      "ski-simulator",
+      "snowboard-simulator"
+    ],
+    "legacyRelatedLinkRequirementsNotMet": [
+      "sled-rider",
+      "downhill-snowboard",
+      "snowboard-game",
+      "ski-king",
+      "ski-rush",
+      "santa-collecting-gifts",
+      "crazy-christmas-fun"
+    ],
+    "note": "Existing release conditions were not disabled or replaced."
+  },
+  "remainingRuntimeIssues": [
+    {
+      "slug": "snow-rider-2",
+      "status": "GameDistribution SDK reports sledgames.com as unregistered"
+    },
+    {
+      "slug": "snowball-io",
+      "status": "This environment did not reach gameplay; game backend requests failed"
+    }
+  ]
+}

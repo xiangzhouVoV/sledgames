@@ -1,0 +1,81 @@
+{
+  "checkedOn": "2026-10-13",
+  "scope": "Task D, local implementation only; not deployed",
+  "source": "https://gamemonetize.com/moto-x3m-winter-game",
+  "officialCatalog": {
+    "title": "Moto X3M Winter",
+    "developer": "MadPuffers",
+    "published": "2022-01-26",
+    "categories": [
+      "Racing",
+      "Sports"
+    ],
+    "controls": "User arrow keys to control",
+    "mobileReady": true,
+    "width": 420,
+    "height": 480,
+    "sourceHttpStatus": 200,
+    "embedHttpStatus": 200,
+    "thumbnailHttpStatus": 200
+  },
+  "localHttpStatus": 200,
+  "title": "Moto X3M Winter - Play the Frozen Bike Stunt Game Free",
+  "description": "Play Moto X3M Winter online for free. Ride your stunt bike through icy ramps, loops and traps, and finish each level as fast as you can.",
+  "descriptionLength": 136,
+  "canonical": "https://sledgames.com/moto-x3m-winter/",
+  "h1Count": 1,
+  "iframeSrc": "https://html5.gamemonetize.co/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/",
+  "iframeDimensions": {
+    "width": 720,
+    "height": 480
+  },
+  "adSenseScriptCount": 1,
+  "breadcrumbSchemaCount": 1,
+  "faqCount": 5,
+  "controlRowCount": 1,
+  "controls": "User arrow keys to control",
+  "headerGameLinkCount": 10,
+  "footerGameLinkCount": 10,
+  "categoryCardCount": 4,
+  "collectionCardCount": 1,
+  "collectionLabel": "Winter",
+  "sitemapUrlCount": 19,
+  "sitemapGameUrlCount": 1,
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "unitAndBuildTests": {
+    "passed": 21,
+    "failed": 0
+  },
+  "browserRegressionTests": {
+    "passed": 19,
+    "failed": 0,
+    "playerFixture": true
+  },
+  "aspectRatioAndFullscreenFollowupTests": {
+    "passed": 5,
+    "failed": 0,
+    "playerFixture": true
+  },
+  "realPlayerCheck": {
+    "chrome": {
+      "context": "Direct official embed in temporary Chrome",
+      "menuVerified": true,
+      "firstLevelVerified": true,
+      "observedPrompt": "Use arrows to move",
+      "pageErrors": []
+    },
+    "localIframe": {
+      "context": "Real iframe within the local preview in Codex in-app browser",
+      "menuVerified": true,
+      "observedCanvasWidth": 720,
+      "observedCanvasHeight": 480
+    },
+    "presentation": "The player fits the observed landscape canvas ratio, rather than the catalog default dimensions.",
+    "gameplayVerified": true,
+    "screenshot": "artifacts/new-games/2026-10-13/moto-x3m-winter-playing.png"
+  }
+}

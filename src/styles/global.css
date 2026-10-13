@@ -105,6 +105,7 @@
   .game-stage iframe { display: block; width: 100%; height: 100%; border: 0; background: #13294b; }
   .play-first .game-stage { height: clamp(300px, calc(100svh - 160px), 600px); }
   .play-heading + .game-stage { height: clamp(140px, calc(100svh - 252px), 600px); }
+  .play-first .game-stage--fitted { width: min(100%, calc(clamp(140px, calc(100svh - 252px), 600px) * var(--game-ratio))); height: auto; aspect-ratio: var(--game-ratio); margin-inline: auto; }
   .play-first .game-stage:fullscreen { width: 100%; height: 100%; aspect-ratio: auto; border: 0; border-radius: 0; }
   .game-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; padding-block: 8px; }
   .game-toolbar p { font-size: .8125rem; }
@@ -225,8 +226,9 @@
     .stage-heading a { font-size: .8125rem; }
     .featured-label { font-size: .6875rem; padding: 4px 7px; }
     .stage-label { display: none; }
-    .game-stage { height: auto; aspect-ratio: 16/10; border-radius: 10px; }
+    .game-stage { height: auto; aspect-ratio: var(--game-ratio, 16/10); border-radius: 10px; }
     .play-first .game-stage { height: auto; }
+    .play-first .game-stage:fullscreen { width: 100%; height: 100%; aspect-ratio: auto; }
     .play-first main { padding-top: 8px; }
     .game-toolbar p { flex-basis: 100%; font-size: .75rem; }
     .game-pending { height: 100%; justify-content: center; }

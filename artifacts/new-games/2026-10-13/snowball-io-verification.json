@@ -1,0 +1,83 @@
+{
+  "checkedOn": "2026-10-13",
+  "scope": "Task C, local implementation only; not deployed",
+  "source": "https://gamemonetize.com/snowball-io-game-game",
+  "officialCatalog": {
+    "title": "Snowball.io Game",
+    "developer": "JumpGame",
+    "published": "2022-06-06",
+    "category": "3D",
+    "controls": "Use Mouse To Play and Keyboard",
+    "mobileReady": true,
+    "width": 750,
+    "height": 1334,
+    "sourceHttpStatus": 200,
+    "embedHttpStatus": 200,
+    "thumbnailHttpStatus": 200
+  },
+  "localHttpStatus": 200,
+  "title": "Snowball.io - Play the Snowball Fighting Game Online Free",
+  "description": "Play Snowball.io online for free in your browser. Slide to grow your snowball, then roll over your opponents in this fast arena snowball fight.",
+  "descriptionLength": 143,
+  "canonical": "https://sledgames.com/snowball-io/",
+  "h1Count": 1,
+  "iframeSrc": "https://html5.gamemonetize.co/jdxrwawd43ij64lixz02uwhqnzmfjk2k/",
+  "iframeDimensions": {
+    "width": 750,
+    "height": 1334
+  },
+  "adSenseScriptCount": 1,
+  "breadcrumbSchemaCount": 1,
+  "faqCount": 5,
+  "controlRowCount": 1,
+  "controls": "Use Mouse To Play and Keyboard",
+  "headerGameLinkCount": 9,
+  "footerGameLinkCount": 9,
+  "categoryCardCount": 4,
+  "collectionCardCount": 1,
+  "collectionLabel": "Winter",
+  "sitemapUrlCount": 18,
+  "sitemapGameUrlCount": 1,
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "unitAndBuildTests": {
+    "passed": 20,
+    "failed": 0
+  },
+  "browserRegressionTests": {
+    "passed": 17,
+    "failed": 0,
+    "playerFixture": true
+  },
+  "fullscreenFollowupTests": {
+    "passed": 3,
+    "failed": 0,
+    "playerFixture": true
+  },
+  "realPlayerCheck": {
+    "contexts": [
+      "Chrome: two independent direct official embed loads",
+      "Codex in-app browser: real iframe within local preview"
+    ],
+    "observedState": "Loading...(4/4)",
+    "chromeAdditionalWaitsInSeconds": [
+      30,
+      35
+    ],
+    "chromeNetworkFailures": [
+      {
+        "endpoint": "https://gcp.91888game.com/api/sgame/setting",
+        "error": "net::ERR_CONNECTION_CLOSED"
+      },
+      {
+        "endpoint": "https://gcp.91888game.com/api/sgame/matching",
+        "error": "net::ERR_CONNECTION_CLOSED"
+      }
+    ],
+    "gameplayVerified": false,
+    "limitation": "This environment did not reach gameplay; the result does not establish failure for all networks."
+  }
+}

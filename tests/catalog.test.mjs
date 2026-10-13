@@ -15,6 +15,21 @@ test('GameDistribution embeds carry the current page URL exactly once', () => {
   }
   game.embed.iframeSrc = 'https://html5.gamedistribution.com/test-id/';
   assert.equal(new URL(embedUrl(game, canonical('/sled-rider'))).searchParams.get('gd_sdk_referrer_url'), canonical('/sled-rider'));
+  game.embed.iframeSrc = 'https://html5.gamedistribution.com/test-id/?gd_sdk_referrer_url=https://old.example/&gd_sdk_referrer_url=duplicate&other=value';
+  const normalized = new URL(embedUrl(game, canonical('/snow-rider-2/')));
+  assert.deepEqual(normalized.searchParams.getAll('gd_sdk_referrer_url'), [canonical('/snow-rider-2/')]);
+  assert.equal(normalized.searchParams.get('other'), 'value');
+});
+
+test('approved descriptions fit the catalog bounds without changing supplied copy', () => {
+  const game = fixture();
+  game.similar = [];
+  for (const length of [130, 139, 160]) {
+    assert.doesNotThrow(() => validateGames([{ ...game, description: 'a'.repeat(length) }]));
+  }
+  for (const length of [129, 161]) {
+    assert.throws(() => validateGames([{ ...game, description: 'a'.repeat(length) }]), /description/);
+  }
 });
 
 test('only approved publisher hosts can be embedded', () => {

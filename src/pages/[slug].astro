@@ -6,30 +6,31 @@ import GameGrid from '../components/GameGrid.astro';
 import GameGuide from '../components/GameGuide.astro';
 import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
-import { games, categories, relatedGames, gameFaqs, gameSchema, faqSchema, breadcrumbSchema, hasSource, gamePath } from '../lib/catalog.mjs';
+import { games, gameCategory, winterCollection, relatedGames, gameFaqs, gameSchema, faqSchema, breadcrumbSchema, hasSource, gamePath } from '../lib/catalog.mjs';
 import type { Game } from '../lib/types';
 export function getStaticPaths() { return games.filter(game => gamePath(game.slug) !== '/').map(game => ({ params: { slug: game.slug }, props: { game } })); }
 interface Props { game: Game }
 const { game } = Astro.props;
 const related = relatedGames(game);
 const faqs = gameFaqs(game);
-const category = categories.find(category => category.slug === game.category[0]);
+const category = gameCategory(game);
+const collection = category?.path === '/' ? winterCollection : category;
 const christmas = game.category.includes('christmas-games');
 const title = game.seoTitle ?? game.title;
 const schema = [gameSchema(game), ...(faqs.length ? [faqSchema(faqs)] : []), breadcrumbSchema([
-  ...(category && category.path !== '/' ? [{ name: category.title, path: category.path }] : []),
+  ...(collection ? [{ name: collection.title, path: collection.path }] : []),
   { name: game.title, path: gamePath(game.slug) },
 ])];
 const number = new Intl.NumberFormat('en-US');
 ---
 <Layout playFirst snowfall={!christmas} theme={christmas ? 'christmas' : undefined} title={title} description={game.description} schema={schema}>
   <h1 class="play-heading">{game.title}</h1>
-  <GameStage game={game} eager />
+  <GameStage game={game} eager fitAspectRatio={game.slug === 'moto-x3m-winter'} />
   {(game.rating !== null || game.playCount !== null) && <div class="info-bar">{game.rating && <span>Rating: {game.rating.value}/5 · {number.format(game.rating.count)} votes</span>}{game.playCount !== null && <span>{number.format(game.playCount)} plays</span>}</div>}
   <AdSlot position="below" />
   <GameGuide game={game} />
   {game.items.length > 0 && hasSource(game, 'items') && <section class="content-section prose"><h2>Items and prices</h2><div class="table-scroll"><table><thead><tr><th scope="col">Item</th><th scope="col">Price</th></tr></thead><tbody>{game.items.map(item => <tr><td>{item.name}</td><td>{item.price}</td></tr>)}</tbody></table></div></section>}
-  {related.length > 0 && <section class="content-section"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2>Explore Other {category?.title}</h2></div></div><GameGrid games={related} /></section>}
+  {related.length > 0 && <section class="content-section"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2>Explore Other {collection === winterCollection ? 'Winter Games' : category?.title}</h2></div></div><GameGrid games={related} /></section>}
   <Faq faqs={faqs} />
   <CategoryLinks />
 </Layout>
