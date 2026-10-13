@@ -1,4 +1,4 @@
-// Describe current operation without claiming that future advertising is active.
+// Describe current website operation and third-party services.
 export const legalContent = [
   {
     slug: 'about', title: 'About Us', description: 'Learn about Sled Games, our winter browser game collection, how we publish dedicated game pages, and our approach to official embeds and sourced information.',
@@ -7,7 +7,7 @@ export const legalContent = [
       { title: 'What we are building', paragraphs: ['Sled Games is an English-language collection of winter browser game pages. Our categories cover sledding, snowboarding, and skiing. Each game has its own page, and our catalog and navigation help you find another title without searching through unrelated content.'] },
       { title: 'How games are published', paragraphs: ['Playable games are provided through authorized publisher embeds. We do not download game files, host copied games, or embed an entire third-party website.'] },
       { title: 'Our information standards', paragraphs: ['We publish game-specific instructions, tips, ratings, and play counts only when a source is available. We leave out details that have not been verified.'] },
-      { title: 'Supporting the website', paragraphs: ['Advertising may help support this website. Advertising inside a game is controlled by its publishing platform. Any website advertising is displayed outside the game window. Google AdSense is planned, but is not loaded by this initial version of the website. See our Privacy Policy for information about third-party content and advertising.'] },
+      { title: 'Supporting the website', paragraphs: ['Advertising may help support this website. Advertising inside a game is controlled by its publishing platform. Any website advertising is displayed outside the game window. We use Google AdSense for website advertising. See our Privacy Policy for information about third-party content and advertising.'] },
     ],
   },
   {
@@ -20,13 +20,13 @@ export const legalContent = [
     ],
   },
   {
-    slug: 'privacy-policy', title: 'Privacy Policy', description: 'Read how Sled Games handles visits and contact messages, and how third-party game embeds, advertising cookies, and planned Google AdSense relate to privacy.',
+    slug: 'privacy-policy', title: 'Privacy Policy', description: 'Read how Sled Games handles visits and contact messages, and how third-party game embeds, advertising cookies, and Google AdSense relate to privacy.',
     intro: 'Information about this website and third-party content.',
     sections: [
       { title: 'Website visits', paragraphs: ['This version of Sled Games does not offer user accounts, comments, payments, or subscriptions. It does not install first-party analytics scripts or set first-party tracking cookies. Our hosting provider may process technical request data, such as an IP address, requested URL, browser information, and request time, to deliver the website and operate its service.'] },
       { title: 'Messages you send us', paragraphs: ['If you email us, your message and email address are used to respond to your request and investigate the issue you report. Send only the information needed for that purpose.'] },
       { title: 'Third-party game embeds', paragraphs: ['Sled Rider loads automatically in an iframe from AZGames at gamea.azgame.io. Other configured games may use GameDistribution or GameMonetize. Loading an iframe connects your browser to the platform, which may receive technical request data and may use cookies, local storage, analytics, or advertising technologies according to its own policies. GameDistribution embeds include the URL of the game page as a referrer parameter. Third-party practices are governed by the platform and its advertising partners.'] },
-      { title: 'Google AdSense and advertising cookies', paragraphs: ['We plan to use Google AdSense for advertising outside the game window. AdSense is not enabled in this initial version. If it is activated, Google and its advertising partners may use cookies or similar technologies to serve and measure advertisements. The applicable privacy notices and consent controls must be in place before advertising is enabled. Advertising inside a game is operated separately by the publishing platform.'] },
+      { title: 'Google AdSense and advertising cookies', paragraphs: ['We use Google AdSense to serve advertising outside the game window. Google and its advertising partners may use cookies or similar technologies to serve, personalise and measure advertisements. You can manage cookies through your browser settings.'] },
       { title: 'Your choices', paragraphs: ['Your browser settings can restrict cookies and clear stored data. Restricting third-party storage may affect embedded games. You can avoid loading third-party game content by leaving a game page before a configured iframe loads. Use the contact address on our Contact Us page for questions about information you have sent to us.'] },
       { title: 'Changes to this page', paragraphs: ['We will update this policy when the website adds features that change how information is handled. Review this page for the current description of website operation.'] },
     ],
