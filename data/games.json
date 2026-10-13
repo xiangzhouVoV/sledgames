@@ -659,7 +659,9 @@
       "downhill-snowboard",
       "snowboard-game",
       "ski-king",
-      "ski-rush"
+      "ski-rush",
+      "snowball-io",
+      "moto-x3m-winter"
     ],
     "embed": {
       "provider": "gamedistribution",
@@ -744,7 +746,9 @@
       "downhill-snowboard",
       "snowboard-game",
       "ski-king",
-      "ski-rush"
+      "ski-rush",
+      "snow-rider-2",
+      "moto-x3m-winter"
     ],
     "embed": {
       "provider": "gamemonetize",
@@ -830,7 +834,9 @@
       "downhill-snowboard",
       "snowboard-game",
       "ski-king",
-      "ski-rush"
+      "ski-rush",
+      "snow-rider-2",
+      "snowball-io"
     ],
     "embed": {
       "provider": "gamemonetize",

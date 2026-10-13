@@ -70,6 +70,43 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
   });
 }
 
+for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
+  test(`new winter game related cards link every new game at ${viewport.width}px without JavaScript`, async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport });
+    try {
+      const page = await context.newPage();
+      await page.route(/^https:\/\/html5\.(gamedistribution\.com|gamemonetize\.co)\//, route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
+      await page.route(/^https:\/\/img\.(gamedistribution|gamemonetize)\.com\//, route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
+      const newGames = [
+        { slug: 'snow-rider-2', title: 'Snow Rider 2' },
+        { slug: 'snowball-io', title: 'Snowball.io' },
+        { slug: 'moto-x3m-winter', title: 'Moto X3M Winter' },
+      ];
+      for (const source of newGames) {
+        for (const target of newGames.filter(game => game.slug !== source.slug)) {
+          await page.goto(`/${source.slug}/`);
+          await expect(page.locator('main h1')).toHaveText(source.title);
+          const related = page.locator('main section').filter({ has: page.getByRole('heading', { level: 2, name: 'Explore Other Winter Games', exact: true }) });
+          await expect(related).toHaveCount(1);
+          await expect(related.locator('.game-card')).toHaveCount(7);
+          await expect(related.locator(`.game-card[href="/${source.slug}/"]`)).toHaveCount(0);
+          expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
+          const card = related.locator(`.game-card[href="/${target.slug}/"]`);
+          await expect(card).toHaveCount(1);
+          await card.click();
+          await expect(page).toHaveURL(`http://127.0.0.1:4321/${target.slug}/`);
+          await expect(page.locator('main h1')).toHaveText(target.title);
+          await expect(page.locator('main h1')).toBeVisible();
+          await expect(page.frameLocator('.game-stage > iframe').locator('body')).toHaveText('Official player fixture');
+          expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
+        }
+      }
+    } finally {
+      await context.close();
+    }
+  });
+}
+
 for (const { width, height } of [{ width: 320, height: 568 }, { width: 390, height: 844 }, { width: 768, height: 768 }, { width: 1280, height: 720 }, { width: 844, height: 390 }]) {
   test(`static navigation and game layout at ${width}x${height}px without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport: { width, height } });

@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-13",
+  "scope": "Related-game cards on the three new detail pages",
+  "before": {
+    "cardCountPerPage": 5,
+    "crossLinksBetweenNewPages": 0,
+    "regressionReproduced": true
+  },
+  "after": {
+    "pages": [
+      {
+        "path": "/snow-rider-2/",
+        "heading": "Explore Other Winter Games",
+        "cardCount": 7,
+        "links": [
+          "/",
+          "/downhill-snowboard/",
+          "/snowboard-game/",
+          "/ski-king/",
+          "/ski-rush/",
+          "/snowball-io/",
+          "/moto-x3m-winter/"
+        ],
+        "newGameLinks": [
+          "/snowball-io/",
+          "/moto-x3m-winter/"
+        ],
+        "selfLinks": 0,
+        "duplicates": 0
+      },
+      {
+        "path": "/snowball-io/",
+        "heading": "Explore Other Winter Games",
+        "cardCount": 7,
+        "links": [
+          "/",
+          "/downhill-snowboard/",
+          "/snowboard-game/",
+          "/ski-king/",
+          "/ski-rush/",
+          "/snow-rider-2/",
+          "/moto-x3m-winter/"
+        ],
+        "newGameLinks": [
+          "/snow-rider-2/",
+          "/moto-x3m-winter/"
+        ],
+        "selfLinks": 0,
+        "duplicates": 0
+      },
+      {
+        "path": "/moto-x3m-winter/",
+        "heading": "Explore Other Winter Games",
+        "cardCount": 7,
+        "links": [
+          "/",
+          "/downhill-snowboard/",
+          "/snowboard-game/",
+          "/ski-king/",
+          "/ski-rush/",
+          "/snow-rider-2/",
+          "/snowball-io/"
+        ],
+        "newGameLinks": [
+          "/snow-rider-2/",
+          "/snowball-io/"
+        ],
+        "selfLinks": 0,
+        "duplicates": 0
+      }
+    ],
+    "crossLinksBetweenNewPages": 6
+  },
+  "validation": {
+    "astroCheck": {
+      "files": 36,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "build": "passed",
+    "unitAndBuildTests": {
+      "passed": 23,
+      "failed": 0
+    },
+    "browserTests": {
+      "passed": 2,
+      "failed": 0,
+      "viewports": [
+        390,
+        1280
+      ],
+      "javaScriptEnabled": false,
+      "crossLinkClicksPerViewport": 6,
+      "totalCrossLinkClicks": 12,
+      "officialPlayers": "fixtures; this regression verifies site navigation"
+    }
+  },
+  "deployed": false
+}

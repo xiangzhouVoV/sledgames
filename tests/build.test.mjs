@@ -289,6 +289,23 @@ test('three new games are reachable from winter collections and separate sport-c
   }
 });
 
+test('new winter game pages link to one another in their related-game sections', () => {
+  const newPaths = ['/snow-rider-2/', '/snowball-io/', '/moto-x3m-winter/'];
+  for (const path of newPaths) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    const related = $('main section').filter((_, section) => $(section).find('h2').first().text() === 'Explore Other Winter Games');
+    assert.equal(related.length, 1, `${path}: one related-game section`);
+    assert.equal(related.find('.game-grid').length, 1, `${path}: one related-game grid`);
+    const cards = related.find('.game-grid .game-card');
+    const targets = cards.map((_, card) => $(card).attr('href')).get();
+    assert.equal(new Set(targets).size, targets.length, `${path}: related cards must be unique`);
+    assert.equal(cards.filter(`[href="${path}"]`).length, 0, `${path}: no related card links to itself`);
+    for (const other of newPaths.filter(other => other !== path)) {
+      assert.equal(cards.filter(`[href="${other}"]`).length, 1, `${path}: one related card for ${other}`);
+    }
+  }
+});
+
 test('each game is reachable from at least three different existing pages', () => {
   for (const game of games) {
     const sources = allPaths.filter(path => path !== gamePath(game.slug) && load(readFileSync(pageFile(path), 'utf8'))(`a[href="${gamePath(game.slug)}"]`).length);
