@@ -1,5 +1,6 @@
 ---
 import { canonical } from '../lib/catalog.mjs';
+import GoogleTag from '../components/GoogleTag.astro';
 // Cloudflare's HTTP redirect lives only in public/_redirects. A normal static
 // page keeps local previews working without an adapter adding the rule again.
 ---
@@ -7,6 +8,7 @@ import { canonical } from '../lib/catalog.mjs';
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <GoogleTag />
     <title>Redirecting to Sled Games</title>
     <script is:inline>
       window.location.replace('/' + window.location.search + window.location.hash);

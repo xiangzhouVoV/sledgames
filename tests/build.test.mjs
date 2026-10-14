@@ -7,6 +7,7 @@ import astroConfig from '../astro.config.mjs';
 
 const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
 const adSenseSrc = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598323555742768';
+const googleTagSrc = 'https://www.googletagmanager.com/gtag/js?id=G-NX4YF4WPRK';
 
 test('all pages have static content, unique metadata, and working internal links', () => {
   const titles = new Set();
@@ -35,7 +36,14 @@ test('all pages have static content, unique metadata, and working internal links
     assert.ok(adSense.parent().is('head'), `${path}: AdSense script belongs in the head`);
     assert.ok(adSense.is('[async]'));
     assert.equal(adSense.attr('crossorigin'), 'anonymous');
-    if (!$('iframe').length) assert.equal($('script:not([type="application/ld+json"])').not(adSense).length, 0, `${path}: content pages should not need other client scripts`);
+    const googleTag = $(`script[src="${googleTagSrc}"]`);
+    const googleTagConfig = googleTag.next('script');
+    assert.equal(googleTag.length, 1, `${path}: exactly one Google tag`);
+    assert.ok(googleTag.parent().is('head'), `${path}: Google tag belongs in the head`);
+    assert.ok(googleTag.is('[async]'));
+    assert.match(googleTagConfig.text(), /gtag\('config', 'G-NX4YF4WPRK'\)/);
+    assert.equal($('head script').first().get(0), googleTag.get(0), `${path}: Google tag precedes other scripts`);
+    if (!$('iframe').length) assert.equal($('script:not([type="application/ld+json"])').not(adSense).not(googleTag).not(googleTagConfig).length, 0, `${path}: content pages should not need other client scripts`);
     assert.ok($('[data-ad-slot]').length <= 3);
     $('a[href^="/"]').each((_, link) => {
       const target = $(link).attr('href').split('#')[0];

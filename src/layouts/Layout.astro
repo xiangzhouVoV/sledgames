@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Snowfall from '../components/Snowfall.astro';
 import ChristmasAtmosphere from '../components/ChristmasAtmosphere.astro';
+import GoogleTag from '../components/GoogleTag.astro';
 import { canonical, serializeSchema } from '../lib/catalog.mjs';
 interface Props {
   title: string;
@@ -22,6 +23,7 @@ const url = canonical(Astro.url.pathname);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <GoogleTag />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
