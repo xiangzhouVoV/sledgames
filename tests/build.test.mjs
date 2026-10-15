@@ -164,9 +164,9 @@ const approvedWinterGames = [
     slug: 'snowball-io', name: 'Snowball.io',
     title: 'Snowball.io - Play the Snowball Fighting Game Online Free',
     description: 'Play Snowball.io online for free in your browser. Slide to grow your snowball, then roll over your opponents in this fast arena snowball fight.',
-    embed: 'https://html5.gamemonetize.co/jdxrwawd43ij64lixz02uwhqnzmfjk2k/',
+    embed: 'https://io.gamemonetize.com/snowwar/',
     thumbnail: 'https://img.gamemonetize.com/jdxrwawd43ij64lixz02uwhqnzmfjk2k/512x384.jpg',
-    width: '750', height: '1334', control: 'Use Mouse To Play and Keyboard',
+    width: '960', height: '600', control: 'Use Mouse To Play and Keyboard',
     developer: 'JumpGame', released: '2022-06-06', releaseLabel: 'June 6, 2022',
   },
   {

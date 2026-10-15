@@ -46,6 +46,12 @@ test('only approved publisher hosts can be embedded', () => {
     game.embed.iframeSrc = `https://${host}.attacker.test/test-id/`;
     assert.throws(() => embedUrl(game, canonical('/sled-rider')));
   }
+  game.embed.iframeSrc = 'https://io.gamemonetize.com/snowwar/';
+  assert.equal(embedUrl(game, canonical('/snowball-io/')), game.embed.iframeSrc);
+  for (const src of ['https://io.gamemonetize.com/another-game/', 'https://io.gamemonetize.com.attacker.test/snowwar/']) {
+    game.embed.iframeSrc = src;
+    assert.throws(() => embedUrl(game, canonical('/snowball-io/')));
+  }
   game.embed.provider = 'azgames';
   game.embed.iframeSrc = 'https://gamea.azgame.io/sled-rider/';
   assert.equal(embedUrl(game, canonical('/sled-rider')), game.embed.iframeSrc);

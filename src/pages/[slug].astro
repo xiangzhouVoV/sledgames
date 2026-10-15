@@ -25,7 +25,7 @@ const number = new Intl.NumberFormat('en-US');
 ---
 <Layout playFirst snowfall={!christmas} theme={christmas ? 'christmas' : undefined} title={title} description={game.description} schema={schema}>
   <h1 class="play-heading">{game.title}</h1>
-  <GameStage game={game} eager fitAspectRatio={game.slug === 'moto-x3m-winter'} />
+  <GameStage game={game} eager fitAspectRatio={['snowball-io', 'moto-x3m-winter'].includes(game.slug)} />
   {(game.rating !== null || game.playCount !== null) && <div class="info-bar">{game.rating && <span>Rating: {game.rating.value}/5 · {number.format(game.rating.count)} votes</span>}{game.playCount !== null && <span>{number.format(game.playCount)} plays</span>}</div>}
   <AdSlot position="below" />
   <GameGuide game={game} />

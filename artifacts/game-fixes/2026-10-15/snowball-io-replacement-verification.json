@@ -1,0 +1,66 @@
+{
+  "checkedOn": "2026-10-15",
+  "scope": "Local implementation and validation; not deployed",
+  "page": "https://sledgames.com/snowball-io/",
+  "source": "https://io.gamemonetize.com/snowwar/",
+  "replacement": "Snow War.io",
+  "embed": {
+    "provider": "gamemonetize",
+    "iframeSrc": "https://io.gamemonetize.com/snowwar/",
+    "width": 960,
+    "height": 600
+  },
+  "preserved": {
+    "pageCopy": true,
+    "metadataAndSchema": true,
+    "pageUrl": true,
+    "thumbnail": true,
+    "otherGames": true,
+    "iframePermissions": true
+  },
+  "checks": {
+    "astro": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "unitAndBuild": {
+      "passed": 23,
+      "failed": 0
+    },
+    "browserRegression": {
+      "passed": 23,
+      "failed": 0,
+      "playerFixture": true
+    }
+  },
+  "realPlayerCheck": {
+    "browser": "Chrome headless",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "url": "http://127.0.0.1:4322/snowball-io/",
+    "mocked": false,
+    "unityRunning": true,
+    "loadingHidden": true,
+    "gameplayVerified": true,
+    "observed": "Clicked Play, skipped publisher ad via its visible SKIP button, reached the arena match, exercised keyboard input.",
+    "gameSourceErrors": [],
+    "screenshots": [
+      "snowwar-menu.png",
+      "snowwar-gameplay.png"
+    ],
+    "limitation": "Desktop gameplay verified; mobile layout tested with fixtures, mobile gameplay not tested."
+  },
+  "rejectedSources": [
+    {
+      "url": "https://html5.gamemonetize.co/1xi00mabdkhp0rxalrnpjclonywa2no4/",
+      "reason": "Redirected to another origin; Unity gamepad permission error in iframe. No permission changes applied."
+    },
+    {
+      "url": "https://html5.gamedistribution.com/d0750da51b6449448a5e7cca57749b3b/",
+      "reason": "Publisher loader rejected sledgames.com as unregistered."
+    }
+  ]
+}

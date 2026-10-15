@@ -20,7 +20,7 @@ export const gameCategory = game => gameCategories.find(category => category.slu
 
 const hosts = {
   gamedistribution: new Set(['html5.gamedistribution.com']),
-  gamemonetize: new Set(['html5.gamemonetize.com', 'html5.gamemonetize.co', 'html5.gamemonetize.games']),
+  gamemonetize: new Set(['html5.gamemonetize.com', 'html5.gamemonetize.co', 'html5.gamemonetize.games', 'io.gamemonetize.com']),
   azgames: new Set(['gamea.azgame.io']),
 };
 
@@ -37,6 +37,9 @@ export function embedUrl(game, pageUrl) {
   }
   if (provider === 'gamedistribution') {
     url.searchParams.set('gd_sdk_referrer_url', pageUrl);
+  }
+  if (url.hostname === 'io.gamemonetize.com' && url.pathname !== '/snowwar/') {
+    throw new Error(`${game.slug}: unverified GameMonetize IO player path`);
   }
   // Only the verified Sled Rider player is enabled for this publisher.
   if (provider === 'azgames' && url.pathname !== '/sled-rider/') {
