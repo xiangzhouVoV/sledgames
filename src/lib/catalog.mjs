@@ -1,12 +1,11 @@
 import rawGames from '../../data/games.json' with { type: 'json' };
 
 export const SITE = 'https://sledgames.com';
-export const HOME_GAME_SLUG = 'sled-rider';
 export const winterCollection = { slug: 'winter-games', title: 'All Winter Games', path: '/games/', label: 'Winter' };
 /** @param {string} path */
 export const pagePath = path => path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
 /** @param {string} slug */
-export const gamePath = slug => slug === HOME_GAME_SLUG ? '/' : pagePath(`/${slug}`);
+export const gamePath = slug => pagePath(`/${slug}`);
 export const legalRoutes = ['about', 'contact', 'privacy-policy', 'terms-of-use', 'copyright'];
 export const categories = [
   { slug: 'sledding-games', path: '/', title: 'Sled Games', label: 'Sledding', symbol: '01', description: 'A little snow. A lot of momentum.' },
@@ -121,10 +120,10 @@ export function breadcrumbSchema(trail) {
   };
 }
 
-/** @param {import('./types').Game[]} entries */
-export function itemListSchema(entries) {
+/** @param {import('./types').Game[]} entries @param {string} [name] */
+export function itemListSchema(entries, name = winterCollection.title) {
   return {
-    '@context': 'https://schema.org', '@type': 'ItemList', name: winterCollection.title,
+    '@context': 'https://schema.org', '@type': 'ItemList', name,
     itemListElement: entries.map((game, index) => ({
       '@type': 'ListItem', position: index + 1, name: game.title, url: canonical(gamePath(game.slug)),
     })),

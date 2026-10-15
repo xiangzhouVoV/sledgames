@@ -4,7 +4,7 @@ export const categoryContent = {
     "paragraphs": [
       "Pick a board and head downhill. Our snowboard games include Downhill Snowboard and SnowBoard Game, with different ways to tackle the mountain. Open a game card to load its player, then use the guide below the game for controls, instructions, and practical tips. You can browse and play without creating a Sled Games account or installing an app.",
       "Downhill Snowboard is a score challenge: keep your run alive, collect coins, and unlock characters and snowboards between attempts. SnowBoard Game focuses on navigating snowy tracks and avoiding barriers as you work toward the finish. Check its in-game controls, then practice smooth adjustments instead of making a late turn beside a hazard.",
-      "Give yourself space to react. Look beyond the rider toward the next gap, and skip a collectible when reaching it would leave you beside an obstacle. Check the controls before switching titles: Both support keyboard movement; SnowBoard Game shows WASD or arrow keys and V for a grab in its start screen. For another way down the mountain, visit Ski Games; for a sledding run, play Sled Rider on our homepage."
+      "Give yourself space to react. Look beyond the rider toward the next gap, and skip a collectible when reaching it would leave you beside an obstacle. Check the controls before switching titles: Both support keyboard movement; SnowBoard Game shows WASD or arrow keys and V for a grab in its start screen. For another way down the mountain, visit Ski Games; for a sledding run, open the dedicated Sled Rider game page."
     ],
     "faqs": [
       {
@@ -34,7 +34,7 @@ export const categoryContent = {
     "paragraphs": [
       "Choose your skiing challenge. Ski King is a mountain course game where passing flags correctly and finishing quickly matter. Ski Rush is about surviving a downhill run and collecting flags for extra points. The cards above lead straight to each game page, where the player comes before the introduction, controls, playing guide, and FAQ.",
       "For a timed course with progression between attempts, try Ski King. Avoid trees and rocks, read the course markers, and pass each flag on the correct side. A wrong pass resets the level. Upgrade points improve your skills as you work on a faster route. Ski Rush uses mouse or touch controls for a continuing downhill run: steer around obstacles and choose which scoring flags you can safely reach.",
-      "The two games ask for different habits. In Ski King, cutting a corner only helps if you still follow the marked course. In Ski Rush, a clear line gives you room to react to the next hazard. Read each game’s instructions instead of assuming the same controls work everywhere. You can also explore Snowboard Games or return to the homepage for Sled Rider."
+      "The two games ask for different habits. In Ski King, cutting a corner only helps if you still follow the marked course. In Ski Rush, a clear line gives you room to react to the next hazard. Read each game’s instructions instead of assuming the same controls work everywhere. You can also explore Snowboard Games or open the dedicated Sled Rider game page."
     ],
     "faqs": [
       {
@@ -64,7 +64,7 @@ export const categoryContent = {
     "paragraphs": [
       "Take a festive trip with Santa. Choose Santa Collecting Gifts or Crazy Christmas Fun above to load a sleigh adventure in your browser. Each game page starts with the player and includes controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed.",
       "Santa Collecting Gifts is a keyboard score challenge: catch falling presents, avoid bombs, and protect your three lives as the pace increases. Crazy Christmas Fun sends Santa and his reindeer through a sky full of balloons, collecting gifts as you work toward the Christmas tree and the next level. Use click or tap controls in Crazy Christmas Fun; Santa Collecting Gifts needs arrow keys or WASD on a computer.",
-      "A steady flight is easier to control than a hurried one. Look for the next clear opening, leave room to change height, and skip a gift when its exit is blocked. Prefer a snowy mountain run? Try our snowboard and ski games, or play Sled Rider on the homepage."
+      "A steady flight is easier to control than a hurried one. Look for the next clear opening, leave room to change height, and skip a gift when its exit is blocked. Prefer a snowy mountain run? Try our snowboard and ski games, or open the dedicated Sled Rider game page."
     ],
     "faqs": [
       {

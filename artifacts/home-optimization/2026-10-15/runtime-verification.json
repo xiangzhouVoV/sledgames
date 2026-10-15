@@ -1,0 +1,241 @@
+{
+  "startedAt": "2026-10-15T07:47:42.233Z",
+  "mockedPlayers": false,
+  "pages": [
+    {
+      "url": "http://127.0.0.1:4322/",
+      "status": 200,
+      "width": 1280,
+      "scrollWidth": 1280,
+      "images": [
+        {
+          "src": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg",
+          "loaded": true
+        }
+      ],
+      "iframeCount": 0
+    },
+    {
+      "url": "http://127.0.0.1:4322/",
+      "status": 200,
+      "width": 390,
+      "scrollWidth": 390,
+      "images": [
+        {
+          "src": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg",
+          "loaded": true
+        }
+      ],
+      "iframeCount": 0
+    },
+    {
+      "url": "http://127.0.0.1:4322/sled-rider/",
+      "status": 200,
+      "redirected": false
+    }
+  ],
+  "playerResponses": [
+    {
+      "url": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+      "status": 200
+    },
+    {
+      "url": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+      "status": 200
+    },
+    {
+      "url": "https://gamea.azgame.io/sled-rider/",
+      "status": 200
+    },
+    {
+      "url": "https://gamea.azgame.io/sled-rider/25111403/theme/game.css",
+      "status": 200
+    },
+    {
+      "url": "https://gamea.azgame.io/sled-rider/25111403/logo.png",
+      "status": 200
+    },
+    {
+      "url": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+      "status": 200
+    },
+    {
+      "url": "https://gamea.azgame.io/sled-rider/25111403/theme/fonts/Fredoka-Bold.woff2",
+      "status": 200
+    },
+    {
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.loader.js",
+      "status": 200
+    },
+    {
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.framework.js.unityweb",
+      "status": 200
+    },
+    {
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.data.unityweb",
+      "status": 200
+    },
+    {
+      "url": "https://games.azgame.io/game/sled-rider/25111403/Build/sled-rider-v25111403.wasm.unityweb",
+      "status": 200
+    },
+    {
+      "url": "https://gamea.azgame.io/sled-rider/25111403/StreamingAssets/UnityServicesProjectConfiguration.json",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "interactionCheck": {
+    "startedAt": "2026-10-15T07:50:20.973Z",
+    "mockedPlayers": false,
+    "observations": [
+      {
+        "label": "initial",
+        "time": "2026-10-15T07:50:23.709Z",
+        "title": "Sled Rider",
+        "url": "https://gamea.azgame.io/sled-rider/",
+        "unityReady": false,
+        "loadingElements": [
+          {
+            "id": "loadingBlock",
+            "display": "block",
+            "text": "\n\t\n\t25111403\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t \n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\t\n"
+          },
+          {
+            "id": "progress_fill",
+            "display": "block",
+            "text": ""
+          }
+        ],
+        "canvas": [
+          {
+            "id": "unity-canvas",
+            "width": 300,
+            "height": 150
+          }
+        ]
+      },
+      {
+        "label": "menu",
+        "time": "2026-10-15T07:51:00.048Z",
+        "title": "Sled Rider",
+        "url": "https://gamea.azgame.io/sled-rider/",
+        "unityReady": true,
+        "loadingElements": [
+          {
+            "id": "loadingBlock",
+            "display": "none",
+            "text": "\n\t\n\t25111403\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t \n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\t\n"
+          },
+          {
+            "id": "progress_fill",
+            "display": "block",
+            "text": ""
+          }
+        ],
+        "canvas": [
+          {
+            "id": "unity-canvas",
+            "width": 1198,
+            "height": 546
+          }
+        ]
+      },
+      {
+        "label": "playing",
+        "time": "2026-10-15T07:51:09.316Z",
+        "title": "Sled Rider",
+        "url": "https://gamea.azgame.io/sled-rider/",
+        "unityReady": true,
+        "loadingElements": [
+          {
+            "id": "loadingBlock",
+            "display": "none",
+            "text": "\n\t\n\t25111403\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t \n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\t\n"
+          },
+          {
+            "id": "progress_fill",
+            "display": "block",
+            "text": ""
+          }
+        ],
+        "canvas": [
+          {
+            "id": "unity-canvas",
+            "width": 1198,
+            "height": 546
+          }
+        ]
+      },
+      {
+        "label": "after-steer",
+        "time": "2026-10-15T07:51:19.707Z",
+        "title": "Sled Rider",
+        "url": "https://gamea.azgame.io/sled-rider/",
+        "unityReady": true,
+        "loadingElements": [
+          {
+            "id": "loadingBlock",
+            "display": "none",
+            "text": "\n\t\n\t25111403\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t \n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\t\n"
+          },
+          {
+            "id": "progress_fill",
+            "display": "block",
+            "text": ""
+          }
+        ],
+        "canvas": [
+          {
+            "id": "unity-canvas",
+            "width": 1198,
+            "height": 546
+          }
+        ]
+      }
+    ]
+  },
+  "initialReadinessProbe": {
+    "status": "superseded",
+    "note": "The first probe used #unity-loading-bar, which is absent in this publisher build. Its screenshot already showed the menu. Follow-up inspection confirmed unityInstance ready and #loadingBlock hidden."
+  },
+  "verified": {
+    "homepageDesktopAndMobile": true,
+    "homepageHasNoGamePlayer": true,
+    "realSledRiderMenuAndGameplay": true,
+    "inputs": [
+      "click inside real canvas",
+      "Space",
+      "ArrowLeft held for 350 ms"
+    ],
+    "visualEvidence": [
+      "sled-rider-menu.png",
+      "sled-rider-playing.png",
+      "sled-rider-after-steer.png"
+    ],
+    "notes": "Real publisher player was not mocked. Menu, running sled, and the 11M distance display were visually inspected. Analytics and site ad script requests were blocked only in the isolated QA browser."
+  },
+  "originalSledRiderContent": "intro, howToPlay, tips, controls, faqs, developer and embed are unchanged from HEAD",
+  "automatedChecks": {
+    "verify": {
+      "passed": 27,
+      "command": "npm run verify"
+    },
+    "browser": {
+      "passed": 28,
+      "note": "23 regression checks passed in the full run; the five homepage checks passed on rerun after correcting thumbnail request classification."
+    },
+    "buildRetest": {
+      "passed": 18,
+      "command": "node --test tests/build.test.mjs"
+    }
+  }
+}

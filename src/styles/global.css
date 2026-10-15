@@ -71,6 +71,8 @@
   .page-intro h1 { margin-block: 8px; }
   .page-intro p { max-width: 660px; font-size: .9375rem; }
   .page-intro .button { margin-top: 20px; }
+  .hub-intro { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 28px; }
+  .hub-intro .button { flex-shrink: 0; margin-top: 0; }
   .play-first main { padding-top: 12px; }
   .play-heading { font-size: clamp(1.25rem, 2.5vw, 1.75rem); margin-block: 0 8px; }
   .content-section { margin-top: 36px; }
@@ -144,6 +146,7 @@
   .card-copy p { margin-top: 8px; font-size: .8125rem; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .category-card { display: flex; align-items: center; gap: 14px; padding: 20px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
   .category-card:hover { border-color: #94b6e2; background: #f8fbff; }
+  .category-card--winter-games { grid-column: 1 / -1; }
   .category-icon { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: #e5efff; color: #2064c1; }
   .category-icon svg { width: 36px; height: 36px; }
   .category-card--snowboard-games .category-icon { background: #ede9ff; color: #6952c8; }
@@ -155,6 +158,7 @@
   .editorial-note { padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: #e9f1fc; margin-top: 36px; }
   .editorial-note h2 { font-size: 1.35rem; margin-bottom: 12px; }
   .editorial-note p { max-width: 790px; font-size: .9375rem; }
+  .editorial-note p a { color: #1559b3; text-decoration: underline; text-underline-offset: 3px; }
   .editorial-note .text-link { margin-top: 8px; }
   .prose { max-width: 790px; }
   .prose h2 { margin-bottom: 18px; }
@@ -182,6 +186,13 @@
   .guide-controls thead { background: #edf5fe; }
   .guide-controls tbody th { font-weight: 600; }
   .game-guide > .text-link { margin-top: 20px; }
+  .featured-games .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured-games .card-art { aspect-ratio: 2/1; }
+  .featured-games .card-copy { padding: 18px 20px; }
+  .featured-games .card-copy h3 { font-size: 1.25rem; }
+  .hub-guide { max-width: 920px; padding: 32px; background: #ffffffed; border: 1px solid #d1e1ef; border-radius: 16px; }
+  .hub-guide > section + section { margin-top: 30px; }
+  .hub-guide h3 { margin-block: 22px 12px; }
   .legal-content { padding-bottom: 10px; }
   .legal-content > section { margin-block: 32px; }
   .contact-box { padding: 26px; border: 1px solid #c5d7ee; background: #e6effc; border-radius: 12px; }
@@ -203,6 +214,7 @@
     .header-inner nav { width: 100%; padding-bottom: 8px; overflow-x: auto; }
     .header-inner nav a { flex-shrink: 0; }
     .game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .featured-games .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .category-card { flex-wrap: wrap; gap: 10px; padding: 18px; }
     .category-card > div { flex: 1 1 150px; }
@@ -221,6 +233,11 @@
     .quick-links a { flex-shrink: 0; }
     .page-intro { padding-block: 22px 18px; }
     .page-intro .eyebrow { font-size: .625rem; }
+    .hub-intro { align-items: flex-start; flex-direction: column; gap: 16px; }
+    .featured-games .card-copy { padding: 12px; }
+    .featured-games .card-copy h3 { font-size: 1rem; }
+    .featured-games .card-art { aspect-ratio: 16/10; }
+    .hub-guide { padding: 20px; }
     .stage-heading { margin-bottom: 10px; }
     .stage-heading > div { gap: 8px; }
     .stage-heading a { font-size: .8125rem; }
@@ -266,6 +283,7 @@
   }
   @media (max-width: 359px) {
     .game-grid { grid-template-columns: 1fr; }
+    .featured-games .game-grid { grid-template-columns: 1fr; }
     .section-heading { flex-wrap: wrap; gap: 0; }
     .stage-caption p { font-size: .75rem; }
     .stage-caption h2 { font-size: 1.5rem; }

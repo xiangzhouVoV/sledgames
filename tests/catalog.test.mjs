@@ -1,8 +1,31 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { games, validateGames, embedUrl, canonical, serializeSchema } from '../src/lib/catalog.mjs';
+import { games, validateGames, embedUrl, canonical, serializeSchema, gamePath, allPaths, categories, itemListSchema } from '../src/lib/catalog.mjs';
 
 const fixture = () => structuredClone(games[0]);
+
+test('all ten games have distinct dedicated paths and the homepage remains the sledding category', () => {
+  assert.equal(games.length, 10);
+  assert.equal(gamePath('sled-rider'), '/sled-rider/');
+  assert.equal(categories.find(category => category.slug === 'sledding-games').path, '/');
+  assert.equal(allPaths.length, 20);
+  assert.equal(new Set(allPaths).size, allPaths.length);
+  for (const game of games) {
+    assert.equal(gamePath(game.slug), `/${game.slug}/`);
+    assert.ok(allPaths.includes(gamePath(game.slug)));
+    assert.notEqual(gamePath(game.slug), '/');
+  }
+});
+
+test('collection schemas support a sledding subset without changing the full winter collection', () => {
+  const sledding = games.filter(game => game.category.includes('sledding-games'));
+  const featured = itemListSchema(sledding, 'Sled Games');
+  assert.equal(featured.name, 'Sled Games');
+  assert.deepEqual(featured.itemListElement.map(item => item.url), sledding.map(game => canonical(gamePath(game.slug))));
+  const full = itemListSchema(games);
+  assert.equal(full.name, 'All Winter Games');
+  assert.equal(full.itemListElement.length, games.length);
+});
 
 test('GameDistribution embeds carry the current page URL exactly once', () => {
   const game = fixture();

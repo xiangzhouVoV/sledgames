@@ -43,7 +43,10 @@ test('all pages have static content, unique metadata, and working internal links
     assert.ok(googleTag.is('[async]'));
     assert.match(googleTagConfig.text(), /gtag\('config', 'G-NX4YF4WPRK'\)/);
     assert.equal($('head script').first().get(0), googleTag.get(0), `${path}: Google tag precedes other scripts`);
-    if (!$('iframe').length) assert.equal($('script:not([type="application/ld+json"])').not(adSense).not(googleTag).not(googleTagConfig).length, 0, `${path}: content pages should not need other client scripts`);
+    if (!$('iframe').length) {
+      const scripts = $('script:not([type="application/ld+json"])').not(adSense).not(googleTag).not(googleTagConfig);
+      assert.equal(scripts.length, path === '/' ? 1 : 0, `${path}: only the home random-game navigation needs a client script`);
+    }
     assert.ok($('[data-ad-slot]').length <= 3);
     $('a[href^="/"]').each((_, link) => {
       const target = $(link).attr('href').split('#')[0];
@@ -55,19 +58,66 @@ test('all pages have static content, unique metadata, and working internal links
 test('sitemap lists every public page and excludes the 404 page', () => {
   const $ = load(readFileSync('dist/sitemap.xml', 'utf8'), { xml: true });
   assert.deepEqual($('loc').map((_, item) => $(item).text()).get().sort(), allPaths.map(canonical).sort());
+  assert.equal($('loc').length, 20);
+  assert.equal($('loc').filter((_, item) => $(item).text() === canonical('/sled-rider/')).length, 1);
   assert.equal(astroConfig.trailingSlash, 'always');
-  assert.equal(JSON.parse(readFileSync('vercel.json', 'utf8')).trailingSlash, true);
   $('loc').each((_, item) => assert.ok($(item).text().endsWith('/')));
   assert.ok(allPaths.every(path => path.endsWith('/')));
   assert.match(readFileSync('dist/robots.txt', 'utf8'), /Allow: \/\n/);
   assert.match(readFileSync('dist/robots.txt', 'utf8'), /Sitemap: https:\/\/sledgames\.com\/sitemap\.xml/);
 });
 
+test('the homepage is a static sledding hub with matching featured games and collection FAQs', () => {
+  const $ = load(readFileSync(pageFile('/'), 'utf8'));
+  const entries = categoryGames('sledding-games');
+  assert.equal($('title').text(), 'Sled Games - Play Free Sledding Games Online');
+  assert.equal($('meta[name="description"]').attr('content'), 'Play free sled games in your web browser. Ride a sled down snowy slopes, then explore our snowboard, ski, and Christmas game pages.');
+  assert.equal($('h1').text(), 'Sled Games');
+  assert.equal($('iframe, .game-stage, .game-guide, .guide-nav, #about-game, #how-to-play, #game-tips').length, 0);
+  assert.equal($('body.play-first').length, 0);
+  assert.equal(entries.length, 2);
+  const cards = $('main .featured-games .game-card');
+  assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), entries.map(game => gamePath(game.slug)));
+  assert.equal($('main .game-card').length, entries.length, 'The homepage contains only sledding game cards');
+  cards.each((_, card) => assert.equal($(card).find('img').attr('loading'), 'eager'));
+  const mainSections = $('main').find('.featured-games, .category-grid').toArray();
+  assert.equal(mainSections.length, 2);
+  assert.ok($(mainSections[0]).hasClass('featured-games'), 'Featured sledding games precede category entries');
+  const random = $('a[data-random-game]');
+  assert.equal(random.length, 1);
+  assert.equal(random.attr('href'), '/sled-rider/');
+  assert.ok(random.text().trim());
+  assert.equal($('main a[href="/about/"]').length, 1);
+  const prose = $('main').text();
+  for (const heading of ['What are sled games?', 'How to pick a sled game', 'Sled games for beginners', 'FAQs']) {
+    assert.ok($('h2').toArray().some(node => $(node).text() === heading), heading);
+  }
+  assert.doesNotMatch(prose, /Play Sled Rider above|guide on this page|Sled Rider: how to play and improve/);
+  const faqs = $('details').toArray().map(node => ({ q: $(node).find('summary').clone().find('[aria-hidden]').remove().end().text(), a: $(node).find('p').text() }));
+  assert.deepEqual(faqs.map(faq => faq.q), [
+    'What are the best free sled games to play online?',
+    'Do I need to download anything to play sled games?',
+    'Can I play sled games on a phone?',
+    'What is the difference between a sled game and a snowboard game?',
+    'Are these sled games free?',
+  ]);
+  assert.ok(faqs.every(faq => faq.a.trim()));
+  const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
+  assert.deepEqual(schemas.map(schema => schema['@type']).sort(), ['FAQPage', 'ItemList', 'WebSite']);
+  assert.equal(schemas.find(schema => schema['@type'] === 'WebSite').url, canonical('/'));
+  const list = schemas.find(schema => schema['@type'] === 'ItemList');
+  assert.equal(list.name, 'Sled Games');
+  assert.deepEqual(list.itemListElement.map(item => ({ position: item.position, name: item.name, url: item.url })), entries.map((game, index) => ({ position: index + 1, name: game.title, url: canonical(gamePath(game.slug)) })));
+  assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity, faqs.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })));
+});
+
 test('Sled Rider uses its verified player without fabricated ratings or prices', () => {
-  const $ = load(readFileSync('dist/index.html', 'utf8'));
-  assert.equal($('title').text(), 'Sled Games - Play Sled Rider Online Free | Sledding Games');
+  const game = games.find(game => game.slug === 'sled-rider');
+  const $ = load(readFileSync(pageFile('/sled-rider/'), 'utf8'));
+  assert.equal($('title').text(), 'Sled Rider - Play the Free Sledding Game Online');
+  assert.equal($('meta[name="description"]').attr('content'), 'Play Sled Rider online for free. Steer your sled down a snowy hill, dodge trees and rocks, collect gifts, and unlock new sleds in your browser.');
   assert.equal($('meta[property="og:title"]').attr('content'), $('title').text());
-  assert.equal($('h1').text(), 'Sled Games - Play Sled Rider');
+  assert.equal($('h1').text(), 'Sled Rider');
   assert.ok(!$('h1').hasClass('sr-only'));
   assert.equal($('.game-stage').prev().get(0), $('h1').get(0));
   assert.equal($('iframe').length, 1);
@@ -77,20 +127,30 @@ test('Sled Rider uses its verified player without fabricated ratings or prices',
   assert.doesNotMatch($('main').text(), /coming soon/i);
   assert.equal($('.info-bar').length, 0);
   assert.equal($('.guide-controls table').length, 1);
+  assert.deepEqual($('#about-game > p:not(.guide-meta)').map((_, node) => $(node).text()).get(), game.intro.split(/\n\s*\n/));
   assert.equal($('#about-game > p:not(.guide-meta)').length, 3);
-  assert.equal($('.guide-steps li').length, games[0].howToPlay.length);
-  assert.equal($('.guide-tips li').length, games[0].tips.length);
-  assert.equal($('.guide-controls tbody tr').length, games[0].controls.length);
+  assert.match($('.guide-meta').text(), /Developer: AZGames/);
+  for (const [selector, expected] of [['.guide-steps li', game.howToPlay], ['.guide-tips li', game.tips]]) {
+    const actual = $(selector).map((_, node) => {
+      const title = $(node).find('strong').text();
+      return `${title ? `${title}: ` : ''}${$(node).find('p').text()}`;
+    }).get();
+    assert.deepEqual(actual, expected);
+    assert.equal(actual.length, 5);
+  }
+  assert.deepEqual($('.guide-controls tbody tr').map((_, row) => ({ action: $(row).find('th').text(), input: $(row).find('td').text() })).get(), game.controls);
   $('.guide-nav a').each((_, link) => assert.equal($($(link).attr('href')).length, 1));
   const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
   const faq = schemas.find(schema => schema['@type'] === 'FAQPage');
-  assert.equal(faq.mainEntity.length, gameFaqs(games[0]).length);
+  assert.equal(faq.mainEntity.length, 5);
+  assert.deepEqual(faq.mainEntity, gameFaqs(game).map(entry => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })));
   for (const entry of faq.mainEntity) {
     assert.ok($('summary').toArray().some(summary => $(summary).text().startsWith(entry.name)));
     assert.ok($('details p').toArray().some(p => $(p).text() === entry.acceptedAnswer.text));
   }
   const schema = schemas.find(schema => schema['@type'] === 'VideoGame');
-  assert.equal(schema.url, canonical('/'));
+  assert.equal(schema.url, canonical('/sled-rider/'));
+  assert.deepEqual(schema.author, { '@type': 'Organization', name: 'AZGames' });
   assert.ok(!schema.aggregateRating);
   assert.equal(schema.offers.price, 0);
 });
@@ -234,7 +294,7 @@ for (const approved of approvedWinterGames) {
   });
 }
 
-test('home and game pages put the eager player before every ad', () => {
+test('every dedicated game page puts the eager player before every ad', () => {
   for (const game of games) {
     const path = gamePath(game.slug);
     const $ = load(readFileSync(pageFile(path), 'utf8'));
@@ -281,8 +341,9 @@ test('winter categories link to their playable games with matching official artw
   }
 });
 
-test('three new games are reachable from winter collections and separate sport-category recommendations', () => {
+test('winter games are reachable from the full collection and separate sport-category recommendations', () => {
   const newPaths = ['/snow-rider-2/', '/snowball-io/', '/moto-x3m-winter/'];
+  const recommendationPaths = ['/sled-rider/', ...newPaths];
   for (const path of ['/games/', '/snowboard-games/', '/ski-games/']) {
     const $ = load(readFileSync(pageFile(path), 'utf8'));
     for (const game of newPaths) {
@@ -293,7 +354,7 @@ test('three new games are reachable from winter collections and separate sport-c
     assert.equal(recommendations.length, 1, `${path}: one recommendation section`);
     assert.equal(recommendations.find('h2#other-winter-games').text(), 'Explore Other Winter Games');
     assert.equal(recommendations.closest('.primary-collection').length, 0, `${path}: recommendations are separate from the sport collection`);
-    assert.deepEqual(recommendations.find('.game-card').map((_, node) => $(node).attr('href')).get().sort(), [...newPaths].sort(), path);
+    assert.deepEqual(recommendations.find('.game-card').map((_, node) => $(node).attr('href')).get().sort(), [...recommendationPaths].sort(), path);
   }
 });
 
@@ -321,19 +382,43 @@ test('each game is reachable from at least three different existing pages', () =
   }
 });
 
-test('Sled Rider is served only on the homepage with a permanent legacy redirect', () => {
-  assert.ok(!allPaths.includes('/sled-rider/'));
-  const $ = load(readFileSync('dist/sled-rider/index.html', 'utf8'));
-  assert.equal($('iframe, .game-guide').length, 0);
-  assert.match($('meta[http-equiv="refresh"]').attr('content'), /url=\/$/);
-  const redirects = readFileSync('dist/_redirects', 'utf8');
-  assert.match(redirects, /^\/sled-rider \/ 301$/m);
-  assert.match(redirects, /^\/sled-rider\/ \/ 301$/m);
+test('Sled Rider is an indexable dedicated page without any homepage redirect mechanism', () => {
+  assert.ok(allPaths.includes('/sled-rider/'));
+  assert.equal(allPaths.length, 20);
+  assert.equal(new Set(allPaths).size, allPaths.length);
+  const $ = load(readFileSync(pageFile('/sled-rider/'), 'utf8'));
+  assert.equal($('iframe, .game-guide').length, 2);
+  assert.equal($('link[rel="canonical"]').attr('href'), canonical('/sled-rider/'));
+  assert.equal($('meta[http-equiv="refresh"]').length, 0);
+  assert.equal($('meta[name="robots"]').filter((_, node) => /noindex/i.test($(node).attr('content'))).length, 0);
+  assert.doesNotMatch($('script').text(), /location\.(?:replace|assign)|location(?:\.href)?\s*=/);
+  const redirects = existsSync('dist/_redirects') ? readFileSync('dist/_redirects', 'utf8') : '';
+  const sourceRedirects = existsSync('public/_redirects') ? readFileSync('public/_redirects', 'utf8') : '';
+  assert.doesNotMatch(redirects, /^\/sled-rider\/?\s/m);
+  assert.doesNotMatch(sourceRedirects, /^\/sled-rider\/?\s/m);
+  assert.ok(!Object.keys(astroConfig.redirects ?? {}).some(source => /^\/sled-rider(?:\/|$)/.test(source)));
   // Cloudflare adapters append configured Astro redirects to this file.
   // Validate the combined rules, including duplicates across both sources.
   const sources = redirects.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#')).map(line => line.split(/\s+/)[0]);
   sources.push(...Object.keys(astroConfig.redirects ?? {}));
   assert.equal(new Set(sources).size, sources.length, 'Cloudflare redirect sources must be unique, including adapter-generated rules');
+});
+
+test('game links use their dedicated pages while the brand and sledding category keep the homepage', () => {
+  for (const path of [...allPaths, '/404']) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    assert.equal($('.game-card[href="/"]').length, 0, `${path}: no game card points to the homepage`);
+    $('a').filter((_, node) => $(node).text().trim() === 'Sled Rider').each((_, node) => {
+      assert.equal($(node).attr('href'), '/sled-rider/', `${path}: Sled Rider anchor`);
+    });
+    assert.equal($('header nav[aria-label="Main navigation"] a').filter((_, node) => $(node).text().trim() === 'Sled Games').attr('href'), '/');
+    const rootCategory = $('.category-card--sledding-games');
+    if (rootCategory.length) assert.equal(rootCategory.attr('href'), '/');
+    const shortcut = $('.quick-links a[href="/sled-rider/"]');
+    assert.equal(shortcut.length, 1);
+    assert.equal(shortcut.attr('aria-current'), path === '/sled-rider/' ? 'page' : undefined);
+    assert.equal($('.quick-links span[aria-current="page"]').length, 0);
+  }
 });
 
 test('SEO titles match the approved copy without changing the SnowBoard Game title', () => {
@@ -345,7 +430,7 @@ test('SEO titles match the approved copy without changing the SnowBoard Game tit
     '/crazy-christmas-fun/': 'Crazy Christmas Fun - Play Free Santa & Reindeer Sleigh Game',
     '/snowboard-game/': 'SnowBoard Game - Play the Snowboarding Game Online Free',
     '/christmas-games/': 'Christmas Games - Play Free Santa & Sleigh Games Online',
-    '/games/': 'All Winter Games - Play Free Sledding, Ski & Snowboard Games',
+    '/games/': 'All Winter Games - Play Free Snowboard, Ski & Christmas Games Online',
   };
   for (const [path, title] of Object.entries(expected)) {
     const $ = load(readFileSync(pageFile(path), 'utf8'));
@@ -358,7 +443,7 @@ test('category and game breadcrumbs describe their real hierarchy with canonical
   const trails = [
     ...categories.filter(category => category.path !== '/').map(category => [category.path, [{ name: category.title, path: category.path }]]),
     ['/games/', [{ name: winterCollection.title, path: winterCollection.path }]],
-    ...games.filter(game => gamePath(game.slug) !== '/').map(game => {
+    ...games.map(game => {
       const category = gameCategory(game);
       const collection = category.path === '/' ? winterCollection : category;
       return [gamePath(game.slug), [{ name: collection.title, path: collection.path }, { name: game.title, path: gamePath(game.slug) }]];

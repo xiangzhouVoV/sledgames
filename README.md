@@ -6,11 +6,11 @@
 
 Sled Games is a free online gaming website built around snowy slopes, winter sports, and festive sleigh adventures. Play in your browser without installing an app or creating a Sled Games account.
 
-Start with Sled Rider on the homepage: steer through a snowy 3D course, jump over hazards, and collect presents as you try to keep your run going. Then explore a different way down the mountain or join Santa for a Christmas adventure.
+Choose a sledding game on the homepage, or use Quick Start to open one of the sled games. Each game has a dedicated player page, including [Sled Rider](https://sledgames.com/sled-rider/) and [Snow Rider 2](https://sledgames.com/snow-rider-2/). Browse [All Winter Games](https://sledgames.com/games/) for the complete collection across every category.
 
 ### Explore the games
 
-- **[Sled Games](https://sledgames.com/)** — Play Sled Rider and see how far you can travel through its snowy obstacle course.
+- **[Sled Games](https://sledgames.com/)** — Compare downhill sledding games and choose your next run.
 - **[Snowboard Games](https://sledgames.com/snowboard-games/)** — Collect coins and unlock boards in Downhill Snowboard, or navigate snowy tracks toward the finish in SnowBoard Game.
 - **[Ski Games](https://sledgames.com/ski-games/)** — Follow the course flags and chase a faster finish in Ski King, or dodge obstacles and collect scoring flags in Ski Rush.
 - **[Christmas Games](https://sledgames.com/christmas-games/)** — Catch presents and avoid bombs in Santa Collecting Gifts, or fly Santa’s reindeer sleigh past balloons in Crazy Christmas Fun.
@@ -27,11 +27,11 @@ Controls vary by game. Some adventures need a keyboard, while games such as Ski 
 
 Sled Games 是一个以雪地、冬季运动和圣诞雪橇冒险为主题的免费在线游戏网站。无需安装应用，也无需注册 Sled Games 账号，即可在浏览器中游玩。
 
-首页以 Sled Rider 为主角：驾驶雪橇穿越立体雪道，躲避障碍、跳过危险路段、收集礼物，挑战更远的距离。你也可以换上滑雪板探索山坡，或跟随圣诞老人开启节日冒险。
+首页帮助你比较和选择雪橇游戏，也可以通过快速开始进入一款雪橇游戏。每款游戏都有独立的播放器页面，包括 [Sled Rider](https://sledgames.com/sled-rider/) 和 [Snow Rider 2](https://sledgames.com/snow-rider-2/)。[全部冬季游戏](https://sledgames.com/games/)目录则展示所有类别的游戏。
 
 ### 探索游戏
 
-- **[雪橇游戏](https://sledgames.com/)** — 在 Sled Rider 中穿越雪地障碍，看看自己能滑多远。
+- **[雪橇游戏](https://sledgames.com/)** — 比较雪地滑行游戏，选择下一段雪橇挑战。
 - **[单板滑雪游戏](https://sledgames.com/snowboard-games/)** — 在 Downhill Snowboard 中收集金币、解锁滑雪板，或在 SnowBoard Game 中躲避障碍、寻找通往终点的路线。
 - **[双板滑雪游戏](https://sledgames.com/ski-games/)** — 在 Ski King 中按照旗标完成赛道、挑战更快的成绩，或在 Ski Rush 中避开障碍、收集旗帜得分。
 - **[圣诞老人雪橇游戏](https://sledgames.com/christmas-games/)** — 在 Santa Collecting Gifts 中接住礼物、避开炸弹，或在 Crazy Christmas Fun 中驾驶驯鹿雪橇穿过气球障碍。

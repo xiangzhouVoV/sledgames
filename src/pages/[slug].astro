@@ -8,7 +8,7 @@ import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
 import { games, gameCategory, winterCollection, relatedGames, gameFaqs, gameSchema, faqSchema, breadcrumbSchema, hasSource, gamePath } from '../lib/catalog.mjs';
 import type { Game } from '../lib/types';
-export function getStaticPaths() { return games.filter(game => gamePath(game.slug) !== '/').map(game => ({ params: { slug: game.slug }, props: { game } })); }
+export function getStaticPaths() { return games.map(game => ({ params: { slug: game.slug }, props: { game } })); }
 interface Props { game: Game }
 const { game } = Astro.props;
 const related = relatedGames(game);
