@@ -6,6 +6,7 @@ export const categoryContent = {
       "Downhill Snowboard is a score challenge: keep your run alive, collect coins, and unlock characters and snowboards between attempts. SnowBoard Game focuses on navigating snowy tracks and avoiding barriers as you work toward the finish. Check its in-game controls, then practice smooth adjustments instead of making a late turn beside a hazard.",
       "Give yourself space to react. Look beyond the rider toward the next gap, and skip a collectible when reaching it would leave you beside an obstacle. Check the controls before switching titles: Both support keyboard movement; SnowBoard Game shows WASD or arrow keys and V for a grab in its start screen. For another way down the mountain, visit Ski Games; for a sledding run, open the dedicated Sled Rider game page."
     ],
+    "relatedLink": { "href": "/sled-rider/", "text": "Play Sled Rider" },
     "faqs": [
       {
         "q": "Which snowboard games can I play here?",
@@ -36,6 +37,7 @@ export const categoryContent = {
       "For a timed course with progression between attempts, try Ski King. Avoid trees and rocks, read the course markers, and pass each flag on the correct side. A wrong pass resets the level. Upgrade points improve your skills as you work on a faster route. Ski Rush uses mouse or touch controls for a continuing downhill run: steer around obstacles and choose which scoring flags you can safely reach.",
       "The two games ask for different habits. In Ski King, cutting a corner only helps if you still follow the marked course. In Ski Rush, a clear line gives you room to react to the next hazard. Read each game’s instructions instead of assuming the same controls work everywhere. You can also explore Snowboard Games or open the dedicated Sled Rider game page."
     ],
+    "relatedLink": { "href": "/snowboard-games/", "text": "Play Snowboard Games" },
     "faqs": [
       {
         "q": "Which ski games are available here?",
@@ -66,6 +68,7 @@ export const categoryContent = {
       "Santa Collecting Gifts is a keyboard score challenge: catch falling presents, avoid bombs, and protect your three lives as the pace increases. Crazy Christmas Fun sends Santa and his reindeer through a sky full of balloons, collecting gifts as you work toward the Christmas tree and the next level. Use click or tap controls in Crazy Christmas Fun; Santa Collecting Gifts needs arrow keys or WASD on a computer.",
       "A steady flight is easier to control than a hurried one. Look for the next clear opening, leave room to change height, and skip a gift when its exit is blocked. Prefer a snowy mountain run? Try our snowboard and ski games, or open the dedicated Sled Rider game page."
     ],
+    "relatedLink": { "href": "/ski-games/", "text": "Play Ski Games" },
     "faqs": [
       {
         "q": "Which Christmas games are available here?",

@@ -4,7 +4,7 @@ import GameGrid from '../components/GameGrid.astro';
 import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
 import ChristmasHero from '../components/ChristmasHero.astro';
-import { categories, categoryGames, games as allGames, winterCollection, faqSchema, breadcrumbSchema, gamePath } from '../lib/catalog.mjs';
+import { categories, categoryGames, games as allGames, winterCollection, faqSchema, breadcrumbSchema } from '../lib/catalog.mjs';
 import { categoryContent } from '../lib/category-content.mjs';
 export function getStaticPaths() {
   return categories.filter(category => category.path !== '/').map(category => ({ params: { category: category.slug.replace(/-games$/, '') }, props: { category, content: categoryContent[category.slug as keyof typeof categoryContent] } }));
@@ -26,7 +26,7 @@ const title = christmas ? 'Christmas Games - Play Free Santa & Sleigh Games Onli
     {christmas && <div class="section-heading"><div><span class="eyebrow">UNWRAP A LITTLE FUN</span><h2>Choose your Christmas game</h2></div></div>}
     <GameGrid games={games} />
   </section>}
-  <section class="content-section prose"><h2>Explore {category.title}</h2>{content.paragraphs.map(paragraph => <p>{paragraph}</p>)}<a class="text-link" href={gamePath('sled-rider')}>Play Sled Rider <span aria-hidden="true">→</span></a></section>
+  <section class="content-section prose"><h2>Explore {category.title}</h2>{content.paragraphs.map(paragraph => <p>{paragraph}</p>)}<a class="text-link" href={content.relatedLink.href}>{content.relatedLink.text} <span aria-hidden="true">→</span></a></section>
   <Faq faqs={content.faqs} />
   {winterRecommendations.length > 0 && <section class="content-section" aria-labelledby="other-winter-games"><div class="section-heading"><div><h2 id="other-winter-games">Explore Other Winter Games</h2></div></div><GameGrid games={winterRecommendations} /></section>}
   <CategoryLinks />
