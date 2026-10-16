@@ -78,7 +78,7 @@ test('the homepage is a static sledding hub with matching featured games and col
   assert.equal(entries.length, 2);
   const cards = $('main .featured-games .game-card');
   assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), entries.map(game => gamePath(game.slug)));
-  assert.equal($('main .game-card').length, entries.length, 'The homepage contains only sledding game cards');
+  assert.equal($('main .game-card').length, entries.length + games.length, 'The homepage has its featured sledding cards and the compact catalog');
   cards.each((_, card) => assert.equal($(card).find('img').attr('loading'), 'eager'));
   const mainSections = $('main').find('.featured-games, .category-grid').toArray();
   assert.equal(mainSections.length, 2);
@@ -109,6 +109,38 @@ test('the homepage is a static sledding hub with matching featured games and col
   assert.equal(list.name, 'Sled Games');
   assert.deepEqual(list.itemListElement.map(item => ({ position: item.position, name: item.name, url: item.url })), entries.map((game, index) => ({ position: index + 1, name: game.title, url: canonical(gamePath(game.slug)) })));
   assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity, faqs.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })));
+});
+
+test('the homepage compact catalog follows the shared catalog without duplicating directory descriptions', () => {
+  const $ = load(readFileSync(pageFile('/'), 'utf8'));
+  const collection = $('main .home-collection');
+  assert.equal(collection.length, 1);
+  assert.equal(collection.prev().is('article.hub-guide'), true, 'The guide immediately precedes the compact collection');
+  assert.equal(collection.next().is('section.faq'), true, 'The FAQs immediately follow the compact collection');
+  assert.equal(collection.attr('aria-labelledby'), 'every-winter-game');
+  assert.equal(collection.find('h2#every-winter-game').text(), 'Browse every winter game');
+  assert.equal(collection.find('.collection-more a').attr('href'), '/games/');
+  assert.equal(collection.find('.collection-more a').text(), 'See the full winter collection');
+  const cards = collection.find('.game-grid.game-grid--compact > a.game-card.game-card--compact');
+  assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), games.map(game => gamePath(game.slug)));
+  cards.each((index, node) => {
+    const card = $(node);
+    const game = games[index];
+    assert.equal(card.find('h3').clone().find('[aria-hidden]').remove().end().text(), game.title);
+    assert.equal(card.find('.card-category').text(), gameCategory(game).label);
+    assert.equal(card.find('img').attr('src'), game.thumbnail);
+    assert.equal(card.find('img').attr('width'), '480');
+    assert.equal(card.find('img').attr('height'), '300');
+    assert.equal(card.find('img').attr('loading'), 'lazy');
+    assert.equal(card.find('img').attr('alt'), '');
+    assert.equal(card.find('p, .card-badge').length, 0, `${game.slug}: compact cards omit descriptions and Play now badges`);
+    assert.doesNotMatch(card.text(), /Play now/);
+  });
+  const featured = categoryGames('sledding-games');
+  for (const game of games) {
+    assert.equal($(`main a.game-card[href="${gamePath(game.slug)}"]`).length, featured.includes(game) ? 2 : 1, `${game.slug}: card count`);
+  }
+  assert.equal($('main .game-card--compact').length, games.length);
 });
 
 test('Sled Rider uses its verified player without fabricated ratings or prices', () => {
@@ -314,7 +346,8 @@ test('winter categories link to their playable games with matching official artw
     const entries = categoryGames(category);
     assert.ok(entries.length >= 2, `${category}: at least two games`);
     const $ = load(readFileSync(pageFile(`/${category}`), 'utf8'));
-    assert.equal($(`header nav a[href="/${category}/"][aria-current="page"]`).length, 1);
+    assert.equal($(`header nav[aria-label="Main navigation"] > span[aria-current="page"]`).text(), categories.find(entry => entry.slug === category).title);
+    assert.equal($(`header nav a[href="/${category}/"]`).length, 0);
     assert.equal($('h1').text(), category === 'christmas-games' ? 'Christmas Games' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
     const collection = $('main .primary-collection');
     assert.equal(collection.length, 1, `${category}: one main category collection`);
@@ -411,13 +444,18 @@ test('game links use their dedicated pages while the brand and sledding category
     $('a').filter((_, node) => $(node).text().trim() === 'Sled Rider').each((_, node) => {
       assert.equal($(node).attr('href'), '/sled-rider/', `${path}: Sled Rider anchor`);
     });
-    assert.equal($('header nav[aria-label="Main navigation"] a').filter((_, node) => $(node).text().trim() === 'Sled Games').attr('href'), '/');
+    const sledCategory = $('header nav[aria-label="Main navigation"] > *').filter((_, node) => $(node).text().trim() === 'Sled Games');
+    assert.equal(sledCategory.get(0).tagName, path === '/' ? 'span' : 'a');
+    assert.equal(sledCategory.attr('href'), path === '/' ? undefined : '/');
     const rootCategory = $('.category-card--sledding-games');
     if (rootCategory.length) assert.equal(rootCategory.attr('href'), '/');
     const shortcut = $('.quick-links a[href="/sled-rider/"]');
-    assert.equal(shortcut.length, 1);
-    assert.equal(shortcut.attr('aria-current'), path === '/sled-rider/' ? 'page' : undefined);
-    assert.equal($('.quick-links span[aria-current="page"]').length, 0);
+    assert.equal(shortcut.length, path === '/sled-rider/' ? 0 : 1);
+    assert.equal(shortcut.attr('aria-current'), undefined);
+    const currentGame = games.find(game => gamePath(game.slug) === path);
+    const currentShortcut = $('.quick-links > span[aria-current="page"]');
+    assert.equal(currentShortcut.length, currentGame ? 1 : 0);
+    if (currentGame) assert.equal(currentShortcut.text(), currentGame.title);
   }
 });
 
@@ -482,7 +520,35 @@ test('winter game list schema matches card order and includes a useful collectio
 test('header shortcuts and footer game links include the full data-driven catalog on every page', () => {
   for (const path of allPaths) {
     const $ = load(readFileSync(pageFile(path), 'utf8'));
-    assert.deepEqual($('.quick-links a').map((_, node) => $(node).attr('href')).get(), games.map(game => gamePath(game.slug)), path);
+    assert.deepEqual($('.quick-links > a, .quick-links > span[aria-current="page"]').map((_, node) => $(node).text()).get(), games.map(game => game.title), path);
+    assert.deepEqual($('.quick-links a').map((_, node) => $(node).attr('href')).get(), games.filter(game => gamePath(game.slug) !== path).map(game => gamePath(game.slug)), path);
     assert.deepEqual($('footer nav[aria-label="Game links"] a').slice(1).map((_, node) => $(node).attr('href')).get(), games.map(game => gamePath(game.slug)), path);
+  }
+});
+
+test('shared navigation renders only the current URL as a noninteractive span and preserves every footer link', () => {
+  for (const path of [...allPaths, '/404']) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    const nav = $('header nav[aria-label="Main navigation"]');
+    const entries = [...categories, { path: '/games/', title: 'All Games' }];
+    assert.equal(nav.children().length, entries.length);
+    entries.forEach((entry, index) => {
+      const item = nav.children().eq(index);
+      const isCurrent = path === entry.path;
+      assert.equal(item.get(0).tagName, isCurrent ? 'span' : 'a', `${path}: ${entry.title} tag`);
+      assert.equal(item.clone().find('[aria-hidden]').remove().end().text().trim(), entry.title, `${path}: label`);
+      assert.equal(item.attr('href'), isCurrent ? undefined : entry.path, `${path}: ${entry.title} target`);
+      assert.equal(item.attr('aria-current'), isCurrent ? 'page' : undefined, `${path}: current status`);
+    });
+    $('header span[aria-current="page"]').each((_, node) => {
+      assert.equal($(node).attr('href'), undefined);
+      assert.equal($(node).attr('tabindex'), undefined);
+      assert.equal($(node).attr('role'), undefined);
+      assert.equal($(node).attr('onclick'), undefined);
+    });
+    assert.equal($('footer span[aria-current="page"]').length, 0);
+    const footer = $('footer nav[aria-label="Game links"]');
+    assert.equal(footer.find('a[href="/games/"]').length, 1);
+    assert.equal($('footer .brand[href="/"]').length, 1);
   }
 });

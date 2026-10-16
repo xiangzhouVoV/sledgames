@@ -1,0 +1,743 @@
+{
+  "baseline": "/tmp/sledgames-home-baseline-66qxmp5u",
+  "checkedAt": "2026-10-16T16:43:34.041Z",
+  "passed": true,
+  "checks": [
+    {
+      "name": "No URLs were added or removed",
+      "passed": true
+    },
+    {
+      "name": "404.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "404.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "404.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "404.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "404.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "404.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "404.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "404.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "about/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "christmas-games/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "contact/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "copyright/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "crazy-christmas-fun/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "downhill-snowboard/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "games/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Home section.page-intro is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Home section.featured-games is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Home article.hub-guide is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Home section.faq is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Home section.editorial-note is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Home changes are confined to the compact collection, navigation, and build assets",
+      "passed": true
+    },
+    {
+      "name": "Home ItemList still contains exactly the two sledding games",
+      "passed": true
+    },
+    {
+      "name": "Home has 12 game cards and the required per-game card counts",
+      "passed": true
+    },
+    {
+      "name": "index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "moto-x3m-winter/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "privacy-policy/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "santa-collecting-gifts/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "ski-games/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "ski-king/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "ski-rush/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "sled-rider/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "snow-rider-2/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "snowball-io/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "snowboard-game/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "snowboard-games/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: protected head tags and scripts are byte-identical",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: entire head is byte-identical apart from build asset names",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: footer is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: only current navigation anchors became spans",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: H1 is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: main is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: all other HTML is unchanged apart from build assets",
+      "passed": true
+    },
+    {
+      "name": "terms-of-use/index.html: no placeholder copy",
+      "passed": true
+    },
+    {
+      "name": "data/games.json is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "src/components/GameGrid.astro is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "src/components/Footer.astro is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "dist/sitemap.xml is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "dist/robots.txt is byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Existing stylesheet src/styles/christmas.css is byte-identical apart from the compact stylesheet import",
+      "passed": true
+    },
+    {
+      "name": "Existing stylesheet src/styles/global.css is byte-identical apart from the compact stylesheet import",
+      "passed": true
+    },
+    {
+      "name": "New compact CSS contains only compact selectors",
+      "passed": true
+    },
+    {
+      "name": "Every previously built CSS rule is preserved; new rules apply only to compact cards or current navigation spans",
+      "passed": true
+    }
+  ]
+}

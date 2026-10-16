@@ -36,9 +36,10 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
         const categories = document.querySelector('main .category-grid');
         return !!categories && !!(section.compareDocumentPosition(categories) & Node.DOCUMENT_POSITION_FOLLOWING);
       })).toBe(true);
-      await expect(page.locator('main .game-card')).toHaveCount(2);
+      await expect(page.locator('main .game-card')).toHaveCount(2 + games.length);
       await expect(page.locator('.quick-links a')).toHaveCount(games.length);
-      await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/"]')).toHaveAttribute('aria-current', 'page');
+      await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toHaveText('Sled Games');
+      await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/"]')).toHaveCount(0);
       await expect(page.locator('.quick-links a[href="/sled-rider/"]')).not.toHaveAttribute('aria-current', 'page');
       await expect(page.locator('.faq details')).toHaveCount(5);
       const schemas = await page.locator('script[type="application/ld+json"]').evaluateAll(nodes => nodes.map(node => JSON.parse(node.textContent!)));
@@ -97,7 +98,8 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
       const entries = games.filter(game => game.category.includes(category));
       for (const game of entries) {
         await page.goto(`/${category}/`);
-        await expect(page.locator(`header nav a[href="/${category}/"]`)).toHaveAttribute('aria-current', 'page');
+        await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toHaveText(category === 'snowboard-games' ? 'Snowboard Games' : category === 'ski-games' ? 'Ski Games' : 'Christmas Games');
+        await expect(page.locator(`header nav a[href="/${category}/"]`)).toHaveCount(0);
         expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
         await expect(page.locator('main .primary-collection .game-card')).toHaveCount(entries.length);
         const card = page.locator(`main .primary-collection .game-card[href="/${game.slug}/"]`);
@@ -107,7 +109,8 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         await expect(page.locator('h1.play-heading')).toHaveText(game.title);
         await expect(page.locator('main h1')).toBeVisible();
         await expect(page.locator('.quick-links')).toBeVisible();
-        await expect(page.locator('.quick-links a')).toHaveCount(games.length);
+        await expect(page.locator('.quick-links a')).toHaveCount(games.length - 1);
+        await expect(page.locator('.quick-links > span[aria-current="page"]')).toHaveText(game.title);
         const heading = await page.locator('main h1').boundingBox();
         const stage = await page.locator('.game-stage').boundingBox();
         expect(stage!.y).toBeGreaterThanOrEqual(heading!.y + heading!.height);
@@ -200,8 +203,9 @@ for (const { width, height } of [{ width: 320, height: 568 }, { width: 390, heig
     await expect(page.locator('main h1')).toHaveText('Sled Rider');
     await expect(page.locator('main h1')).toBeVisible();
     await expect(page.locator('.quick-links')).toBeVisible();
-    await expect(page.locator('.quick-links a')).toHaveCount(games.length);
-    await expect(page.locator('.quick-links a[href="/sled-rider/"]')).toHaveAttribute('aria-current', 'page');
+    await expect(page.locator('.quick-links a')).toHaveCount(games.length - 1);
+    await expect(page.locator('.quick-links > span[aria-current="page"]')).toHaveText('Sled Rider');
+    await expect(page.locator('.quick-links a[href="/sled-rider/"]')).toHaveCount(0);
     const heading = await page.locator('main h1').boundingBox();
     const headingStyles = await page.locator('main h1').evaluate(el => { const style = getComputedStyle(el); return { size: parseFloat(style.fontSize), top: parseFloat(style.marginTop), bottom: parseFloat(style.marginBottom) }; });
     expect(headingStyles.size).toBeGreaterThanOrEqual(20);
@@ -238,7 +242,8 @@ for (const width of [320, 390, 1280]) {
     await page.route('https://html5.gamedistribution.com/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
     await page.route('https://img.gamedistribution.com/**', route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
     await page.goto('/games/');
-    await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/games/"]')).toHaveAttribute('aria-current', 'page');
+    await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toContainText('All Games');
+    await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/games/"]')).toHaveCount(0);
     await expect(page.locator('main .game-card')).toHaveCount(games.length);
     await expect(page.locator('.quick-links')).toBeVisible();
     const lastGame = games[games.length - 1];

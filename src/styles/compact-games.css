@@ -1,0 +1,13 @@
+@layer components {
+  .game-grid--compact { gap: 12px; }
+  .game-card--compact .card-copy { padding: 12px 14px; }
+  .game-card--compact .card-copy h3 { font-size: .9375rem; }
+  .game-card--compact .card-category { margin-top: 4px; font-size: .75rem; }
+}
+
+@layer responsive {
+  @media (max-width: 600px) {
+    .game-card--compact .card-copy { padding: 10px 12px; }
+    .game-card--compact .card-copy h3 { font-size: .875rem; }
+  }
+}

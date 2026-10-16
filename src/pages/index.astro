@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import GameGrid from '../components/GameGrid.astro';
+import CompactGameGrid from '../components/CompactGameGrid.astro';
 import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
-import { categoryGames, canonical, gamePath, itemListSchema, faqSchema } from '../lib/catalog.mjs';
+import { games, categoryGames, canonical, gamePath, itemListSchema, faqSchema } from '../lib/catalog.mjs';
 const sledGames = categoryGames('sledding-games');
 const faqs = [
   {
@@ -60,6 +61,16 @@ const faqs = [
       <p>When trying another sledding game, keep the same practice goal for a few attempts. That makes differences in timing and movement easier to notice. If a run ends quickly, decide whether you turned late, chose a blocked landing, or chased a risky gift before restarting.</p>
     </section>
   </article>
+  <section class="content-section home-collection" aria-labelledby="every-winter-game">
+    <div class="section-heading">
+      <div>
+        <h2 id="every-winter-game">Browse every winter game</h2>
+        <p>All {games.length} games on Sled Games, in one place. Open any card to play, or use the full directory for details and guides.</p>
+      </div>
+    </div>
+    <CompactGameGrid games={games} />
+    <p class="collection-more"><a class="text-link" href="/games/">See the full winter collection</a></p>
+  </section>
   <Faq faqs={faqs} />
   <section class="editorial-note"><h2>Find your next winter game</h2><p>Pick a sled game from the collection above, or browse our <a href="/snowboard-games/">snowboard</a>, <a href="/ski-games/">ski</a>, and <a href="/christmas-games/">Christmas game</a> categories for something different. Visit the <a href="/games/">full winter collection</a> to see every game in one place.</p><a class="text-link" href="/about/">About Sled Games →</a></section>
   <script is:inline>

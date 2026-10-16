@@ -1,0 +1,300 @@
+[
+  {
+    "width": 375,
+    "metrics": {
+      "overflow": false,
+      "currentTag": "SPAN",
+      "currentStyle": {
+        "display": "flex",
+        "fontSize": "13px",
+        "fontWeight": "650",
+        "color": "rgb(18, 90, 187)",
+        "backgroundColor": "rgb(234, 242, 255)",
+        "minHeight": "44px",
+        "paddingTop": "10px",
+        "paddingRight": "10px",
+        "paddingBottom": "10px",
+        "paddingLeft": "10px",
+        "borderTopWidth": "0px",
+        "borderRadius": "9px",
+        "marginLeft": "0px",
+        "lineHeight": "20.8px"
+      },
+      "currentRect": {
+        "x": 16,
+        "y": 55,
+        "width": 95.59375,
+        "height": 44
+      },
+      "intro": {
+        "x": 16,
+        "y": 146.46875,
+        "width": 343,
+        "height": 265.78125
+      },
+      "featured": {
+        "x": 16,
+        "y": 412.25,
+        "width": 343,
+        "height": 296.859375
+      },
+      "featuredCards": [
+        {
+          "rect": {
+            "x": 16,
+            "y": 485.546875,
+            "width": 165.5,
+            "height": 223.5625
+          },
+          "style": {
+            "display": "block",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "color": "rgb(23, 45, 80)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "minHeight": "auto",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "borderTopWidth": "1px",
+            "borderRadius": "12px",
+            "marginLeft": "0px",
+            "lineHeight": "25.6px"
+          }
+        },
+        {
+          "rect": {
+            "x": 193.5,
+            "y": 485.546875,
+            "width": 165.5,
+            "height": 223.5625
+          },
+          "style": {
+            "display": "block",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "color": "rgb(23, 45, 80)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "minHeight": "auto",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "borderTopWidth": "1px",
+            "borderRadius": "12px",
+            "marginLeft": "0px",
+            "lineHeight": "25.6px"
+          }
+        }
+      ],
+      "compactColumns": 2,
+      "images": [
+        {
+          "src": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/4jlpcom1sy0z4thlimget2ew3z6ow05d/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/220zq0t2ac34j1ghs7gsmtvb8pawcepf/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/qhm0nbxkucx74gkbrix22wywohn2lwrz/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/9l3npfpud13rxnfixu6dx9yoojgw1tng/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/jdxrwawd43ij64lixz02uwhqnzmfjk2k/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/512x384.jpg",
+          "loaded": true
+        }
+      ],
+      "baselineEqual": {
+        "intro": true,
+        "featured": true,
+        "featuredCards": true,
+        "currentStyle": true,
+        "currentRect": true
+      }
+    }
+  },
+  {
+    "width": 1280,
+    "metrics": {
+      "overflow": false,
+      "currentTag": "SPAN",
+      "currentStyle": {
+        "display": "flex",
+        "fontSize": "14px",
+        "fontWeight": "650",
+        "color": "rgb(18, 90, 187)",
+        "backgroundColor": "rgb(234, 242, 255)",
+        "minHeight": "44px",
+        "paddingTop": "10px",
+        "paddingRight": "14px",
+        "paddingBottom": "10px",
+        "paddingLeft": "14px",
+        "borderTopWidth": "0px",
+        "borderRadius": "9px",
+        "marginLeft": "0px",
+        "lineHeight": "22.4px"
+      },
+      "currentRect": {
+        "x": 583.921875,
+        "y": 15.984375,
+        "width": 108.734375,
+        "height": 44
+      },
+      "intro": {
+        "x": 40,
+        "y": 120,
+        "width": 1200,
+        "height": 189.296875
+      },
+      "featured": {
+        "x": 40,
+        "y": 309.296875,
+        "width": 1200,
+        "height": 517.171875
+      },
+      "featuredCards": [
+        {
+          "rect": {
+            "x": 40,
+            "y": 392.28125,
+            "width": 592,
+            "height": 434.1875
+          },
+          "style": {
+            "display": "block",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "color": "rgb(23, 45, 80)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "minHeight": "auto",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "borderTopWidth": "1px",
+            "borderRadius": "12px",
+            "marginLeft": "0px",
+            "lineHeight": "25.6px"
+          }
+        },
+        {
+          "rect": {
+            "x": 648,
+            "y": 392.28125,
+            "width": 592,
+            "height": 434.1875
+          },
+          "style": {
+            "display": "block",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "color": "rgb(23, 45, 80)",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "minHeight": "auto",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "borderTopWidth": "1px",
+            "borderRadius": "12px",
+            "marginLeft": "0px",
+            "lineHeight": "25.6px"
+          }
+        }
+      ],
+      "compactColumns": 4,
+      "images": [
+        {
+          "src": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://gamea.azgame.io/sled-rider/25111403/loading.png",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/xxlz1gjpdxfhl98zmshxkqg3a90gccvz/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/4jlpcom1sy0z4thlimget2ew3z6ow05d/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/220zq0t2ac34j1ghs7gsmtvb8pawcepf/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/qhm0nbxkucx74gkbrix22wywohn2lwrz/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/9l3npfpud13rxnfixu6dx9yoojgw1tng/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/jdxrwawd43ij64lixz02uwhqnzmfjk2k/512x384.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.gamemonetize.com/1gjwgvl2j0ipdd9ybezeavu04y1nqjen/512x384.jpg",
+          "loaded": true
+        }
+      ],
+      "baselineEqual": {
+        "intro": true,
+        "featured": true,
+        "featuredCards": true,
+        "currentStyle": true,
+        "currentRect": true
+      }
+    }
+  }
+]

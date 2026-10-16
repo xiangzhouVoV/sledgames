@@ -1,4 +1,5 @@
 @layer reset, base, layout, components, responsive;
+@import './compact-games.css';
 
 @layer reset {
   *, *::before, *::after { box-sizing: border-box; }

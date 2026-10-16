@@ -1,0 +1,514 @@
+diff --git a/scripts/verify-home-collection.mjs b/scripts/verify-home-collection.mjs
+new file mode 100644
+index 0000000..42ea7a4
+--- /dev/null
++++ b/scripts/verify-home-collection.mjs
+@@ -0,0 +1,148 @@
++import assert from 'node:assert/strict';
++import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
++import { dirname, join, resolve } from 'node:path';
++import { load } from 'cheerio';
++import postcss from 'postcss';
++
++// Run against a saved pre-change checkout/build, without rebuilding either side:
++// node scripts/verify-home-collection.mjs /path/to/baseline [report.json]
++const baseline = process.argv[2] ?? process.env.HOME_COLLECTION_BASELINE;
++if (!baseline) {
++  console.error('Usage: node scripts/verify-home-collection.mjs BASELINE_DIRECTORY [REPORT_JSON]');
++  process.exit(1);
++}
++const beforeRoot = resolve(baseline);
++const afterRoot = process.cwd();
++const checks = [];
++const read = (root, path) => readFileSync(join(root, path), 'utf8');
++const check = (name, verify) => {
++  try { verify(); checks.push({ name, passed: true }); }
++  catch (error) { checks.push({ name, passed: false, error: error.message }); }
++};
++function files(root, extension) {
++  return readdirSync(root, { withFileTypes: true }).flatMap(entry => entry.isDirectory()
++    ? files(join(root, entry.name), extension).map(path => join(entry.name, path))
++    : entry.name.endsWith(extension) ? [entry.name] : []);
++}
++function document(html) {
++  const $ = load(html, { sourceCodeLocationInfo: true });
++  const raw = node => {
++    assert.ok(node?.sourceCodeLocation, 'Missing element or original source location');
++    return html.slice(node.sourceCodeLocation.startOffset, node.sourceCodeLocation.endOffset);
++  };
++  return { $, raw, select: selector => $(selector).toArray().map(raw) };
++}
++function protectedHead(doc) {
++  return doc.select('head title, head meta[name="description"], head link[rel="canonical"], head meta[property^="og:"], head meta[name="theme-color"], head link[rel~="icon"], head script:not([src^="/_astro/"])');
++}
++function headerWithCurrentSpans(doc) {
++  let header = doc.select('header.site-header')[0];
++  doc.$('header a[aria-current="page"]').each((_, node) => {
++    const original = doc.raw(node);
++    const replacement = original.replace(/^<a\b/, '<span').replace(/\s+href="[^"]*"/, '').replace(/<\/a>$/, '</span>');
++    header = header.replace(original, replacement);
++  });
++  return header;
++}
++function normalizeBuildAssets(html) {
++  return html.replace(/(\b(?:src|href)=")\/_astro\/[^"\s]+(?=")/g, '$1/_astro/BUILD_ASSET');
++}
++function cssRules(root) {
++  const rules = new Map();
++  const collect = css => {
++    postcss.parse(css).walkRules(rule => {
++      const contexts = [];
++      for (let parent = rule.parent; parent?.type !== 'root'; parent = parent.parent) {
++        if (parent.type === 'atrule') contexts.unshift(`@${parent.name} ${parent.params}`);
++      }
++      const signature = `${contexts.join('|')}|${rule.toString()}`;
++      rules.set(signature, rule.selector);
++    });
++  };
++  for (const path of files(join(root, 'dist'), '.css')) collect(read(root, join('dist', path)));
++  for (const path of files(join(root, 'dist'), '.html')) {
++    const $ = load(read(root, join('dist', path)));
++    $('style').each((_, node) => collect($(node).text()));
++  }
++  return rules;
++}
++
++const pages = files(join(beforeRoot, 'dist'), '.html');
++check('No URLs were added or removed', () => assert.deepEqual(files(join(afterRoot, 'dist'), '.html').sort(), [...pages].sort()));
++for (const path of pages) {
++  const oldHtml = read(beforeRoot, join('dist', path));
++  const newHtml = read(afterRoot, join('dist', path));
++  const before = document(oldHtml);
++  const after = document(newHtml);
++  check(`${path}: protected head tags and scripts are byte-identical`, () => assert.deepEqual(protectedHead(after), protectedHead(before)));
++  check(`${path}: entire head is byte-identical apart from build asset names`, () => assert.equal(normalizeBuildAssets(after.select('head')[0]), normalizeBuildAssets(before.select('head')[0])));
++  check(`${path}: footer is byte-identical`, () => assert.deepEqual(after.select('footer'), before.select('footer')));
++  check(`${path}: only current navigation anchors became spans`, () => assert.equal(after.select('header.site-header')[0], headerWithCurrentSpans(before)));
++  check(`${path}: H1 is byte-identical`, () => assert.deepEqual(after.select('main h1'), before.select('main h1')));
++  if (path !== 'index.html') {
++    check(`${path}: main is byte-identical`, () => assert.deepEqual(after.select('main'), before.select('main')));
++    check(`${path}: all other HTML is unchanged apart from build assets`, () => assert.equal(
++      normalizeBuildAssets(newHtml.replace(after.select('header.site-header')[0], '<header>SHARED_NAVIGATION</header>')),
++      normalizeBuildAssets(oldHtml.replace(before.select('header.site-header')[0], '<header>SHARED_NAVIGATION</header>')),
++    ));
++  } else {
++    for (const selector of ['section.page-intro', 'section.featured-games', 'article.hub-guide', 'section.faq', 'section.editorial-note']) {
++      check(`Home ${selector} is byte-identical`, () => assert.deepEqual(after.select(selector), before.select(selector)));
++    }
++    check('Home changes are confined to the compact collection, navigation, and build assets', () => assert.equal(
++      normalizeBuildAssets(newHtml.replace(after.select('header.site-header')[0], '<header>SHARED_NAVIGATION</header>').replace(after.select('.home-collection')[0], '')).replace(/>\s+</g, '><'),
++      normalizeBuildAssets(oldHtml.replace(before.select('header.site-header')[0], '<header>SHARED_NAVIGATION</header>')).replace(/>\s+</g, '><'),
++    ));
++    check('Home ItemList still contains exactly the two sledding games', () => {
++      const schemas = after.$('script[type="application/ld+json"]').toArray().map(node => JSON.parse(after.$(node).text()));
++      assert.deepEqual(schemas.map(schema => schema['@type']).sort(), ['FAQPage', 'ItemList', 'WebSite']);
++      assert.deepEqual(schemas.find(schema => schema['@type'] === 'ItemList').itemListElement.map(item => item.url), ['https://sledgames.com/sled-rider/', 'https://sledgames.com/snow-rider-2/']);
++    });
++    check('Home has 12 game cards and the required per-game card counts', () => {
++      const counts = {};
++      after.$('main a.game-card').each((_, node) => { const href = after.$(node).attr('href'); counts[href] = (counts[href] ?? 0) + 1; });
++      const games = JSON.parse(read(afterRoot, 'data/games.json'));
++      assert.equal(after.$('main a.game-card').length, 12);
++      assert.deepEqual(counts, Object.fromEntries(games.map(game => [`/${game.slug}/`, ['sled-rider', 'snow-rider-2'].includes(game.slug) ? 2 : 1])));
++    });
++  }
++  check(`${path}: no placeholder copy`, () => {
++    const copy = after.$('body').clone().find('script,style').remove().end().text();
++    assert.doesNotMatch(copy, /coming[-\s]+soon|\bempty\b|on\s+(?:the|its)\s+way/i);
++  });
++}
++for (const path of ['data/games.json', 'src/components/GameGrid.astro', 'src/components/Footer.astro', 'dist/sitemap.xml', 'dist/robots.txt']) {
++  check(`${path} is byte-identical`, () => assert.equal(read(afterRoot, path), read(beforeRoot, path)));
++}
++for (const path of files(join(beforeRoot, 'src'), '.css')) {
++  check(`Existing stylesheet src/${path} is byte-identical apart from the compact stylesheet import`, () => {
++    const current = read(afterRoot, join('src', path));
++    const permitted = path === 'styles/global.css' ? current.replace(/^@import '\.\/compact-games\.css';\r?\n/m, '') : current;
++    assert.equal(permitted, read(beforeRoot, join('src', path)));
++  });
++}
++check('New compact CSS contains only compact selectors', () => {
++  const path = join(afterRoot, 'src/styles/compact-games.css');
++  assert.ok(existsSync(path));
++  postcss.parse(readFileSync(path, 'utf8')).walkRules(rule => {
++    assert.ok(rule.selector.split(',').every(selector => /\.game-(?:grid|card)--compact\b/.test(selector)), `Unexpected selector: ${rule.selector}`);
++  });
++});
++check('Every previously built CSS rule is preserved; new rules apply only to compact cards or current navigation spans', () => {
++  const previous = cssRules(beforeRoot);
++  const current = cssRules(afterRoot);
++  for (const rule of previous.keys()) assert.ok(current.has(rule), `Changed or removed CSS: ${rule}`);
++  for (const [rule, selector] of current) {
++    if (previous.has(rule)) continue;
++    assert.ok(selector.split(',').every(part => /\.game-(?:grid|card)--compact\b/.test(part)
++      || /(?:\.header-inner\s+nav|\.quick-links)\s*>\s*span\[aria-current\s*=\s*["']?page["']?\]/.test(part)), `Unexpected new CSS rule: ${rule}`);
++  }
++});
++const report = { baseline: beforeRoot, checkedAt: new Date().toISOString(), passed: checks.every(check => check.passed), checks };
++if (process.argv[3]) {
++  const reportPath = resolve(process.argv[3]);
++  mkdirSync(dirname(reportPath), { recursive: true });
++  writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
++}
++console.log(JSON.stringify(report, null, 2));
++if (!report.passed) process.exitCode = 1;
+diff --git a/src/components/CompactGameGrid.astro b/src/components/CompactGameGrid.astro
+new file mode 100644
+index 0000000..42108e5
+--- /dev/null
++++ b/src/components/CompactGameGrid.astro
+@@ -0,0 +1,17 @@
++---
++import type { Game } from '../lib/types';
++import { gameCategory, gamePath } from '../lib/catalog.mjs';
++interface Props { games: Game[] }
++const { games } = Astro.props;
++---
++<div class="game-grid game-grid--compact">
++  {games.map(game => <a class="game-card game-card--compact" href={gamePath(game.slug)}>
++    <div class="card-art">
++      <img src={game.thumbnail} width="480" height="300" loading="lazy" alt="" />
++    </div>
++    <div class="card-copy">
++      <h3>{game.title}<span aria-hidden="true">→</span></h3>
++      <span class="card-category">{gameCategory(game)?.label}</span>
++    </div>
++  </a>)}
++</div>
+diff --git a/src/components/Header.astro b/src/components/Header.astro
+index 1af9e76..8b89d5c 100644
+--- a/src/components/Header.astro
++++ b/src/components/Header.astro
+@@ -10,2 +10,2 @@ const path = pagePath(Astro.url.pathname);
+-      {categories.map(category => <a href={category.path} aria-current={path === category.path ? 'page' : undefined}>{category.title}</a>)}
+-      <a class="nav-all" href="/games/" aria-current={path === '/games/' ? 'page' : undefined}>All Games <span aria-hidden="true">→</span></a>
++      {categories.map(category => path === category.path ? <span aria-current="page">{category.title}</span> : <a href={category.path}>{category.title}</a>)}
++      {path === '/games/' ? <span class="nav-all" aria-current="page">All Games <span aria-hidden="true">→</span></span> : <a class="nav-all" href="/games/">All Games <span aria-hidden="true">→</span></a>}
+@@ -14 +14 @@ const path = pagePath(Astro.url.pathname);
+-  <nav class="quick-links container" aria-label="Explore games"><span>Explore games</span>{games.map(game => <a href={gamePath(game.slug)} aria-current={path === gamePath(game.slug) ? 'page' : undefined}>{game.title}</a>)}</nav>
++  <nav class="quick-links container" aria-label="Explore games"><span>Explore games</span>{games.map(game => path === gamePath(game.slug) ? <span aria-current="page">{game.title}</span> : <a href={gamePath(game.slug)}>{game.title}</a>)}</nav>
+@@ -15,0 +16,40 @@ const path = pagePath(Astro.url.pathname);
++
++<style is:global>
++  @layer layout {
++    .header-inner nav > span[aria-current='page'] {
++      min-height: 44px;
++      display: flex;
++      align-items: center;
++      gap: 8px;
++      padding: 10px 14px;
++      border-radius: 9px;
++      white-space: nowrap;
++      color: #125abb;
++      background: #eaf2ff;
++    }
++    .quick-links > span[aria-current='page'] {
++      display: inline-flex;
++      flex-shrink: 0;
++      align-items: center;
++      padding: 6px 10px;
++      border-radius: 6px;
++      font-size: inherit;
++      font-weight: 600;
++      white-space: nowrap;
++      color: var(--blue);
++      background: #eff5ff;
++    }
++  }
++  @layer components {
++    .christmas-page .header-inner nav > span[aria-current='page'] { color: #fff2d8; background: #9e303d; }
++    .christmas-page .quick-links > span[aria-current='page'] { color: #fff2d8; background: #294a3a; }
++  }
++  @layer responsive {
++    @media (max-width: 1000px) {
++      .header-inner nav > span[aria-current='page'] { flex-shrink: 0; }
++    }
++    @media (max-width: 600px) {
++      .header-inner nav > span[aria-current='page'] { padding-inline: 10px; }
++    }
++  }
++</style>
+diff --git a/src/pages/index.astro b/src/pages/index.astro
+index fcf2de7..52beefe 100644
+--- a/src/pages/index.astro
++++ b/src/pages/index.astro
+@@ -3,0 +4 @@ import GameGrid from '../components/GameGrid.astro';
++import CompactGameGrid from '../components/CompactGameGrid.astro';
+@@ -6 +7 @@ import CategoryLinks from '../components/CategoryLinks.astro';
+-import { categoryGames, canonical, gamePath, itemListSchema, faqSchema } from '../lib/catalog.mjs';
++import { games, categoryGames, canonical, gamePath, itemListSchema, faqSchema } from '../lib/catalog.mjs';
+@@ -62,0 +64,10 @@ const faqs = [
++  <section class="content-section home-collection" aria-labelledby="every-winter-game">
++    <div class="section-heading">
++      <div>
++        <h2 id="every-winter-game">Browse every winter game</h2>
++        <p>All {games.length} games on Sled Games, in one place. Open any card to play, or use the full directory for details and guides.</p>
++      </div>
++    </div>
++    <CompactGameGrid games={games} />
++    <p class="collection-more"><a class="text-link" href="/games/">See the full winter collection</a></p>
++  </section>
+diff --git a/src/styles/compact-games.css b/src/styles/compact-games.css
+new file mode 100644
+index 0000000..51f4acb
+--- /dev/null
++++ b/src/styles/compact-games.css
+@@ -0,0 +1,13 @@
++@layer components {
++  .game-grid--compact { gap: 12px; }
++  .game-card--compact .card-copy { padding: 12px 14px; }
++  .game-card--compact .card-copy h3 { font-size: .9375rem; }
++  .game-card--compact .card-category { margin-top: 4px; font-size: .75rem; }
++}
++
++@layer responsive {
++  @media (max-width: 600px) {
++    .game-card--compact .card-copy { padding: 10px 12px; }
++    .game-card--compact .card-copy h3 { font-size: .875rem; }
++  }
++}
+diff --git a/src/styles/global.css b/src/styles/global.css
+index 7e186fc..83f7032 100644
+--- a/src/styles/global.css
++++ b/src/styles/global.css
+@@ -1,0 +2 @@
++@import './compact-games.css';
+diff --git a/tests/browser/home-collection.spec.ts b/tests/browser/home-collection.spec.ts
+new file mode 100644
+index 0000000..26acfe5
+--- /dev/null
++++ b/tests/browser/home-collection.spec.ts
+@@ -0,0 +1,105 @@
++import { test, expect, type Page } from '@playwright/test';
++import games from '../../data/games.json' with { type: 'json' };
++
++async function mockExternalResources(page: Page) {
++  await page.route(/^https:\/\//, route => {
++    if (route.request().resourceType() === 'image') return route.fulfill({
++      body: '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300"><rect width="480" height="300" fill="#cee7ff"/></svg>',
++      contentType: 'image/svg+xml',
++    });
++    if (route.request().resourceType() === 'document') return route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' });
++    return route.abort();
++  });
++}
++
++for (const viewport of [{ width: 375, height: 812 }, { width: 1280, height: 800 }]) {
++  test(`compact home collection works at ${viewport.width}px without JavaScript`, async ({ browser }, testInfo) => {
++    const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport });
++    try {
++      const page = await context.newPage();
++      await mockExternalResources(page);
++      await page.goto('/');
++      const collection = page.locator('main .home-collection');
++      await expect(collection.locator('.game-card--compact')).toHaveCount(games.length);
++      await expect(page.locator('main .game-card')).toHaveCount(games.length + 2);
++      await expect(page.locator('.page-intro h1')).toHaveText('Sled Games');
++      await expect(page.locator('.featured-games .game-card')).toHaveCount(2);
++      expect(await page.locator('main').evaluate(main => {
++        const sections = Array.from(main.children);
++        const guide = sections.findIndex(section => section.matches('.hub-guide'));
++        return guide >= 0 && sections[guide + 1]?.matches('.home-collection') && sections[guide + 2]?.matches('.faq');
++      })).toBe(true);
++      expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
++      const gridColumns = await collection.locator('.game-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length);
++      expect(gridColumns).toBeLessThanOrEqual(viewport.width === 375 ? 2 : 4);
++      expect(gridColumns).toBeGreaterThanOrEqual(1);
++      await collection.scrollIntoViewIfNeeded();
++      expect(await collection.boundingBox()).not.toBeNull();
++      await expect(collection.locator('p:not(.section-heading p):not(.collection-more), .card-badge')).toHaveCount(0);
++      await page.evaluate(() => scrollTo(0, 0));
++      await page.screenshot({ path: testInfo.outputPath(`home-${viewport.width}.png`), fullPage: true, animations: 'disabled' });
++      for (const game of games) {
++        const card = page.locator(`.home-collection a.game-card--compact[href="/${game.slug}/"]`);
++        await expect(card.locator('img')).toHaveAttribute('src', game.thumbnail!);
++        await card.click();
++        await expect(page).toHaveURL(`http://127.0.0.1:4321/${game.slug}/`);
++        await expect(page.locator('main h1')).toHaveText(game.title);
++        expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
++        await page.goto('/');
++      }
++      await collection.locator('.collection-more a').click();
++      await expect(page).toHaveURL('http://127.0.0.1:4321/games/');
++      await expect(page.locator('main h1')).toHaveText('All Winter Games');
++    } finally {
++      await context.close();
++    }
++  });
++
++  test(`current navigation items are plain nonfocusable spans at ${viewport.width}px without JavaScript`, async ({ browser }) => {
++    const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport });
++    try {
++      const page = await context.newPage();
++      await mockExternalResources(page);
++      for (const path of ['/', '/games/', '/snowboard-games/', '/sled-rider/']) {
++        await page.goto(path);
++        const nav = page.locator('header nav[aria-label="Main navigation"]');
++        const currentSpans = page.locator('header span[aria-current="page"]');
++        await expect(currentSpans).toHaveCount(1);
++        const current = currentSpans.first();
++        await expect(current).not.toHaveAttribute('href');
++        await expect(current).not.toHaveAttribute('tabindex');
++        expect(await current.evaluate(el => (el as HTMLElement).tabIndex)).toBe(-1);
++        await current.click();
++        await expect(page).toHaveURL(`http://127.0.0.1:4321${path}`);
++        if (path === '/') {
++          await expect(nav.locator('> span[aria-current="page"]')).toHaveText('Sled Games');
++          await expect(nav.locator('a[href="/games/"]')).toContainText('All Games');
++          await page.locator('header .brand').focus();
++          await page.keyboard.press('Tab');
++          await expect(nav.locator('a[href="/snowboard-games/"]')).toBeFocused();
++        } else if (path === '/games/') {
++          await expect(nav.locator('> span[aria-current="page"]')).toContainText('All Games');
++          await expect(nav.locator('a[href="/"]')).toHaveText('Sled Games');
++          await nav.locator('a[href="/christmas-games/"]').focus();
++          await page.keyboard.press('Tab');
++          await expect(page.locator('.quick-links a').first()).toBeFocused();
++        } else {
++          await expect(nav.locator('a[href="/"]')).toHaveText('Sled Games');
++          await expect(nav.locator('a[href="/games/"]')).toContainText('All Games');
++          if (path === '/sled-rider/') {
++            await expect(page.locator('.quick-links > span[aria-current="page"]')).toHaveText('Sled Rider');
++            await nav.locator('a[href="/games/"]').focus();
++            await page.keyboard.press('Tab');
++            await expect(page.locator('.quick-links a[href="/downhill-snowboard/"]')).toBeFocused();
++          }
++        }
++        await expect(page.locator('footer nav[aria-label="Game links"] a')).toHaveCount(games.length + 1);
++        await expect(page.locator('footer nav[aria-label="Game links"] a[href="/games/"]')).toHaveText('All Games');
++        await expect(page.locator('footer span[aria-current="page"]')).toHaveCount(0);
++        expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
++      }
++    } finally {
++      await context.close();
++    }
++  });
++}
+diff --git a/tests/browser/site.spec.ts b/tests/browser/site.spec.ts
+index d274e7a..446cc6a 100644
+--- a/tests/browser/site.spec.ts
++++ b/tests/browser/site.spec.ts
+@@ -39 +39 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
+-      await expect(page.locator('main .game-card')).toHaveCount(2);
++      await expect(page.locator('main .game-card')).toHaveCount(2 + games.length);
+@@ -41 +41,2 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
+-      await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/"]')).toHaveAttribute('aria-current', 'page');
++      await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toHaveText('Sled Games');
++      await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/"]')).toHaveCount(0);
+@@ -100 +101,2 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800
+-        await expect(page.locator(`header nav a[href="/${category}/"]`)).toHaveAttribute('aria-current', 'page');
++        await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toHaveText(category === 'snowboard-games' ? 'Snowboard Games' : category === 'ski-games' ? 'Ski Games' : 'Christmas Games');
++        await expect(page.locator(`header nav a[href="/${category}/"]`)).toHaveCount(0);
+@@ -110 +112,2 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800
+-        await expect(page.locator('.quick-links a')).toHaveCount(games.length);
++        await expect(page.locator('.quick-links a')).toHaveCount(games.length - 1);
++        await expect(page.locator('.quick-links > span[aria-current="page"]')).toHaveText(game.title);
+@@ -203,2 +206,3 @@ for (const { width, height } of [{ width: 320, height: 568 }, { width: 390, heig
+-    await expect(page.locator('.quick-links a')).toHaveCount(games.length);
+-    await expect(page.locator('.quick-links a[href="/sled-rider/"]')).toHaveAttribute('aria-current', 'page');
++    await expect(page.locator('.quick-links a')).toHaveCount(games.length - 1);
++    await expect(page.locator('.quick-links > span[aria-current="page"]')).toHaveText('Sled Rider');
++    await expect(page.locator('.quick-links a[href="/sled-rider/"]')).toHaveCount(0);
+@@ -241 +245,2 @@ for (const width of [320, 390, 1280]) {
+-    await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/games/"]')).toHaveAttribute('aria-current', 'page');
++    await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toContainText('All Games');
++    await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/games/"]')).toHaveCount(0);
+diff --git a/tests/build.test.mjs b/tests/build.test.mjs
+index 5528cf0..269fc72 100644
+--- a/tests/build.test.mjs
++++ b/tests/build.test.mjs
+@@ -81 +81 @@ test('the homepage is a static sledding hub with matching featured games and col
+-  assert.equal($('main .game-card').length, entries.length, 'The homepage contains only sledding game cards');
++  assert.equal($('main .game-card').length, entries.length + games.length, 'The homepage has its featured sledding cards and the compact catalog');
+@@ -113,0 +114,32 @@ test('the homepage is a static sledding hub with matching featured games and col
++test('the homepage compact catalog follows the shared catalog without duplicating directory descriptions', () => {
++  const $ = load(readFileSync(pageFile('/'), 'utf8'));
++  const collection = $('main .home-collection');
++  assert.equal(collection.length, 1);
++  assert.equal(collection.prev().is('article.hub-guide'), true, 'The guide immediately precedes the compact collection');
++  assert.equal(collection.next().is('section.faq'), true, 'The FAQs immediately follow the compact collection');
++  assert.equal(collection.attr('aria-labelledby'), 'every-winter-game');
++  assert.equal(collection.find('h2#every-winter-game').text(), 'Browse every winter game');
++  assert.equal(collection.find('.collection-more a').attr('href'), '/games/');
++  assert.equal(collection.find('.collection-more a').text(), 'See the full winter collection');
++  const cards = collection.find('.game-grid.game-grid--compact > a.game-card.game-card--compact');
++  assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), games.map(game => gamePath(game.slug)));
++  cards.each((index, node) => {
++    const card = $(node);
++    const game = games[index];
++    assert.equal(card.find('h3').clone().find('[aria-hidden]').remove().end().text(), game.title);
++    assert.equal(card.find('.card-category').text(), gameCategory(game).label);
++    assert.equal(card.find('img').attr('src'), game.thumbnail);
++    assert.equal(card.find('img').attr('width'), '480');
++    assert.equal(card.find('img').attr('height'), '300');
++    assert.equal(card.find('img').attr('loading'), 'lazy');
++    assert.equal(card.find('img').attr('alt'), '');
++    assert.equal(card.find('p, .card-badge').length, 0, `${game.slug}: compact cards omit descriptions and Play now badges`);
++    assert.doesNotMatch(card.text(), /Play now/);
++  });
++  const featured = categoryGames('sledding-games');
++  for (const game of games) {
++    assert.equal($(`main a.game-card[href="${gamePath(game.slug)}"]`).length, featured.includes(game) ? 2 : 1, `${game.slug}: card count`);
++  }
++  assert.equal($('main .game-card--compact').length, games.length);
++});
++
+@@ -317 +349,2 @@ test('winter categories link to their playable games with matching official artw
+-    assert.equal($(`header nav a[href="/${category}/"][aria-current="page"]`).length, 1);
++    assert.equal($(`header nav[aria-label="Main navigation"] > span[aria-current="page"]`).text(), categories.find(entry => entry.slug === category).title);
++    assert.equal($(`header nav a[href="/${category}/"]`).length, 0);
+@@ -414 +447,3 @@ test('game links use their dedicated pages while the brand and sledding category
+-    assert.equal($('header nav[aria-label="Main navigation"] a').filter((_, node) => $(node).text().trim() === 'Sled Games').attr('href'), '/');
++    const sledCategory = $('header nav[aria-label="Main navigation"] > *').filter((_, node) => $(node).text().trim() === 'Sled Games');
++    assert.equal(sledCategory.get(0).tagName, path === '/' ? 'span' : 'a');
++    assert.equal(sledCategory.attr('href'), path === '/' ? undefined : '/');
+@@ -418,3 +453,6 @@ test('game links use their dedicated pages while the brand and sledding category
+-    assert.equal(shortcut.length, 1);
+-    assert.equal(shortcut.attr('aria-current'), path === '/sled-rider/' ? 'page' : undefined);
+-    assert.equal($('.quick-links span[aria-current="page"]').length, 0);
++    assert.equal(shortcut.length, path === '/sled-rider/' ? 0 : 1);
++    assert.equal(shortcut.attr('aria-current'), undefined);
++    const currentGame = games.find(game => gamePath(game.slug) === path);
++    const currentShortcut = $('.quick-links > span[aria-current="page"]');
++    assert.equal(currentShortcut.length, currentGame ? 1 : 0);
++    if (currentGame) assert.equal(currentShortcut.text(), currentGame.title);
+@@ -485 +523,2 @@ test('header shortcuts and footer game links include the full data-driven catalo
+-    assert.deepEqual($('.quick-links a').map((_, node) => $(node).attr('href')).get(), games.map(game => gamePath(game.slug)), path);
++    assert.deepEqual($('.quick-links > a, .quick-links > span[aria-current="page"]').map((_, node) => $(node).text()).get(), games.map(game => game.title), path);
++    assert.deepEqual($('.quick-links a').map((_, node) => $(node).attr('href')).get(), games.filter(game => gamePath(game.slug) !== path).map(game => gamePath(game.slug)), path);
+@@ -488,0 +528,27 @@ test('header shortcuts and footer game links include the full data-driven catalo
++
++test('shared navigation renders only the current URL as a noninteractive span and preserves every footer link', () => {
++  for (const path of [...allPaths, '/404']) {
++    const $ = load(readFileSync(pageFile(path), 'utf8'));
++    const nav = $('header nav[aria-label="Main navigation"]');
++    const entries = [...categories, { path: '/games/', title: 'All Games' }];
++    assert.equal(nav.children().length, entries.length);
++    entries.forEach((entry, index) => {
++      const item = nav.children().eq(index);
++      const isCurrent = path === entry.path;
++      assert.equal(item.get(0).tagName, isCurrent ? 'span' : 'a', `${path}: ${entry.title} tag`);
++      assert.equal(item.clone().find('[aria-hidden]').remove().end().text().trim(), entry.title, `${path}: label`);
++      assert.equal(item.attr('href'), isCurrent ? undefined : entry.path, `${path}: ${entry.title} target`);
++      assert.equal(item.attr('aria-current'), isCurrent ? 'page' : undefined, `${path}: current status`);
++    });
++    $('header span[aria-current="page"]').each((_, node) => {
++      assert.equal($(node).attr('href'), undefined);
++      assert.equal($(node).attr('tabindex'), undefined);
++      assert.equal($(node).attr('role'), undefined);
++      assert.equal($(node).attr('onclick'), undefined);
++    });
++    assert.equal($('footer span[aria-current="page"]').length, 0);
++    const footer = $('footer nav[aria-label="Game links"]');
++    assert.equal(footer.find('a[href="/games/"]').length, 1);
++    assert.equal($('footer .brand[href="/"]').length, 1);
++  }
++});
+diff --git a/tests/fixture.test.mjs b/tests/fixture.test.mjs
+index 6709324..bdefbb8 100644
+--- a/tests/fixture.test.mjs
++++ b/tests/fixture.test.mjs
+@@ -33,0 +34,3 @@ test('configured official embeds render distinct dedicated game referrers while
++    assert.deepEqual(home('main .home-collection .game-card--compact').map((_, card) => home(card).attr('href')).get(), ['/sled-rider/', '/fixture-game/']);
++    assert.equal(home('main .game-card').length, 4, 'Both home collections use the fixture catalog rather than a fixed game count');
++    assert.match(home('.home-collection .section-heading p').text(), /All 2 games/);

@@ -7,9 +7,49 @@ const path = pagePath(Astro.url.pathname);
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Sled Games home"><span class="brand-mark"><SportIcon /></span>sled<span>games</span></a>
     <nav aria-label="Main navigation">
-      {categories.map(category => <a href={category.path} aria-current={path === category.path ? 'page' : undefined}>{category.title}</a>)}
-      <a class="nav-all" href="/games/" aria-current={path === '/games/' ? 'page' : undefined}>All Games <span aria-hidden="true">→</span></a>
+      {categories.map(category => path === category.path ? <span aria-current="page">{category.title}</span> : <a href={category.path}>{category.title}</a>)}
+      {path === '/games/' ? <span class="nav-all" aria-current="page">All Games <span aria-hidden="true">→</span></span> : <a class="nav-all" href="/games/">All Games <span aria-hidden="true">→</span></a>}
     </nav>
   </div>
-  <nav class="quick-links container" aria-label="Explore games"><span>Explore games</span>{games.map(game => <a href={gamePath(game.slug)} aria-current={path === gamePath(game.slug) ? 'page' : undefined}>{game.title}</a>)}</nav>
+  <nav class="quick-links container" aria-label="Explore games"><span>Explore games</span>{games.map(game => path === gamePath(game.slug) ? <span aria-current="page">{game.title}</span> : <a href={gamePath(game.slug)}>{game.title}</a>)}</nav>
 </header>
+
+<style is:global>
+  @layer layout {
+    .header-inner nav > span[aria-current='page'] {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 9px;
+      white-space: nowrap;
+      color: #125abb;
+      background: #eaf2ff;
+    }
+    .quick-links > span[aria-current='page'] {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: inherit;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--blue);
+      background: #eff5ff;
+    }
+  }
+  @layer components {
+    .christmas-page .header-inner nav > span[aria-current='page'] { color: #fff2d8; background: #9e303d; }
+    .christmas-page .quick-links > span[aria-current='page'] { color: #fff2d8; background: #294a3a; }
+  }
+  @layer responsive {
+    @media (max-width: 1000px) {
+      .header-inner nav > span[aria-current='page'] { flex-shrink: 0; }
+    }
+    @media (max-width: 600px) {
+      .header-inner nav > span[aria-current='page'] { padding-inline: 10px; }
+    }
+  }
+</style>
