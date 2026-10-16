@@ -2,6 +2,17 @@
 
 [Play at sledgames.com · 访问网站](https://sledgames.com/)
 
+## Build and deploy
+
+Use Node.js 24 (`.nvmrc`), then run `npm ci` and `npm run build`. The static website is generated in `dist/`.
+
+Cloudflare Workers uses `wrangler.jsonc` to publish only `dist/`, preserve trailing slashes, and serve the custom 404 page. The Cloudflare build settings are:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+
+For local validation without publishing, run `npm run deploy:check`. To build and publish from an authenticated local environment, run `npm run deploy`.
+
 ## English
 
 Sled Games is a free online gaming website built around snowy slopes, winter sports, and festive sleigh adventures. Play in your browser without installing an app or creating a Sled Games account.
