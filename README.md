@@ -6,7 +6,7 @@
 
 Sled Games is a free online gaming website built around snowy slopes, winter sports, and festive sleigh adventures. Play in your browser without installing an app or creating a Sled Games account.
 
-Choose a sledding game on the homepage, or use Quick Start to open one of the sled games. Each game has a dedicated player page, including [Sled Rider](https://sledgames.com/sled-rider/) and [Snow Rider 2](https://sledgames.com/snow-rider-2/). Browse [All Winter Games](https://sledgames.com/games/) for the complete collection across every category.
+Choose a sledding game on the homepage, or use Play now to open one of the sled games. Each game has a dedicated player page, including [Sled Rider](https://sledgames.com/sled-rider/) and [Snow Rider 2](https://sledgames.com/snow-rider-2/). Browse [All Winter Games](https://sledgames.com/games/) for the complete collection across every category.
 
 ### Explore the games
 

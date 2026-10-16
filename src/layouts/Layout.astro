@@ -15,9 +15,12 @@ interface Props {
   playFirst?: boolean;
   snowfall?: boolean;
   theme?: 'christmas';
+  socialImage?: string;
+  socialImageAlt?: string;
 }
-const { title, description, schema = [], noindex = false, playFirst = false, snowfall = false, theme } = Astro.props;
+const { title, description, schema = [], noindex = false, playFirst = false, snowfall = false, theme, socialImage, socialImageAlt = title } = Astro.props;
 const url = canonical(Astro.url.pathname);
+const socialImageUrl = socialImage ? new URL(socialImage, url).href : undefined;
 ---
 <!doctype html>
 <html lang="en">
@@ -35,6 +38,15 @@ const url = canonical(Astro.url.pathname);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
+    {socialImageUrl && <>
+      <meta property="og:image" content={socialImageUrl} />
+      <meta property="og:image:alt" content={socialImageAlt} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={socialImageUrl} />
+      <meta name="twitter:image:alt" content={socialImageAlt} />
+    </>}
     <script
       is:inline
       async

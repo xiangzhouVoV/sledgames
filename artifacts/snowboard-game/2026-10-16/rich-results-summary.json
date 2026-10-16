@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-16",
+  "tool": "Google Rich Results Test",
+  "mode": "code",
+  "inputFile": "dist/snowboard-game/index.html",
+  "inputSha256": "92bdc1466f3b8b7c201d4285649ac2cbf637cb2bf48d77ae67c1f4e73b12f5a8",
+  "status": "incomplete_external_test",
+  "steps": [
+    "Opened tool and waited for page scripts",
+    "Switched to code mode",
+    "Pasted current local build HTML",
+    "Clicked Test code"
+  ],
+  "observed": "The current local build HTML was pasted in code mode and Test code was clicked. No result report was generated. Visual review of rich-results-result.png shows a dialog reading: 出了点问题 / 请登录，然后重试 (Something went wrong / Sign in, then try again).",
+  "googleValidationConfirmed": false,
+  "googleResultUrl": null,
+  "failedRequests": [
+    {
+      "url": "https://www.google.com/recaptcha/api2/clr?k=6LeKMsIjAAAAAGP5PskdMId0tLXc7dL3LiO07Avf",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    }
+  ],
+  "limitation": "Google requires signing in and retrying in this browser session. The external test has not passed; local schema consistency checks passed. A separately observed aborted reCAPTCHA request does not establish the root cause.",
+  "evidence": [
+    "rich-results-submission.json",
+    "rich-results-submitted-code.png",
+    "rich-results-after-submit.png",
+    "rich-results-result.png"
+  ],
+  "visualReview": {
+    "screenshot": "rich-results-result.png",
+    "dialog": "出了点问题；请登录，然后重试",
+    "note": "The dialog was present in the screenshot although the earlier DOM text extraction missed it."
+  }
+}

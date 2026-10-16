@@ -188,18 +188,21 @@
       "Snowboarding",
       "Racing"
     ],
-    "description": "Play SnowBoard Game online for free in your browser. Ride snowy slopes, dodge barriers, and find your route to the finish in a winter sports challenge.",
-    "intro": "SnowBoard Game is a winter sports game from Quantum Studio. Guide your snowboarder down snowy tracks, avoid barriers, and work toward the finish line.\n\nThe challenge is choosing a clear route while reacting to the course. Start with the in-game controls, then practice making smooth adjustments.",
+    "description": "Play SnowBoard Game online for free - no download, no install. Ride snowy slopes, dodge barriers and find your route to the finish. Play on desktop and mobile.",
+    "intro": "SnowBoard Game is a winter racing game from Quantum Studio, published in the GameMonetize catalog on February 18, 2026. It uses a third-person 3D view: you guide a snowboarder along snowy tracks, avoid barriers, and choose a route to the finish line.\n\nThe start screen lists movement and a separate grab action. Learn how the rider responds before trying to combine the two. You can play in the window above without installing a separate app; the browser loads the game's files over an internet connection.",
     "howToPlay": [
-      "Start: Click GO inside the game window and allow the course to load.",
-      "Move: Use W, A, S, D or the arrow keys shown in the game’s controls.",
-      "Navigate: Keep your board clear of barriers.",
-      "Finish: Follow the snowy course toward the finish line."
+      "Start: Click GO inside the game window and let the course load. Read the start screen before moving; it shows the movement keys and grab input used in this version.",
+      "Move: Use W, A, S, D or the arrow keys shown on the start screen. If the keys scroll this page instead of moving the rider, click inside the game to give it keyboard focus.",
+      "Steer: Guide the board through an open part of the snowy track. Check the rider's position after each adjustment so you know whether another input is needed. Learn the response before attempting a narrow gap.",
+      "Grab: Press V for the grab action. Try it on a clear stretch where you can watch what happens without also needing an immediate turn.",
+      "Finish: Keep following the course toward the finish line. Use each clear stretch to line up for the next section."
     ],
     "tips": [
-      "Look ahead: Read the next obstacle before turning.",
-      "Keep control: Make smooth adjustments to your route.",
-      "Learn the course: Remember the hazard that ended your attempt."
+      "Read obstacles early: Look beyond the space immediately beside your board. Pick the next open gap while you still have room to move. Waiting until a barrier reaches the rider leaves less time to decide which side to pass.",
+      "Keep turns smooth: Make a deliberate correction, then check the result before adding another. Repeatedly switching directions can put you back beside the obstacle you were avoiding.",
+      "Separate grab practice from steering practice: First learn a line you can follow comfortably, then try V on its clearest stretch. If you miss the next turn while watching the grab, leave the extra action out of that part of the course.",
+      "Choose a gap by its exit: An opening can be easy to enter but leave you close to the next barrier. Compare where each route will put your board afterward. Favor a line with room for another adjustment over a tight gap that immediately demands a second turn.",
+      "Change one decision per retry: Identify where the previous attempt became difficult: a late turn, an awkward exit, or attention lost during a grab. Change that one decision next time. Keeping the rest of your approach similar helps you see whether the adjustment worked."
     ],
     "controls": [
       {
@@ -217,24 +220,32 @@
     ],
     "faqs": [
       {
-        "q": "Is it free?",
-        "a": "Yes, play in the browser window above."
+        "q": "Is SnowBoard Game free?",
+        "a": "Yes. You can play SnowBoard Game for free in the browser window above."
       },
       {
-        "q": "What is the objective?",
-        "a": "Avoid barriers and reach the finish line."
+        "q": "Do I need to download anything?",
+        "a": "No app or separate client is required. The game loads its files through your browser and uses an internet connection."
       },
       {
-        "q": "How do I start?",
-        "a": "Click GO in the game window, wait for the course to load, then use W, A, S, D or the arrow keys to move."
+        "q": "What are the controls?",
+        "a": "Click GO to start, use WASD or the arrow keys to move, and press V for a grab. Click inside the player if the keyboard is not responding."
       },
       {
-        "q": "Do I need a download?",
-        "a": "No separate app installation is needed."
+        "q": "Can I play it on my phone?",
+        "a": "The publisher lists it as mobile ready. Check for touch movement and grab controls in the player on your device; use a computer if they are unavailable."
       },
       {
-        "q": "Who made this game?",
-        "a": "The official catalog lists Quantum Studio."
+        "q": "Is it unblocked at school or work?",
+        "a": "Only if your network allows both this site and the embedded game. Being playable in a browser does not override school or workplace restrictions."
+      },
+      {
+        "q": "What's the difference between SnowBoard Game and Downhill Snowboard?",
+        "a": "SnowBoard Game uses a 3D view and a finish-line objective. Downhill Snowboard uses a 2D downhill view, with coins that unlock characters and boards."
+      },
+      {
+        "q": "Who made SnowBoard Game?",
+        "a": "Quantum Studio is the developer listed in the official GameMonetize catalog."
       }
     ],
     "similar": [

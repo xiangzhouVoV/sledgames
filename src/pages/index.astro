@@ -31,8 +31,8 @@ const faqs = [
 ---
 <Layout snowfall title="Sled Games - Play Free Sledding Games Online" description="Play free sled games in your web browser. Ride a sled down snowy slopes, then explore our snowboard, ski, and Christmas game pages." schema={[{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Sled Games', url: canonical('/') }, itemListSchema(sledGames, 'Sled Games'), faqSchema(faqs)]}>
   <section class="page-intro hub-intro">
-    <div><span class="eyebrow">PICK YOUR NEXT RUN</span><h1>Sled Games</h1><p>Choose a downhill sledding run, compare the controls, and open a game when you're ready. Start with the sled games below, or use Quick Start to jump into a game.</p></div>
-    {sledGames.length > 0 && <a class="button" data-random-game href={gamePath(sledGames[0].slug)}>Quick Start <span aria-hidden="true">↗</span></a>}
+    <div><span class="eyebrow">PICK YOUR NEXT RUN</span><h1>Sled Games</h1><p>Choose a downhill sledding run, compare the controls, and open a game when you're ready. Start with the sled games below, or use Play now to jump into a game.</p></div>
+    {sledGames.length > 0 && <a class="button" data-random-game href={gamePath(sledGames[0].slug)}>Play now <span aria-hidden="true">↗</span></a>}
   </section>
   <section class="featured-games" aria-labelledby="sled-games-collection">
     <div class="section-heading"><div><h2 id="sled-games-collection">Choose your sled game</h2><p>Downhill runs, each with its own player and guide.</p></div></div>

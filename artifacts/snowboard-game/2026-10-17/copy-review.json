@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-17",
+  "purpose": "Remove repeated explanations and padding; approximate length replaces all minimum-word requirements.",
+  "proseWords": 911,
+  "articleWordsIncludingHeadingsAndQuestions": 1008,
+  "excludes": [
+    "navigation",
+    "developer metadata",
+    "control table",
+    "related cards",
+    "site header and footer"
+  ],
+  "tips": 5,
+  "faqs": 7,
+  "duplicateExactParagraphs": [],
+  "editorialChanges": [
+    "Condensed introduction and removed the repeated step-by-step overview.",
+    "Removed the sixth tip, which repeated reaching the finish and grab practice.",
+    "Shortened FAQ answers, removing the repeated date and inserted keyword phrases.",
+    "Removed generic hand-position and touchscreen reminders.",
+    "Added practical instructions for the existing Reload and Fullscreen buttons.",
+    "Removed total and per-section minimum-word assertions from tests."
+  ],
+  "validation": {
+    "build": "passed",
+    "staticTests": 32,
+    "browserTests": {
+      "passed": 4,
+      "viewports": [
+        320,
+        390,
+        1280
+      ]
+    }
+  }
+}

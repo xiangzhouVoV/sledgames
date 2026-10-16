@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-16",
+  "tool": "Google Rich Results Test",
+  "url": "https://search.google.com/test/rich-results",
+  "inputFile": "dist/snowboard-game/index.html",
+  "mode": "code",
+  "steps": [
+    "Browser launched",
+    "Page navigation completed"
+  ],
+  "errors": [],
+  "initial": {
+    "url": "https://search.google.com/test/rich-results",
+    "title": "富媒体搜索结果测试 - Google Search Console",
+    "body": "富媒体搜索结果测试\n\n登录\n您的网页支持富媒体搜索结果吗？\n网址\n代码\n输入要测试的网址\n\nGoogle 检查工具智能手机版\n\nGoogle 检查工具桌面版\n\n测试网址\n什么是富媒体搜索结果？\n富媒体搜索结果是指我们在各种 Google 平台（例如 Google 搜索）上提供的超越了普通蓝色链接的用户体验。这类搜索结果可能包括轮换展示内容、图片以及其他非文字元素。\n这是什么测试？\n测试您的可公开访问的网页，看看该网页所包含的结构化数据可生成哪些富媒体搜索结果。\n了解详情\n\n结构化数据库\n关于 Google 支持的结构化数据的参考文档\n阅读相关文档\n",
+    "buttons": [
+      "帮助反馈",
+      "",
+      "测试网址"
+    ],
+    "tabs": [
+      "网址",
+      "代码"
+    ],
+    "textareas": 5
+  }
+}

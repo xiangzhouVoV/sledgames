@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-16",
+  "origin": "http://127.0.0.1:4321",
+  "scope": "Local built-page layout and interaction checks. Publisher iframe replaced with an explicit layout fixture; these screenshots do not verify mobile gameplay.",
+  "contentWords": 1331,
+  "introWords": 207,
+  "tipWords": [
+    39,
+    38,
+    39,
+    38,
+    38,
+    41
+  ],
+  "unblockedWords": 147,
+  "comparisonWords": 144,
+  "descriptionCharacters": 159,
+  "descriptionNote": "Approved description wording shortened from Playable to Play to stay within the existing 160-character catalog limit; download, desktop, and mobile meaning retained.",
+  "internalLinksBefore": 39,
+  "internalLinksAfter": 41,
+  "lostLinks": [],
+  "faqs": 7,
+  "schemas": [
+    "VideoGame",
+    "FAQPage",
+    "BreadcrumbList"
+  ],
+  "mobileEvidence": {
+    "publisher": "https://gamemonetize.com/snowboard-game-game",
+    "status": "Publisher marks mobile ready; no specific movement/grab gestures independently verified. Copy asks players to check controls and offers keyboard fallback."
+  },
+  "viewports": [
+    {
+      "width": 320,
+      "overflow": false,
+      "faqOpened": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "faqOpened": true
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "faqOpened": true
+    }
+  ],
+  "validation": {
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "astroBuild": {
+      "pages": 21,
+      "passed": true
+    },
+    "nodeTests": {
+      "passed": 32,
+      "failed": 0
+    },
+    "browserTests": {
+      "passed": 32,
+      "failed": 0,
+      "note": "30 tests passed initially; the two category-navigation tests passed on rerun after replacing the old fixed five-FAQ expectation with each game data count."
+    },
+    "diffWhitespaceCheck": "passed"
+  },
+  "deployment": "Local implementation only; not deployed. No GSC validation actions taken.",
+  "googleRichResultsTest": {
+    "status": "blocked_sign_in_required",
+    "confirmedPassed": false,
+    "evidence": "rich-results-result.png",
+    "summary": "rich-results-summary.json"
+  }
+}

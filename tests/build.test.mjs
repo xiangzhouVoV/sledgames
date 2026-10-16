@@ -368,7 +368,7 @@ test('winter categories link to their playable games with matching official artw
       assert.ok(detail('.guide-steps li').length >= 3);
       assert.ok(detail('.guide-tips li').length >= 3);
       assert.ok(detail('.guide-controls tbody tr').length > 0);
-      assert.equal(detail('details').length, 5);
+      assert.equal(detail('details').length, game.faqs.length);
       assert.ok(entries.some(other => other.slug !== game.slug && detail(`.game-card[href="${gamePath(other.slug)}"]`).length));
     }
   }

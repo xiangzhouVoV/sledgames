@@ -125,7 +125,7 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         await page.getByRole('link', { name: 'How to play', exact: true }).click();
         await expect(page.locator('#how-to-play')).toBeInViewport();
         await expect(page.locator('.guide-controls')).toBeVisible();
-        await expect(page.locator('details')).toHaveCount(5);
+        await expect(page.locator('details')).toHaveCount(game.faqs.length);
         await expect(page.locator(`.game-card[href="/${game.similar[0]}/"]`)).toHaveCount(1);
       }
     }
