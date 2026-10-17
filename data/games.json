@@ -104,17 +104,17 @@
       "Endless runner"
     ],
     "description": "Play Downhill Snowboard online for free. Ride the snowy slope, collect coins, and unlock new characters and boards in this browser snowboarding challenge.",
-    "intro": "Downhill Snowboard is a snowboarding score challenge from Renan Games. Ride down the slope, keep your run alive, and collect coins along the way.\n\nBetween attempts, use those coins to unlock characters and snowboards. Try to improve your route before chasing another collectible.",
+    "intro": "Downhill Snowboard is a 2D snowboarding score challenge from Renan Games. Keep the descent going and collect coins along the slope, balancing each pickup against the need to preserve your run.\n\nUse coins between attempts to unlock characters and snowboards. Work toward your next unlock while learning a more controlled route.",
     "howToPlay": [
-      "Start: Choose play inside the game window.",
-      "Steer: Use A and D or the arrow keys.",
-      "Collect: Pick up coins along a clear route.",
-      "Unlock: Check the game menu for new characters and boards."
+      "Start: Choose Play inside the game window. Use the mouse for menus, then switch to the keyboard for the descent.",
+      "Steer: Use A and D or the arrow keys to guide the board. Try small corrections first so you can judge the response.",
+      "Collect: Pick up coins that fit your route. Check the space beyond a coin before turning toward it.",
+      "Unlock: Between attempts, check the menu for characters and snowboards. Use collected coins toward the options you want."
     ],
     "tips": [
-      "Look ahead: Choose your next turn early.",
-      "Keep control: Make small steering corrections.",
-      "Skip risky coins: Keep the run alive first."
+      "Read ahead: Watch the route beyond the nearest coin. Plan the exit so you do not collect a pickup with no room left to steer.",
+      "Choose a key set: Try A / D and the arrow keys in separate attempts. Stick with the set that gives you the most controlled turns.",
+      "Value the run: Pass up an awkward coin when reaching it would spoil your line. A longer descent gives you more opportunities to collect."
     ],
     "controls": [
       {
@@ -122,30 +122,34 @@
         "input": "A / D or arrow keys"
       },
       {
-        "action": "Menus / touch controls",
+        "action": "Menus / interaction",
         "input": "Mouse or touch"
       }
     ],
     "faqs": [
       {
-        "q": "Is it free?",
-        "a": "Yes, play in the game window above."
+        "q": "Which keys steer Downhill Snowboard?",
+        "a": "Use A and D or the arrow keys to steer the board during the descent. Mouse or touch is listed for interaction, so use the keyboard controls when playing the snowboarding run."
       },
       {
-        "q": "Which keys steer the board?",
-        "a": "Use A and D or the arrow keys."
+        "q": "What are coins used for?",
+        "a": "Coins unlock new characters and snowboards in the game menu. Check the available options between attempts, then collect more coins on later runs to work toward an unlock."
       },
       {
-        "q": "What are coins for?",
-        "a": "They unlock characters and snowboards."
+        "q": "What should I focus on after a failed run?",
+        "a": "Try to keep the next descent going with smaller, earlier steering corrections. If a coin caused an awkward turn, leave that pickup behind next time and concentrate on maintaining a clear route."
       },
       {
-        "q": "Do I need to install it?",
-        "a": "No, it runs in your browser."
+        "q": "How is Downhill Snowboard different from SnowBoard Game?",
+        "a": "Downhill Snowboard offers a 2D score descent with coins that unlock characters and boards. SnowBoard Game uses a 3D course toward a finish line, WASD or arrow controls, and V for a grab. Choose between extending a score run and completing a course."
       },
       {
-        "q": "Who publishes this version?",
-        "a": "The official catalog lists Renan Games."
+        "q": "Can I play Downhill Snowboard on a phone?",
+        "a": "This version is not listed as mobile ready. Use a computer with A and D or arrow keys for the descent; the mouse or touch interaction listing does not establish touch steering for the run."
+      },
+      {
+        "q": "Is Downhill Snowboard free and browser based?",
+        "a": "Yes, the game runs for free in the browser player above without a separate app installation. Start it inside the window and use a keyboard for the descent controls."
       }
     ],
     "similar": [
@@ -289,17 +293,17 @@
       "Time trial"
     ],
     "description": "Play Ski King online for free. Pass course flags on the correct side, dodge trees and rocks, and improve your skiing skills while chasing faster finish times.",
-    "intro": "Ski King is a downhill course game from Inlogic Software. Avoid trees and rocks, cross icy ground, and find a fast route through the mountain.\n\nPass every course flag on the correct side: a wrong pass resets the level. Upgrade points improve your skills between attempts.",
+    "intro": "Ski King is a timed downhill skiing game from Inlogic Software. Each course asks you to balance a short route with flag rules, trees, rocks, and icy ground.\n\nEvery flag must be passed on its marked side; a wrong pass resets the level. Upgrade points let you improve skiing skills, then revisit the course to chase a quicker finish.",
     "howToPlay": [
-      "Choose: Select a language, open Play, and start the first available course.",
-      "Navigate: Use the left and right arrow keys to carve, and pass flags on the marked side.",
-      "Avoid: Keep your skier clear of trees and rocks.",
-      "Improve: Spend upgrade points and try for a faster finish."
+      "Choose: Select a language, open Play, and start an available course. Use the mouse or touch for menus and upgrades.",
+      "Carve: Steer with Left and Right. Look beyond the next flag so you can reach its marked side without a last-second swerve.",
+      "Route: Find a short line around trees and rocks, leaving room to adjust as you cross icy ground.",
+      "Improve: Finish the course, check your time, and use upgrade points before trying the route again."
     ],
     "tips": [
-      "Read flags early: Prepare the correct side before turning.",
-      "Stay safe: A shortcut is useless if it resets the level.",
-      "Practice the route: Improve one difficult turn at a time."
+      "Plan the exit: Approach a flag with the following turn in mind. A legal pass can still leave you badly placed for the next one.",
+      "Cut distance carefully: Choose a shorter line only when it leaves enough space for a correct flag pass and a clear path around hazards.",
+      "Practice one section: Repeat a troublesome turn until the approach feels reliable, then work on reducing your finishing time."
     ],
     "controls": [
       {
@@ -313,24 +317,28 @@
     ],
     "faqs": [
       {
-        "q": "Is it free?",
-        "a": "Yes, play in the window above."
+        "q": "Which controls are used during a Ski King run?",
+        "a": "Use the Left and Right arrow keys to steer down the course. The mouse or touch is used for menus and upgrades, so those interactions are separate from carving on the slope."
       },
       {
-        "q": "Why did my level reset?",
-        "a": "Passing a flag on the wrong side resets it."
+        "q": "Why does Ski King reset my level at a flag?",
+        "a": "Passing a course flag on the wrong side resets the level. Check the marked side before you turn; simply passing close to the flag is not enough to complete that part of the route."
       },
       {
-        "q": "What do upgrade points do?",
-        "a": "They improve skiing skills."
+        "q": "What do upgrade points change?",
+        "a": "Upgrade points improve your skiing skills and let you adjust your style between attempts. They do not replace the flag rules, so you still need to learn a valid route through each course."
       },
       {
-        "q": "What is the goal?",
-        "a": "Finish the course with a fast time."
+        "q": "How do I improve my finishing time?",
+        "a": "Look for a short, valid route through the flags while avoiding trees and rocks. First make a reliable pass through the difficult sections, then trim unnecessary turns instead of taking a shortcut that resets the level."
       },
       {
-        "q": "Do I need to install it?",
-        "a": "No, it runs in your browser."
+        "q": "How is Ski King different from Ski Rush?",
+        "a": "Ski King centers on timed courses with flags that must be passed on the correct side. Ski Rush is a survival run where flags add points, making it a different choice when you want to keep a run going rather than refine a finishing time."
+      },
+      {
+        "q": "Can I play Ski King for free without installing it?",
+        "a": "Yes, Ski King runs for free in the browser player above. Start a course inside that window; you do not need a separate app to use the menus or play the skiing game."
       }
     ],
     "similar": [
@@ -374,17 +382,17 @@
       "Endless runner"
     ],
     "description": "Play Ski Rush online for free. Ski down the mountain, avoid obstacles, and collect flags for extra points using mouse or touch controls in your browser.",
-    "intro": "Ski Rush is a downhill survival game. Keep skiing for as long as possible, steer clear of obstacles, and collect flags to increase your score.\n\nIts mouse and touch controls offer a different feel from a keyboard snowboarding game. Learn the steering before taking risks for extra points.",
+    "intro": "Ski Rush is a downhill survival game built around avoiding obstacles for as long as possible. Flags add points, so each run asks you to judge whether a scoring opportunity is worth the detour.\n\nMouse or touch controls guide the skier. Learn how the steering responds on a clear stretch before taking a tighter route toward a flag.",
     "howToPlay": [
-      "Begin: Click or tap the play button.",
-      "Steer: Use the game’s mouse or touch controls.",
-      "Score: Collect flags when your route is clear.",
-      "Retry: After a crash, start another downhill attempt."
+      "Begin: Click or tap Play in the game window. Learn the mouse or touch steering before chasing points.",
+      "Steer: Move the mouse side to side or use the game’s touch controls. Read the downhill route early so you can choose an open gap.",
+      "Score: Steer toward flags when the approach and exit are clear. You can leave a risky flag behind and keep the run alive.",
+      "Retry: A collision ends the attempt. Start again and use what you learned about spacing to survive longer."
     ],
     "tips": [
-      "Look downhill: Spot obstacles before they reach you.",
-      "Keep space: Leave room for another turn.",
-      "Choose safe flags: Avoid detours into hazards."
+      "Keep an exit: Before moving toward a flag, check where you can steer afterward. The point pickup should leave room for the next obstacle.",
+      "Avoid late detours: Let a flag go if reaching it would force you across a hazard. Survival gives you more chances to score later.",
+      "Learn the response: Judge how much mouse or touch movement you need. Aim for controlled changes rather than rushed corrections."
     ],
     "controls": [
       {
@@ -394,24 +402,28 @@
     ],
     "faqs": [
       {
-        "q": "Is it free?",
-        "a": "Yes, use the browser player above."
+        "q": "How do I control the skier in Ski Rush?",
+        "a": "Use the mouse or touch controls inside the game window to steer and interact. Start by testing the steering on a clear route so you can judge its response before moving toward a flag."
       },
       {
-        "q": "How do I steer?",
-        "a": "Use mouse or touch controls inside the game."
+        "q": "Do I have to collect every flag?",
+        "a": "Flags increase your score, but survival remains the main goal. Skip a flag when its approach or exit would put you in the path of an obstacle."
       },
       {
-        "q": "What increases my score?",
-        "a": "Collect flags while skiing."
+        "q": "What ends a Ski Rush run?",
+        "a": "Hitting an obstacle ends the attempt. Restart the run and focus on spotting an open route earlier, especially when a flag draws you toward a crowded section."
       },
       {
-        "q": "How long does a run last?",
-        "a": "Keep going until you hit an obstacle."
+        "q": "Is there a finish line to reach?",
+        "a": "The stated goal is to ski for as long as possible while avoiding obstacles. Treat your progress as a longer surviving run with more safe flag pickups, rather than aiming for a timed course finish."
       },
       {
-        "q": "Do I need a download?",
-        "a": "No app installation is required."
+        "q": "How is Ski Rush different from Ski King?",
+        "a": "Ski Rush uses mouse or touch steering for a survival run, with flags providing extra points. Ski King uses Left and Right arrow keys on timed courses where passing a flag on the wrong side resets the level."
+      },
+      {
+        "q": "Is Ski Rush free to play without a download?",
+        "a": "Yes, use the free browser player above to start Ski Rush. There is no separate app installation; click or tap Play inside the window and use the controls provided by the game."
       }
     ],
     "similar": [

@@ -6,7 +6,10 @@ import { games, winterCollection, itemListSchema, breadcrumbSchema } from '../li
 ---
 <Layout title={'All Winter Games - Play Free Snowboard, Ski & Christmas Games Online'} description="Browse free winter games online. Explore snowboard, ski, and Christmas games, find controls and guides, and choose your next browser adventure." schema={[itemListSchema(games), breadcrumbSchema([{ name: winterCollection.title, path: winterCollection.path }])]}>
   <section class="page-intro"><span class="eyebrow">THE WHOLE MOUNTAIN</span><h1>{winterCollection.title}</h1><p>Every adventure, in one place. Pick your next stop.</p></section>
-  <section class="content-section"><GameGrid games={games} /></section>
+  <section class="content-section" aria-labelledby="winter-games-collection">
+    <div class="section-heading"><div><h2 id="winter-games-collection">Choose your winter game</h2></div></div>
+    <GameGrid games={games} />
+  </section>
   <section class="content-section prose" aria-labelledby="winter-games-guide">
     <h2 id="winter-games-guide">Find your next winter game</h2>
     <p>Explore free winter games that bring snowy slopes, mountain courses, and festive sleigh adventures to your browser. This collection includes sledding, skiing, snowboarding, and Christmas games. Each card opens a game page with its player, an introduction, controls, instructions, tips, and answers to common questions. You can browse the collection without installing an app or creating a Sled Games account.</p>

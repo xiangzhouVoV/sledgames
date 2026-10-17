@@ -1,0 +1,23 @@
+---
+import type { Game } from '../lib/types';
+import { games, gameCategory, gamePath } from '../lib/catalog.mjs';
+import { gameComparison } from '../lib/game-comparisons.mjs';
+
+interface Props { game: Game }
+const { game } = Astro.props;
+const comparison = gameComparison(game.slug);
+const other = comparison && games.find(entry => entry.slug === comparison.otherSlug);
+const category = gameCategory(game);
+const id = `${game.slug}-comparison`;
+---
+{comparison && other && category && <section id={id} class="content-section game-guide prose game-comparison" aria-labelledby={`${id}-heading`}>
+  <h2 id={`${id}-heading`}>{comparison.title}</h2>
+  <p>{comparison.objective}</p>
+  <p>{comparison.controls}</p>
+  <p>{comparison.choice} <a href={gamePath(other.slug)}>Try {other.title}</a> or browse the <a href={category.path}>{category.title} collection</a>.</p>
+</section>}
+
+<style>
+  section { scroll-margin-top: 24px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+</style>

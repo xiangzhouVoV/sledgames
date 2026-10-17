@@ -55,6 +55,69 @@ test('all pages have static content, unique metadata, and working internal links
   }
 });
 
+test('game cards name their play destination and reserve Play now for the home primary action', () => {
+  for (const path of [...allPaths, '/404']) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    const visibleText = $('body').clone().find('script, style').remove().end().text();
+    assert.equal((visibleText.match(/\bPlay now\b/g) ?? []).length, path === '/' ? 1 : 0, `${path}: generic play copy is reserved for the home primary action`);
+    if (path === '/') {
+      const primaryAction = $('main .page-intro a[data-random-game]');
+      assert.equal(primaryAction.length, 1);
+      assert.equal(primaryAction.clone().find('[aria-hidden]').remove().end().text().trim(), 'Play now');
+    }
+    $('main .game-card:not(.game-card--compact)').each((_, node) => {
+      const card = $(node);
+      const game = games.find(game => gamePath(game.slug) === card.attr('href'));
+      assert.ok(game, `${path}: a game card must have a catalog destination`);
+      assert.equal(card.find('.card-badge').length, 1, `${path}: ${game.title} has one play label`);
+      assert.equal(card.find('.card-badge').text(), `Play ${game.title}`, `${path}: the play label identifies ${game.title}`);
+    });
+  }
+});
+
+test('full game cards use distinct contextual descriptions across pages', () => {
+  const appearances = new Map(games.map(game => [game.slug, []]));
+  for (const path of [...allPaths, '/404']) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    $('main .game-card:not(.game-card--compact)').each((_, node) => {
+      const card = $(node);
+      const game = games.find(game => gamePath(game.slug) === card.attr('href'));
+      assert.ok(game, `${path}: a game card must have a catalog destination`);
+      const paragraphs = card.find('.card-copy > p');
+      const description = paragraphs.text().trim().replace(/\s+/g, ' ');
+      assert.equal(paragraphs.length, 1, `${path}: ${game.title} has one card description`);
+      assert.ok(description, `${path}: ${game.title} has useful preview copy`);
+      assert.notEqual(description, game.description, `${path}: ${game.title} does not repeat its metadata`);
+      assert.doesNotMatch(description, /^Play .+? online for free\b/i, `${path}: ${game.title} avoids the generic catalog opening`);
+      appearances.get(game.slug).push({ path, description, firstSentence: description.split(/[.!?](?:\s+|$)/, 1)[0] });
+    });
+  }
+  for (const [slug, entries] of appearances) {
+    assert.ok(entries.length >= 3, `${slug}: compare descriptions on at least three pages`);
+    for (const field of ['description', 'firstSentence']) {
+      const seen = new Map();
+      for (const entry of entries) {
+        assert.ok(!seen.has(entry[field]), `${slug}: ${field} repeats between ${seen.get(entry[field])} and ${entry.path}`);
+        seen.set(entry[field], entry.path);
+      }
+    }
+  }
+});
+
+test('main heading outlines keep collection headings between page and card titles', () => {
+  for (const path of [...allPaths, '/404']) {
+    const $ = load(readFileSync(pageFile(path), 'utf8'));
+    const headings = $('main h1, main h2, main h3').toArray();
+    assert.equal(headings[0]?.tagName, 'h1', `${path}: the page title starts the outline`);
+    let previousLevel = 0;
+    for (const heading of headings) {
+      const level = Number(heading.tagName.slice(1));
+      assert.ok(level <= previousLevel + 1, `${path}: ${$(heading).text()} skips from H${previousLevel} to H${level}`);
+      previousLevel = level;
+    }
+  }
+});
+
 test('sitemap lists every public page and excludes the 404 page', () => {
   const $ = load(readFileSync('dist/sitemap.xml', 'utf8'), { xml: true });
   assert.deepEqual($('loc').map((_, item) => $(item).text()).get().sort(), allPaths.map(canonical).sort());
@@ -133,7 +196,7 @@ test('the homepage compact catalog follows the shared catalog without duplicatin
     assert.equal(card.find('img').attr('height'), '300');
     assert.equal(card.find('img').attr('loading'), 'lazy');
     assert.equal(card.find('img').attr('alt'), '');
-    assert.equal(card.find('p, .card-badge').length, 0, `${game.slug}: compact cards omit descriptions and Play now badges`);
+    assert.equal(card.find('p, .card-badge').length, 0, `${game.slug}: compact cards omit descriptions and play labels`);
     assert.doesNotMatch(card.text(), /Play now/);
   });
   const featured = categoryGames('sledding-games');
@@ -245,7 +308,8 @@ test('Snow Rider 2 publishes the approved guide and the official Snow Rider 3D p
   const card = collection(`main .game-card[href="${path}"]`);
   assert.equal(card.length, 1);
   assert.equal(card.find('img').attr('src'), 'https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x384.jpg');
-  assert.equal(card.find('p').text(), description);
+  assert.notEqual(card.find('p').text(), description);
+  assert.match(card.find('p').text(), /sled|sleigh/i, 'The collection card describes Snow Rider 2 gameplay');
   for (const category of ['/snowboard-games/', '/ski-games/']) {
     assert.equal(load(readFileSync(pageFile(category), 'utf8'))(`main .primary-collection .game-card[href="${path}"]`).length, 0, category);
   }
@@ -319,7 +383,8 @@ for (const approved of approvedWinterGames) {
     assert.equal(card.length, 1);
     assert.equal(card.find('img').attr('src'), approved.thumbnail);
     assert.equal(card.find('.card-category').text(), 'Winter');
-    assert.equal(card.find('p').text(), approved.description);
+    assert.notEqual(card.find('p').text(), approved.description);
+    assert.match(card.find('p').text(), approved.slug === 'snowball-io' ? /snowball|arena/i : /motorcycle|bike|stunt/i, `${approved.name}: the collection preview describes its gameplay`);
     for (const category of ['/snowboard-games/', '/ski-games/']) {
       assert.equal(load(readFileSync(pageFile(category), 'utf8'))(`main .primary-collection .game-card[href="${path}"]`).length, 0, category);
     }
@@ -351,13 +416,16 @@ test('winter categories link to their playable games with matching official artw
     assert.equal($('h1').text(), category === 'christmas-games' ? 'Christmas Games' : category === 'ski-games' ? 'Ski Games' : 'Snowboard Games');
     const collection = $('main .primary-collection');
     assert.equal(collection.length, 1, `${category}: one main category collection`);
-    assert.equal(collection.attr('aria-label'), $('h1').text());
+    const collectionHeading = collection.find('h2');
+    assert.equal(collectionHeading.length, 1, `${category}: one visible collection heading`);
+    assert.equal(collection.attr('aria-labelledby'), collectionHeading.attr('id'));
+    assert.equal(collectionHeading.text(), category === 'christmas-games' ? 'Choose your Christmas game' : category === 'ski-games' ? 'Choose your ski game' : 'Choose your snowboard game');
     assert.equal(collection.find('.game-card').length, entries.length);
     for (const game of entries) {
       const card = collection.find(`.game-card[href="${gamePath(game.slug)}"]`);
       assert.equal(card.length, 1);
       assert.equal(card.find('img').attr('src'), game.thumbnail);
-      assert.equal(card.find('.card-badge').text(), 'Play now');
+      assert.equal(card.find('.card-badge').text(), `Play ${game.title}`);
       const detail = load(readFileSync(pageFile(gamePath(game.slug)), 'utf8'));
       const player = new URL(detail('iframe').attr('src'));
       assert.equal(player.href, embedUrl(game, canonical(gamePath(game.slug))));
