@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import games from '../../data/games.json' with { type: 'json' };
+import { games as catalogGames, relatedGames } from '../../src/lib/catalog.mjs';
 
 const publisherPattern = /^https:\/\/(?:gamea\.azgame\.io|html5\.(?:gamedistribution\.com|gamemonetize\.(?:com|co|games))|io\.gamemonetize\.com)\//;
 
@@ -126,7 +127,9 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         await expect(page.locator('#how-to-play')).toBeInViewport();
         await expect(page.locator('.guide-controls')).toBeVisible();
         await expect(page.locator('details')).toHaveCount(game.faqs.length);
-        await expect(page.locator(`.game-card[href="/${game.similar[0]}/"]`)).toHaveCount(1);
+        const related = relatedGames(catalogGames.find(entry => entry.slug === game.slug)!);
+        await expect(page.locator('#related-games .game-card')).toHaveCount(5);
+        await expect(page.locator('#related-games .game-card').first()).toHaveAttribute('href', `/${related[0].slug}/`);
       }
     }
     await context.close();
@@ -162,8 +165,12 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
     const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport });
     try {
       const page = await context.newPage();
-      await page.route(/^https:\/\/(?:html5\.(?:gamedistribution\.com|gamemonetize\.co)\/|io\.gamemonetize\.com\/snowwar\/)/, route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
-      await page.route(/^https:\/\/img\.(gamedistribution|gamemonetize)\.com\//, route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
+      await page.route(/^https:\/\//, route => {
+        const type = route.request().resourceType();
+        if (type === 'image') return route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' });
+        if (type === 'document') return route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' });
+        return route.abort();
+      });
       const newGames = [
         { slug: 'snow-rider-2', title: 'Snow Rider 2' },
         { slug: 'snowball-io', title: 'Snowball.io' },
@@ -173,9 +180,10 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         for (const target of newGames.filter(game => game.slug !== source.slug)) {
           await page.goto(`/${source.slug}/`);
           await expect(page.locator('main h1')).toHaveText(source.title);
-          const related = page.locator('main section').filter({ has: page.getByRole('heading', { level: 2, name: 'Explore Other Winter Games', exact: true }) });
+          const related = page.locator('main section.related-games#related-games');
           await expect(related).toHaveCount(1);
-          await expect(related.locator('.game-card')).toHaveCount(7);
+          await expect(related.getByRole('heading', { level: 2, name: 'Explore More Winter Games', exact: true })).toHaveCount(1);
+          await expect(related.locator('.game-card')).toHaveCount(5);
           await expect(related.locator(`.game-card[href="/${source.slug}/"]`)).toHaveCount(0);
           expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
           const card = related.locator(`.game-card[href="/${target.slug}/"]`);

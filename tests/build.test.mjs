@@ -280,7 +280,7 @@ test('Snow Rider 2 publishes the approved guide and the official Snow Rider 3D p
   assert.deepEqual($('.guide-steps li strong').map((_, node) => $(node).text()).get(), ['Start', 'Steer', 'Jump', 'Collect']);
   assert.equal($('.guide-tips li').length, 4);
   assert.deepEqual($('.guide-tips li strong').map((_, node) => $(node).text()).get(), ['Look further ahead', 'Small corrections', 'Jump early on gaps', 'Keep the run alive']);
-  assert.ok($('h2').toArray().some(node => $(node).text() === 'Explore Other Winter Games'));
+  assert.equal($('#related-games h2#related-games-heading').text(), 'Explore More Winter Games');
   assert.equal($('.info-bar').length, 0);
   assert.doesNotMatch($('main').text(), /Items and prices/);
 
@@ -463,7 +463,7 @@ test('new winter game pages link to one another in their related-game sections',
   const newPaths = ['/snow-rider-2/', '/snowball-io/', '/moto-x3m-winter/'];
   for (const path of newPaths) {
     const $ = load(readFileSync(pageFile(path), 'utf8'));
-    const related = $('main section').filter((_, section) => $(section).find('h2').first().text() === 'Explore Other Winter Games');
+    const related = $('main section.related-games#related-games');
     assert.equal(related.length, 1, `${path}: one related-game section`);
     assert.equal(related.find('.game-grid').length, 1, `${path}: one related-game grid`);
     const cards = related.find('.game-grid .game-card');

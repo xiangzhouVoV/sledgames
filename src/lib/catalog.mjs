@@ -89,8 +89,27 @@ export function validateGames(entries) {
 /** @type {import('./types').Game[]} */
 export const games = validateGames(rawGames);
 export const allPaths = [...new Set(['/', '/games/', ...categories.filter(c => c.path !== '/').map(c => c.path), ...games.map(g => gamePath(g.slug)), ...legalRoutes.map(slug => pagePath(`/${slug}`))])];
-/** @param {import('./types').Game} game */
-export const relatedGames = game => game.similar.map(slug => games.find(g => g.slug === slug)).filter(entry => entry !== undefined);
+export const RELATED_GAME_LIMIT = 5;
+/**
+ * Prefer the same category, then the winter pool, then the full winter catalog.
+ * Editorial selections order peers within each group without excluding new games.
+ * @param {import('./types').Game} game
+ * @param {import('./types').Game[]} entries
+ */
+export function relatedGames(game, entries = games) {
+  const seen = new Set([game.slug]);
+  const candidates = entries.filter(entry => {
+    if (seen.has(entry.slug)) return false;
+    seen.add(entry.slug);
+    return true;
+  });
+  const preferred = new Map(game.similar.map((slug, index) => [slug, index]));
+  /** @param {import('./types').Game} entry */
+  const priority = entry => entry.category.some(slug => game.category.includes(slug)) ? 0
+    : entry.category.some(slug => slug === 'sledding-games' || slug === winterCollection.slug) ? 1 : 2;
+  return candidates.sort((left, right) => priority(left) - priority(right)
+    || (preferred.get(left.slug) ?? preferred.size) - (preferred.get(right.slug) ?? preferred.size)).slice(0, RELATED_GAME_LIMIT);
+}
 export const categoryGames = slug => games.filter(game => game.category.includes(slug));
 export const gameFaqs = game => game.faqs.filter(faq => faq.q?.trim() && faq.a?.trim());
 

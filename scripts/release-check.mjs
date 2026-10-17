@@ -1,4 +1,4 @@
-import { games, relatedGames, categories, categoryGames } from '../src/lib/catalog.mjs';
+import { games, relatedGames, categories, categoryGames, RELATED_GAME_LIMIT } from '../src/lib/catalog.mjs';
 import { readFileSync } from 'node:fs';
 
 const errors = [];
@@ -9,7 +9,8 @@ for (const slug of required) if (!games.some(game => game.slug === slug)) errors
 for (const game of games) {
   if (!game.embed.iframeSrc) errors.push(`${game.slug}: official publisher embed is not configured.`);
   if (!game.intro || !game.howToPlay.length || !game.tips.length) errors.push(`${game.slug}: verify and complete game information.`);
-  if (relatedGames(game).length < 5) errors.push(`${game.slug}: add 5–8 related game links.`);
+  const relatedCount = relatedGames(game).length;
+  if (relatedCount < 4 || relatedCount > RELATED_GAME_LIMIT) errors.push(`${game.slug}: add 4–${RELATED_GAME_LIMIT} related game links.`);
   if (game.faqs.filter(faq => faq.q && faq.a).length < 5) errors.push(`${game.slug}: at least 5 complete FAQs required.`);
 }
 for (const category of categories) if (!categoryGames(category.slug).length) errors.push(`${category.slug}: category has no games.`);

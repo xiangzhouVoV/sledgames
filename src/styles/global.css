@@ -81,6 +81,7 @@
   .section-heading h2 { margin-top: 4px; }
   .section-heading p { margin-top: 5px; font-size: .875rem; }
   .game-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .related-games .game-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .category-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 }
 @layer components {

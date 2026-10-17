@@ -39,7 +39,7 @@ const number = new Intl.NumberFormat('en-US');
   {game.slug === 'snowboard-game' && <SnowboardGameDetails />}
   <GameComparison game={game} />
   {game.items.length > 0 && hasSource(game, 'items') && <section class="content-section prose"><h2>Items and prices</h2><div class="table-scroll"><table><thead><tr><th scope="col">Item</th><th scope="col">Price</th></tr></thead><tbody>{game.items.map(item => <tr><td>{item.name}</td><td>{item.price}</td></tr>)}</tbody></table></div></section>}
-  {related.length > 0 && <section class="content-section"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2>Explore Other {collection === winterCollection ? 'Winter Games' : category?.title}</h2></div></div><GameGrid games={related} /></section>}
+  {related.length > 0 && <section class="content-section related-games" id="related-games" aria-labelledby="related-games-heading"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2 id="related-games-heading">Explore More Winter Games</h2></div></div><GameGrid games={related} /></section>}
   <Faq faqs={faqs} />
   <CategoryLinks />
 </Layout>
