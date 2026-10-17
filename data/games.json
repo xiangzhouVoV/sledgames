@@ -488,23 +488,27 @@
     "faqs": [
       {
         "q": "How do I move Santa?",
-        "a": "Use arrow keys or WASD on a keyboard."
+        "a": "Use the arrow keys or WASD on a computer keyboard to move Santa's sleigh. Watch where presents and bombs are falling, then move into a clear collection path before an object reaches you."
       },
       {
         "q": "What gives me points?",
-        "a": "Catch the falling presents."
+        "a": "Catching falling presents adds to your score. Keep an attempt going as the objects speed up, and pass up a present when moving under it would leave you beside a bomb."
       },
       {
         "q": "What happens when I hit a bomb?",
-        "a": "You lose a life. Losing all three lives ends the attempt."
+        "a": "Hitting a bomb costs one of your three lives, and losing all three ends the attempt. Before collecting another present, check that you have room to move away from nearby bombs rather than chasing every falling object."
       },
       {
         "q": "Does the game get harder?",
-        "a": "Gifts and bombs fall faster as you progress."
+        "a": "The falling presents and bombs get faster as you progress. Watch above Santa for the next group and make small, early movements, leaving room to avoid a bomb when it reaches the sleigh."
       },
       {
         "q": "Can I play on a phone?",
-        "a": "This game requires a keyboard. For click or tap controls, try Crazy Christmas Fun."
+        "a": "Santa Collecting Gifts requires arrow keys or WASD, so use a computer with a keyboard for the controls described here. For mouse clicks or taps, try Crazy Christmas Fun, where you guide a flying sleigh toward a Christmas tree."
+      },
+      {
+        "q": "How can I improve my score?",
+        "a": "Look above Santa and choose a clear route through the falling presents before moving. Leave a gift behind when a bomb blocks your escape. After losing a life, focus on the movement that put you in danger and adjust it on your next attempt."
       }
     ],
     "similar": [
@@ -569,23 +573,27 @@
     "faqs": [
       {
         "q": "How do I raise the sleigh?",
-        "a": "Click inside the game to ascend."
+        "a": "Use a mouse click or tap inside the game window to lift Santa's sleigh. Make small height corrections and look for a clear gap between balloons before moving toward a present."
       },
       {
         "q": "What is the goal?",
-        "a": "Avoid obstacles, collect gifts, and reach the Christmas tree."
+        "a": "Guide Santa and his reindeer through the balloon-filled sky, collect gifts, and reach the Christmas tree. The tree is your destination for completing the level, so choose a safe route toward it when a present would pull you beside an obstacle."
       },
       {
         "q": "How do I reach the next level?",
-        "a": "Arrive at the Christmas tree."
+        "a": "Reach the Christmas tree to advance to the next level. Collecting presents alone does not complete the stage, so keep looking ahead for openings that let you continue toward the tree."
       },
       {
         "q": "Does the game include Santa and reindeer?",
-        "a": "Yes. You control their flying sleigh."
+        "a": "Yes, you guide a flying sleigh with Santa and his reindeer through a North Pole setting. Balloons obstruct their route, and you adjust the sleigh's height to pass them while working toward the Christmas tree."
       },
       {
         "q": "Is an app installation required?",
-        "a": "No. Play in the browser window; platform ads may appear."
+        "a": "No separate app installation is needed because Crazy Christmas Fun runs in the browser player on this page. Start from the play control inside that window, then use clicks or taps to guide the sleigh. The game platform may show advertisements."
+      },
+      {
+        "q": "Can I play Crazy Christmas Fun on a phone?",
+        "a": "The publisher lists Crazy Christmas Fun as mobile ready, with clicks or taps used to raise the sleigh. On a phone, start the player and make small height adjustments around balloons. Santa Collecting Gifts requires a keyboard, so the two Christmas games use different controls."
       }
     ],
     "similar": [
@@ -659,7 +667,7 @@
     "faqs": [
       {
         "q": "Is it free?",
-        "a": "Yes, play in the game window above."
+        "a": "Yes, you can play Snow Rider 2 for free in the game window above. Start the embedded player on this page and ride the snowy track; no Sled Games account is needed to begin a run."
       },
       {
         "q": "Is this Snow Rider 3D or Snow Rider 2?",
@@ -667,15 +675,19 @@
       },
       {
         "q": "Which keys do I use?",
-        "a": "Up arrow or W to jump, left arrow or A to steer left, right arrow or D to steer right."
+        "a": "Use Up arrow or W to jump, Left arrow or A to steer left, and Right arrow or D to steer right. Click inside the player first if your keys are moving the surrounding page, then make small steering corrections as you approach logs or gaps."
       },
       {
         "q": "Can I play it on a phone?",
-        "a": "The official catalog lists this game as compatible with iOS and Android browsers."
+        "a": "The official catalog lists Snow Rider 3D, the game embedded here, as compatible with iOS and Android browsers. Follow the controls shown inside the player on your device; the keyboard bindings above describe computer play. If no usable touch controls appear, use a computer with a keyboard."
       },
       {
         "q": "Do I need to install anything?",
-        "a": "No, it runs in your browser."
+        "a": "No installation is required because the Snow Rider 3D player runs inside this page in your browser. Allow the game window to finish loading, then start from its play control. Keep an internet connection available while the embedded game loads."
+      },
+      {
+        "q": "How do I improve my score without crashing?",
+        "a": "Distance increases your score, so concentrate on keeping the sleigh on a clear route through the next obstacles. Use small steering corrections and plan your landing when jumping over a log or gap. Collect gifts along that route, and leave one behind if it would pull you toward a hazard."
       }
     ],
     "similar": [

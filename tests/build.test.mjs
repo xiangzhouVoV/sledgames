@@ -285,11 +285,12 @@ test('Snow Rider 2 publishes the approved guide and the official Snow Rider 3D p
   assert.doesNotMatch($('main').text(), /Items and prices/);
 
   const faqs = [
-    { q: 'Is it free?', a: 'Yes, play in the game window above.' },
-    { q: 'Is this Snow Rider 3D or Snow Rider 2?', a: 'The game window runs Snow Rider 3D, published by GameBiz in the official GameDistribution catalog. That is the sleigh-riding game usually searched for as Snow Rider 2.' },
-    { q: 'Which keys do I use?', a: 'Up arrow or W to jump, left arrow or A to steer left, right arrow or D to steer right.' },
-    { q: 'Can I play it on a phone?', a: 'The official catalog lists this game as compatible with iOS and Android browsers.' },
-    { q: 'Do I need to install anything?', a: 'No, it runs in your browser.' },
+    { q: "Is it free?", a: "Yes, you can play Snow Rider 2 for free in the game window above. Start the embedded player on this page and ride the snowy track; no Sled Games account is needed to begin a run." },
+    { q: "Is this Snow Rider 3D or Snow Rider 2?", a: "The game window runs Snow Rider 3D, published by GameBiz in the official GameDistribution catalog. That is the sleigh-riding game usually searched for as Snow Rider 2." },
+    { q: "Which keys do I use?", a: "Use Up arrow or W to jump, Left arrow or A to steer left, and Right arrow or D to steer right. Click inside the player first if your keys are moving the surrounding page, then make small steering corrections as you approach logs or gaps." },
+    { q: "Can I play it on a phone?", a: "The official catalog lists Snow Rider 3D, the game embedded here, as compatible with iOS and Android browsers. Follow the controls shown inside the player on your device; the keyboard bindings above describe computer play. If no usable touch controls appear, use a computer with a keyboard." },
+    { q: "Do I need to install anything?", a: "No installation is required because the Snow Rider 3D player runs inside this page in your browser. Allow the game window to finish loading, then start from its play control. Keep an internet connection available while the embedded game loads." },
+    { q: "How do I improve my score without crashing?", a: "Distance increases your score, so concentrate on keeping the sleigh on a clear route through the next obstacles. Use small steering corrections and plan your landing when jumping over a log or gap. Collect gifts along that route, and leave one behind if it would pull you toward a hazard." },
   ];
   assert.deepEqual($('details').toArray().map(node => ({ q: $(node).find('summary').clone().find('[aria-hidden]').remove().end().text(), a: $(node).find('p').text() })), faqs);
   const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
