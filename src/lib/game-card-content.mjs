@@ -37,6 +37,10 @@ const descriptionsByPage = {
   '/christmas-games': {
     'santa-collecting-gifts': "Santa Collecting Gifts is the keyboard-controlled Christmas score challenge: catch falling presents and avoid bombs. You have three lives as the falling objects get faster.",
     'crazy-christmas-fun': "Crazy Christmas Fun takes Santa and his reindeer through a balloon-filled sky. Click to raise the sleigh, collect gifts, and reach each level's Christmas tree.",
+    'sled-rider': "Keep collecting presents after the Santa games with Sled Rider's automatic downhill run. Steer past trees and rocks, jump gaps, and save gifts for new sleds.",
+    'snow-rider-2': "Continue the festive sleigh theme on Snow Rider 2's endless snowy track. Its Snow Rider 3D player challenges you to jump logs and gaps while collecting gifts.",
+    'snowball-io': "Take a break from Santa's sleigh for an arena snowball fight in Snowball.io. Roll to build a larger snowball, then choose when to approach opponents.",
+    'moto-x3m-winter': "For winter action beyond Santa and presents, try Moto X3M Winter's motorcycle courses. Clear ramps and traps, reach timed finishes, and earn stars toward rider unlocks.",
   },
   '/404': {
     'sled-rider': "Take another trail with an automatic sled descent through snow, trees, rocks, and gaps. Collect presents for the shop while keeping the run alive.",

@@ -442,10 +442,10 @@ test('winter categories link to their playable games with matching official artw
   }
 });
 
-test('winter games are reachable from the full collection and separate sport-category recommendations', () => {
+test('winter games are reachable from the full collection and separate category recommendations', () => {
   const newPaths = ['/snow-rider-2/', '/snowball-io/', '/moto-x3m-winter/'];
   const recommendationPaths = ['/sled-rider/', ...newPaths];
-  for (const path of ['/games/', '/snowboard-games/', '/ski-games/']) {
+  for (const path of ['/games/', '/snowboard-games/', '/ski-games/', '/christmas-games/']) {
     const $ = load(readFileSync(pageFile(path), 'utf8'));
     for (const game of newPaths) {
       assert.equal($(`main .game-card[href="${game}"]`).length, 1, `${path}: one card for ${game}`);
@@ -453,7 +453,7 @@ test('winter games are reachable from the full collection and separate sport-cat
     if (path === '/games/') continue;
     const recommendations = $('main section[aria-labelledby="other-winter-games"]');
     assert.equal(recommendations.length, 1, `${path}: one recommendation section`);
-    assert.equal(recommendations.find('h2#other-winter-games').text(), 'Explore Other Winter Games');
+    assert.equal(recommendations.find('h2#other-winter-games').text(), 'Explore More Winter Games');
     assert.equal(recommendations.closest('.primary-collection').length, 0, `${path}: recommendations are separate from the sport collection`);
     assert.deepEqual(recommendations.find('.game-card').map((_, node) => $(node).attr('href')).get().sort(), [...recommendationPaths].sort(), path);
   }

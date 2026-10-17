@@ -16,7 +16,7 @@ interface Props {
 const { category, content } = Astro.props;
 const games = categoryGames(category.slug);
 const snowfall = ['snowboard-games', 'ski-games'].includes(category.slug);
-const winterRecommendations = snowfall ? allGames.filter(game => game.category.some(slug => slug === 'sledding-games' || slug === winterCollection.slug)) : [];
+const winterRecommendations = allGames.filter(game => game.category.some(slug => slug === 'sledding-games' || slug === winterCollection.slug));
 const christmas = category.slug === 'christmas-games';
 const collectionHeadingId = `${category.slug}-collection`;
 const collectionHeading = `Choose your ${christmas ? 'Christmas' : category.title.replace(/ Games$/, '').toLowerCase()} game`;
@@ -29,7 +29,7 @@ const title = christmas ? 'Christmas Games - Play Free Santa & Sleigh Games Onli
     <GameGrid games={games} />
   </section>}
   <section class="content-section prose"><h2>Explore {category.title}</h2>{content.paragraphs.map(paragraph => <p>{paragraph}</p>)}<a class="text-link" href={content.relatedLink.href}>{content.relatedLink.text} <span aria-hidden="true">→</span></a></section>
+  {winterRecommendations.length > 0 && <section class="content-section" aria-labelledby="other-winter-games"><div class="section-heading"><div><h2 id="other-winter-games">Explore More Winter Games</h2></div></div><GameGrid games={winterRecommendations} /></section>}
   <Faq faqs={content.faqs} />
-  {winterRecommendations.length > 0 && <section class="content-section" aria-labelledby="other-winter-games"><div class="section-heading"><div><h2 id="other-winter-games">Explore Other Winter Games</h2></div></div><GameGrid games={winterRecommendations} /></section>}
   <CategoryLinks />
 </Layout>

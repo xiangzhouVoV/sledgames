@@ -137,16 +137,16 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
 }
 
 for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
-  test(`winter recommendations preserve sports collections and open the new game at ${viewport.width}px without JavaScript`, async ({ browser }) => {
+  test(`winter recommendations preserve category collections and open the new game at ${viewport.width}px without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false, viewport });
     const page = await context.newPage();
     await page.route('https://html5.gamemonetize.co/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
     await page.route(/^https:\/\/img\.(gamedistribution|gamemonetize)\.com\//, route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
-    for (const category of ['snowboard-games', 'ski-games']) {
+    for (const category of ['snowboard-games', 'ski-games', 'christmas-games']) {
       await page.goto(`/${category}/`);
       await expect(page.locator('main .primary-collection .game-card')).toHaveCount(games.filter(game => game.category.includes(category)).length);
       const recommendations = page.locator('main section[aria-labelledby="other-winter-games"]');
-      await expect(recommendations.getByRole('heading', { name: 'Explore Other Winter Games', exact: true })).toBeVisible();
+      await expect(recommendations.getByRole('heading', { name: 'Explore More Winter Games', exact: true })).toBeVisible();
       await expect(recommendations.locator('.game-card')).toHaveCount(4);
       for (const slug of ['sled-rider', 'snow-rider-2', 'snowball-io', 'moto-x3m-winter']) {
         await expect(recommendations.locator(`.game-card[href="/${slug}/"]`)).toHaveCount(1);
