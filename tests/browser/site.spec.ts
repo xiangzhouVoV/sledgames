@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import games from '../../data/games.json' with { type: 'json' };
-import { games as catalogGames, relatedGames } from '../../src/lib/catalog.mjs';
+import { games as catalogGames, relatedGames, embedUrl, canonical, gamePath } from '../../src/lib/catalog.mjs';
 
 const publisherPattern = /^https:\/\/(?:gamea\.azgame\.io|html5\.(?:gamedistribution\.com|gamemonetize\.(?:com|co|games))|io\.gamemonetize\.com)\//;
 
@@ -120,8 +120,8 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         await expect(page.locator('.game-stage > iframe')).toHaveAttribute('title', `Play ${game.title}`);
         await expect(page.locator('body')).toHaveClass(category === 'christmas-games' ? /christmas-page/ : /has-snow/);
         const src = new URL(await page.locator('.game-stage > iframe').getAttribute('src') as string);
-        expect(src.href).toBe(game.embed.iframeSrc);
-        expect(src.hostname).toBe('html5.gamemonetize.co');
+        expect(src.href).toBe(embedUrl(game, canonical(gamePath(game.slug))));
+        expect(src.hostname).toBe(new URL(game.embed.iframeSrc).hostname);
         expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
         await page.getByRole('link', { name: 'How to play', exact: true }).click();
         await expect(page.locator('#how-to-play')).toBeInViewport();

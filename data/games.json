@@ -593,7 +593,7 @@
       },
       {
         "q": "Can I play Crazy Christmas Fun on a phone?",
-        "a": "The publisher lists Crazy Christmas Fun as mobile ready, with clicks or taps used to raise the sleigh. On a phone, start the player and make small height adjustments around balloons. Santa Collecting Gifts requires a keyboard, so the two Christmas games use different controls."
+        "a": "The publisher lists Crazy Christmas Fun as mobile ready, with clicks or taps used to raise the sleigh. On a phone, start the player and make small height adjustments around balloons. Santa Collecting Gifts requires a keyboard, so these sleigh games use different controls."
       }
     ],
     "similar": [
@@ -623,6 +623,94 @@
       "thumbnail": "https://img.gamemonetize.com/98ieb2tvbgxy6pqt17bdkww2gh2e5dcw/512x384.jpg",
       "publishing": "https://gamemonetize.com/faq",
       "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "merge-christmas",
+    "title": "Merge Christmas",
+    "seoTitle": "Merge Christmas - Play the Free Christmas Merge Game Online",
+    "category": [
+      "christmas-games"
+    ],
+    "genres": [
+      "Christmas",
+      "Merge puzzle"
+    ],
+    "description": "Play Merge Christmas online for free. Drop and combine matching snowballs into bigger festive characters in this Christmas merge puzzle on desktop or mobile.",
+    "intro": "Merge Christmas is a festive drop-and-merge puzzle from BestGamesFreePlay.com. Position a snowball above the box, then release it so matching snowballs meet and combine into a larger snowball or a new Christmas character.\n\nEach drop changes the arrangement inside the box. Look for a matching piece you can reach before releasing the next one, then check where the combined piece ends up. The portrait player supports mouse controls on a computer and drag-and-release controls on a phone.",
+    "howToPlay": [
+      "Start: Open the game in the player above and use its play control to begin. Keep the full portrait box in view so you can judge where each snowball will land.",
+      "Position: On a computer, move the mouse to choose the snowball's position. On a phone, touch and drag to line up your drop.",
+      "Drop: Release to send the snowball into the box. Aim toward an identical snowball so the matching pieces can meet.",
+      "Merge: Matching snowballs combine into a bigger snowball or a new character. Check the new arrangement before placing the next piece."
+    ],
+    "tips": [
+      "Choose the target first: Find an identical piece before moving the next snowball. Aim for a match you can reach instead of dropping into any open space.",
+      "Let the box settle: Watch how the pieces move after a drop or merge. Wait until you can see the new arrangement before choosing another landing spot.",
+      "Keep matches accessible: Consider what your drop will cover. Leaving an identical snowball reachable gives you a clearer target for a later piece."
+    ],
+    "controls": [
+      {
+        "action": "Position and drop on desktop",
+        "input": "Move the mouse to position the snowball; release to drop"
+      },
+      {
+        "action": "Position and drop on mobile",
+        "input": "Touch and drag to position the snowball; release to drop"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is Merge Christmas?",
+        "a": "Merge Christmas is a Christmas-themed puzzle by BestGamesFreePlay.com. Drop snowballs into a box and bring matching ones together to create larger snowballs and festive characters."
+      },
+      {
+        "q": "How do I merge snowballs in Merge Christmas?",
+        "a": "Aim a falling snowball toward an identical one inside the box. When matching pieces meet, they combine; check the result before lining up the next drop."
+      },
+      {
+        "q": "What are the desktop controls?",
+        "a": "Move the mouse to position the snowball, then release to drop it into the box. Keep the pointer inside the game window while lining up your target."
+      },
+      {
+        "q": "Can I play Merge Christmas on my phone?",
+        "a": "The official publisher lists support for iOS and Android browsers. Touch and drag to position a snowball, then lift your finger to drop it; the player uses a portrait layout."
+      },
+      {
+        "q": "Is Merge Christmas free to play without a download?",
+        "a": "Yes, you can play in the browser window above without installing an app or creating a Sled Games account. Keep JavaScript enabled and allow the game to load; the publishing platform may show advertisements."
+      },
+      {
+        "q": "How is Merge Christmas different from the other Christmas games?",
+        "a": "Merge Christmas focuses on placing and combining matching snowballs. Santa Collecting Gifts is a keyboard gift-catching challenge, while Crazy Christmas Fun uses clicks or taps to guide a flying sleigh around balloons."
+      }
+    ],
+    "similar": [
+      "santa-collecting-gifts",
+      "crazy-christmas-fun"
+    ],
+    "embed": {
+      "provider": "gamedistribution",
+      "iframeSrc": "https://html5.gamedistribution.com/3c25a8f0c83b46e19bf2358c01a0c699/",
+      "width": 360,
+      "height": 640
+    },
+    "developer": "BestGamesFreePlay.com",
+    "released": "2025-12-08",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamedistribution.com/3c25a8f0c83b46e19bf2358c01a0c699-512x384.jpg",
+    "sources": {
+      "intro": "https://gamedistribution.com/games/merge-christmas/",
+      "howToPlay": "https://gamedistribution.com/games/merge-christmas/",
+      "tips": "https://gamedistribution.com/games/merge-christmas/",
+      "controls": "https://gamedistribution.com/games/merge-christmas/",
+      "faqs": "https://gamedistribution.com/games/merge-christmas/",
+      "embed": "https://gamedistribution.com/games/merge-christmas/",
+      "developer": "https://gamedistribution.com/games/merge-christmas/",
+      "released": "https://gamedistribution.com/games/merge-christmas/",
+      "thumbnail": "https://img.gamedistribution.com/3c25a8f0c83b46e19bf2358c01a0c699-512x384.jpg"
     }
   },
   {

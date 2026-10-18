@@ -4,11 +4,11 @@ import { games, validateGames, embedUrl, canonical, serializeSchema, gamePath, a
 
 const fixture = () => structuredClone(games[0]);
 
-test('all ten games have distinct dedicated paths and the homepage remains the sledding category', () => {
-  assert.equal(games.length, 10);
+test('all catalog games have distinct dedicated paths and the homepage remains the sledding category', () => {
+  assert.ok(games.some(game => game.slug === 'merge-christmas' && game.category.includes('christmas-games')));
   assert.equal(gamePath('sled-rider'), '/sled-rider/');
   assert.equal(categories.find(category => category.slug === 'sledding-games').path, '/');
-  assert.equal(allPaths.length, 20);
+  assert.equal(allPaths.length, games.length + 10);
   assert.equal(new Set(allPaths).size, allPaths.length);
   for (const game of games) {
     assert.equal(gamePath(game.slug), `/${game.slug}/`);

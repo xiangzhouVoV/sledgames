@@ -62,25 +62,25 @@ export const categoryContent = {
     ]
   },
   "christmas-games": {
-    "description": "Play Christmas games online for free. Fly with Santa and his reindeer, collect gifts, dodge obstacles, and find controls and tips for each sleigh adventure.",
+    "description": "Play Christmas games online for free. Try Merge Christmas, catch gifts with Santa, or fly a reindeer sleigh, with controls and tips for each festive game.",
     "paragraphs": [
-      "Take a festive trip with Santa. Choose Santa Collecting Gifts or Crazy Christmas Fun above to load a sleigh adventure in your browser. Each game page starts with the player and includes controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed.",
+      "Find your festive challenge. Choose Merge Christmas for a snowball puzzle, Santa Collecting Gifts for a gift-catching challenge, or Crazy Christmas Fun for a flying sleigh adventure. Each game page starts with the player and includes controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed.",
       "Santa Collecting Gifts is a keyboard score challenge: catch falling presents, avoid bombs, and protect your three lives as the pace increases. Crazy Christmas Fun sends Santa and his reindeer through a sky full of balloons, collecting gifts as you work toward the Christmas tree and the next level. Use click or tap controls in Crazy Christmas Fun; Santa Collecting Gifts needs arrow keys or WASD on a computer.",
-      "A steady flight is easier to control than a hurried one. Look for the next clear opening, leave room to change height, and skip a gift when its exit is blocked. Prefer a snowy mountain run? Try our snowboard and ski games, or open the dedicated Sled Rider game page."
+      "Merge Christmas offers a different pace: position and drop snowballs into a box, bringing matching pieces together to create bigger snowballs and festive characters. Use the mouse on a computer or drag and release on a phone. Watch where each piece settles before choosing the next drop. For a snowy mountain run, try our snowboard and ski games, or open the dedicated Sled Rider game page."
     ],
     "relatedLink": { "href": "/ski-games/", "text": "Play Ski Games" },
     "faqs": [
       {
         "q": "Which Christmas games are available here?",
-        "a": "Choose Santa Collecting Gifts or Crazy Christmas Fun from the cards above. Both feature Santa’s sleigh; Crazy Christmas Fun also includes his reindeer."
+        "a": "Choose Merge Christmas, Santa Collecting Gifts, or Crazy Christmas Fun from the cards above. Merge Christmas is a snowball merge puzzle; the other games feature Santa’s sleigh."
       },
       {
         "q": "Are these Christmas games free?",
         "a": "Yes. You can use the browser players without buying an app or creating a Sled Games account. The game platform may show advertisements."
       },
       {
-        "q": "How do I control Santa’s sleigh?",
-        "a": "Santa Collecting Gifts uses arrow keys or WASD. Crazy Christmas Fun uses a mouse click or tap. Read the in-game instructions before starting."
+        "q": "Which controls do these Christmas games use?",
+        "a": "Merge Christmas uses mouse positioning and release on desktop, or touch and drag followed by release on mobile. Santa Collecting Gifts uses arrow keys or WASD, while Crazy Christmas Fun uses clicks or taps."
       },
       {
         "q": "Which game has levels?",
@@ -88,7 +88,7 @@ export const categoryContent = {
       },
       {
         "q": "Can I play on a phone?",
-        "a": "For a phone, choose Crazy Christmas Fun, which the platform lists as mobile ready. Santa Collecting Gifts requires a keyboard and is intended for computer play."
+        "a": "Merge Christmas supports iOS and Android browsers with drag-and-release controls. Crazy Christmas Fun also supports mobile play with taps. Santa Collecting Gifts requires a keyboard and is intended for computer play."
       }
     ]
   }

@@ -24,7 +24,7 @@ Choose a sledding game on the homepage, or use Play now to open one of the sled 
 - **[Sled Games](https://sledgames.com/)** — Compare downhill sledding games and choose your next run.
 - **[Snowboard Games](https://sledgames.com/snowboard-games/)** — Collect coins and unlock boards in Downhill Snowboard, or navigate snowy tracks toward the finish in SnowBoard Game.
 - **[Ski Games](https://sledgames.com/ski-games/)** — Follow the course flags and chase a faster finish in Ski King, or dodge obstacles and collect scoring flags in Ski Rush.
-- **[Christmas Games](https://sledgames.com/christmas-games/)** — Catch presents and avoid bombs in Santa Collecting Gifts, or fly Santa’s reindeer sleigh past balloons in Crazy Christmas Fun.
+- **[Christmas Games](https://sledgames.com/christmas-games/)** — Combine matching snowballs in Merge Christmas, catch presents in Santa Collecting Gifts, or fly Santa’s reindeer sleigh past balloons in Crazy Christmas Fun.
 
 ### Enjoy a little winter atmosphere
 
@@ -45,7 +45,7 @@ Sled Games 是一个以雪地、冬季运动和圣诞雪橇冒险为主题的免
 - **[雪橇游戏](https://sledgames.com/)** — 比较雪地滑行游戏，选择下一段雪橇挑战。
 - **[单板滑雪游戏](https://sledgames.com/snowboard-games/)** — 在 Downhill Snowboard 中收集金币、解锁滑雪板，或在 SnowBoard Game 中躲避障碍、寻找通往终点的路线。
 - **[双板滑雪游戏](https://sledgames.com/ski-games/)** — 在 Ski King 中按照旗标完成赛道、挑战更快的成绩，或在 Ski Rush 中避开障碍、收集旗帜得分。
-- **[圣诞老人雪橇游戏](https://sledgames.com/christmas-games/)** — 在 Santa Collecting Gifts 中接住礼物、避开炸弹，或在 Crazy Christmas Fun 中驾驶驯鹿雪橇穿过气球障碍。
+- **[圣诞游戏](https://sledgames.com/christmas-games/)** — 在 Merge Christmas 中合成相同雪球，在 Santa Collecting Gifts 中接住礼物、避开炸弹，或在 Crazy Christmas Fun 中驾驶驯鹿雪橇穿过气球障碍。
 
 ### 感受冬日与圣诞氛围
 

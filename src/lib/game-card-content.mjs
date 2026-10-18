@@ -14,6 +14,7 @@ const descriptionsByPage = {
     'ski-rush': "For skiing without a finish-line goal, try this downhill survival challenge. Mouse or touch controls steer the skier past obstacles and toward flags for points.",
     'santa-collecting-gifts': "This Christmas score challenge puts Santa beneath falling presents and bombs. Move his sleigh with keyboard controls and keep collecting through a three-life attempt.",
     'crazy-christmas-fun': "The flying sleigh option follows Santa and his reindeer through balloons in the North Pole sky. Click to rise and reach the Christmas tree.",
+    'merge-christmas': "Choose a festive merge puzzle when you want to plan each drop. Bring identical snowballs together inside the box to create bigger pieces and Christmas characters.",
     'snow-rider-2': "This endless sleigh entry runs Snow Rider 3D, the game commonly sought as Snow Rider 2. Jump logs and gaps while collecting gifts.",
     'snowball-io': "The arena choice is Snowball.io, where rolling builds a larger snowball to use against opponents. Watch surrounding characters and choose your approach before engaging.",
     'moto-x3m-winter': "Choose winter motorcycle courses for ramps, traps, and timed finishes. Earn stars to unlock riders, and try front or back flips for a time bonus.",
@@ -37,6 +38,7 @@ const descriptionsByPage = {
   '/christmas-games': {
     'santa-collecting-gifts': "Santa Collecting Gifts is the keyboard-controlled Christmas score challenge: catch falling presents and avoid bombs. You have three lives as the falling objects get faster.",
     'crazy-christmas-fun': "Crazy Christmas Fun takes Santa and his reindeer through a balloon-filled sky. Click to raise the sleigh, collect gifts, and reach each level's Christmas tree.",
+    'merge-christmas': "Merge Christmas brings snowball matching to the Christmas collection. Position each drop with a mouse or touch, then combine matching pieces into larger festive characters.",
     'sled-rider': "Keep collecting presents after the Santa games with Sled Rider's automatic downhill run. Steer past trees and rocks, jump gaps, and save gifts for new sleds.",
     'snow-rider-2': "Continue the festive sleigh theme on Snow Rider 2's endless snowy track. Its Snow Rider 3D player challenges you to jump logs and gaps while collecting gifts.",
     'snowball-io': "Take a break from Santa's sleigh for an arena snowball fight in Snowball.io. Roll to build a larger snowball, then choose when to approach opponents.",
@@ -50,6 +52,7 @@ const descriptionsByPage = {
     'ski-rush': "Restart your visit with a survival skiing run controlled by mouse or touch. Dodge obstacles and collect flags when the route leaves enough room.",
     'santa-collecting-gifts': "Find Santa in the snowy sky and catch the presents falling toward his sleigh. Keyboard movement, bombs, and three lives shape this scoring challenge.",
     'crazy-christmas-fun': "Follow Santa and his reindeer toward a Christmas tree to pick up a different route. Click to lift the sleigh past balloons and gather gifts.",
+    'merge-christmas': "Find a new starting point inside a Christmas snowball puzzle. Drop matching pieces together and watch them combine into bigger snowballs or festive characters.",
     'snow-rider-2': "Open the Snow Rider 2 page to ride the embedded Snow Rider 3D sleigh game. Build distance, collect gifts, and jump over logs and gaps.",
     'snowball-io': "Try an arena route in Snowball.io: roll to build a larger snowball, then approach opponents. The objective here is elimination rather than downhill distance.",
     'moto-x3m-winter': "Return to a timed motorcycle course filled with winter ramps, traps, and explosives. Faster finishes earn stars, and flips can add a time bonus.",
@@ -84,6 +87,7 @@ const descriptionsByPage = {
   },
   '/santa-collecting-gifts': {
     'crazy-christmas-fun': "Crazy Christmas Fun trades falling presents and bombs for a flying route around balloons. Click to raise Santa's sleigh and reach a Christmas tree to advance.",
+    'merge-christmas': "Trade Santa's falling presents for snowballs you place yourself in Merge Christmas. Aim matching pieces at one another and combine them inside a portrait puzzle box.",
     'sled-rider': "Sled Rider takes Santa Collecting Gifts' presents onto a downhill course. Steer and jump through hazards while saving gifts for sleds, with distance extending the challenge.",
     'snow-rider-2': "For gift collecting along a moving route after Santa Collecting Gifts, try Snow Rider 2. Its Snow Rider 3D sleigh run adds logs and gaps to clear.",
     'snowball-io': "Snowball.io swaps Santa Collecting Gifts' falling objects for opponents in a snowball arena. Roll to grow your snowball, then choose when to engage another character.",
@@ -91,10 +95,18 @@ const descriptionsByPage = {
   },
   '/crazy-christmas-fun': {
     'santa-collecting-gifts': "Santa Collecting Gifts replaces Crazy Christmas Fun's route to a tree with a three-life score challenge. Use keyboard movement to catch falling presents and avoid bombs.",
+    'merge-christmas': "Switch from flying past balloons to lining up snowball matches in Merge Christmas. Use the mouse or drag and release on a phone to place each piece.",
     'sled-rider': "Bring Crazy Christmas Fun's gift collecting down to the snow in Sled Rider. Automatic downhill movement, keyboard steering, and jumps replace raising a flying sleigh.",
     'snow-rider-2': "Snow Rider 2 offers a ground-level sleigh route after Crazy Christmas Fun's flying levels. Survive the endless Snow Rider 3D track, jumping logs and collecting gifts.",
     'snowball-io': "Leave Crazy Christmas Fun's balloon route for Snowball.io's arena opponents. Roll to grow a snowball and choose an approach, with elimination replacing the Christmas tree destination.",
     'moto-x3m-winter': "Moto X3M Winter replaces Crazy Christmas Fun's flying sleigh with a motorcycle. Follow winter ramps and traps toward timed finishes, earning stars for rider unlocks.",
+  },
+  '/merge-christmas': {
+    'santa-collecting-gifts': "Santa Collecting Gifts changes snowball placement into a keyboard catching challenge. Guide Santa's sleigh beneath falling presents, avoid bombs, and protect three lives.",
+    'crazy-christmas-fun': "Keep the Christmas setting while swapping the merge box for a flying sleigh in Crazy Christmas Fun. Click or tap to rise past balloons and reach the tree.",
+    'sled-rider': "After planning snowball drops, try steering a moving sled through a snowy 3D course. Sled Rider combines jumps, obstacle avoidance, and presents saved for the sled shop.",
+    'snow-rider-2': "Snow Rider 2 adds an endless sleigh descent after Merge Christmas's matching puzzle. Its Snow Rider 3D player asks you to jump logs and gaps while collecting gifts.",
+    'snowball-io': "Take snowballs from the merge box into an arena in Snowball.io. Grow a larger snowball by rolling, then choose an approach to nearby opponents.",
   },
   '/sled-rider': {
     'snow-rider-2': "Snow Rider 2 offers another endless sleigh route after Sled Rider. Follow its Snow Rider 3D track past rolling snowballs, logs, and gaps.",

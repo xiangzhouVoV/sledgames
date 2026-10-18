@@ -121,7 +121,7 @@ test('main heading outlines keep collection headings between page and card title
 test('sitemap lists every public page and excludes the 404 page', () => {
   const $ = load(readFileSync('dist/sitemap.xml', 'utf8'), { xml: true });
   assert.deepEqual($('loc').map((_, item) => $(item).text()).get().sort(), allPaths.map(canonical).sort());
-  assert.equal($('loc').length, 20);
+  assert.equal($('loc').length, allPaths.length);
   assert.equal($('loc').filter((_, item) => $(item).text() === canonical('/sled-rider/')).length, 1);
   assert.equal(astroConfig.trailingSlash, 'always');
   $('loc').each((_, item) => assert.ok($(item).text().endsWith('/')));
@@ -424,7 +424,7 @@ test('winter categories link to their playable games with matching official artw
       const detail = load(readFileSync(pageFile(gamePath(game.slug)), 'utf8'));
       const player = new URL(detail('iframe').attr('src'));
       assert.equal(player.href, embedUrl(game, canonical(gamePath(game.slug))));
-      assert.equal(player.hostname, 'html5.gamemonetize.co');
+      assert.equal(player.hostname, new URL(game.embed.iframeSrc).hostname);
       assert.equal(player.pathname, new URL(game.embed.iframeSrc).pathname);
       assert.ok(!player.href.includes('{{PAGE_URL}}'));
       assert.ok(detail('#about-game p').length > 0);
@@ -480,7 +480,7 @@ test('each game is reachable from at least three different existing pages', () =
 
 test('Sled Rider is an indexable dedicated page without any homepage redirect mechanism', () => {
   assert.ok(allPaths.includes('/sled-rider/'));
-  assert.equal(allPaths.length, 20);
+  assert.equal(allPaths.length, games.length + 10);
   assert.equal(new Set(allPaths).size, allPaths.length);
   const $ = load(readFileSync(pageFile('/sled-rider/'), 'utf8'));
   assert.equal($('iframe, .game-guide').length, 2);
