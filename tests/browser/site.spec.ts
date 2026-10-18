@@ -265,8 +265,8 @@ for (const width of [320, 390, 1280]) {
 
 for (const game of [
   { slug: 'snow-rider-2', title: 'Snow Rider 2', playerPattern: 'https://html5.gamedistribution.com/**', fixtureText: 'Snow Rider 3D player fixture', faq: 'Is this Snow Rider 3D or Snow Rider 2?', answer: 'The game window runs Snow Rider 3D, published by GameBiz', portrait: false, fitted: false, aspectRatio: 800 / 600 },
-  { slug: 'snowball-io', title: 'Snowball.io', playerPattern: 'https://io.gamemonetize.com/snowwar/**', fixtureText: 'Snowball.io player fixture', faq: 'Which controls do I use?', answer: 'Use Mouse To Play and Keyboard', portrait: false, fitted: true, aspectRatio: 960 / 600 },
-  { slug: 'moto-x3m-winter', title: 'Moto X3M Winter', playerPattern: 'https://html5.gamemonetize.co/**', fixtureText: 'Moto X3M Winter player fixture', faq: 'Which controls do I use?', answer: 'User arrow keys to control', portrait: false, fitted: true, aspectRatio: 720 / 480 },
+  { slug: 'snowball-io', title: 'Snowball.io', playerPattern: 'https://io.gamemonetize.com/snowwar/**', fixtureText: 'Snowball.io player fixture', faq: 'Which controls do I use?', answer: 'The publisher lists mouse and keyboard controls for Snowball.io', portrait: false, fitted: true, aspectRatio: 960 / 600 },
+  { slug: 'moto-x3m-winter', title: 'Moto X3M Winter', playerPattern: 'https://html5.gamemonetize.co/**', fixtureText: 'Moto X3M Winter player fixture', faq: 'Which controls do I use?', answer: 'Use the arrow keys to control the bike', portrait: false, fitted: true, aspectRatio: 720 / 480 },
 ]) {
   for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
     test(`${game.title} opens from its collection card with working guide navigation at ${viewport.width}px`, async ({ browser }) => {

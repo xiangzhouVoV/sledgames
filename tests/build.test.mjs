@@ -362,7 +362,7 @@ for (const approved of approvedWinterGames) {
     assert.equal(game.datePublished, approved.released);
     assert.ok(!game.aggregateRating);
     const faqs = $('details').toArray().map(node => ({ q: $(node).find('summary').clone().find('[aria-hidden]').remove().end().text(), a: $(node).find('p').text() }));
-    assert.equal(faqs.length, 5);
+    assert.equal(faqs.length, 6);
     assert.ok(faqs.every(entry => entry.q.trim() && entry.a.trim()));
     const faq = schemas.find(schema => schema['@type'] === 'FAQPage');
     assert.deepEqual(faq.mainEntity, faqs.map(entry => ({ '@type': 'Question', name: entry.q, acceptedAnswer: { '@type': 'Answer', text: entry.a } })));
