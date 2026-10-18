@@ -31,9 +31,10 @@ test('configured official embeds render distinct dedicated game referrers while 
     const home = load(readFileSync(join(root, 'dist/index.html'), 'utf8'));
     assert.equal(home('iframe, .game-stage, .game-guide').length, 0);
     assert.deepEqual(home('main .featured-games .game-card').map((_, card) => home(card).attr('href')).get(), ['/sled-rider/', '/fixture-game/']);
-    assert.deepEqual(home('main .home-collection .game-card--compact').map((_, card) => home(card).attr('href')).get(), ['/sled-rider/', '/fixture-game/']);
-    assert.equal(home('main .game-card').length, 4, 'Both home collections use the fixture catalog rather than a fixed game count');
-    assert.match(home('.home-collection .section-heading p').text(), /All 2 games/);
+    const editorialLinks = home('main .editorial-note p a').filter((_, node) => ['/sled-rider/', '/fixture-game/'].includes(home(node).attr('href')));
+    assert.deepEqual(editorialLinks.map((_, node) => home(node).attr('href')).get(), ['/sled-rider/', '/fixture-game/']);
+    assert.equal(home('main .game-card').length, 2, 'Only featured games use cards, while editorial links follow the fixture catalog');
+    assert.equal(home('main .home-collection').length, 0);
     const $ = load(readFileSync(join(root, 'dist/games/index.html'), 'utf8'));
     const schemas = $('script[type="application/ld+json"]').map((_, node) => JSON.parse($(node).text())).get();
     const list = schemas.find(schema => schema['@type'] === 'ItemList');

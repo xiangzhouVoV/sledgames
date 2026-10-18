@@ -37,7 +37,7 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
         const categories = document.querySelector('main .category-grid');
         return !!categories && !!(section.compareDocumentPosition(categories) & Node.DOCUMENT_POSITION_FOLLOWING);
       })).toBe(true);
-      await expect(page.locator('main .game-card')).toHaveCount(2 + games.length);
+      await expect(page.locator('main .game-card')).toHaveCount(2);
       await expect(page.locator('.quick-links a')).toHaveCount(games.length);
       await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toHaveText('Sled Games');
       await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/"]')).toHaveCount(0);

@@ -13,41 +13,45 @@ async function mockExternalResources(page: Page) {
 }
 
 for (const viewport of [{ width: 375, height: 812 }, { width: 1280, height: 800 }]) {
-  test(`compact home collection works at ${viewport.width}px without JavaScript`, async ({ browser }, testInfo) => {
+  test(`editorial home catalog works at ${viewport.width}px without JavaScript`, async ({ browser }, testInfo) => {
     const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport });
     try {
       const page = await context.newPage();
       await mockExternalResources(page);
       await page.goto('/');
-      const collection = page.locator('main .home-collection');
-      await expect(collection.locator('.game-card--compact')).toHaveCount(games.length);
-      await expect(page.locator('main .game-card')).toHaveCount(games.length + 2);
+      const collection = page.locator('main .editorial-note');
+      await expect(collection.getByRole('heading', { name: 'Find your next winter game', exact: true })).toBeVisible();
+      await expect(collection.locator('p a')).toHaveCount(games.length + 4);
+      await expect(page.locator('main .home-collection, main .game-card--compact')).toHaveCount(0);
+      await expect(page.getByRole('heading', { name: 'Browse every winter game', exact: true })).toHaveCount(0);
+      await expect(page.locator('main .game-card')).toHaveCount(2);
       await expect(page.locator('.page-intro h1')).toHaveText('Sled Games');
       await expect(page.locator('.featured-games .game-card')).toHaveCount(2);
       expect(await page.locator('main').evaluate(main => {
         const sections = Array.from(main.children);
         const guide = sections.findIndex(section => section.matches('.hub-guide'));
-        return guide >= 0 && sections[guide + 1]?.matches('.home-collection') && sections[guide + 2]?.matches('.faq');
+        const blocks = sections.filter(section => section.matches('section, article'));
+        return guide >= 0 && sections[guide + 1]?.matches('.editorial-note')
+          && sections[guide + 2]?.matches('.faq')
+          && !!sections[guide + 3]?.querySelector('.category-grid')
+          && blocks.at(-1) === sections[guide + 3];
       })).toBe(true);
       expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
-      const gridColumns = await collection.locator('.game-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length);
-      expect(gridColumns).toBeLessThanOrEqual(viewport.width === 375 ? 2 : 4);
-      expect(gridColumns).toBeGreaterThanOrEqual(1);
-      await collection.scrollIntoViewIfNeeded();
-      expect(await collection.boundingBox()).not.toBeNull();
-      await expect(collection.locator('p:not(.section-heading p):not(.collection-more), .card-badge')).toHaveCount(0);
-      await page.evaluate(() => scrollTo(0, 0));
+      await expect(collection.locator('img, .game-card')).toHaveCount(0);
       await page.screenshot({ path: testInfo.outputPath(`home-${viewport.width}.png`), fullPage: true, animations: 'disabled' });
+      await collection.scrollIntoViewIfNeeded();
+      await page.screenshot({ path: testInfo.outputPath(`home-editorial-${viewport.width}.png`), animations: 'disabled' });
       for (const game of games) {
-        const card = page.locator(`.home-collection a.game-card--compact[href="/${game.slug}/"]`);
-        await expect(card.locator('img')).toHaveAttribute('src', game.thumbnail!);
-        await card.click();
+        const link = collection.getByRole('link', { name: game.title, exact: true });
+        await expect(link).toHaveCount(1);
+        await expect(link).toHaveAttribute('href', `/${game.slug}/`);
+        await link.click();
         await expect(page).toHaveURL(`http://127.0.0.1:4321/${game.slug}/`);
         await expect(page.locator('main h1')).toHaveText(game.title);
         expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
         await page.goto('/');
       }
-      await collection.locator('.collection-more a').click();
+      await collection.getByRole('link', { name: 'full winter collection', exact: true }).click();
       await expect(page).toHaveURL('http://127.0.0.1:4321/games/');
       await expect(page.locator('main h1')).toHaveText('All Winter Games');
     } finally {

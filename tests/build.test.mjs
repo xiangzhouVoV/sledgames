@@ -141,7 +141,7 @@ test('the homepage is a static sledding hub with matching featured games and col
   assert.equal(entries.length, 2);
   const cards = $('main .featured-games .game-card');
   assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), entries.map(game => gamePath(game.slug)));
-  assert.equal($('main .game-card').length, entries.length + games.length, 'The homepage has its featured sledding cards and the compact catalog');
+  assert.equal($('main .game-card').length, entries.length, 'The homepage keeps only its featured sledding cards');
   cards.each((_, card) => assert.equal($(card).find('img').attr('loading'), 'eager'));
   const mainSections = $('main').find('.featured-games, .category-grid').toArray();
   assert.equal(mainSections.length, 2);
@@ -174,36 +174,30 @@ test('the homepage is a static sledding hub with matching featured games and col
   assert.deepEqual(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity, faqs.map(faq => ({ '@type': 'Question', name: faq.q, acceptedAnswer: { '@type': 'Answer', text: faq.a } })));
 });
 
-test('the homepage compact catalog follows the shared catalog without duplicating directory descriptions', () => {
+test('the homepage keeps its complete catalog as editorial links before FAQs and final category navigation', () => {
   const $ = load(readFileSync(pageFile('/'), 'utf8'));
-  const collection = $('main .home-collection');
+  const collection = $('main .editorial-note');
   assert.equal(collection.length, 1);
-  assert.equal(collection.prev().is('article.hub-guide'), true, 'The guide immediately precedes the compact collection');
-  assert.equal(collection.next().is('section.faq'), true, 'The FAQs immediately follow the compact collection');
-  assert.equal(collection.attr('aria-labelledby'), 'every-winter-game');
-  assert.equal(collection.find('h2#every-winter-game').text(), 'Browse every winter game');
-  assert.equal(collection.find('.collection-more a').attr('href'), '/games/');
-  assert.equal(collection.find('.collection-more a').text(), 'See the full winter collection');
-  const cards = collection.find('.game-grid.game-grid--compact > a.game-card.game-card--compact');
-  assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), games.map(game => gamePath(game.slug)));
-  cards.each((index, node) => {
-    const card = $(node);
-    const game = games[index];
-    assert.equal(card.find('h3').clone().find('[aria-hidden]').remove().end().text(), game.title);
-    assert.equal(card.find('.card-category').text(), gameCategory(game).label);
-    assert.equal(card.find('img').attr('src'), game.thumbnail);
-    assert.equal(card.find('img').attr('width'), '480');
-    assert.equal(card.find('img').attr('height'), '300');
-    assert.equal(card.find('img').attr('loading'), 'lazy');
-    assert.equal(card.find('img').attr('alt'), '');
-    assert.equal(card.find('p, .card-badge').length, 0, `${game.slug}: compact cards omit descriptions and play labels`);
-    assert.doesNotMatch(card.text(), /Play now/);
+  assert.equal(collection.find('h2').text(), 'Find your next winter game');
+  assert.equal(collection.prev().is('article.hub-guide'), true, 'The guide immediately precedes the editorial links');
+  assert.equal(collection.next().is('section.faq'), true, 'The FAQs immediately follow the editorial links');
+  const categories = $('main .category-grid').closest('section');
+  assert.equal(categories.prev().is('section.faq'), true, 'Category navigation follows the FAQs');
+  assert.equal($('main > section, main > article').last().get(0), categories.get(0), 'Category navigation is the final content block');
+  assert.equal($('main .home-collection, main .game-card--compact, h2#every-winter-game').length, 0, 'The separate catalog and duplicate compact cards are removed');
+  assert.equal(collection.find('a[href="/games/"]').text(), 'full winter collection');
+  const gamePaths = new Set(games.map(game => gamePath(game.slug)));
+  const links = collection.find('p a').filter((_, node) => gamePaths.has($(node).attr('href')));
+  assert.deepEqual(links.map((_, node) => $(node).attr('href')).get(), games.map(game => gamePath(game.slug)));
+  links.each((index, node) => {
+    assert.equal($(node).text(), games[index].title, `${games[index].slug}: meaningful game link text`);
+    assert.equal($(node).closest('p').length, 1, 'Game links are part of the editorial prose');
   });
+  assert.equal(collection.find('img, .game-card').length, 0, 'The editorial catalog uses text links');
   const featured = categoryGames('sledding-games');
   for (const game of games) {
-    assert.equal($(`main a.game-card[href="${gamePath(game.slug)}"]`).length, featured.includes(game) ? 2 : 1, `${game.slug}: card count`);
+    assert.equal($(`main a.game-card[href="${gamePath(game.slug)}"]`).length, featured.includes(game) ? 1 : 0, `${game.slug}: no duplicate game card`);
   }
-  assert.equal($('main .game-card--compact').length, games.length);
 });
 
 test('Sled Rider uses its verified player without fabricated ratings or prices', () => {
