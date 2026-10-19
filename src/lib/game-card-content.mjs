@@ -270,35 +270,55 @@ const sledExpansionDescriptionsByPage = {
 /** @type {Record<string, Record<string, string>>} */
 const waddlePeaksDescriptionsByPage = {
   '/games': {
-    'waddle-peaks': "Waddle Peaks starts its penguin on skis and offers a snowboard to unlock. Choose from races, slalom, tricks, fish collecting, and escapes from avalanches or a yeti.",
+    'waddle-peaks': "Waddle Peaks sends a penguin down 3D ski slopes through several event types. Try races, slalom, tricks, fish collecting, and escapes from avalanches or a yeti.",
   },
   '/404': {
-    'waddle-peaks': "Find another slope with Waddle Peaks and its penguin winter challenges. Begin on skis, unlock a snowboard for quicker spins and higher trick scores, and explore the different events.",
+    'waddle-peaks': "Find another ski slope with Waddle Peaks and its penguin mountain challenges. Turn through slalom gates, jump for tricks, collect fish, or race away from an avalanche or a yeti.",
   },
-  '/snowboard-games': {
-    'waddle-peaks': "Waddle Peaks joins this board collection through its unlockable snowboard, while the penguin begins on skis. The board spins faster and earns higher trick scores across the mountain challenges.",
+  '/ski-games': {
+    'waddle-peaks': "Waddle Peaks adds a penguin and varied events to this ski collection. Take on races, slalom turns, trick challenges, and fish collecting, with avalanche and yeti escapes to try too.",
   },
-  '/downhill-snowboard': {
-    'waddle-peaks': "Waddle Peaks expands Downhill Snowboard's slope session with penguin races, slalom, and trick events. Start on skis and unlock the snowboard to try its faster spins and higher trick scores.",
+  '/ski-king': {
+    'waddle-peaks': "Waddle Peaks expands Ski King's marked-course session with several penguin ski events. Practice slalom and time trials, jump for trick scores, or try escaping an avalanche or a yeti.",
   },
-  '/snowboard-game': {
-    'waddle-peaks': "Take SnowBoard Game's finish-line focus into Waddle Peaks and its varied penguin events. Skis are the starting equipment, with a snowboard to unlock for faster spins and higher trick scores.",
-  },
-  '/snowboard-king-2024': {
-    'waddle-peaks': "Try another avalanche escape after Snowboard King 2024 in Waddle Peaks. This penguin starts on skis, can unlock a snowboard, and also takes on races, slalom, and trick challenges.",
-  },
-  '/snowboard-game-party': {
-    'waddle-peaks': "Follow Snowboard Game Party's racing with Waddle Peaks' penguin mountain events. Begin on skis, work toward an unlockable snowboard, and try slalom turns, trick scores, or a yeti escape.",
-  },
-  '/snowboard-girl': {
-    'waddle-peaks': "Waddle Peaks moves beyond Snowboard Girl's side-scrolling jumps into 3D penguin challenges. Start with skis, then unlock a snowboard whose quicker spins and higher trick scores add another way to ride.",
+  '/ski-rush': {
+    'waddle-peaks': "Follow Ski Rush's survival descent with Waddle Peaks' 3D penguin ski challenges. Choose races, slalom, tricks, or fish collecting, and try downhill escapes from an avalanche or a yeti.",
   },
   '/waddle-peaks': {
-    'downhill-snowboard': "Downhill Snowboard follows Waddle Peaks' event selection with a focused downhill survival run. Collect coins along the descent and spend them on characters or boards between attempts.",
-    'snowboard-game': "Keep a finish line in view after Waddle Peaks with SnowBoard Game's third-person tracks. Guide the snowboarder past barriers and use the separate V input for a grab.",
-    'snowboard-king-2024': "Snowboard King 2024 continues Waddle Peaks' avalanche theme through downhill board courses. Pick a line around trees and rocks, accelerate with Space, and spend coins on ability upgrades.",
-    'snowboard-game-party': "Take another racing route after Waddle Peaks with Snowboard Game Party's mouse or touch steering. Pass snowballs and fences as you progress toward equipment unlocks.",
-    'snowboard-girl': "Snowboard Girl gives you a side view after Waddle Peaks' 3D mountain events. Follow the player's buttons to move, jump through levels, and collect coins along each route.",
+    'ski-king': "Ski King follows Waddle Peaks' varied events with marked ski courses and faster finish times to pursue. Pass flags on the correct side and use upgrade points between attempts.",
+    'ski-rush': "Keep skiing after Waddle Peaks with Ski Rush's ongoing survival descent. Mouse or touch input steers past obstacles while collected flags add to your score.",
+    'sled-rider': "Trade Waddle Peaks' skis for an automatically moving sled in Sled Rider. Steer around trees and rocks, jump gaps, and collect presents toward new sleds in the shop.",
+    'snow-rider-2': "Snow Rider 2 takes your session beyond Waddle Peaks' ski events onto an endless sleigh track. Its Snow Rider 3D player combines distance, gift collecting, and jumps over logs or gaps.",
+    'snowball-io': "Leave Waddle Peaks' mountain events for a snowball arena in Snowball.io. Rolling builds a larger snowball before you choose when and where to approach opponents.",
+  },
+};
+
+/** @type {Record<string, Record<string, string>>} */
+const snowRidersDescriptionsByPage = {
+  '/games': {
+    'snow-riders': "Snow Riders brings skier-against-skier racing to the winter directory. Dodge obstacles, collect gems, and use rewards for equipment upgrades and more snowy courses.",
+  },
+  '/404': {
+    'snow-riders': "Head back onto a ski course with Snow Riders and its downhill races. Steer past obstacles, gather gems, and work toward new gear, levels, and mountain maps.",
+  },
+  '/ski-games': {
+    'snow-riders': "Snow Riders adds races against other skiers to this skiing collection. Use A/D, arrow keys, or the joystick to avoid obstacles and collect gems for progression.",
+  },
+  '/ski-king': {
+    'snow-riders': "Carry Ski King's course practice into Snow Riders' races against other skiers. Navigate obstacles, gather gems, and check equipment upgrades between runs.",
+  },
+  '/ski-rush': {
+    'snow-riders': "Move from Ski Rush's survival challenge to Snow Riders' ski races. Keep an open line past obstacles while collecting gems and working toward more gear and snowy maps.",
+  },
+  '/waddle-peaks': {
+    'snow-riders': "Snow Riders follows Waddle Peaks' varied events with skier racing and equipment progression. Steer with keys or the joystick, avoid obstacles, and collect gems during each descent.",
+  },
+  '/snow-riders': {
+    'ski-king': "Ski King swaps Snow Riders' rivals for a marked course and a finish time to improve. Pass each flag on the correct side and use upgrade points between attempts.",
+    'ski-rush': "Keep descending after Snow Riders with Ski Rush's mouse or touch survival run. Steer around obstacles and collect scoring flags when the route leaves room.",
+    'waddle-peaks': "Waddle Peaks turns Snow Riders' skier races into a penguin mountain adventure with several event types. Practice slalom, tricks, timed runs, and escapes from avalanches or a yeti.",
+    'sled-rider': "Sled Rider changes Snow Riders' ski races into an ongoing sled descent. Jump gaps, steer around trees and rocks, and collect presents for the sled shop.",
+    'snow-rider-2': "Compare a different winter ride after Snow Riders on the Snow Rider 2 page. Its Snow Rider 3D sleigh player combines endless distance, gift collecting, and jumps over logs or gaps.",
   },
 };
 
@@ -311,7 +331,7 @@ const waddlePeaksDescriptionsByPage = {
 export function gameCardDescription(game, pathname) {
   const path = pathname.replace(/\/+$/, '') || '/';
   const page = path === '/404.html' ? '/404' : path;
-  const description = descriptionsByPage[page]?.[game.slug] ?? sledExpansionDescriptionsByPage[page]?.[game.slug] ?? waddlePeaksDescriptionsByPage[page]?.[game.slug];
+  const description = descriptionsByPage[page]?.[game.slug] ?? sledExpansionDescriptionsByPage[page]?.[game.slug] ?? waddlePeaksDescriptionsByPage[page]?.[game.slug] ?? snowRidersDescriptionsByPage[page]?.[game.slug];
   if (description) return description;
 
   // New catalog entries remain useful before their contextual copy is written.

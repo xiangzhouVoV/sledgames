@@ -58,7 +58,6 @@
   .christmas-hero-art { justify-self: center; width: min(100%, 390px); }
   .christmas-collection { scroll-margin-top: 24px; }
   .christmas-collection .section-heading h2 { margin-top: 8px; }
-  .christmas-collection .game-grid { max-width: 920px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
   .christmas-page .game-card, .christmas-page .category-card, .christmas-page .faq details {
     --ink: #203e32;
     --muted: #5b675a;
@@ -72,8 +71,6 @@
   .christmas-page .game-card:hover { box-shadow: 0 14px 30px #041a2944; }
   .christmas-page .card-art { background: #294a38; }
   .christmas-page .card-badge--available { padding: 5px 11px; border-radius: 999px; background: #aa303e; color: #fff5df; box-shadow: 0 2px 8px #0002; }
-  .christmas-page .card-copy { padding: 18px 20px 20px; }
-  .christmas-page .card-copy h3 { font-size: 1.125rem; }
   .christmas-page .card-copy h3 > span { color: #a5303e; }
   .christmas-page main > .prose { max-width: 920px; padding: 28px 32px; border: 1px solid #c4ab7444; border-radius: 16px; background: #142f28d9; }
   .christmas-page .prose p { color: #d2e0d1; }
@@ -99,11 +96,7 @@
     .christmas-page .christmas-hero p { font-size: .9375rem; }
     .christmas-page .christmas-play-link { margin-top: 18px; }
     .christmas-hero-note { font-size: .6875rem; }
-    .christmas-collection .game-grid { gap: 12px; }
-    .christmas-page .card-copy { padding: 12px; }
-    .christmas-page .card-copy h3 { font-size: .875rem; }
     .christmas-page .card-badge--available { padding: 3px 8px; }
     .christmas-page main > .prose { padding: 22px 20px; }
   }
-  @media (max-width: 359px) { .christmas-collection .game-grid { grid-template-columns: 1fr; } }
 }

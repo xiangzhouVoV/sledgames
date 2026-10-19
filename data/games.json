@@ -1549,9 +1549,9 @@
   {
     "slug": "waddle-peaks",
     "title": "Waddle Peaks",
-    "seoTitle": "Waddle Peaks - Penguin Slopes, Snowboards and Tricks",
+    "seoTitle": "Waddle Peaks - Play the Penguin Ski Adventure Online",
     "category": [
-      "snowboard-games"
+      "ski-games"
     ],
     "embed": {
       "provider": "benerits",
@@ -1563,17 +1563,17 @@
     "developer": "Benerits",
     "released": "2026-09-25",
     "genres": [
-      "Snowboarding",
       "Skiing",
+      "Snowboarding",
       "Racing"
     ],
-    "description": "Play Waddle Peaks on Benerits. Guide a penguin down snowy mountains, unlock a snowboard, land aerial tricks, and take on races and chase events.",
-    "intro": "Waddle Peaks is a 3D penguin downhill game from Benerits with skis and snowboards you can unlock using fish. A snowboard spins faster and earns more trick points, while skis provide steadier carving and better glide. Pick the equipment that suits the event you want to practice.\n\nThe career includes races, slalom, trick runs, and chase events. Big Mountain offers an endless descent. Read the current objective before starting: a race rewards finishing position, a trick run asks for points, and missed slalom gates add time. Build familiarity with one event before changing equipment or chasing a better result.",
+    "description": "Play Waddle Peaks on Benerits. Ski down snowy mountains as a penguin, race through gates, land aerial tricks, and escape avalanches and yetis.",
+    "intro": "Waddle Peaks is a 3D penguin ski game from Benerits. Carve across snowy mountains, tuck for speed, and use jumps to add spins, flips, or grabs. Skis provide steadier carving and better glide; fish can also unlock snowboards for faster spins and higher trick scores.\n\nThe career includes races, slalom, trick runs, and chase events. Big Mountain offers an endless descent. Read the current objective before starting: a race rewards finishing position, a trick run asks for points, and missed slalom gates add time. Build familiarity with one event before changing equipment or chasing a better result.",
     "howToPlay": [
       "Open the official game: Select Play on Benerits above to launch the browser game in a new tab. Keep this guide available for the controls.",
       "Choose an event: Read its objective and target before beginning. Decide whether your next attempt is about position, time, tricks, or collecting fish.",
       "Control the descent: Use the left and right arrows or A and D to carve. Hold Down, S, or Shift to tuck, and press Space to jump.",
-      "Finish the landing: Complete a spin or flip before touching down. Use earned fish to unlock a snowboard when you want to focus on aerial tricks."
+      "Finish the landing: Complete a spin or flip before touching down. Follow the event goal and compare the next attempt with the section you want to improve."
     ],
     "tips": [
       "Practice one action at a time: Start by judging turns and jump timing. Add another input after you can repeat the approach without needing to look at the controls.",
@@ -1647,6 +1647,91 @@
       "released": "https://play.benerits.com/en/g/waddle-peaks",
       "externalPlayUrl": "https://play.benerits.com/en/g/waddle-peaks",
       "thumbnail": "https://play.benerits.com/en/g/waddle-peaks"
+    }
+  },
+  {
+    "slug": "snow-riders",
+    "title": "Snow Riders",
+    "seoTitle": "Snow Riders - Race Downhill and Upgrade Your Gear",
+    "category": [
+      "ski-games"
+    ],
+    "embed": {
+      "provider": "poki",
+      "iframeSrc": "",
+      "width": 960,
+      "height": 600
+    },
+    "externalPlayUrl": "https://poki.com/en/g/snow-riders",
+    "developer": "Sleepless Games",
+    "released": "",
+    "genres": [
+      "Skiing",
+      "Racing"
+    ],
+    "description": "Play Snow Riders on Poki. Race other skiers down snowy slopes, dodge obstacles, collect gems, and unlock new gear, levels, and mountain maps.",
+    "intro": "Snow Riders is a ski racing game by Sleepless Games. Compete with other skiers down snowy courses, steer around obstacles, and collect gems along the route. Use rewards to upgrade equipment and unlock more levels and mountain maps.\n\nEach race gives you a route to learn and other skiers to watch. Choose a line that leaves room for the next obstacle before moving toward a gem. Read the equipment and level menus between attempts, then return to the course with a clear idea of the section you want to improve.",
+    "howToPlay": [
+      "Open the official game: Select Play on Poki above to launch Snow Riders in a new tab. Follow the game's start prompts to enter a race.",
+      "Steer down the course: Use A and D, the left and right arrows, or the game's joystick control. Watch the open route ahead of your skier.",
+      "Race and collect: Navigate around obstacles while competing with the other skiers. Collect gems when your approach leaves room to continue safely.",
+      "Check your rewards: Review the equipment and progression menus after a run. Use rewards for gear upgrades and work toward additional levels and snowy maps."
+    ],
+    "tips": [
+      "Look beyond the next gem: Notice the following obstacle before changing direction. A clear exit helps you judge whether a collectible fits your current line.",
+      "Learn a troublesome section: Use another attempt to observe the approach to a place where you collide. Change one steering decision and compare the result.",
+      "Read menus between races: Check the available equipment and level choices before starting again. Pick one goal for the next attempt so you can judge your progress."
+    ],
+    "controls": [
+      {
+        "action": "Steer with a keyboard",
+        "input": "A / D or Left / Right arrow keys"
+      },
+      {
+        "action": "Steer with a joystick",
+        "input": "Use the game's joystick control"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Where do I play Snow Riders?",
+        "a": "Use Play on Poki above to open the official browser game in a new tab. This page keeps the controls, playing guide, and tips available alongside that play option."
+      },
+      {
+        "q": "How do I steer in Snow Riders?",
+        "a": "Use A and D, the left and right arrow keys, or the joystick control offered by the game. Follow the visible control prompts when you open the player on your device."
+      },
+      {
+        "q": "What can I unlock in Snow Riders?",
+        "a": "The game offers equipment upgrades, additional levels, and snowy maps. Collect gems during races and check the reward and equipment menus to see your current progression options."
+      },
+      {
+        "q": "Can I play Snow Riders on a phone?",
+        "a": "Poki lists support for computers, phones, and tablets. Open the official game and check the joystick and other visible controls before beginning your first race."
+      },
+      {
+        "q": "Is Snow Riders the same as Snow Rider 2?",
+        "a": "They are separate catalog entries. Snow Riders is Sleepless Games' ski racing game, while Snow Rider 2 is the dedicated page for a Snow Rider 3D sleigh run in our sledding collection."
+      },
+      {
+        "q": "Is Snow Riders free to play?",
+        "a": "Poki lists Snow Riders as a free browser game. Use the official-site button above to play without installing a separate app."
+      }
+    ],
+    "similar": [],
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.poki-cdn.com/3be86bfb7de7996d53de8d12e87298d4/snow-riders-logo.png",
+    "sources": {
+      "intro": "https://poki.com/en/g/snow-riders",
+      "howToPlay": "https://poki.com/en/g/snow-riders",
+      "tips": "https://poki.com/en/g/snow-riders",
+      "controls": "https://poki.com/en/g/snow-riders",
+      "faqs": "https://poki.com/en/g/snow-riders",
+      "developer": "https://poki.com/en/g/snow-riders",
+      "externalPlayUrl": "https://poki.com/en/g/snow-riders",
+      "thumbnail": "https://poki.com/en/g/snow-riders"
     }
   }
 ]

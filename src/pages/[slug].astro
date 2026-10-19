@@ -18,7 +18,7 @@ const faqs = gameFaqs(game);
 const category = gameCategory(game);
 const collection = category?.path === '/' ? winterCollection : category;
 const christmas = game.category.includes('christmas-games');
-const focusedGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl', 'gnome-bobsled', 'sled-line', 'sleigh-o-balance', 'waddle-peaks'].includes(game.slug);
+const focusedGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl', 'gnome-bobsled', 'sled-line', 'sleigh-o-balance', 'waddle-peaks', 'snow-riders'].includes(game.slug);
 const title = game.seoTitle ?? game.title;
 const schema = [gameSchema(game), ...(faqs.length ? [faqSchema(faqs)] : []), breadcrumbSchema([
   ...(collection ? [{ name: collection.title, path: collection.path }] : []),
@@ -26,7 +26,7 @@ const schema = [gameSchema(game), ...(faqs.length ? [faqSchema(faqs)] : []), bre
 ])];
 const number = new Intl.NumberFormat('en-US');
 ---
-<Layout playFirst snowfall={!christmas} theme={christmas ? 'christmas' : undefined} title={title} description={game.description} schema={schema} socialImage={['snowboard-game', 'waddle-peaks'].includes(game.slug) ? game.thumbnail : undefined} socialImageAlt={game.slug === 'waddle-peaks' ? 'Waddle Peaks game cover' : 'SnowBoard Game snowboarder on a snowy mountain course'}>
+<Layout playFirst snowfall={!christmas} theme={christmas ? 'christmas' : undefined} title={title} description={game.description} schema={schema} socialImage={['snowboard-game', 'waddle-peaks', 'snow-riders'].includes(game.slug) ? game.thumbnail : undefined} socialImageAlt={['waddle-peaks', 'snow-riders'].includes(game.slug) ? `${game.title} game cover` : 'SnowBoard Game snowboarder on a snowy mountain course'}>
   <h1 class="play-heading">{game.title}</h1>
   <GameStage game={game} eager fitAspectRatio={focusedGuide || ['snowball-io', 'moto-x3m-winter'].includes(game.slug)} />
   {(game.rating !== null || game.playCount !== null) && <div class="info-bar">{game.rating && <span>Rating: {game.rating.value}/5 · {number.format(game.rating.count)} votes</span>}{game.playCount !== null && <span>{number.format(game.playCount)} plays</span>}</div>}

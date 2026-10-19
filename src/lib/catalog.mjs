@@ -26,6 +26,7 @@ const hosts = {
 const externalDestinations = new Map([
   ['sleigh-o-balance', { url: 'https://xxchester.itch.io/sleigh-o-balance', name: 'itch.io' }],
   ['waddle-peaks', { url: 'https://play.benerits.com/en/g/waddle-peaks', name: 'Benerits' }],
+  ['snow-riders', { url: 'https://poki.com/en/g/snow-riders', name: 'Poki' }],
 ]);
 
 /** @param {import('./types').Game} game */

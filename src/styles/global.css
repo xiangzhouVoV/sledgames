@@ -190,10 +190,6 @@
   .guide-controls thead { background: #edf5fe; }
   .guide-controls tbody th { font-weight: 600; }
   .game-guide > .text-link { margin-top: 20px; }
-  .featured-games .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .featured-games .card-art { aspect-ratio: 2/1; }
-  .featured-games .card-copy { padding: 18px 20px; }
-  .featured-games .card-copy h3 { font-size: 1.25rem; }
   .hub-guide { max-width: 920px; padding: 32px; background: #ffffffed; border: 1px solid #d1e1ef; border-radius: 16px; }
   .hub-guide > section + section { margin-top: 30px; }
   .hub-guide h3 { margin-block: 22px 12px; }
@@ -218,7 +214,6 @@
     .header-inner nav { width: 100%; padding-bottom: 8px; overflow-x: auto; }
     .header-inner nav a { flex-shrink: 0; }
     .game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .featured-games .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .category-card { flex-wrap: wrap; gap: 10px; padding: 18px; }
     .category-card > div { flex: 1 1 150px; }
@@ -238,9 +233,6 @@
     .page-intro { padding-block: 22px 18px; }
     .page-intro .eyebrow { font-size: .625rem; }
     .hub-intro { align-items: flex-start; flex-direction: column; gap: 16px; }
-    .featured-games .card-copy { padding: 12px; }
-    .featured-games .card-copy h3 { font-size: 1rem; }
-    .featured-games .card-art { aspect-ratio: 16/10; }
     .hub-guide { padding: 20px; }
     .stage-heading { margin-bottom: 10px; }
     .stage-heading > div { gap: 8px; }
@@ -287,7 +279,6 @@
   }
   @media (max-width: 359px) {
     .game-grid { grid-template-columns: 1fr; }
-    .featured-games .game-grid { grid-template-columns: 1fr; }
     .section-heading { flex-wrap: wrap; gap: 0; }
     .stage-caption p { font-size: .75rem; }
     .stage-caption h2 { font-size: 1.5rem; }
