@@ -21,7 +21,7 @@ const additions = [
     player: 'https://html5.gamemonetize.co/m8rawdukwnf27lq4de69iduxipyscbxl/',
   },
 ];
-const snowboardSlugs = ['downhill-snowboard', 'snowboard-game', ...additions.map(game => game.slug)];
+const snowboardSlugs = ['downhill-snowboard', 'snowboard-game', ...additions.map(game => game.slug), 'waddle-peaks'];
 const categoryKeyword = /\bsnowboard\s+games\b/i;
 const page = path => load(readFileSync(`dist${path}index.html`, 'utf8'));
 const normalize = text => text.replace(/\s+/g, ' ').trim();
@@ -158,7 +158,7 @@ for (const game of additions) {
   });
 }
 
-test('the snowboard category adds all three games while retaining both existing games and its keyword ownership', () => {
+test('the snowboard category retains all six games and its keyword ownership', () => {
   const entries = categoryGames('snowboard-games');
   assert.deepEqual(entries.map(game => game.slug).sort(), [...snowboardSlugs].sort());
   const $ = page('/snowboard-games/');
@@ -166,7 +166,7 @@ test('the snowboard category adds all three games while retaining both existing 
   assert.match($('title').text(), /^Snowboard Games\b/);
   assert.equal($('link[rel="canonical"]').attr('href'), 'https://sledgames.com/snowboard-games/');
   const cards = $('main .primary-collection .game-card');
-  assert.equal(cards.length, 5);
+  assert.equal(cards.length, snowboardSlugs.length);
   assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), entries.map(game => gamePath(game.slug)));
   for (const game of entries) {
     const card = cards.filter(`[href="${gamePath(game.slug)}"]`);
@@ -178,14 +178,13 @@ test('the snowboard category adds all three games while retaining both existing 
   }
 });
 
-test('the five snowboard details link to every category peer before broader winter recommendations', () => {
+test('the six snowboard details link to all five category peers', () => {
   for (const slug of snowboardSlugs) {
     const $ = page(gamePath(slug));
     const related = $('#related-games .game-card');
     const peers = snowboardSlugs.filter(other => other !== slug).map(gamePath);
     assert.equal(related.length, 5);
-    assert.deepEqual(new Set(related.slice(0, 4).map((_, card) => $(card).attr('href')).get()), new Set(peers), `${slug}: all four snowboard alternatives remain visible`);
-    assert.ok(!peers.includes(related.eq(4).attr('href')), 'The final recommendation offers a different winter activity');
+    assert.deepEqual(new Set(related.map((_, card) => $(card).attr('href')).get()), new Set(peers), `${slug}: all five snowboard alternatives remain visible`);
     assert.equal($('main .category-card[href="/snowboard-games/"]').length, 1, 'Every game links back to its collection');
   }
   for (const game of additions) {

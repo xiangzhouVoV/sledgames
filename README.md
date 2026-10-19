@@ -13,16 +13,18 @@ Cloudflare Workers uses `wrangler.jsonc` to publish only `dist/`, preserve trail
 
 For local validation without publishing, run `npm run deploy:check`. To build and publish from an authenticated local environment, run `npm run deploy`.
 
+Waddle Peaks currently uses its [official play page](https://play.benerits.com/en/g/waddle-peaks). Checked on 2026-10-19: its embed wrapper loads, but the actual game's `Content-Security-Policy: frame-ancestors https://play.benerits.com` blocks embedding from sledgames.com or localhost. Keep the official external play option until that policy supports external sites.
+
 ## English
 
 Sled Games is a free online gaming website built around snowy slopes, winter sports, and festive sleigh adventures. Play in your browser without installing an app or creating a Sled Games account.
 
-Choose a sledding game on the homepage, or use Play now to open one of the sled games. Each game has a dedicated player page, including [Sled Rider](https://sledgames.com/sled-rider/) and [Snow Rider 2](https://sledgames.com/snow-rider-2/). Browse [All Winter Games](https://sledgames.com/games/) for the complete collection across every category.
+Choose a sledding game on the homepage, or use Play now to open one of the sled games. Each game has a dedicated guide page: [Sled Rider](https://sledgames.com/sled-rider/), [Snow Rider 2](https://sledgames.com/snow-rider-2/), [Gnome Bobsled](https://sledgames.com/gnome-bobsled/), [Sled Line](https://sledgames.com/sled-line/), and [Sleigh O’Balance](https://sledgames.com/sleigh-o-balance/). The first four have embedded players; Sleigh O’Balance links to the author’s official page to play. Browse [All Winter Games](https://sledgames.com/games/) for the complete collection across every category.
 
 ### Explore the games
 
-- **[Sled Games](https://sledgames.com/)** — Compare downhill sledding games and choose your next run.
-- **[Snowboard Games](https://sledgames.com/snowboard-games/)** — Compare five board rides: Downhill Snowboard's survival runs, SnowBoard Game's 3D tracks, Snowboard King 2024's avalanche courses, Snowboard Game Party's obstacle racing, and Snowboard Girl's side-scrolling levels.
+- **[Sled Games](https://sledgames.com/)** — Choose downhill runs in Sled Rider and Snow Rider 2, ice-track time trials in Gnome Bobsled, route drawing in Sled Line, or gift balancing in Sleigh O’Balance.
+- **[Snowboard Games](https://sledgames.com/snowboard-games/)** — Compare six challenges: Downhill Snowboard's survival runs, SnowBoard Game's 3D tracks, Snowboard King 2024's avalanche courses, Snowboard Game Party's obstacle racing, Snowboard Girl's side-scrolling levels, and Waddle Peaks' penguin mountain events. Waddle Peaks starts on skis with snowboards to unlock, and opens on its official site.
 - **[Ski Games](https://sledgames.com/ski-games/)** — Follow the course flags and chase a faster finish in Ski King, or dodge obstacles and collect scoring flags in Ski Rush.
 - **[Christmas Games](https://sledgames.com/christmas-games/)** — Combine matching snowballs in Merge Christmas, catch presents in Santa Collecting Gifts, or fly Santa’s reindeer sleigh past balloons in Crazy Christmas Fun.
 
@@ -32,18 +34,18 @@ Bright blue winter scenery and falling snow set the mood for mountain adventures
 
 Each game page includes an introduction, controls, instructions, practical tips, and answers to common questions. You can also discover another game from the same collection when you are ready for a new challenge.
 
-Controls vary by game. Some adventures need a keyboard, while games such as Ski Rush and Crazy Christmas Fun offer mouse or touch controls. Check the instructions to choose a game that suits your device.
+Controls vary by game. Some adventures need a keyboard; Gnome Bobsled offers keyboard or mobile touch controls, and Sled Line supports drawing with a mouse or finger. Sleigh O’Balance uses mouse controls. Check each guide to choose a game that suits your device.
 
 ## 中文介绍
 
 Sled Games 是一个以雪地、冬季运动和圣诞雪橇冒险为主题的免费在线游戏网站。无需安装应用，也无需注册 Sled Games 账号，即可在浏览器中游玩。
 
-首页帮助你比较和选择雪橇游戏，也可以通过快速开始进入一款雪橇游戏。每款游戏都有独立的播放器页面，包括 [Sled Rider](https://sledgames.com/sled-rider/) 和 [Snow Rider 2](https://sledgames.com/snow-rider-2/)。[全部冬季游戏](https://sledgames.com/games/)目录则展示所有类别的游戏。
+首页帮助你比较和选择雪橇游戏，也可以通过快速开始进入一款雪橇游戏。每款游戏都有独立的攻略页面：[Sled Rider](https://sledgames.com/sled-rider/)、[Snow Rider 2](https://sledgames.com/snow-rider-2/)、[Gnome Bobsled](https://sledgames.com/gnome-bobsled/)、[Sled Line](https://sledgames.com/sled-line/) 和 [Sleigh O’Balance](https://sledgames.com/sleigh-o-balance/)。前四款使用站内嵌入播放器；Sleigh O’Balance 则通过链接前往作者官方页面游玩。[全部冬季游戏](https://sledgames.com/games/)目录展示所有类别的游戏。
 
 ### 探索游戏
 
-- **[雪橇游戏](https://sledgames.com/)** — 比较雪地滑行游戏，选择下一段雪橇挑战。
-- **[单板滑雪游戏](https://sledgames.com/snowboard-games/)** — 比较五种挑战：Downhill Snowboard 的生存滑行、SnowBoard Game 的 3D 赛道、Snowboard King 2024 的雪崩追逐关卡、Snowboard Game Party 的障碍竞速，以及 Snowboard Girl 的横版关卡。
+- **[雪橇游戏](https://sledgames.com/)** — 在 Sled Rider 和 Snow Rider 2 中挑战下坡滑行，在 Gnome Bobsled 中进行冰槽计时竞速，在 Sled Line 中画出道路，或在 Sleigh O’Balance 中装载礼物、保持配重平衡。
+- **[单板滑雪游戏](https://sledgames.com/snowboard-games/)** — 比较六种挑战：Downhill Snowboard 的生存滑行、SnowBoard Game 的 3D 赛道、Snowboard King 2024 的雪崩追逐关卡、Snowboard Game Party 的障碍竞速、Snowboard Girl 的横版关卡，以及 Waddle Peaks 的企鹅山地项目。Waddle Peaks 初始使用双板，可解锁单板，通过官方站试玩入口打开。
 - **[双板滑雪游戏](https://sledgames.com/ski-games/)** — 在 Ski King 中按照旗标完成赛道、挑战更快的成绩，或在 Ski Rush 中避开障碍、收集旗帜得分。
 - **[圣诞游戏](https://sledgames.com/christmas-games/)** — 在 Merge Christmas 中合成相同雪球，在 Santa Collecting Gifts 中接住礼物、避开炸弹，或在 Crazy Christmas Fun 中驾驶驯鹿雪橇穿过气球障碍。
 
@@ -53,4 +55,4 @@ Sled Games 是一个以雪地、冬季运动和圣诞雪橇冒险为主题的免
 
 每款游戏都配有介绍、操作说明、玩法步骤、实用技巧和常见问题解答。一轮结束后，还可以从同类游戏中找到下一项挑战。
 
-不同游戏的操作方式有所区别：部分游戏需要键盘，Ski Rush、Crazy Christmas Fun 等游戏支持鼠标或触控操作。开始前查看说明，选择适合自己设备的游戏即可。
+不同游戏的操作方式有所区别：部分游戏需要键盘，Gnome Bobsled 提供键盘或移动触控操作，Sled Line 支持鼠标或手指画路，Sleigh O’Balance 使用鼠标操作。开始前查看各自的操作说明，选择适合自己设备的游戏即可。

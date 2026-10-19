@@ -1,15 +1,33 @@
 import { test, expect, type Page } from '@playwright/test';
 import games from '../../data/games.json' with { type: 'json' };
-import { games as catalogGames, relatedGames, embedUrl, canonical, gamePath } from '../../src/lib/catalog.mjs';
+import { games as catalogGames, relatedGames, embedUrl, externalPlayLabel, canonical, gamePath } from '../../src/lib/catalog.mjs';
 
-const publisherPattern = /^https:\/\/(?:gamea\.azgame\.io|html5\.(?:gamedistribution\.com|gamemonetize\.(?:com|co|games))|io\.gamemonetize\.com)\//;
+const sledGames = games.filter(game => game.category.includes('sledding-games'));
+const winterRecommendations = games.filter(game => game.category.some(category => ['sledding-games', 'winter-games'].includes(category)));
+const publisherOrigins = new Set(games.filter(game => game.embed.iframeSrc).map(game => new URL(game.embed.iframeSrc!).origin));
+const isPublisherRequest = (url: string) => publisherOrigins.has(new URL(url).origin);
 
 async function mockHomepageResources(page: Page) {
-  await page.route(publisherPattern, route => route.request().resourceType() === 'image'
-    ? route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' })
-    : route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
-  await page.route(/^https:\/\/img\.(gamedistribution|gamemonetize)\.com\//, route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
-  await page.route('https://pagead2.googlesyndication.com/**', route => route.abort());
+  await page.route(/^https:\/\//, route => {
+    const request = route.request();
+    if (request.resourceType() === 'image') return route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' });
+    if (request.resourceType() === 'document' && isPublisherRequest(request.url())) return route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' });
+    return route.abort();
+  });
+}
+
+async function expectGameDestination(page: Page, game: (typeof catalogGames)[number], fixtureText = 'Official player fixture') {
+  if (game.embed.iframeSrc) {
+    await expect(page.frameLocator('.game-stage > iframe').locator('body')).toHaveText(fixtureText);
+  } else {
+    await expect(page.locator('main iframe, [data-game-tools]')).toHaveCount(0);
+    const external = page.locator('.game-external a');
+    await expect(external).toHaveAttribute('href', game.externalPlayUrl!);
+    await expect(external).toHaveText(`Play on ${externalPlayLabel(game)} ↗`);
+    await expect(external).toHaveAttribute('target', '_blank');
+    await expect(external).toHaveAttribute('rel', /\bnoopener\b/);
+    await expect(external).toHaveAttribute('rel', /\bnoreferrer\b/);
+  }
 }
 
 for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }, { width: 1280, height: 800 }]) {
@@ -19,7 +37,7 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
       const page = await context.newPage();
       const publisherRequests: string[] = [];
       page.on('request', request => {
-        if (publisherPattern.test(request.url()) && request.resourceType() !== 'image') publisherRequests.push(request.url());
+        if (isPublisherRequest(request.url()) && request.resourceType() !== 'image') publisherRequests.push(request.url());
       });
       await mockHomepageResources(page);
       const response = await page.goto('/');
@@ -29,15 +47,15 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
       await expect(page.locator('main h1')).toBeVisible();
       await expect(page.locator('iframe, .game-stage, [data-game-tools]')).toHaveCount(0);
       const featured = page.locator('section.featured-games');
-      await expect(featured.locator('.game-card')).toHaveCount(2);
-      for (const slug of ['sled-rider', 'snow-rider-2']) {
-        await expect(featured.locator(`.game-card[href="/${slug}/"]`)).toHaveCount(1);
+      await expect(featured.locator('.game-card')).toHaveCount(sledGames.length);
+      for (const game of sledGames) {
+        await expect(featured.locator(`.game-card[href="/${game.slug}/"]`)).toHaveCount(1);
       }
       expect(await featured.evaluate(section => {
         const categories = document.querySelector('main .category-grid');
         return !!categories && !!(section.compareDocumentPosition(categories) & Node.DOCUMENT_POSITION_FOLLOWING);
       })).toBe(true);
-      await expect(page.locator('main .game-card')).toHaveCount(2);
+      await expect(page.locator('main .game-card')).toHaveCount(sledGames.length);
       await expect(page.locator('.quick-links a')).toHaveCount(games.length);
       await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toHaveText('Sled Games');
       await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/"]')).toHaveCount(0);
@@ -46,10 +64,7 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
       const schemas = await page.locator('script[type="application/ld+json"]').evaluateAll(nodes => nodes.map(node => JSON.parse(node.textContent!)));
       expect(schemas.map(schema => schema['@type']).sort()).toEqual(['FAQPage', 'ItemList', 'WebSite']);
       const itemList = schemas.find(schema => schema['@type'] === 'ItemList');
-      expect(itemList.itemListElement.map((item: { url: string }) => item.url)).toEqual([
-        'https://sledgames.com/sled-rider/',
-        'https://sledgames.com/snow-rider-2/',
-      ]);
+      expect(itemList.itemListElement.map((item: { url: string }) => item.url)).toEqual(sledGames.map(game => canonical(gamePath(game.slug))));
       expect(schemas.find(schema => schema['@type'] === 'FAQPage').mainEntity).toHaveLength(5);
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://sledgames.com/');
       await expect(page.locator('main .game-guide')).toHaveCount(0);
@@ -67,11 +82,12 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
   });
 }
 
-for (const selection of [{ random: 0, slug: 'sled-rider', title: 'Sled Rider' }, { random: .99, slug: 'snow-rider-2', title: 'Snow Rider 2' }]) {
+for (const [index, game] of sledGames.entries()) {
+  const selection = { ...game, random: (index + .5) / sledGames.length };
   test(`homepage random start selects ${selection.title} with JavaScript`, async ({ page }) => {
     const publisherRequests: string[] = [];
     page.on('request', request => {
-      if (publisherPattern.test(request.url()) && request.resourceType() !== 'image') publisherRequests.push(request.url());
+      if (isPublisherRequest(request.url()) && request.resourceType() !== 'image') publisherRequests.push(request.url());
     });
     await mockHomepageResources(page);
     await page.addInitScript(value => { Math.random = () => value; }, selection.random);
@@ -83,19 +99,19 @@ for (const selection of [{ random: 0, slug: 'sled-rider', title: 'Sled Rider' },
     await random.click();
     await expect(page).toHaveURL(`http://127.0.0.1:4321/${selection.slug}/`);
     await expect(page.locator('main h1')).toHaveText(selection.title);
-    await expect(page.frameLocator('.game-stage > iframe').locator('body')).toHaveText('Official player fixture');
+    await expectGameDestination(page, catalogGames.find(game => game.slug === selection.slug)!);
   });
 }
 
 for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
-  test(`category cards open the correct official players at ${viewport.width}px`, async ({ browser }) => {
+  test(`category cards open the correct verified game destinations at ${viewport.width}px`, async ({ browser }) => {
     test.setTimeout(60_000); // This case visits every game in all three growing category collections.
     const context = await browser.newContext({ viewport });
     const page = await context.newPage();
     await page.route(/^https:\/\//, route => {
       const request = route.request();
       if (request.resourceType() === 'image') return route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' });
-      if (request.resourceType() === 'document' && publisherPattern.test(request.url())) return route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' });
+      if (request.resourceType() === 'document' && isPublisherRequest(request.url())) return route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' });
       // Ads and analytics do not participate in category-to-player navigation.
       return route.abort();
     });
@@ -121,11 +137,14 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         expect(stage!.y).toBeGreaterThanOrEqual(heading!.y + heading!.height);
         expect(stage!.y - heading!.y - heading!.height).toBeLessThanOrEqual(12);
         expect(stage!.y + stage!.height).toBeLessThanOrEqual(viewport.height);
-        await expect(page.locator('.game-stage > iframe')).toHaveAttribute('title', `Play ${game.title}`);
+        if (game.embed.iframeSrc) {
+          await expect(page.locator('.game-stage > iframe')).toHaveAttribute('title', `Play ${game.title}`);
+          const src = new URL(await page.locator('.game-stage > iframe').getAttribute('src') as string);
+          expect(src.href).toBe(embedUrl(game, canonical(gamePath(game.slug))));
+          expect(src.hostname).toBe(new URL(game.embed.iframeSrc).hostname);
+        }
+        await expectGameDestination(page, catalogGames.find(entry => entry.slug === game.slug)!);
         await expect(page.locator('body')).toHaveClass(category === 'christmas-games' ? /christmas-page/ : /has-snow/);
-        const src = new URL(await page.locator('.game-stage > iframe').getAttribute('src') as string);
-        expect(src.href).toBe(embedUrl(game, canonical(gamePath(game.slug))));
-        expect(src.hostname).toBe(new URL(game.embed.iframeSrc).hostname);
         expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
         await page.getByRole('link', { name: 'How to play', exact: true }).click();
         await expect(page.locator('#how-to-play')).toBeInViewport();
@@ -144,16 +163,15 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
   test(`winter recommendations preserve category collections and open the new game at ${viewport.width}px without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false, viewport });
     const page = await context.newPage();
-    await page.route('https://html5.gamemonetize.co/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
-    await page.route(/^https:\/\/img\.(gamedistribution|gamemonetize)\.com\//, route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
+    await mockHomepageResources(page);
     for (const category of ['snowboard-games', 'ski-games', 'christmas-games']) {
       await page.goto(`/${category}/`);
       await expect(page.locator('main .primary-collection .game-card')).toHaveCount(games.filter(game => game.category.includes(category)).length);
       const recommendations = page.locator('main section[aria-labelledby="other-winter-games"]');
       await expect(recommendations.getByRole('heading', { name: 'Explore More Winter Games', exact: true })).toBeVisible();
-      await expect(recommendations.locator('.game-card')).toHaveCount(4);
-      for (const slug of ['sled-rider', 'snow-rider-2', 'snowball-io', 'moto-x3m-winter']) {
-        await expect(recommendations.locator(`.game-card[href="/${slug}/"]`)).toHaveCount(1);
+      await expect(recommendations.locator('.game-card')).toHaveCount(winterRecommendations.length);
+      for (const game of winterRecommendations) {
+        await expect(recommendations.locator(`.game-card[href="/${game.slug}/"]`)).toHaveCount(1);
       }
       expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
       await recommendations.locator('.game-card[href="/moto-x3m-winter/"]').click();
@@ -165,7 +183,7 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
 }
 
 for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
-  test(`new winter game related cards link every new game at ${viewport.width}px without JavaScript`, async ({ browser }) => {
+  test(`winter game related cards open their selected targets at ${viewport.width}px without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce', viewport });
     try {
       const page = await context.newPage();
@@ -181,7 +199,8 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         { slug: 'moto-x3m-winter', title: 'Moto X3M Winter' },
       ];
       for (const source of newGames) {
-        for (const target of newGames.filter(game => game.slug !== source.slug)) {
+        const selected = relatedGames(catalogGames.find(game => game.slug === source.slug)!);
+        for (const target of selected) {
           await page.goto(`/${source.slug}/`);
           await expect(page.locator('main h1')).toHaveText(source.title);
           const related = page.locator('main section.related-games#related-games');
@@ -196,7 +215,7 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
           await expect(page).toHaveURL(`http://127.0.0.1:4321/${target.slug}/`);
           await expect(page.locator('main h1')).toHaveText(target.title);
           await expect(page.locator('main h1')).toBeVisible();
-          await expect(page.frameLocator('.game-stage > iframe').locator('body')).toHaveText('Official player fixture');
+          await expectGameDestination(page, target);
           expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
         }
       }
@@ -249,10 +268,7 @@ for (const width of [320, 390, 1280]) {
   test(`all-game navigation scrolls to every game at ${width}px without JavaScript`, async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height: 844 } });
     const page = await context.newPage();
-    await page.route('https://html5.gamemonetize.co/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
-    await page.route('https://img.gamemonetize.com/**', route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
-    await page.route('https://html5.gamedistribution.com/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
-    await page.route('https://img.gamedistribution.com/**', route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
+    await mockHomepageResources(page);
     await page.goto('/games/');
     await expect(page.locator('header nav[aria-label="Main navigation"] > span[aria-current="page"]')).toContainText('All Games');
     await expect(page.locator('header nav[aria-label="Main navigation"] a[href="/games/"]')).toHaveCount(0);

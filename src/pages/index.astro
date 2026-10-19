@@ -8,15 +8,15 @@ const sledGames = categoryGames('sledding-games');
 const faqs = [
   {
     q: 'What are the best free sled games to play online?',
-    a: 'Our current sledding choices are Sled Rider and Snow Rider 2. Both feature downhill survival runs and gift collecting. Start with Sled Rider for its detailed beginner walkthrough, or choose Snow Rider 2 for the Snow Rider 3D release identified on its game page.',
+    a: 'Choose from Sled Rider, Snow Rider 2, Gnome Bobsled, Sled Line, and Sleigh O’Balance. The first two offer downhill survival runs; Gnome Bobsled adds timed ice-track racing, Sled Line lets you draw the route, and Sleigh O’Balance challenges you to balance a load of gifts. Read each guide to pick the challenge you prefer.',
   },
   {
     q: 'Do I need to download anything to play sled games?',
-    a: 'No app installation is needed. Open a game card to visit its player page, keep JavaScript enabled, and allow the game to load. If a player stays stuck, its Reload button lets you try again without leaving the page.',
+    a: 'No app installation is needed. Open a card for its guide and play option. Most games have an embedded browser player with a Reload button if loading stalls. Sleigh O’Balance opens on the author’s official page. Keep JavaScript enabled when playing either way.',
   },
   {
     q: 'Can I play sled games on a phone?',
-    a: 'Support varies by game. Snow Rider 2 is listed as compatible with iOS and Android browsers in its official catalog. Check the player for touch controls before starting, and use landscape orientation if that makes the course easier to see.',
+    a: 'Support varies by game. Snow Rider 2 is listed for iOS and Android browsers, Gnome Bobsled offers mobile touch controls, and Sled Line supports drawing with a finger. Sleigh O’Balance uses mouse controls, so choose a computer for that game. Check the controls on the game page before starting.',
   },
   {
     q: 'What is the difference between a sled game and a snowboard game?',
@@ -24,39 +24,39 @@ const faqs = [
   },
   {
     q: 'Are these sled games free?',
-    a: 'Yes. There is no Sled Games access fee or account requirement. Games load through third-party publishing platforms, which may show advertisements and set their own in-game terms. The game pages include controls and guides alongside the free browser players.',
+    a: 'Yes. There is no Sled Games access fee or account requirement. The guides lead to free browser games, either embedded here or on the author’s official page for Sleigh O’Balance. Third-party platforms may show advertisements and set their own in-game terms.',
   },
 ];
 ---
-<Layout snowfall title="Sled Games - Play Free Sledding Games Online" description="Play free sled games in your web browser. Ride a sled down snowy slopes, then explore our snowboard, ski, and Christmas game pages." schema={[{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Sled Games', url: canonical('/') }, itemListSchema(sledGames, 'Sled Games'), faqSchema(faqs)]}>
+<Layout snowfall title="Sled Games - Play Free Sledding Games Online" description="Play free sled games: Sled Rider, Snow Rider 2, Gnome Bobsled, Sled Line, and Sleigh O’Balance. Race on ice, draw routes, or balance a loaded sleigh." schema={[{ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Sled Games', url: canonical('/') }, itemListSchema(sledGames, 'Sled Games'), faqSchema(faqs)]}>
   <section class="page-intro hub-intro">
-    <div><span class="eyebrow">PICK YOUR NEXT RUN</span><h1>Sled Games</h1><p>Choose a downhill sledding run, compare the controls, and open a game when you're ready. Start with the sled games below, or use the quick-start button to jump into a game.</p></div>
+    <div><span class="eyebrow">PICK YOUR NEXT CHALLENGE</span><h1>Sled Games</h1><p>Choose a downhill run, an ice-track race, a drawing challenge, or a sleigh-balancing game. Compare the controls and open one of the sled games below, or use the quick-start button to make a choice.</p></div>
     {sledGames.length > 0 && <a class="button" data-random-game href={gamePath(sledGames[0].slug)}>Play now <span aria-hidden="true">↗</span></a>}
   </section>
   <section class="featured-games" aria-labelledby="sled-games-collection">
-    <div class="section-heading"><div><h2 id="sled-games-collection">Choose your sled game</h2><p>Downhill runs, each with its own player and guide.</p></div></div>
+    <div class="section-heading"><div><h2 id="sled-games-collection">Choose your sled game</h2><p>Five ways to race, draw, slide, and balance, each with its own page and guide.</p></div></div>
     <GameGrid games={sledGames} eager />
   </section>
   <article class="content-section hub-guide prose" aria-label="Choosing sled games">
     <section aria-labelledby="what-are-sled-games">
       <h2 id="what-are-sled-games">What are sled games?</h2>
-      <p>Sled games put you on a sled or sleigh moving across snow, with the route in front of you setting the challenge. In the downhill games featured here, the sled advances automatically; you choose where to steer, when to jump, and whether a collectible is worth leaving a clear line. A run continues until a collision or fall ends it.</p>
-      <p>This page focuses on sledding. Sled Rider and Snow Rider 2 are the current choices, rather than a list of every winter sport. The Snow Rider 2 page explains that its player runs Snow Rider 3D, so you can check which release you are opening before starting.</p>
+      <p>Sled games build a challenge around a sled or sleigh. That can mean steering down an open slope, racing through an ice channel, drawing a safe path, or keeping gifts balanced as the sleigh moves. The vehicle connects these games, while their goals and controls give you different ways to play.</p>
+      <p>This collection includes <a href={gamePath('sled-rider')}>Sled Rider</a>, <a href={gamePath('snow-rider-2')}>Snow Rider 2</a>, <a href={gamePath('gnome-bobsled')}>Gnome Bobsled</a>, <a href={gamePath('sled-line')}>Sled Line</a>, and <a href={gamePath('sleigh-o-balance')}>Sleigh O’Balance</a>. The Snow Rider 2 guide explains that its player runs Snow Rider 3D, so you can check which release you are opening before starting.</p>
     </section>
     <section aria-labelledby="pick-a-sled-game">
       <h2 id="pick-a-sled-game">How to pick a sled game</h2>
       <h3>Endless runners vs level-based games</h3>
-      <p>The first choice is the kind of goal you want. An endless runner asks how long you can keep a run alive, while a level-based game gives you a course or stage to complete. Both sled games in this collection are endless runs. Choose them for repeated attempts at distance and gift collecting, rather than expecting a finish line or fixed levels.</p>
-      <p>If finishing marked courses matters more to you, use the category links below. Ski King offers ski courses, and SnowBoard Game has a finish-line objective. Those are different sports, so they live in their own categories and the <a href="/games/">All Winter Games</a> directory.</p>
+      <p>The first choice is the kind of goal you want. Sled Rider and Snow Rider 2 ask you to keep a downhill run alive while collecting gifts. Gnome Bobsled gives you ice tracks to finish against the clock: time your push at the start, take the bends, and compare a run with your own best-record ghost.</p>
+      <p>For a different kind of challenge, Sled Line lets you draw roads that guide the sled past gaps and slopes. Sleigh O’Balance asks you to distribute gifts across a sleigh and respond to falling anvils. Browse <a href="/games/">All Winter Games</a> when you want to compare these with skiing, snowboarding, and other festive adventures.</p>
       <h3>Keyboard or touch controls</h3>
-      <p>Check your device before choosing a game. A keyboard gives you separate inputs for steering and jumping; each detail page lists the keys used by that game. Read those labels instead of assuming that every sledding game shares the same layout.</p>
-      <p>On a phone, look for the controls visible inside the player. A mobile compatibility listing does not mean the keyboard instructions describe touch input. If the controls are missing or awkward to use, try a keyboard device or look through the other categories for a game with documented touch controls.</p>
+      <p>Check your device before choosing a game. Sled Rider and Snow Rider 2 use steering and jumping inputs. Gnome Bobsled adds a timed push at the start, cornering, and braking, with keyboard or mobile touch controls. Sled Line uses a mouse or finger to draw the road. Read each game’s controls table before you begin.</p>
+      <p>Sleigh O’Balance uses mouse controls: place gifts and decide when an anvil can help counterbalance the load. Choose a computer for this game. A mobile compatibility listing for one game does not establish support for the whole collection, so use the visible prompts and the individual guide to choose a comfortable setup.</p>
     </section>
     <section aria-labelledby="sled-games-beginners">
       <h2 id="sled-games-beginners">Sled games for beginners</h2>
       <p>For a first session, choose one game and read its controls table before pressing play. <a href={gamePath('sled-rider')}>Sled Rider</a> is a useful starting point if you want a guide that breaks a run into starting, steering, jumping, collecting, and retrying. Its game page has the complete walkthrough.</p>
-      <p>Give your first few attempts one goal: stay on open snow. Saving every present can pull you into a turn you have not prepared for. Once steering feels predictable, add gift collecting to your next attempt. Compare your own decisions across runs instead of looking for a universal easiest game.</p>
-      <p>When trying another sledding game, keep the same practice goal for a few attempts. That makes differences in timing and movement easier to notice. If a run ends quickly, decide whether you turned late, chose a blocked landing, or chased a risky gift before restarting.</p>
+      <p>In a downhill runner, give your first few attempts one goal: stay on open snow. Saving every present can pull you into a turn you have not prepared for. Once steering feels predictable, add gift collecting to your next attempt. In Gnome Bobsled, practice the starting push and then learn one bend at a time before chasing a faster finish.</p>
+      <p>Take a slower approach to Sled Line by planning a smooth route before drawing it. In Sleigh O’Balance, watch how each gift changes the load and weigh it against an anvil drop on the other side. Each game rewards a different habit, so use its own guide rather than carrying the same controls and strategy into every new challenge.</p>
     </section>
   </article>
   <section class="editorial-note">

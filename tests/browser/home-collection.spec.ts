@@ -1,6 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 import games from '../../data/games.json' with { type: 'json' };
 
+const sledGames = games.filter(game => game.category.includes('sledding-games'));
+
 async function mockExternalResources(page: Page) {
   await page.route(/^https:\/\//, route => {
     if (route.request().resourceType() === 'image') return route.fulfill({
@@ -24,9 +26,9 @@ for (const viewport of [{ width: 375, height: 812 }, { width: 1280, height: 800 
       await expect(collection.locator('p a')).toHaveCount(games.length + 4);
       await expect(page.locator('main .home-collection, main .game-card--compact')).toHaveCount(0);
       await expect(page.getByRole('heading', { name: 'Browse every winter game', exact: true })).toHaveCount(0);
-      await expect(page.locator('main .game-card')).toHaveCount(2);
+      await expect(page.locator('main .game-card')).toHaveCount(sledGames.length);
       await expect(page.locator('.page-intro h1')).toHaveText('Sled Games');
-      await expect(page.locator('.featured-games .game-card')).toHaveCount(2);
+      await expect(page.locator('.featured-games .game-card')).toHaveCount(sledGames.length);
       expect(await page.locator('main').evaluate(main => {
         const sections = Array.from(main.children);
         const guide = sections.findIndex(section => section.matches('.hub-guide'));
@@ -48,6 +50,11 @@ for (const viewport of [{ width: 375, height: 812 }, { width: 1280, height: 800 
         await link.click();
         await expect(page).toHaveURL(`http://127.0.0.1:4321/${game.slug}/`);
         await expect(page.locator('main h1')).toHaveText(game.title);
+        if (!game.embed.iframeSrc) {
+          await expect(page.locator('main iframe, [data-game-tools]')).toHaveCount(0);
+          await expect(page.locator('.game-external a')).toHaveAttribute('href', game.externalPlayUrl!);
+          await expect(page.locator('.game-external a')).toHaveAttribute('target', '_blank');
+        }
         expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(viewport.width);
         await page.goto('/');
       }
@@ -94,7 +101,8 @@ for (const viewport of [{ width: 375, height: 812 }, { width: 1280, height: 800 
             await expect(page.locator('.quick-links > span[aria-current="page"]')).toHaveText('Sled Rider');
             await nav.locator('a[href="/games/"]').focus();
             await page.keyboard.press('Tab');
-            await expect(page.locator('.quick-links a[href="/downhill-snowboard/"]')).toBeFocused();
+            const firstShortcut = games.find(game => game.slug !== 'sled-rider')!;
+            await expect(page.locator(`.quick-links a[href="/${firstShortcut.slug}/"]`)).toBeFocused();
           }
         }
         await expect(page.locator('footer nav[aria-label="Game links"] a')).toHaveCount(games.length + 1);

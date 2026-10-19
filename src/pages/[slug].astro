@@ -18,7 +18,7 @@ const faqs = gameFaqs(game);
 const category = gameCategory(game);
 const collection = category?.path === '/' ? winterCollection : category;
 const christmas = game.category.includes('christmas-games');
-const focusedSnowboardGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl'].includes(game.slug);
+const focusedGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl', 'gnome-bobsled', 'sled-line', 'sleigh-o-balance', 'waddle-peaks'].includes(game.slug);
 const title = game.seoTitle ?? game.title;
 const schema = [gameSchema(game), ...(faqs.length ? [faqSchema(faqs)] : []), breadcrumbSchema([
   ...(collection ? [{ name: collection.title, path: collection.path }] : []),
@@ -26,12 +26,12 @@ const schema = [gameSchema(game), ...(faqs.length ? [faqSchema(faqs)] : []), bre
 ])];
 const number = new Intl.NumberFormat('en-US');
 ---
-<Layout playFirst snowfall={!christmas} theme={christmas ? 'christmas' : undefined} title={title} description={game.description} schema={schema} socialImage={game.slug === 'snowboard-game' ? game.thumbnail : undefined} socialImageAlt="SnowBoard Game snowboarder on a snowy mountain course">
+<Layout playFirst snowfall={!christmas} theme={christmas ? 'christmas' : undefined} title={title} description={game.description} schema={schema} socialImage={['snowboard-game', 'waddle-peaks'].includes(game.slug) ? game.thumbnail : undefined} socialImageAlt={game.slug === 'waddle-peaks' ? 'Waddle Peaks game cover' : 'SnowBoard Game snowboarder on a snowy mountain course'}>
   <h1 class="play-heading">{game.title}</h1>
-  <GameStage game={game} eager fitAspectRatio={focusedSnowboardGuide || ['snowball-io', 'moto-x3m-winter'].includes(game.slug)} />
+  <GameStage game={game} eager fitAspectRatio={focusedGuide || ['snowball-io', 'moto-x3m-winter'].includes(game.slug)} />
   {(game.rating !== null || game.playCount !== null) && <div class="info-bar">{game.rating && <span>Rating: {game.rating.value}/5 · {number.format(game.rating.count)} votes</span>}{game.playCount !== null && <span>{number.format(game.playCount)} plays</span>}</div>}
   <AdSlot position="below" />
-  <GameGuide game={game} stepsFirst={game.slug === 'snowboard-game'} focusedHeadings={focusedSnowboardGuide}>
+  <GameGuide game={game} stepsFirst={game.slug === 'snowboard-game'} focusedHeadings={focusedGuide}>
     <Fragment slot="after-controls">
       {game.slug === 'snowboard-game' && <p class="guide-mobile"><strong>Playing on a phone:</strong> Turn your phone sideways for a wider view, tap GO, and check the game's instructions for touch controls on your device. If the player offers no way to steer or grab by touch, use a computer with a keyboard.</p>}
       {game.slug === 'snowboard-game' && <p><strong>Using the player tools:</strong> Select Fullscreen below the game for a larger view when that button is available in your browser. This expands the game window and keeps you on this page. If the player stalls during loading, Reload refreshes just the game window. Reload restarts the embedded player, so use it when you are ready to start over. These buttons and the game need JavaScript enabled. A network block will still prevent loading after a reload; the unblocked section below explains that case.</p>}
@@ -41,6 +41,6 @@ const number = new Intl.NumberFormat('en-US');
   <GameComparison game={game} />
   {game.items.length > 0 && hasSource(game, 'items') && <section class="content-section prose"><h2>Items and prices</h2><div class="table-scroll"><table><thead><tr><th scope="col">Item</th><th scope="col">Price</th></tr></thead><tbody>{game.items.map(item => <tr><td>{item.name}</td><td>{item.price}</td></tr>)}</tbody></table></div></section>}
   {related.length > 0 && <section class="content-section related-games" id="related-games" aria-labelledby="related-games-heading"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2 id="related-games-heading">Explore More Winter Games</h2></div></div><GameGrid games={related} /></section>}
-  <Faq faqs={faqs} title={focusedSnowboardGuide ? `${game.title} FAQ` : undefined} />
-  <CategoryLinks headings={!focusedSnowboardGuide} />
+  <Faq faqs={faqs} title={focusedGuide ? `${game.title} FAQ` : undefined} />
+  <CategoryLinks headings={!focusedGuide} />
 </Layout>

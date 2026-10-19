@@ -21,7 +21,15 @@ const hosts = {
   gamedistribution: new Set(['html5.gamedistribution.com']),
   gamemonetize: new Set(['html5.gamemonetize.com', 'html5.gamemonetize.co', 'html5.gamemonetize.games', 'io.gamemonetize.com']),
   azgames: new Set(['gamea.azgame.io']),
+  gamepix: new Set(['play.gamepix.com']),
 };
+const externalDestinations = new Map([
+  ['sleigh-o-balance', { url: 'https://xxchester.itch.io/sleigh-o-balance', name: 'itch.io' }],
+  ['waddle-peaks', { url: 'https://play.benerits.com/en/g/waddle-peaks', name: 'Benerits' }],
+]);
+
+/** @param {import('./types').Game} game */
+export const externalPlayLabel = game => externalDestinations.get(game.slug)?.name;
 
 export function canonical(path = '/') {
   return new URL(pagePath(path), SITE).href;
@@ -43,6 +51,9 @@ export function embedUrl(game, pageUrl) {
   // Only the verified Sled Rider player is enabled for this publisher.
   if (provider === 'azgames' && url.pathname !== '/sled-rider/') {
     throw new Error(`${game.slug}: unverified AZGames player path`);
+  }
+  if (provider === 'gamepix' && !['/gnome-bobsled/embed', '/sled-line/embed'].includes(url.pathname)) {
+    throw new Error(`${game.slug}: unverified GamePix player path`);
   }
   return url.href;
 }
@@ -67,6 +78,9 @@ export function validateGames(entries) {
     }
     if (!(game.embed?.width > 0 && game.embed?.height > 0)) throw new Error(`${game.slug}: invalid embed dimensions`);
     embedUrl(game, canonical(gamePath(game.slug)));
+    if (game.externalPlayUrl && (game.embed.iframeSrc || game.externalPlayUrl !== externalDestinations.get(game.slug)?.url)) {
+      throw new Error(`${game.slug}: unverified external game destination`);
+    }
     for (const field of ['intro', 'howToPlay', 'tips', 'controls', 'items', 'rating', 'playCount']) {
       const value = game[field];
       const populated = Array.isArray(value) ? value.length > 0 : value != null && value !== '';
@@ -120,8 +134,8 @@ export function gameSchema(game) {
     ...(game.intro ? { description: game.intro } : {}),
     ...(game.developer ? { author: { '@type': 'Organization', name: game.developer } } : {}),
     ...(game.released ? { datePublished: game.released } : {}),
-    // Do not assert pricing or playability until an authorized embed is configured.
-    ...(game.embed.iframeSrc ? { offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' } } : {}),
+    // Assert free access only when a verified play destination is configured.
+    ...(game.embed.iframeSrc || game.externalPlayUrl ? { offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' } } : {}),
   };
 }
 

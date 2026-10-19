@@ -1277,5 +1277,376 @@
       "publishing": "https://gamemonetize.com/faq",
       "terms": "https://gamemonetize.com/termofuse.php"
     }
+  },
+  {
+    "slug": "gnome-bobsled",
+    "title": "Gnome Bobsled",
+    "seoTitle": "Gnome Bobsled - Play the Ice Track Time Trial Online",
+    "category": [
+      "sledding-games"
+    ],
+    "embed": {
+      "provider": "gamepix",
+      "iframeSrc": "https://play.gamepix.com/gnome-bobsled/embed",
+      "width": 960,
+      "height": 600
+    },
+    "developer": "",
+    "released": "2026-10-13",
+    "genres": [
+      "Bobsledding",
+      "Time trial"
+    ],
+    "description": "Play Gnome Bobsled online. Time your pushes, lean through icy bends, brake for tight corners, and race your best ghost across snow-carved tracks.",
+    "intro": "Gnome Bobsled is an ice-track time trial built around starting rhythm, cornering, and braking. Push in time with the crew's footsteps, then lean into banked turns while watching the track ahead. The route has a finish and a time to improve, so a careful bend can matter more than holding the fastest possible speed.\n\nThe course selection offers medal targets and a ghost of your best run. Use that ghost to compare a new line with your previous attempt. Frost runes provide speed, but low-rimmed hairpins call for braking before the turn. Learn one section at a time, then join the sections into a cleaner complete run.",
+    "howToPlay": [
+      "Time the start: Use Space, W, or the up arrow on each thump of the crew's boots. On a touch screen, use the Push button shown by the player.",
+      "Lean through bends: Use the left and right arrows or A and D to position the bobsled on the banked walls. Watch the wall gauge and keep the sled near its blue ring.",
+      "Brake before tight turns: Hold the down arrow, S, or Shift as a low-rimmed corner approaches. If the rim glows red, reduce speed until the warning clears.",
+      "Improve a complete run: Reach the finish and compare the result with the medal targets and your best-run ghost. Use R to restart or Escape to pause when you need another look at a section."
+    ],
+    "tips": [
+      "Build a repeatable start: Follow the audible or visible footstep rhythm instead of pressing Push as quickly as possible. A consistent launch makes later route changes easier to compare.",
+      "Prepare for the corner: Brake before the tightest part of a hairpin, then adjust your lean. Trying to correct speed and position at the last instant leaves less room for error.",
+      "Read the wall gauge: Use the blue ring and red rim warning to judge your position. Treat the track's feedback as a reason to adjust before the next bend.",
+      "Use the ghost as a comparison: Focus on a section where your previous run pulls ahead. Try one change to braking or lean timing, then see whether it improves the whole finish time."
+    ],
+    "controls": [
+      {
+        "action": "Push at the start",
+        "input": "Space / W / Up arrow, timed to the crew footsteps"
+      },
+      {
+        "action": "Lean left or right",
+        "input": "Left and Right arrows / A and D"
+      },
+      {
+        "action": "Brake",
+        "input": "Hold Down arrow / S / Shift"
+      },
+      {
+        "action": "Restart",
+        "input": "R"
+      },
+      {
+        "action": "Pause",
+        "input": "Escape"
+      },
+      {
+        "action": "Touch controls",
+        "input": "Push button, arrow buttons to lean, and Brake"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the goal of Gnome Bobsled?",
+        "a": "Complete each ice track quickly enough to improve your time and work toward medal targets. The course has a finish, and your best-run ghost gives you a previous performance to compare against."
+      },
+      {
+        "q": "How do I start the bobsled?",
+        "a": "Press Space, W, or the up arrow in time with the crew's footsteps. On a touch screen, tap the Push button on the same rhythm."
+      },
+      {
+        "q": "When should I brake?",
+        "a": "Brake before low-rimmed hairpins and whenever the rim warning glows red. Hold the down arrow, S, or Shift on a keyboard, or use the Brake control on a touch screen."
+      },
+      {
+        "q": "What does the ghost represent?",
+        "a": "The ghost represents your own best run. Compare its route and progress with your current attempt while practicing a faster complete course."
+      },
+      {
+        "q": "Can I play Gnome Bobsled on a phone?",
+        "a": "The publisher lists mobile browser support and touch buttons for pushing, leaning, and braking. Check that those buttons fit your screen before starting a timed run."
+      }
+    ],
+    "similar": [],
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "sources": {
+      "intro": "https://www.gamepix.com/play/gnome-bobsled",
+      "howToPlay": "https://www.gamepix.com/play/gnome-bobsled",
+      "tips": "https://www.gamepix.com/play/gnome-bobsled",
+      "controls": "https://www.gamepix.com/play/gnome-bobsled",
+      "faqs": "https://www.gamepix.com/play/gnome-bobsled",
+      "embed": "https://api.gamepix.com/v3/games/ns/gnome-bobsled/player",
+      "released": "https://www.gamepix.com/play/gnome-bobsled",
+      "thumbnail": "https://img.gamepix.com/games/gnome-bobsled/cover/gnome-bobsled.png?w=400"
+    },
+    "thumbnail": "https://img.gamepix.com/games/gnome-bobsled/cover/gnome-bobsled.png?w=400"
+  },
+  {
+    "slug": "sled-line",
+    "title": "Sled Line",
+    "seoTitle": "Sled Line - Draw a Path for the Sleigh Online",
+    "category": [
+      "sledding-games"
+    ],
+    "embed": {
+      "provider": "gamepix",
+      "iframeSrc": "https://play.gamepix.com/sled-line/embed",
+      "width": 960,
+      "height": 600
+    },
+    "developer": "NewnessGames",
+    "released": "2026-01-02",
+    "genres": [
+      "Drawing",
+      "Physics puzzle"
+    ],
+    "description": "Play Sled Line online. Draw paths with your mouse or finger, guide a sleigh over ramps and gaps, and adjust each slope to keep the ride balanced.",
+    "intro": "Sled Line makes drawing the route part of the ride. Use a mouse or finger to place lines in the scenery and guide a sleigh across ramps, gaps, and festive obstacles. Your choices change the surface beneath the vehicle, so planning a manageable slope matters as much as reacting to the next hazard.\n\nWatch what happens after each stroke. A sharp change in angle can unsettle the sleigh, while a connected path gives it somewhere to land. Try a simple route first, then adjust the shape of a troublesome section on the next attempt. The challenge is to keep the ride supported and moving through the course.",
+    "howToPlay": [
+      "Read the next section: Look at the gap, ramp, or obstacle in front of the sleigh before placing a line. Decide where the path needs to begin and where it should lead.",
+      "Draw the path: Use the mouse on a computer or draw with a finger on a touch screen. Place a route that supports the sleigh through the next stretch of scenery.",
+      "Keep the transition manageable: Connect the approach and landing with slopes the sleigh can follow. Watch its balance as it reaches the line you have drawn.",
+      "Adjust the next attempt: If the sleigh falls or loses balance, change the angle or connection of that section. Use what happened on the previous ride to plan the next stroke."
+    ],
+    "tips": [
+      "Draw with the landing in view: Look beyond the obstacle as well as directly in front of the sleigh. A ramp needs an exit that keeps the vehicle supported.",
+      "Start with simple lines: A clear route makes it easier to understand the response to your drawing. Add more ambitious slopes after the basic path works.",
+      "Avoid sudden changes of angle: Try a gentler connection when the sleigh becomes unstable at the same point. The line shape influences how it approaches the next stretch.",
+      "Leave room for your hand: On a touch screen, keep the area ahead of the sleigh visible while you draw. A larger supported play view can make it easier to judge the next line."
+    ],
+    "controls": [
+      {
+        "action": "Draw a route on desktop",
+        "input": "Draw with the mouse"
+      },
+      {
+        "action": "Draw a route on a touch screen",
+        "input": "Draw with a finger on the screen"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What do I control in Sled Line?",
+        "a": "You draw the route that guides the sleigh. Use lines to support it across ramps, gaps, and obstacles while trying to keep the vehicle balanced."
+      },
+      {
+        "q": "Which controls does Sled Line use?",
+        "a": "Use the mouse to draw on a computer. On a phone or tablet, draw the route directly with your finger on the touch screen."
+      },
+      {
+        "q": "Why does my sleigh lose balance?",
+        "a": "The shape of the path changes how the sleigh moves. If a connection or slope repeatedly causes trouble, try a gentler angle and a clearer landing on the next attempt."
+      },
+      {
+        "q": "Can I play Sled Line on a phone?",
+        "a": "The publisher lists desktop, mobile, and tablet browser support, with finger drawing on touch screens. Keep the path ahead visible while placing each line."
+      },
+      {
+        "q": "How should I practice a difficult section?",
+        "a": "Change one part of the route at a time. Watch the approach, the transition onto your line, and the landing so you can identify the shape that needs adjusting."
+      }
+    ],
+    "similar": [],
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "sources": {
+      "intro": "https://www.gamepix.com/play/sled-line",
+      "howToPlay": "https://www.gamepix.com/play/sled-line",
+      "tips": "https://www.gamepix.com/play/sled-line",
+      "controls": "https://www.gamepix.com/play/sled-line",
+      "faqs": "https://www.gamepix.com/play/sled-line",
+      "embed": "https://api.gamepix.com/v3/games/ns/sled-line/player",
+      "released": "https://www.gamepix.com/play/sled-line",
+      "thumbnail": "https://img.gamepix.com/games/sled-line/cover/sled-line.png?w=400",
+      "developer": "https://codecanyon.net/item/sled-line-html5-template-mobile-desktop/61250703"
+    },
+    "thumbnail": "https://img.gamepix.com/games/sled-line/cover/sled-line.png?w=400"
+  },
+  {
+    "slug": "sleigh-o-balance",
+    "title": "Sleigh O’Balance",
+    "seoTitle": "Sleigh O’Balance - Play the Gift Balancing Challenge",
+    "category": [
+      "sledding-games"
+    ],
+    "embed": {
+      "provider": "itch",
+      "iframeSrc": "",
+      "width": 960,
+      "height": 600
+    },
+    "developer": "XXChester and atumdemar",
+    "released": "",
+    "genres": [
+      "Physics",
+      "Balancing",
+      "Puzzle"
+    ],
+    "description": "Play Sleigh O’Balance online. Load Santa’s sleigh with gifts, manage shifting weight and anvil drops, and keep the sleigh steady in a physics challenge.",
+    "intro": "Sleigh O’Balance is a physics challenge from XXChester and atumdemar about loading Santa's sleigh without leaving it badly tilted. Gifts change the weight distribution as they land. Watch the whole sleigh and let each load settle before deciding how to respond to the next one.\n\nThe anvil-carrying elf adds another decision: allow or prevent a drop according to the balance you need. The author explains that the run ends when the sleigh stays tilted too far for a short time; a brief wobble can still recover. Use the mouse controls and the in-game tutorial to learn the loading actions, then work toward a steadier attempt.",
+    "howToPlay": [
+      "Learn the loading actions: Open the creator's browser game with the Play on itch.io button above. Follow its tutorial using the mouse before trying to build a large load.",
+      "Watch gifts settle: Observe where each gift lands and how the sleigh tilts. A new load changes the balance, so check the resulting position before making another decision.",
+      "Judge anvil drops: Decide whether to let the elf drop an anvil or send it away. The front-side weight can counter the gifts, but an unhelpful drop can worsen the tilt.",
+      "Recover before the run ends: React when the sleigh leans too far and give the load time to settle. A short wobble is not automatically the end; the author describes a sustained excessive tilt as the losing condition."
+    ],
+    "tips": [
+      "Read the whole sleigh: Watch the angle and the distribution of the gifts rather than only following the next present. Your next action should respond to the load already aboard.",
+      "Allow the physics to settle: Gifts can bounce and shift after landing. See where the weight comes to rest before assuming a momentary tilt will persist.",
+      "Treat anvils as weight decisions: Consider which way the sleigh is leaning before allowing a drop. The same heavy object can help counterweight one load and destabilize another.",
+      "Practice a steady load first: Learn the response to a few gifts before pursuing a larger score. Change one loading or anvil decision after a failed attempt so its effect is easier to judge."
+    ],
+    "controls": [
+      {
+        "action": "Menus and loading actions",
+        "input": "Mouse; follow the tutorial inside the game"
+      },
+      {
+        "action": "Anvil decision",
+        "input": "Use the mouse controls shown by the game to allow or prevent the drop"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Where do I play Sleigh O’Balance?",
+        "a": "Use Play on itch.io above to open the creator’s browser game in a new tab. Keep this guide available for the mouse controls, loading advice, and explanation of the balance rules."
+      },
+      {
+        "q": "What is the goal of Sleigh O’Balance?",
+        "a": "Load Santa's sleigh with gifts while keeping its weight balanced. Manage the shifting load and anvil drops so the sleigh does not remain tilted too far."
+      },
+      {
+        "q": "Which controls does Sleigh O’Balance use?",
+        "a": "The developer identifies the browser game as mouse controlled. Follow the tutorial inside the player to learn the gift-loading and anvil actions."
+      },
+      {
+        "q": "Does any tilt end the game immediately?",
+        "a": "No. The author explains that the sleigh must remain tilted too far for a short time before the run ends. It can recover when the presents settle and the balance improves."
+      },
+      {
+        "q": "Should I stop every anvil drop?",
+        "a": "Judge the current load first. The author describes front-side anvils as a way to counterbalance gifts, so decide whether the next drop would help the sleigh stay steady."
+      },
+      {
+        "q": "Is the browser version confirmed for touch screens?",
+        "a": "The browser controls are documented by the developer as mouse based. Use a computer with a mouse for these instructions; the separate Android release does not establish the controls of the web version."
+      },
+      {
+        "q": "Why do the gifts move after landing?",
+        "a": "The load responds to physics. Watch the gifts bounce and settle before deciding how much extra weight the sleigh needs on either side."
+      }
+    ],
+    "similar": [],
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "sources": {
+      "intro": "https://xxchester.itch.io/sleigh-o-balance",
+      "howToPlay": "https://itch.io/jam/jame-gam-christmas-edition-2023/rate/2434511",
+      "tips": "https://itch.io/jam/jame-gam-christmas-edition-2023/rate/2434511",
+      "controls": "https://itch.io/jam/jame-gam-christmas-edition-2023/rate/2434511",
+      "faqs": "https://itch.io/jam/jame-gam-christmas-edition-2023/rate/2434511",
+      "embed": "https://xxchester.itch.io/sleigh-o-balance",
+      "externalPlayUrl": "https://xxchester.itch.io/sleigh-o-balance"
+    },
+    "externalPlayUrl": "https://xxchester.itch.io/sleigh-o-balance"
+  },
+  {
+    "slug": "waddle-peaks",
+    "title": "Waddle Peaks",
+    "seoTitle": "Waddle Peaks - Penguin Slopes, Snowboards and Tricks",
+    "category": [
+      "snowboard-games"
+    ],
+    "embed": {
+      "provider": "benerits",
+      "iframeSrc": "",
+      "width": 960,
+      "height": 600
+    },
+    "externalPlayUrl": "https://play.benerits.com/en/g/waddle-peaks",
+    "developer": "Benerits",
+    "released": "2026-09-25",
+    "genres": [
+      "Snowboarding",
+      "Skiing",
+      "Racing"
+    ],
+    "description": "Play Waddle Peaks on Benerits. Guide a penguin down snowy mountains, unlock a snowboard, land aerial tricks, and take on races and chase events.",
+    "intro": "Waddle Peaks is a 3D penguin downhill game from Benerits with skis and snowboards you can unlock using fish. A snowboard spins faster and earns more trick points, while skis provide steadier carving and better glide. Pick the equipment that suits the event you want to practice.\n\nThe career includes races, slalom, trick runs, and chase events. Big Mountain offers an endless descent. Read the current objective before starting: a race rewards finishing position, a trick run asks for points, and missed slalom gates add time. Build familiarity with one event before changing equipment or chasing a better result.",
+    "howToPlay": [
+      "Open the official game: Select Play on Benerits above to launch the browser game in a new tab. Keep this guide available for the controls.",
+      "Choose an event: Read its objective and target before beginning. Decide whether your next attempt is about position, time, tricks, or collecting fish.",
+      "Control the descent: Use the left and right arrows or A and D to carve. Hold Down, S, or Shift to tuck, and press Space to jump.",
+      "Finish the landing: Complete a spin or flip before touching down. Use earned fish to unlock a snowboard when you want to focus on aerial tricks."
+    ],
+    "tips": [
+      "Practice one action at a time: Start by judging turns and jump timing. Add another input after you can repeat the approach without needing to look at the controls.",
+      "Plan a landing before a trick: Look at the space beyond the jump. Save an ambitious rotation for an approach that gives you time to judge the landing.",
+      "Compare similar attempts: Keep the same event and equipment while practicing a difficult section. Change one decision so you can tell whether it helped."
+    ],
+    "controls": [
+      {
+        "action": "Carve left or right",
+        "input": "Left and Right arrows / A and D"
+      },
+      {
+        "action": "Tuck / jump",
+        "input": "Hold Down / S / Shift to tuck; Space to jump"
+      },
+      {
+        "action": "Aerial tricks",
+        "input": "Left / Right to spin; Space to flip; Down to grab"
+      },
+      {
+        "action": "Pause",
+        "input": "P"
+      },
+      {
+        "action": "Mouse controls",
+        "input": "Move left / right to carve; hold to tuck; click to jump"
+      },
+      {
+        "action": "Touch controls",
+        "input": "Hold a side or drag to carve; hold both sides to tuck; swipe up to jump"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Where do I play Waddle Peaks?",
+        "a": "Use Play on Benerits above to open the official browser game in a new tab. The game is played on the developer’s website, while this page provides its guide and controls."
+      },
+      {
+        "q": "Can I use a snowboard in Waddle Peaks?",
+        "a": "Yes. Fish can unlock snowboards as well as skis and other equipment. A snowboard spins faster and earns more trick points; skis offer steadier carving and better glide."
+      },
+      {
+        "q": "Which keyboard controls does Waddle Peaks use?",
+        "a": "Use Left and Right or A and D to carve, Down, S, or Shift to tuck, and Space to jump. In the air, use Left and Right to spin, Space to flip, and Down to grab. P pauses the game."
+      },
+      {
+        "q": "Can I play Waddle Peaks on a phone?",
+        "a": "The developer provides touch controls: hold a side or drag to carve, hold both sides to tuck, and swipe up to jump. Tilt steering is available in Settings."
+      },
+      {
+        "q": "How should I approach a new event?",
+        "a": "Read the objective before choosing what to practice. Use an early attempt to learn the route and controls, then concentrate on one section or action when trying again."
+      },
+      {
+        "q": "Is Waddle Peaks free to play?",
+        "a": "Benerits lists the browser game as free, with no download or installation required. Use the official-site button above to start playing."
+      }
+    ],
+    "similar": [],
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://play.benerits.com/m/covers/2a5594ef-8bd2-4390-8dd5-b201c3372e6f/17ae36181c76e36d-1280.webp",
+    "sources": {
+      "intro": "https://play.benerits.com/en/g/waddle-peaks",
+      "howToPlay": "https://play.benerits.com/en/g/waddle-peaks",
+      "tips": "https://play.benerits.com/en/g/waddle-peaks",
+      "controls": "https://play.benerits.com/en/g/waddle-peaks",
+      "faqs": "https://play.benerits.com/en/g/waddle-peaks",
+      "developer": "https://play.benerits.com/en/g/waddle-peaks",
+      "released": "https://play.benerits.com/en/g/waddle-peaks",
+      "externalPlayUrl": "https://play.benerits.com/en/g/waddle-peaks",
+      "thumbnail": "https://play.benerits.com/en/g/waddle-peaks"
+    }
   }
 ]

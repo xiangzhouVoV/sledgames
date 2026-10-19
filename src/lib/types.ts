@@ -5,6 +5,7 @@ export interface Game {
   description: string;
   category: string[];
   embed: { provider: string; iframeSrc: string; width: number; height: number };
+  externalPlayUrl?: string;
   developer: string;
   released: string;
   genres: string[];

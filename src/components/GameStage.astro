@@ -1,5 +1,5 @@
 ---
-import { canonical, embedUrl } from '../lib/catalog.mjs';
+import { canonical, embedUrl, externalPlayLabel } from '../lib/catalog.mjs';
 import type { Game } from '../lib/types';
 import WinterScene from './WinterScene.astro';
 interface Props { game: Game; eager?: boolean; fitAspectRatio?: boolean }
@@ -10,6 +10,10 @@ const fitted = portrait || fitAspectRatio;
 ---
 <section class:list={['game-stage', { 'game-stage--portrait': portrait, 'game-stage--fitted': fitted }]} style={fitted ? `--game-ratio: ${game.embed.width / game.embed.height}` : undefined} aria-label={`${game.title} game window`}>
   {src ? <iframe src={src} title={`Play ${game.title}`} width={game.embed.width} height={game.embed.height} loading={eager ? 'eager' : 'lazy'} allow="fullscreen; autoplay; gamepad" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" /> :
+    game.externalPlayUrl ? <div class="game-pending game-external">
+      {game.thumbnail ? <img class="stage-scene" src={game.thumbnail} alt="" width={game.embed.width} height={game.embed.height} loading={eager ? 'eager' : 'lazy'} /> : <WinterScene id={`stage-${game.slug}`} class="stage-scene" />}
+      <div class="stage-caption"><h2>{game.title}</h2><a class="button" href={game.externalPlayUrl} target="_blank" rel="noopener noreferrer">Play on {externalPlayLabel(game)} <span aria-hidden="true">↗</span></a><p>Open the creator’s browser game in a new tab.</p></div>
+    </div> :
     <div class="game-pending">
       <WinterScene id={`stage-${game.slug}`} class="stage-scene" />
       <div class="stage-caption"><h2>{game.title}</h2><a class="button" href="/games/">Browse games <span aria-hidden="true">→</span></a></div>

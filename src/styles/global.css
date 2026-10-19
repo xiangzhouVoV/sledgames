@@ -122,6 +122,7 @@
   .game-script-note { font-size: .8125rem; padding-bottom: 8px; }
   .game-pending { position: relative; height: 100%; isolation: isolate; overflow: hidden; display: flex; align-items: center; background: #4092e3; }
   .stage-scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
+  img.stage-scene { object-fit: cover; }
   .game-pending::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #112747ed 0%, #152f50be 36%, #142f5020 73%, transparent); }
   .stage-caption { padding: 48px 56px; max-width: 600px; color: white; }
   .pill { display: inline-block; padding: 5px 10px; border: 1px solid #b1c9e6; background: #142d4b55; border-radius: 6px; font-size: .8125rem; font-weight: 600; }

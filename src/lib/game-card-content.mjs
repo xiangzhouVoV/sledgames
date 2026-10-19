@@ -192,6 +192,116 @@ const descriptionsByPage = {
   },
 };
 
+/** @type {Record<string, Record<string, string>>} */
+const sledExpansionDescriptionsByPage = {
+  '/': {
+    'gnome-bobsled': "Gnome Bobsled brings timed ice-track racing to this sled collection. Build speed with the starting push, lean through bends, and brake when the next corner needs it.",
+    'sled-line': "Sled Line makes drawing the road your main sledding skill. Use a mouse or finger to connect slopes and gaps, then see how your route guides the sled.",
+    'sleigh-o-balance': "Sleigh O’Balance adds gift loading and balance to the sled selection. Distribute the presents across the sleigh and respond when a falling anvil changes the load.",
+  },
+  '/games': {
+    'gnome-bobsled': "Choose Gnome Bobsled for timed races inside a 3D ice channel. Practice the push at the start, control each bend, and chase medals or your own best-record ghost.",
+    'sled-line': "The route-drawing choice in this winter collection is Sled Line. Sketch a road with a mouse or finger to carry the sled over gaps and along the slopes.",
+    'sleigh-o-balance': "The gift-balancing option is Sleigh O’Balance, with presents and falling anvils affecting the sleigh. Plan where the weight goes instead of steering through a downhill course.",
+  },
+  '/404': {
+    'gnome-bobsled': "Find a fresh start on Gnome Bobsled’s timed ice tracks after this missing page. Push off, work through the bends, and compare the result with your personal best.",
+    'sled-line': "Draw a new way forward in Sled Line after this missing page. A mouse or finger lays the road that guides a sled through slopes and gaps.",
+    'sleigh-o-balance': "Pick up a gift-loading challenge in Sleigh O’Balance to continue your visit. Balance the sleigh’s load by weighing presents against anvil drops.",
+  },
+  '/snowboard-games': {
+    'gnome-bobsled': "Exchange the snowboard for an ice-track time trial in Gnome Bobsled. A timed push, cornering, and braking shape your run toward medals and a better personal record.",
+    'sled-line': "Leave snowboard steering for road drawing in Sled Line. Sketch a smooth path across slopes and gaps, then guide the sled with the route you created.",
+    'sleigh-o-balance': "Take a break from snowboard courses with Sleigh O’Balance’s loaded sleigh. Place gifts to manage the weight and react to anvils falling into the challenge.",
+  },
+  '/ski-games': {
+    'gnome-bobsled': "Carry a taste for timed ski finishes into Gnome Bobsled’s ice channel. Practice its starting push, lean through the bends, and manage braking to improve your time.",
+    'sled-line': "Change from ski turns to drawing a route for a sled in Sled Line. Mouse or touch input builds the road through gaps and slopes before the sled follows it.",
+    'sleigh-o-balance': "Move away from the ski slopes for gift balancing in Sleigh O’Balance. Spread the load across the sleigh and stay alert for falling anvils.",
+  },
+  '/christmas-games': {
+    'gnome-bobsled': "Add a timed winter race after the festive games with Gnome Bobsled. Push the bobsled off the start, take the ice-track bends, and aim for a medal.",
+    'sled-line': "Keep the sled theme after the Christmas collection by drawing roads in Sled Line. Use a mouse or finger to bridge gaps and shape a route along snowy slopes.",
+    'sleigh-o-balance': "Sleigh O’Balance turns Christmas presents into a weight-management challenge. Load the gifts across a sleigh and decide when an anvil can counterbalance them.",
+  },
+  '/sled-rider': {
+    'gnome-bobsled': "Gnome Bobsled replaces Sled Rider’s ongoing descent with timed ice-track finishes. Push off at the start, take the corners, and race your own best-record ghost.",
+    'sled-line': "Put the route in your own hands after Sled Rider with Sled Line. Draw roads across slopes and gaps rather than steering around obstacles on an automatic descent.",
+    'sleigh-o-balance': "Turn Sled Rider’s gift collecting into gift placement in Sleigh O’Balance. Keep the sleigh’s load balanced as presents and falling anvils change the challenge.",
+  },
+  '/snow-rider-2': {
+    'gnome-bobsled': "Try a marked ice course after Snow Rider 2’s endless sleigh run in Gnome Bobsled. The timed push, bends, and braking give you a finish time to improve.",
+    'sled-line': "Sled Line changes Snow Rider 2’s steering and jumps into road drawing. Sketch the path through slopes and gaps, then let your lines guide the sled.",
+    'sleigh-o-balance': "After Snow Rider 2’s downhill gifts, arrange presents on the sleigh in Sleigh O’Balance. Manage the load’s balance and watch how falling anvils affect it.",
+  },
+  '/snowball-io': {
+    'gnome-bobsled': "Gnome Bobsled changes Snowball.io’s arena battles into a race against the clock. Time the starting push and manage ice-track bends as you chase your personal best.",
+    'sled-line': "Swap Snowball.io’s moving opponents for a path you design in Sled Line. Draw roads across slopes and gaps to guide the sled with mouse or touch input.",
+    'sleigh-o-balance': "Replace Snowball.io’s growing snowball with a loaded sleigh in Sleigh O’Balance. Use mouse controls to weigh gifts against anvil drops and keep the load balanced.",
+  },
+  '/moto-x3m-winter': {
+    'gnome-bobsled': "Keep chasing finish times after Moto X3M Winter with Gnome Bobsled’s ice-track races. A starting push, cornering, and braking replace motorcycle ramps and flips.",
+    'sled-line': "Sled Line turns Moto X3M Winter’s fixed course into a road-drawing challenge. Sketch smooth connections between slopes and gaps to guide a sled with a mouse or finger.",
+    'sleigh-o-balance': "Change from Moto X3M Winter’s bike balance to distributing weight in Sleigh O’Balance. Load gifts, consider anvil counterweights, and keep the sleigh from tipping too far.",
+  },
+  '/gnome-bobsled': {
+    'sled-rider': "Sled Rider changes Gnome Bobsled’s timed track into an ongoing downhill survival run. Steer past trees and rocks, jump gaps, and collect gifts for new sleds.",
+    'snow-rider-2': "Leave Gnome Bobsled’s ice channel for the Snow Rider 3D sleigh on Snow Rider 2. Jump logs and gaps while building distance and collecting gifts.",
+    'sled-line': "Sled Line trades Gnome Bobsled’s racing inputs for a road you draw yourself. Plan smooth connections between slopes and gaps with a mouse or finger.",
+    'sleigh-o-balance': "Move from Gnome Bobsled’s cornering to managing a loaded sleigh in Sleigh O’Balance. Place gifts to preserve balance and respond to falling anvils.",
+    'snowball-io': "Snowball.io takes your session beyond Gnome Bobsled’s solo time trials into an arena. Roll to grow a snowball, watch nearby opponents, and choose an approach before engaging.",
+  },
+  '/sled-line': {
+    'sled-rider': "Trade Sled Line’s drawn roads for steering and jumps in Sled Rider. An automatic downhill run asks you to avoid trees, rocks, and gaps while collecting gifts.",
+    'snow-rider-2': "Try Snow Rider 2 when you want an endless sleigh track after Sled Line’s route drawing. Its Snow Rider 3D player combines logs, gaps, jumps, and gift collecting.",
+    'gnome-bobsled': "Gnome Bobsled puts you inside an ice channel after Sled Line’s road building. Time the starting push, control bends and braking, and work toward a faster finish.",
+    'sleigh-o-balance': "Keep planning each move after Sled Line with Sleigh O’Balance’s gift loads. Balance presents across the sleigh and adapt when an anvil falls.",
+    'snowball-io': "Switch from Sled Line’s route planning to moving among opponents in Snowball.io. Rolling builds a larger snowball before you decide where to approach another character.",
+  },
+  '/sleigh-o-balance': {
+    'sled-rider': "Carry the sleigh theme from Sleigh O’Balance into Sled Rider’s downhill survival challenge. Collect gifts through steering and jumps to work toward sled-shop unlocks.",
+    'snow-rider-2': "Snow Rider 2 turns Sleigh O’Balance’s gift loading into gift collecting on a moving course. The embedded Snow Rider 3D sleigh must jump logs and gaps to keep going.",
+    'gnome-bobsled': "Race for a finish time after Sleigh O’Balance in Gnome Bobsled. Push off the start, lean into ice-track bends, and use braking to prepare for the next corner.",
+    'sled-line': "Sled Line keeps a planning focus after Sleigh O’Balance while changing the task to road drawing. Lay a route across slopes and gaps with a mouse or finger.",
+    'snowball-io': "Leave Sleigh O’Balance’s presents for a snowball arena in Snowball.io. Grow your snowball by rolling and watch opponents before choosing when to engage.",
+  },
+};
+
+/** @type {Record<string, Record<string, string>>} */
+const waddlePeaksDescriptionsByPage = {
+  '/games': {
+    'waddle-peaks': "Waddle Peaks starts its penguin on skis and offers a snowboard to unlock. Choose from races, slalom, tricks, fish collecting, and escapes from avalanches or a yeti.",
+  },
+  '/404': {
+    'waddle-peaks': "Find another slope with Waddle Peaks and its penguin winter challenges. Begin on skis, unlock a snowboard for quicker spins and higher trick scores, and explore the different events.",
+  },
+  '/snowboard-games': {
+    'waddle-peaks': "Waddle Peaks joins this board collection through its unlockable snowboard, while the penguin begins on skis. The board spins faster and earns higher trick scores across the mountain challenges.",
+  },
+  '/downhill-snowboard': {
+    'waddle-peaks': "Waddle Peaks expands Downhill Snowboard's slope session with penguin races, slalom, and trick events. Start on skis and unlock the snowboard to try its faster spins and higher trick scores.",
+  },
+  '/snowboard-game': {
+    'waddle-peaks': "Take SnowBoard Game's finish-line focus into Waddle Peaks and its varied penguin events. Skis are the starting equipment, with a snowboard to unlock for faster spins and higher trick scores.",
+  },
+  '/snowboard-king-2024': {
+    'waddle-peaks': "Try another avalanche escape after Snowboard King 2024 in Waddle Peaks. This penguin starts on skis, can unlock a snowboard, and also takes on races, slalom, and trick challenges.",
+  },
+  '/snowboard-game-party': {
+    'waddle-peaks': "Follow Snowboard Game Party's racing with Waddle Peaks' penguin mountain events. Begin on skis, work toward an unlockable snowboard, and try slalom turns, trick scores, or a yeti escape.",
+  },
+  '/snowboard-girl': {
+    'waddle-peaks': "Waddle Peaks moves beyond Snowboard Girl's side-scrolling jumps into 3D penguin challenges. Start with skis, then unlock a snowboard whose quicker spins and higher trick scores add another way to ride.",
+  },
+  '/waddle-peaks': {
+    'downhill-snowboard': "Downhill Snowboard follows Waddle Peaks' event selection with a focused downhill survival run. Collect coins along the descent and spend them on characters or boards between attempts.",
+    'snowboard-game': "Keep a finish line in view after Waddle Peaks with SnowBoard Game's third-person tracks. Guide the snowboarder past barriers and use the separate V input for a grab.",
+    'snowboard-king-2024': "Snowboard King 2024 continues Waddle Peaks' avalanche theme through downhill board courses. Pick a line around trees and rocks, accelerate with Space, and spend coins on ability upgrades.",
+    'snowboard-game-party': "Take another racing route after Waddle Peaks with Snowboard Game Party's mouse or touch steering. Pass snowballs and fences as you progress toward equipment unlocks.",
+    'snowboard-girl': "Snowboard Girl gives you a side view after Waddle Peaks' 3D mountain events. Follow the player's buttons to move, jump through levels, and collect coins along each route.",
+  },
+};
+
 /**
  * Return copy for the card's page context without reusing its SEO description.
  * @param {import('./types').Game} game
@@ -201,7 +311,7 @@ const descriptionsByPage = {
 export function gameCardDescription(game, pathname) {
   const path = pathname.replace(/\/+$/, '') || '/';
   const page = path === '/404.html' ? '/404' : path;
-  const description = descriptionsByPage[page]?.[game.slug];
+  const description = descriptionsByPage[page]?.[game.slug] ?? sledExpansionDescriptionsByPage[page]?.[game.slug] ?? waddlePeaksDescriptionsByPage[page]?.[game.slug];
   if (description) return description;
 
   // New catalog entries remain useful before their contextual copy is written.

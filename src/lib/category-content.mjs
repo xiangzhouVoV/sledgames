@@ -1,17 +1,17 @@
 export const categoryContent = {
   "snowboard-games": {
-    "description": "Play free snowboard games online: Downhill Snowboard, SnowBoard Game, Snowboard King 2024, Snowboard Game Party, and Snowboard Girl. Get controls and tips.",
+    "description": "Play snowboard games: Downhill Snowboard, SnowBoard Game, Snowboard King 2024, Snowboard Game Party, Snowboard Girl, and Waddle Peaks. Free browser play.",
     "paragraphs": [
-      "Pick a board and choose your challenge. Our five snowboard games are Downhill Snowboard, SnowBoard Game, Snowboard King 2024, Snowboard Game Party, and Snowboard Girl. Compare survival runs, 3D tracks, obstacle racing, and side-scrolling levels in the cards above. Each card opens a player with its own controls, playing guide, and practical tips. No Sled Games account or app installation is needed.",
+      "Choose from six games: Downhill Snowboard, SnowBoard Game, Snowboard King 2024, Snowboard Game Party, Snowboard Girl, and Waddle Peaks. Compare survival runs, 3D tracks, obstacle racing, and side-scrolling levels in the cards above. Waddle Peaks starts its penguin on skis and lets you unlock a snowboard. Each card opens a dedicated guide with controls, tips, and a play option; Waddle Peaks launches on its official site. No Sled Games account or app installation is needed.",
       "For a continuing score challenge, Downhill Snowboard lets you collect coins toward new characters and boards. SnowBoard Game gives you a finish-line objective on snowy 3D tracks. Snowboard King 2024 adds route choices, trees and rocks to avoid, an avalanche to escape, and coin-funded ability upgrades. Start with the goal you prefer, then read that game's guide before the first attempt.",
-      "For races against other riders, try Snowboard Game Party: use mouse or touch to dodge snowballs and fences while working toward equipment unlocks. Snowboard Girl changes the view to side-scrolling levels with jumps and coins: use its screen buttons to avoid obstacles, keep your balance, and build speed toward the finish. These games offer different kinds of progression, so check the current level or equipment menu before spending collected rewards.",
+      "For races against other riders, try Snowboard Game Party: use mouse or touch to dodge snowballs and fences while working toward equipment unlocks. Snowboard Girl changes the view to side-scrolling levels with jumps and coins: use its screen buttons to avoid obstacles, keep your balance, and build speed toward the finish. Waddle Peaks adds slalom, trick events, timed runs, and snow escapes. Collect fish to unlock equipment; its snowboard spins faster and earns more for tricks, while skis offer steadier carving.",
       "Give yourself space to react. Look beyond the rider toward the next opening, and skip a collectible when reaching it would leave you beside an obstacle. Controls vary: Snowboard King 2024 uses the left and right arrow keys plus Space to accelerate; SnowBoard Game shows WASD or arrow keys and V for a grab. On touch devices, read the player's on-screen buttons. For another way down the mountain, visit Ski Games or the dedicated Sled Rider game page."
     ],
     "relatedLink": { "href": "/sled-rider/", "text": "Play Sled Rider" },
     "faqs": [
       {
         "q": "Which snowboard games can I play here?",
-        "a": "Choose from five games in the cards above: Downhill Snowboard, SnowBoard Game, Snowboard King 2024, Snowboard Game Party, and Snowboard Girl. Each opens a dedicated page with its player, controls, and playing guide."
+        "a": "Choose from six games in the cards above: Downhill Snowboard, SnowBoard Game, Snowboard King 2024, Snowboard Game Party, Snowboard Girl, and Waddle Peaks. Each opens a dedicated guide with controls and a play option. Waddle Peaks opens on its official site and starts on skis, with a snowboard available to unlock."
       },
       {
         "q": "Are these snowboard games free to play?",
@@ -19,19 +19,19 @@ export const categoryContent = {
       },
       {
         "q": "Which controls do these snowboard games use?",
-        "a": "Downhill Snowboard uses A and D or arrow keys for steering. SnowBoard Game uses WASD or arrow keys and V for a grab. Snowboard King 2024 uses left and right arrows to steer and Space to boost away from the avalanche. Snowboard Game Party uses mouse or touch to race against other riders and dodge snowballs and fences. Snowboard Girl uses on-screen ride and jump controls to avoid obstacles, keep your balance, and build speed toward the finish."
+        "a": "Downhill Snowboard uses A and D or arrow keys for steering. SnowBoard Game uses WASD or arrow keys and V for a grab. Snowboard King 2024 uses left and right arrows to steer and Space to boost away from the avalanche. Snowboard Game Party uses mouse or touch to race against other riders and dodge snowballs and fences. Snowboard Girl uses on-screen ride and jump controls to avoid obstacles, keep your balance, and build speed toward the finish. Waddle Peaks uses A/D or left/right arrows to carve, S/down/Shift to tuck, and Space to jump; in the air, left/right spins, Space flips, and down grabs."
       },
       {
         "q": "Which snowboard games have courses or levels?",
-        "a": "SnowBoard Game has snowy tracks with a finish-line objective. Snowboard King 2024 offers downhill courses and an avalanche chase, Snowboard Game Party focuses on obstacle racing, and Snowboard Girl uses side-scrolling levels. Downhill Snowboard is the survival score option."
+        "a": "SnowBoard Game has snowy tracks with a finish-line objective. Snowboard King 2024 offers downhill courses and an avalanche chase, Snowboard Game Party focuses on obstacle racing, and Snowboard Girl uses side-scrolling levels. Waddle Peaks has mountain events including slalom, trick challenges, and timed runs. Downhill Snowboard is the survival score option."
       },
       {
         "q": "Can I unlock another board or character?",
-        "a": "Downhill Snowboard lets you spend collected coins on characters and boards. Snowboard Game Party has equipment unlocks, while coins in Snowboard King 2024 improve abilities. Open each game's menu to check its available upgrades."
+        "a": "Downhill Snowboard lets you spend collected coins on characters and boards. Snowboard Game Party has equipment unlocks, while coins in Snowboard King 2024 improve abilities. Waddle Peaks lets you spend fish on skis, snowboards, outfits, and upgrades. Open each game's menu to check its available upgrades."
       },
       {
         "q": "Which snowboard games can I try with touch controls?",
-        "a": "Snowboard Game Party supports touch racing, and Snowboard Girl provides on-screen buttons for movement and jumps. Let the player finish loading and check that its controls fit your screen before starting. The game platform may show advertisements."
+        "a": "Snowboard Game Party supports touch racing, and Snowboard Girl provides on-screen buttons for movement and jumps. On Waddle Peaks’ official site, hold the left or right side to carve, hold both sides to tuck, and swipe up to jump. Let the game finish loading and check that its controls fit your screen before starting. The game platform may show advertisements."
       }
     ]
   },

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { load } from 'cheerio';
-import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categories, categoryGames, gameCategory, winterCollection } from '../src/lib/catalog.mjs';
+import { allPaths, canonical, games, gameFaqs, gamePath, embedUrl, categories, categoryGames, gameCategory, winterCollection, relatedGames } from '../src/lib/catalog.mjs';
 import astroConfig from '../astro.config.mjs';
 
 const pageFile = path => path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}/index.html`;
@@ -43,7 +43,7 @@ test('all pages have static content, unique metadata, and working internal links
     assert.ok(googleTag.is('[async]'));
     assert.match(googleTagConfig.text(), /gtag\('config', 'G-NX4YF4WPRK'\)/);
     assert.equal($('head script').first().get(0), googleTag.get(0), `${path}: Google tag precedes other scripts`);
-    if (!$('iframe').length) {
+    if (!$('.game-stage').length) {
       const scripts = $('script:not([type="application/ld+json"])').not(adSense).not(googleTag).not(googleTagConfig);
       assert.equal(scripts.length, path === '/' ? 1 : 0, `${path}: only the home random-game navigation needs a client script`);
     }
@@ -134,21 +134,33 @@ test('the homepage is a static sledding hub with matching featured games and col
   const $ = load(readFileSync(pageFile('/'), 'utf8'));
   const entries = categoryGames('sledding-games');
   assert.equal($('title').text(), 'Sled Games - Play Free Sledding Games Online');
-  assert.equal($('meta[name="description"]').attr('content'), 'Play free sled games in your web browser. Ride a sled down snowy slopes, then explore our snowboard, ski, and Christmas game pages.');
+  const description = $('meta[name="description"]').attr('content');
+  assert.match(description, /sled games/i);
+  assert.ok(description.length >= 130 && description.length <= 160);
   assert.equal($('h1').text(), 'Sled Games');
   assert.equal($('iframe, .game-stage, .game-guide, .guide-nav, #about-game, #how-to-play, #game-tips').length, 0);
   assert.equal($('body.play-first').length, 0);
-  assert.equal(entries.length, 2);
+  assert.ok(entries.length >= 2, 'The sled collection offers multiple games');
   const cards = $('main .featured-games .game-card');
   assert.deepEqual(cards.map((_, card) => $(card).attr('href')).get(), entries.map(game => gamePath(game.slug)));
   assert.equal($('main .game-card').length, entries.length, 'The homepage keeps only its featured sledding cards');
-  cards.each((_, card) => assert.equal($(card).find('img').attr('loading'), 'eager'));
+  cards.each((index, node) => {
+    const card = $(node);
+    if (entries[index].thumbnail) {
+      assert.equal(card.find('.card-art > img').length, 1);
+      assert.equal(card.find('img').attr('src'), entries[index].thumbnail);
+      assert.equal(card.find('img').attr('loading'), 'eager');
+    } else {
+      assert.equal(card.find('img').length, 0, `${entries[index].slug}: vector artwork makes no thumbnail request`);
+      assert.equal(card.find('.card-art > svg.card-scene').length, 1, `${entries[index].slug}: a card still needs visible artwork`);
+    }
+  });
   const mainSections = $('main').find('.featured-games, .category-grid').toArray();
   assert.equal(mainSections.length, 2);
   assert.ok($(mainSections[0]).hasClass('featured-games'), 'Featured sledding games precede category entries');
   const random = $('a[data-random-game]');
   assert.equal(random.length, 1);
-  assert.equal(random.attr('href'), '/sled-rider/');
+  assert.equal(random.attr('href'), gamePath(entries[0].slug));
   assert.ok(random.text().trim());
   assert.equal($('main a[href="/about/"]').length, 1);
   const prose = $('main').text();
@@ -386,12 +398,23 @@ for (const approved of approvedWinterGames) {
   });
 }
 
-test('every dedicated game page puts the eager player before every ad', () => {
+test('every dedicated game page puts its real player or creator link before every ad', () => {
   for (const game of games) {
     const path = gamePath(game.slug);
     const $ = load(readFileSync(pageFile(path), 'utf8'));
-    assert.equal($('iframe').attr('src'), embedUrl(game, canonical(path)));
-    assert.equal($('iframe').attr('loading'), 'eager');
+    if (game.embed.iframeSrc) {
+      assert.equal($('iframe').length, 1);
+      assert.equal($('iframe').attr('src'), embedUrl(game, canonical(path)));
+      assert.equal($('iframe').attr('loading'), 'eager');
+    } else {
+      assert.ok(game.externalPlayUrl, `${path}: a game without an embed needs a creator destination`);
+      assert.equal($('iframe, [data-game-tools]').length, 0, `${path}: an external game has no fabricated player or controls`);
+      const external = $('.game-stage .game-external a[target="_blank"]');
+      assert.equal(external.length, 1);
+      assert.equal(external.attr('href'), game.externalPlayUrl);
+      assert.match(external.attr('rel'), /\bnoopener\b/);
+      assert.match(external.attr('rel'), /\bnoreferrer\b/);
+    }
     assert.equal($('body.play-first').length, 1);
     assert.equal($('h1.play-heading').length, 1, `${path}: visible game heading`);
     assert.equal($('.game-stage').prev().get(0), $('h1').get(0));
@@ -422,11 +445,16 @@ test('winter categories link to their playable games with matching official artw
       assert.equal(card.find('img').attr('src'), game.thumbnail);
       assert.equal(card.find('.card-badge').text(), `Play ${game.title}`);
       const detail = load(readFileSync(pageFile(gamePath(game.slug)), 'utf8'));
-      const player = new URL(detail('iframe').attr('src'));
-      assert.equal(player.href, embedUrl(game, canonical(gamePath(game.slug))));
-      assert.equal(player.hostname, new URL(game.embed.iframeSrc).hostname);
-      assert.equal(player.pathname, new URL(game.embed.iframeSrc).pathname);
-      assert.ok(!player.href.includes('{{PAGE_URL}}'));
+      if (game.embed.iframeSrc) {
+        const player = new URL(detail('iframe').attr('src'));
+        assert.equal(player.href, embedUrl(game, canonical(gamePath(game.slug))));
+        assert.equal(player.hostname, new URL(game.embed.iframeSrc).hostname);
+        assert.equal(player.pathname, new URL(game.embed.iframeSrc).pathname);
+        assert.ok(!player.href.includes('{{PAGE_URL}}'));
+      } else {
+        assert.equal(detail('iframe, [data-game-tools]').length, 0);
+        assert.equal(detail('.game-external a').attr('href'), game.externalPlayUrl);
+      }
       assert.ok(detail('#about-game p').length > 0);
       assert.ok(detail('.guide-steps li').length >= 3);
       assert.ok(detail('.guide-tips li').length >= 3);
@@ -439,7 +467,7 @@ test('winter categories link to their playable games with matching official artw
 
 test('winter games are reachable from the full collection and separate category recommendations', () => {
   const newPaths = ['/snow-rider-2/', '/snowball-io/', '/moto-x3m-winter/'];
-  const recommendationPaths = ['/sled-rider/', ...newPaths];
+  const recommendationPaths = games.filter(game => game.category.some(category => ['sledding-games', winterCollection.slug].includes(category))).map(game => gamePath(game.slug));
   for (const path of ['/games/', '/snowboard-games/', '/ski-games/', '/christmas-games/']) {
     const $ = load(readFileSync(pageFile(path), 'utf8'));
     for (const game of newPaths) {
@@ -454,7 +482,7 @@ test('winter games are reachable from the full collection and separate category 
   }
 });
 
-test('new winter game pages link to one another in their related-game sections', () => {
+test('winter game pages render their selected related games without duplicate or self links', () => {
   const newPaths = ['/snow-rider-2/', '/snowball-io/', '/moto-x3m-winter/'];
   for (const path of newPaths) {
     const $ = load(readFileSync(pageFile(path), 'utf8'));
@@ -465,9 +493,8 @@ test('new winter game pages link to one another in their related-game sections',
     const targets = cards.map((_, card) => $(card).attr('href')).get();
     assert.equal(new Set(targets).size, targets.length, `${path}: related cards must be unique`);
     assert.equal(cards.filter(`[href="${path}"]`).length, 0, `${path}: no related card links to itself`);
-    for (const other of newPaths.filter(other => other !== path)) {
-      assert.equal(cards.filter(`[href="${other}"]`).length, 1, `${path}: one related card for ${other}`);
-    }
+    const game = games.find(game => gamePath(game.slug) === path);
+    assert.deepEqual(targets, relatedGames(game).map(entry => gamePath(entry.slug)), `${path}: selected related games appear in order`);
   }
 });
 
