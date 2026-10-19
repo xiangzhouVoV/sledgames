@@ -89,12 +89,16 @@ for (const selection of [{ random: 0, slug: 'sled-rider', title: 'Sled Rider' },
 
 for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
   test(`category cards open the correct official players at ${viewport.width}px`, async ({ browser }) => {
+    test.setTimeout(60_000); // This case visits every game in all three growing category collections.
     const context = await browser.newContext({ viewport });
     const page = await context.newPage();
-    await page.route('https://html5.gamedistribution.com/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
-    await page.route('https://html5.gamemonetize.co/**', route => route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' }));
-    await page.route('https://img.gamedistribution.com/**', route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
-    await page.route('https://img.gamemonetize.com/**', route => route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' }));
+    await page.route(/^https:\/\//, route => {
+      const request = route.request();
+      if (request.resourceType() === 'image') return route.fulfill({ body: '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="512" height="384" fill="#cee7ff"/></svg>', contentType: 'image/svg+xml' });
+      if (request.resourceType() === 'document' && publisherPattern.test(request.url())) return route.fulfill({ body: '<html><body>Official player fixture</body></html>', contentType: 'text/html' });
+      // Ads and analytics do not participate in category-to-player navigation.
+      return route.abort();
+    });
     for (const category of ['snowboard-games', 'ski-games', 'christmas-games']) {
       const entries = games.filter(game => game.category.includes(category));
       for (const game of entries) {

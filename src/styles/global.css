@@ -154,7 +154,7 @@
   .category-card--snowboard-games .category-icon { background: #ede9ff; color: #6952c8; }
   .category-card--ski-games .category-icon { background: #e0f5fa; color: #14708a; }
   .category-card--christmas-games .category-icon { background: #fce7e1; color: #b4422e; }
-  .category-card h3 { font-size: 1rem; }
+  .category-card .category-title { display: block; font-size: 1rem; }
   .category-card p { margin-top: 5px; font-size: .8125rem; }
   .category-arrow { margin-left: auto; color: #607998; flex-shrink: 0; }
   .editorial-note { padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: #e9f1fc; margin-top: 36px; }

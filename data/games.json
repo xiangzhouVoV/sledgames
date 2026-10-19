@@ -282,6 +282,288 @@
     }
   },
   {
+    "slug": "snowboard-king-2024",
+    "title": "Snowboard King 2024",
+    "seoTitle": "Snowboard King 2024 - Play the Downhill Challenge Online",
+    "category": [
+      "snowboard-games"
+    ],
+    "genres": [
+      "Snowboarding",
+      "Level challenge"
+    ],
+    "description": "Play Snowboard King 2024 online. Carve past trees and rocks, collect coins for skill upgrades, and use boost to stay ahead of the avalanche.",
+    "intro": "Snowboard King 2024 is a downhill level challenge from Inlogic Software. Carve around trees and rocks, choose a route through rough terrain, and reach the end of the slope while escaping an avalanche. A boost gives you extra speed, but a clear route still matters when obstacles are close together.\n\nCoins support three skill upgrades: Carve improves turning, Boost reduces the wait between boosts, and Stability reduces the slowdown from obstacles. Choose an upgrade around the part of the descent that is causing trouble, then try the course again with that change in mind.",
+    "howToPlay": [
+      "Begin a level: Choose Play inside the game window, then select an available slope. Read the short control guide before starting your descent.",
+      "Carve through gaps: Use the Left and Right arrow keys to turn. Aim for the open snow beyond the next tree or rock so each turn leaves room for the following one.",
+      "Use boost deliberately: Press Space to boost when it is ready. Line up with a clear stretch first; extra speed gives you less time to react to the next obstacle.",
+      "Spend coins on skills: Open the upgrade options between attempts. Compare Carve, Boost, and Stability, then choose the skill that addresses the problem you noticed on the slope.",
+      "Finish ahead of the avalanche: Keep moving down the course and avoid unnecessary detours. After an unsuccessful attempt, try an earlier turn or a clearer boost section."
+    ],
+    "tips": [
+      "Plan two turns ahead: A gap beside a tree can lead straight toward a rock. Pick a line that gives you space after the first obstacle, rather than treating every turn as a separate decision.",
+      "Save boost for open snow: Before pressing Space, check where the faster movement will carry you. A short, clear route is easier to use than a coin trail that immediately bends toward an obstacle.",
+      "Upgrade for the difficulty you are having: Try Carve if you cannot turn into a chosen gap in time. Consider Stability when rough terrain costs too much speed, or Boost when you want the ability available more often.",
+      "Keep coins secondary to the finish: Collect the coins that lie along a manageable route. Turning back across the slope for one pickup can cost the space you need to stay ahead of the avalanche."
+    ],
+    "controls": [
+      {
+        "action": "Carve left / right",
+        "input": "Left / Right arrow keys"
+      },
+      {
+        "action": "Boost",
+        "input": "Space"
+      },
+      {
+        "action": "Menus / upgrades",
+        "input": "Mouse click or touch the in-game buttons"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What are the controls in Snowboard King 2024?",
+        "a": "Use the Left and Right arrow keys to carve and Space to boost. Select levels and upgrades with the in-game buttons. Click inside the player first if the arrow keys are moving the surrounding page."
+      },
+      {
+        "q": "What do Carve, Boost, and Stability improve?",
+        "a": "Carve improves turning, Boost reduces its cooldown, and Stability reduces the speed lost to obstacles. Compare the upgrade costs in the menu and choose the skill that fits the part of the course you find hardest."
+      },
+      {
+        "q": "When should I use the boost?",
+        "a": "Use it after lining up with an open stretch. Check the next obstacle before activating it so the added speed does not carry you into a turn you have not prepared for."
+      },
+      {
+        "q": "Is Snowboard King 2024 an endless run?",
+        "a": "The game uses individual slopes to complete. Your goal is to reach the end while staying ahead of the avalanche, then continue through the available levels."
+      },
+      {
+        "q": "Can I play Snowboard King 2024 on a phone?",
+        "a": "The official publisher lists mobile support. Use the touch prompts displayed inside the player on your device; the Left, Right, and Space controls above describe keyboard play."
+      },
+      {
+        "q": "What should I do if the player does not respond?",
+        "a": "Wait for loading or an in-game ad to finish, then select the game window before using the keys. If it remains stuck, use Reload below the player and check your internet connection."
+      }
+    ],
+    "similar": [
+      "snowboard-game-party",
+      "snowboard-girl",
+      "downhill-snowboard",
+      "snowboard-game"
+    ],
+    "embed": {
+      "provider": "gamedistribution",
+      "iframeSrc": "https://html5.gamedistribution.com/ce6797fbf599415fa270487c9a384001/",
+      "width": 800,
+      "height": 600
+    },
+    "developer": "Inlogic Software",
+    "released": "2023-08-24",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamedistribution.com/ce6797fbf599415fa270487c9a384001-512x384.jpg",
+    "sources": {
+      "intro": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "howToPlay": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "tips": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "controls": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "faqs": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "embed": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "developer": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "released": "https://gamedistribution.com/games/snowboard-king-2024/",
+      "thumbnail": "https://img.gamedistribution.com/ce6797fbf599415fa270487c9a384001-512x384.jpg"
+    }
+  },
+  {
+    "slug": "snowboard-game-party",
+    "title": "Snowboard Game Party",
+    "seoTitle": "Snowboard Game Party - Play the Snow Racing Challenge",
+    "category": [
+      "snowboard-games"
+    ],
+    "genres": [
+      "Snowboarding",
+      "Racing"
+    ],
+    "description": "Play Snowboard Game Party online. Dodge snowballs and fences on racing tracks, keep a clear route, and work toward new gear with mouse or touch.",
+    "intro": "Snowboard Game Party is a snow racing challenge from bestgames.com. Work through tracks with snowballs, fences, and changes in the slope while trying to keep your speed. The course asks you to notice hazards early and leave yourself space to pass them.\n\nRace results provide points toward gear and appearance options. Follow the game's mouse or touch prompts, learn how the rider responds, and use each attempt to find a route with fewer interruptions.",
+    "howToPlay": [
+      "Start the race: Click or tap the play prompt inside the game window. Follow the opening instructions before setting off so you can see which screen inputs control the rider.",
+      "Follow mouse or touch prompts: Use mouse clicks or taps as indicated by the game. Make a small input first and watch the response before trying to pass a narrow opening.",
+      "Read the track: Look ahead for snowballs, fences, and slope changes. Choose an open route early enough to avoid a hurried correction beside the obstacle.",
+      "Build toward gear: Complete races and check the game's results and gear menus. Use the points and unlock requirements shown there to plan your next target."
+    ],
+    "tips": [
+      "Watch the open route: Keep your attention on where you can pass a fence or snowball, then check what comes after it. Staring at the hazard can delay the input needed to move clear.",
+      "Give moving hazards room: When a snowball makes a route uncertain, choose a wider opening. A tight pass is less useful if it forces another immediate correction.",
+      "Learn one difficult section: On a retry, focus on the obstacle that interrupted your previous race. Adjust the approach there before changing the rest of your route.",
+      "Check gear requirements after racing: Read the current point cost or unlock condition in the menu. Pick one target so you know what your next completed race is working toward."
+    ],
+    "controls": [
+      {
+        "action": "Play / race interaction",
+        "input": "Mouse click or tap, following the in-game prompts"
+      },
+      {
+        "action": "Menus / gear",
+        "input": "Click or tap the in-game buttons"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do I control Snowboard Game Party?",
+        "a": "Use mouse clicks or taps and follow the race prompts inside the player. Try a small input on an open stretch first so you can see how the rider responds before the next obstacle."
+      },
+      {
+        "q": "Which obstacles should I watch for?",
+        "a": "Expect snowballs, fences, and sudden changes in the slope. Look ahead for an opening and check that the route beyond it gives you time to respond to the next hazard."
+      },
+      {
+        "q": "How do I unlock new gear?",
+        "a": "Race results earn points toward gear and style options. Open the in-game gear menu to see the current costs and unlock conditions, then work toward an option over later races."
+      },
+      {
+        "q": "Can I play Snowboard Game Party on mobile?",
+        "a": "Yes, the official GameMonetize listing marks it as mobile ready and provides tap controls. If buttons feel small, try the fullscreen option below the player on a supported browser."
+      },
+      {
+        "q": "Why is the race not starting when I tap?",
+        "a": "Let the game finish loading and use its visible play or continue prompt. During an in-game ad, wait for the close or continue button. If the player stays unresponsive, use Reload below it."
+      }
+    ],
+    "similar": [
+      "snowboard-king-2024",
+      "snowboard-game",
+      "snowboard-girl",
+      "downhill-snowboard"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/e60tb5zjmg6wfnkaddqv8bji60h8gx50/",
+      "width": 1334,
+      "height": 750
+    },
+    "developer": "bestgames.com",
+    "released": "2025-07-21",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/e60tb5zjmg6wfnkaddqv8bji60h8gx50/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/snowboard-game-party-game",
+      "howToPlay": "https://gamemonetize.com/snowboard-game-party-game",
+      "tips": "https://gamemonetize.com/snowboard-game-party-game",
+      "controls": "https://gamemonetize.com/snowboard-game-party-game",
+      "faqs": "https://gamemonetize.com/snowboard-game-party-game",
+      "embed": "https://gamemonetize.com/snowboard-game-party-game",
+      "developer": "https://gamemonetize.com/snowboard-game-party-game",
+      "released": "https://gamemonetize.com/snowboard-game-party-game",
+      "thumbnail": "https://img.gamemonetize.com/e60tb5zjmg6wfnkaddqv8bji60h8gx50/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "snowboard-girl",
+    "title": "Snowboard Girl",
+    "seoTitle": "Snowboard Girl - Play the Jump and Ride Challenge Online",
+    "category": [
+      "snowboard-games"
+    ],
+    "genres": [
+      "Snowboarding",
+      "Platformer"
+    ],
+    "description": "Play Snowboard Girl online. Time jumps along side-scrolling slopes, avoid obstacles, and collect coins while completing levels with screen controls.",
+    "intro": "Snowboard Girl is a side-scrolling slope challenge from Playtouch. Ride through levels, collect coins, and time jumps around the obstacles in your path. The view makes the approach and landing part of the same decision: clearing a hazard is useful only if you are ready for the next stretch.\n\nThe game provides screen buttons for riding and jumping. Start by learning their response, then use a steady approach to each obstacle instead of chasing every coin. A retry gives you another chance to adjust the timing on a difficult section.",
+    "howToPlay": [
+      "Enter a level: Use the play prompt inside the window and choose an available level. Let loading or any opening ad finish before trying the movement buttons.",
+      "Use the screen controls: Click or tap the riding button on the right and the jump arrow shown in the game. Try the controls on the opening stretch so you can judge their response.",
+      "Time each jump: Watch the obstacle and the snow beyond it. Use the jump button early enough to clear the hazard while keeping the landing area in view.",
+      "Collect along your route: Pick up coins that fit a manageable jump or landing. Keep working toward the end of the level, then retry a difficult section with a small timing change."
+    ],
+    "tips": [
+      "Watch the landing: Before jumping, look beyond the obstacle. Knowing where the rider will come down helps you prepare for the next input instead of reacting only after landing.",
+      "Adjust timing in small steps: If an attempt ends at the same obstacle, jump a little earlier or later on the next try. Changing one input makes the result easier to judge.",
+      "Leave awkward coins behind: A coin is optional when its position pulls you away from a useful landing. Learn a route that clears the section first, then try collecting more along it.",
+      "Keep both buttons accessible: On a touch screen, position your hands so you can reach riding and jumping without covering the approaching terrain. Fullscreen can help when the buttons are difficult to see."
+    ],
+    "controls": [
+      {
+        "action": "Ride",
+        "input": "Click or tap the riding button on the right"
+      },
+      {
+        "action": "Jump",
+        "input": "Click or tap the on-screen jump arrow"
+      },
+      {
+        "action": "Menus / level selection",
+        "input": "Mouse click or touch"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do I jump in Snowboard Girl?",
+        "a": "Click or tap the jump arrow inside the game. Watch the approach and the landing area, then adjust the timing slightly on your next attempt if you hit the obstacle."
+      },
+      {
+        "q": "Which controls move the rider?",
+        "a": "Use the riding button on the right side of the game window and the separate jump arrow. The controls listed here describe the screen buttons visible in this version."
+      },
+      {
+        "q": "What is the goal of Snowboard Girl?",
+        "a": "Work through each level by riding along the slope and clearing its obstacles. Collect coins along a clear route, while keeping the next jump and landing manageable."
+      },
+      {
+        "q": "Do I need to collect every coin?",
+        "a": "Prioritize getting through the section when you are learning it. Once your jumps are consistent, try a route that reaches more coins without making the landing harder."
+      },
+      {
+        "q": "Can I play Snowboard Girl on a phone?",
+        "a": "Yes. The official publisher lists mobile support, and the game has screen buttons for riding and jumping. Use fullscreen on a supported browser if the play area is difficult to see."
+      },
+      {
+        "q": "What if an ad or loading screen appears before a level?",
+        "a": "Wait for the game's close or continue prompt before using the riding controls. If the player remains stuck after loading, use Reload below the window; this restarts the embedded player."
+      }
+    ],
+    "similar": [
+      "downhill-snowboard",
+      "snowboard-king-2024",
+      "snowboard-game-party",
+      "snowboard-game"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/m8rawdukwnf27lq4de69iduxipyscbxl/",
+      "width": 800,
+      "height": 600
+    },
+    "developer": "Playtouch",
+    "released": "2022-06-30",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/m8rawdukwnf27lq4de69iduxipyscbxl/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/snowboard-girl-game",
+      "howToPlay": "https://gamemonetize.com/snowboard-girl-game",
+      "tips": "https://gamemonetize.com/snowboard-girl-game",
+      "controls": "https://gamemonetize.com/snowboard-girl-game",
+      "faqs": "https://gamemonetize.com/snowboard-girl-game",
+      "embed": "https://gamemonetize.com/snowboard-girl-game",
+      "developer": "https://gamemonetize.com/snowboard-girl-game",
+      "released": "https://gamemonetize.com/snowboard-girl-game",
+      "thumbnail": "https://img.gamemonetize.com/m8rawdukwnf27lq4de69iduxipyscbxl/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
     "slug": "ski-king",
     "title": "Ski King",
     "seoTitle": "Ski King - Play the Free Online Downhill Skiing Game",

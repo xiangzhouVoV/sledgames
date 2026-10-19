@@ -1,6 +1,9 @@
 ---
 import { categories, winterCollection } from '../lib/catalog.mjs';
 import SportIcon from './SportIcon.astro';
+interface Props { headings?: boolean }
+const { headings = true } = Astro.props;
+const CategoryTitle = headings ? 'h3' : 'strong';
 const collections = [...categories, { ...winterCollection, description: 'Snowball battles, icy bike tracks, and the full winter collection.' }];
 ---
-<section class="content-section"><div class="section-heading"><div><h2>Browse by category</h2><p>Find your next winter adventure.</p></div></div><div class="category-grid">{collections.map(category => <a class:list={['category-card', `category-card--${category.slug}`]} href={category.path}><span class="category-icon"><SportIcon sport={category.slug} /></span><div><h3>{category.title}</h3><p>{category.description}</p></div><span class="category-arrow" aria-hidden="true">→</span></a>)}</div></section>
+<section class="content-section"><div class="section-heading"><div><h2>Browse by category</h2><p>Find your next winter adventure.</p></div></div><div class="category-grid">{collections.map(category => <a class:list={['category-card', `category-card--${category.slug}`]} href={category.path}><span class="category-icon"><SportIcon sport={category.slug} /></span><div><CategoryTitle class="category-title">{category.title}</CategoryTitle><p>{category.description}</p></div><span class="category-arrow" aria-hidden="true">→</span></a>)}</div></section>
