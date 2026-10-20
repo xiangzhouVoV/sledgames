@@ -549,14 +549,14 @@ test('game links use their dedicated pages while the brand and sledding category
   }
 });
 
-test('SEO titles match the approved copy without changing the SnowBoard Game title', () => {
+test('SEO titles match the approved copy', () => {
   const expected = {
     '/downhill-snowboard/': 'Downhill Snowboard - Play the Free Snowboarding Game Online',
     '/ski-king/': 'Ski King - Play the Free Online Downhill Skiing Game',
     '/ski-rush/': 'Ski Rush - Play the Free Online Ski Survival Game',
     '/santa-collecting-gifts/': 'Santa Collecting Gifts - Play the Free Online Sleigh Game',
     '/crazy-christmas-fun/': 'Crazy Christmas Fun - Play Free Santa & Reindeer Sleigh Game',
-    '/snowboard-game/': 'SnowBoard Game - Play the Snowboarding Game Online Free',
+    '/snowboard-game/': 'SnowBoard Game - Winter Racing Game Online',
     '/christmas-games/': 'Christmas Games - Play Free Santa & Sleigh Games Online',
     '/games/': 'All Winter Games - Play Free Snowboard, Ski & Christmas Games Online',
   };

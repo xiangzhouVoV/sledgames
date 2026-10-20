@@ -5,7 +5,7 @@ import { load } from 'cheerio';
 import { allPaths } from '../src/lib/catalog.mjs';
 
 const path = '/snowboard-game/';
-const title = 'SnowBoard Game - Play the Snowboarding Game Online Free';
+const title = 'SnowBoard Game - Winter Racing Game Online';
 const player = 'https://html5.gamemonetize.co/4jlpcom1sy0z4thlimget2ew3z6ow05d/';
 const thumbnail = 'https://img.gamemonetize.com/4jlpcom1sy0z4thlimget2ew3z6ow05d/512x384.jpg';
 const questions = [

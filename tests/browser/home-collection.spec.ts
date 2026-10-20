@@ -49,7 +49,7 @@ for (const viewport of [{ width: 375, height: 812 }, { width: 1280, height: 800 
         await expect(link).toHaveAttribute('href', `/${game.slug}/`);
         await link.click();
         await expect(page).toHaveURL(`http://127.0.0.1:4321/${game.slug}/`);
-        await expect(page.locator('main h1')).toHaveText(game.title);
+        await expect(page.locator('main h1')).toHaveText(game.slug === 'snow-riders' ? game.seoTitle! : game.title);
         if (!game.embed.iframeSrc) {
           await expect(page.locator('main iframe, [data-game-tools]')).toHaveCount(0);
           await expect(page.locator('.game-external a')).toHaveAttribute('href', game.externalPlayUrl!);

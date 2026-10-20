@@ -34,7 +34,7 @@ test('Snow Riders accepts only its verified Poki destination with no embedded-pl
 test('Snow Riders keeps its own title, guide, FAQ schema and clearly labelled Poki launch', () => {
   const $ = page(gamePath(game.slug));
   assert.equal($('h1').length, 1);
-  assert.equal($('h1.play-heading').text(), game.title);
+  assert.equal($('h1.play-heading').text(), game.seoTitle);
   assert.ok($('title').text().startsWith(game.title));
   assert.equal($('meta[name="description"]').attr('content'), game.description);
   assert.equal($('link[rel="canonical"]').attr('href'), canonical('/snow-riders/'));

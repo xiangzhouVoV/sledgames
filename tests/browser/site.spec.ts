@@ -127,7 +127,7 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 
         await expect(card.locator('img')).toHaveAttribute('src', game.thumbnail!);
         await card.click();
         await expect(page).toHaveURL(`http://127.0.0.1:4321/${game.slug}/`);
-        await expect(page.locator('h1.play-heading')).toHaveText(game.title);
+        await expect(page.locator('h1.play-heading')).toHaveText(game.slug === 'snow-riders' ? game.seoTitle! : game.title);
         await expect(page.locator('main h1')).toBeVisible();
         await expect(page.locator('.quick-links')).toBeVisible();
         await expect(page.locator('.quick-links a')).toHaveCount(games.length - 1);
@@ -277,7 +277,7 @@ for (const width of [320, 390, 1280]) {
     const lastGame = games[games.length - 1];
     await page.locator(`.quick-links a[href="/${lastGame.slug}/"]`).click();
     await expect(page).toHaveURL(`http://127.0.0.1:4321/${lastGame.slug}/`);
-    await expect(page.locator('h1.play-heading')).toHaveText(lastGame.title);
+    await expect(page.locator('h1.play-heading')).toHaveText(lastGame.slug === 'snow-riders' ? lastGame.seoTitle! : lastGame.title);
     expect(await page.locator('html').evaluate(el => el.scrollWidth)).toBeLessThanOrEqual(width);
     await context.close();
   });

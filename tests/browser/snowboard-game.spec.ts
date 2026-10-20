@@ -41,7 +41,7 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
       const response = await page.goto('/snowboard-game/');
       expect(response!.status()).toBe(200);
       expect(response!.request().redirectedFrom()).toBeNull();
-      await expect(page).toHaveTitle('SnowBoard Game - Play the Snowboarding Game Online Free');
+      await expect(page).toHaveTitle('SnowBoard Game - Winter Racing Game Online');
       await expect(page.locator('main h1')).toHaveText('SnowBoard Game');
       await expect(page.locator('main h1')).toBeVisible();
       await expect(page.locator('.game-stage > iframe')).toHaveAttribute('src', player);
