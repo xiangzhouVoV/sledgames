@@ -1,0 +1,281 @@
+{
+  "checkedOn": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "provider": "GameMonetize",
+  "method": "Official distribution pages plus direct HTTP GET checks of entry documents, thumbnails and selected runtime resources. Limited initial screen observations are recorded separately.",
+  "limitations": [
+    "HTTP 200 and absence of X-Frame-Options / Content-Security-Policy on an entry document do not prove complete gameplay or every downstream resource.",
+    "No candidate is marked as fully played through.",
+    "Advertisements and provider opening screens may appear.",
+    "Remote IAB navigation attempts timed out in this environment; local site rendering is validated separately."
+  ],
+  "games": [
+    {
+      "slug": "xmas-triple-mahjong",
+      "title": "Xmas Triple Mahjong",
+      "developer": "LofGames.com",
+      "published": "2020-12-22",
+      "sourceUrl": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "iframeUrl": "https://html5.gamemonetize.co/9xkacv3717u8lgbshnkg888l3xzuy0j8/",
+      "dimensions": {
+        "width": 800,
+        "height": 450
+      },
+      "thumbnailUrl": "https://img.gamemonetize.com/9xkacv3717u8lgbshnkg888l3xzuy0j8/512x384.jpg",
+      "facts": [
+        "Remove three identical Christmas tiles.",
+        "Selectable tiles require at least two adjacent sides open.",
+        "Publisher lists mouse or touch controls."
+      ],
+      "http": {
+        "entry": {
+          "status": 200,
+          "xFrameOptions": null,
+          "contentSecurityPolicy": null
+        },
+        "thumbnail": {
+          "status": 200,
+          "bytes": 168533
+        },
+        "majorResources": [
+          {
+            "path": "xmas_triple_mahjong.js",
+            "status": 200,
+            "xFrameOptions": null,
+            "contentSecurityPolicy": null
+          }
+        ]
+      },
+      "runtimeObservation": {
+        "state": "not-observed",
+        "gameplayVerified": false,
+        "note": "Entry and main script were checked by HTTP GET; no playable scene was confirmed."
+      }
+    },
+    {
+      "slug": "xmas-balls",
+      "title": "Xmas Balls",
+      "developer": "Mapi Games",
+      "published": "2024-12-17",
+      "sourceUrl": "https://gamemonetize.com/xmas-balls-game",
+      "iframeUrl": "https://html5.gamemonetize.co/az4fzkv1ynqr09w0fknfnv7ptwtpp8ii/",
+      "dimensions": {
+        "width": 720,
+        "height": 1280
+      },
+      "thumbnailUrl": "https://img.gamemonetize.com/az4fzkv1ynqr09w0fknfnv7ptwtpp8ii/512x384.jpg",
+      "facts": [
+        "Aim and shoot balls at gift blocks before the blocks touch the ground.",
+        "Tutorial text confirms extra-ball and instant multi-ball pickups.",
+        "Publisher lists mouse clicks or taps and marks mobile ready."
+      ],
+      "http": {
+        "entry": {
+          "status": 200,
+          "bytes": 16180,
+          "xFrameOptions": null,
+          "contentSecurityPolicy": null
+        },
+        "thumbnail": {
+          "status": 200,
+          "bytes": 152873
+        },
+        "majorResources": [
+          {
+            "path": "data.js",
+            "status": 200,
+            "bytes": 136952
+          },
+          {
+            "path": "code0.js",
+            "status": 200,
+            "bytes": 30187
+          }
+        ]
+      },
+      "runtimeObservation": {
+        "state": "preloader-observed",
+        "gameplayVerified": false,
+        "note": "A canvas and the GDevelop opening splash/skip countdown were visible during a short load. Gameplay was not started."
+      }
+    },
+    {
+      "slug": "xmas-memory-match",
+      "title": "Xmas Memory Match",
+      "developer": "Mapi Games",
+      "published": "2024-11-14",
+      "sourceUrl": "https://gamemonetize.com/xmas-memory-match-game",
+      "iframeUrl": "https://html5.gamemonetize.co/hm8cers6azm5r8txkwezpakvprcf7aaj/",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "thumbnailUrl": "https://img.gamemonetize.com/hm8cers6azm5r8txkwezpakvprcf7aaj/512x384.jpg",
+      "facts": [
+        "Flip cards and find matching pairs of Christmas pictures.",
+        "Publisher lists Easy and Medium modes, mouse clicks or taps, and mobile ready."
+      ],
+      "http": {
+        "entry": {
+          "status": 200,
+          "bytes": 4726,
+          "xFrameOptions": null,
+          "contentSecurityPolicy": null
+        },
+        "thumbnail": {
+          "status": 200,
+          "bytes": 196152
+        },
+        "majorResources": [
+          {
+            "path": "js/gse/gse-export.js",
+            "status": 200,
+            "bytes": 1280641
+          }
+        ]
+      },
+      "runtimeObservation": {
+        "state": "title-screen-observed",
+        "gameplayVerified": false,
+        "note": "The Xmas Memory Match title screen and Click here to play prompt were visible. Gameplay was not started."
+      }
+    },
+    {
+      "slug": "scroll-and-spot",
+      "title": "Scroll and Spot",
+      "developer": "LofGames.com",
+      "published": "2024-12-11",
+      "sourceUrl": "https://gamemonetize.com/scroll-and-spot-game",
+      "iframeUrl": "https://html5.gamemonetize.co/8jxfjtyj3zka0yqz6i8qvr04lmcg8hb8/",
+      "dimensions": {
+        "width": 600,
+        "height": 800
+      },
+      "thumbnailUrl": "https://img.gamemonetize.com/8jxfjtyj3zka0yqz6i8qvr04lmcg8hb8/512x384.jpg",
+      "facts": [
+        "Scroll two aligned Christmas pictures and find five differences to advance.",
+        "Publisher instructions specify dragging to scroll and tapping differences.",
+        "Entry HTML waits for a first click before initializing the resource loader."
+      ],
+      "http": {
+        "entry": {
+          "status": 200,
+          "bytes": 8340,
+          "xFrameOptions": null,
+          "contentSecurityPolicy": null
+        },
+        "thumbnail": {
+          "status": 200,
+          "bytes": 84407
+        },
+        "majorResources": [
+          {
+            "path": "libs/commons.js",
+            "status": 200,
+            "bytes": 342769
+          },
+          {
+            "url": "https://lofgames.com/games/lofgames524.js",
+            "status": 200,
+            "bytes": 263844
+          },
+          {
+            "path": "sas.js?1733574511526",
+            "status": 200,
+            "bytes": 426530
+          }
+        ]
+      },
+      "runtimeObservation": {
+        "state": "not-started",
+        "gameplayVerified": false,
+        "note": "The initial canvas was blank during a short load. Static entry inspection explains that a first click is required to begin loading. Gameplay was not started."
+      }
+    },
+    {
+      "slug": "subway-santa-runner-christmas",
+      "title": "Subway Santa Runner Christmas",
+      "developer": "LEOGAMESINC",
+      "published": "2021-12-27",
+      "sourceUrl": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "iframeUrl": "https://html5.gamemonetize.co/yojqzj372a7bvuxli6zcawswdtj8ueix/",
+      "dimensions": {
+        "width": 600,
+        "height": 960
+      },
+      "thumbnailUrl": "https://img.gamemonetize.com/yojqzj372a7bvuxli6zcawswdtj8ueix/512x384.jpg",
+      "facts": [
+        "Santa-themed endless runner set in a snowy village.",
+        "Publisher lists mouse on desktop and touch on mobile, and marks mobile ready.",
+        "Build metadata contains SwipeControl, mouse-down/up handlers, swipe directions, SlideRoll, tapToStart, laneIndex and coin collection fields.",
+        "WASD / CTRL / SPACE strings are labeled SANTA CLAUS Demo; they are not treated as verified controls for this game."
+      ],
+      "http": {
+        "entry": {
+          "status": 200,
+          "bytes": 888,
+          "xFrameOptions": null,
+          "contentSecurityPolicy": null
+        },
+        "thumbnail": {
+          "status": 200,
+          "bytes": 271841
+        },
+        "majorResources": [
+          {
+            "path": "Build/UnityLoader.js",
+            "status": 200,
+            "bytes": 156042
+          },
+          {
+            "path": "Build/GM.json",
+            "status": 200,
+            "productName": "Subway Santa Runner Christmas"
+          },
+          {
+            "path": "Build/GM.data.unityweb",
+            "status": 200,
+            "bytes": 27399727,
+            "decodedBytes": 37844830
+          },
+          {
+            "path": "Build/GM.asm.code.unityweb",
+            "status": 200
+          },
+          {
+            "path": "Build/GM.asm.memory.unityweb",
+            "status": 200
+          },
+          {
+            "path": "Build/GM.asm.framework.unityweb",
+            "status": 200
+          },
+          {
+            "path": "Build/GM.jpg",
+            "status": 200,
+            "bytes": 18171
+          }
+        ]
+      },
+      "runtimeObservation": {
+        "state": "loading-screen-observed",
+        "gameplayVerified": false,
+        "note": "The Santa artwork and Unity loading progress were visible. The 27.4 MB compressed data file can increase first-load time. Gameplay was not started."
+      }
+    }
+  ],
+  "localValidation": {
+    "astroCheck": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "build": true,
+    "nodeTestsPassed": 78,
+    "christmasCategoryCards": 8,
+    "notes": [
+      "Category screenshot saved as christmas-collection.png.",
+      "Xmas Memory Match title screen was also observed in the local embedded player using CUA.",
+      "CUA could not reliably start canvas gameplay in the embedded frame; gameplay remains unverified."
+    ]
+  }
+}

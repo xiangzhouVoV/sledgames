@@ -18,7 +18,7 @@ const faqs = gameFaqs(game);
 const category = gameCategory(game);
 const collection = category?.path === '/' ? winterCollection : category;
 const christmas = game.category.includes('christmas-games');
-const focusedGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl', 'gnome-bobsled', 'sled-line', 'sleigh-o-balance', 'waddle-peaks', 'snow-riders'].includes(game.slug);
+const focusedGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl', 'gnome-bobsled', 'sled-line', 'sleigh-o-balance', 'waddle-peaks', 'snow-riders', 'xmas-triple-mahjong', 'xmas-balls', 'xmas-memory-match', 'scroll-and-spot', 'subway-santa-runner-christmas'].includes(game.slug);
 const title = game.seoTitle ?? game.title;
 const heading = game.slug === 'snow-riders' ? title : game.title;
 const alternativeGame = game.slug === 'snow-riders'

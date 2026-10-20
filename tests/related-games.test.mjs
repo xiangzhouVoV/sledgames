@@ -44,6 +44,21 @@ test('small catalogs return available distinct alternatives and use the wider co
   assert.deepEqual(relatedGames(source, []), []);
 });
 
+test('a category larger than the recommendation limit keeps all five slots for peers in editorial order', () => {
+  const source = fixture('source', 'christmas-games');
+  source.similar = ['other-preferred', 'winter-preferred', 'peer-six', 'peer-three'];
+  const entries = [
+    source,
+    fixture('other-preferred', 'ski-games'),
+    fixture('winter-preferred', 'winter-games'),
+    ...['peer-first', 'peer-second', 'peer-three', 'peer-four', 'peer-five', 'peer-six', 'peer-seven']
+      .map(slug => fixture(slug, 'christmas-games')),
+  ];
+  assert.deepEqual(relatedGames(source, entries).map(game => game.slug), [
+    'peer-six', 'peer-three', 'peer-first', 'peer-second', 'peer-four',
+  ]);
+});
+
 test('every game detail renders five unique sibling cards with category peers first and winter games filling gaps', () => {
   assert.equal(RELATED_GAME_LIMIT, 5);
   for (const game of games) {
@@ -60,10 +75,12 @@ test('every game detail renders five unique sibling cards with category peers fi
     assert.deepEqual(targets, relatedGames(game).map(other => gamePath(other.slug)), `${game.slug}: static cards follow the shared recommendation policy`);
 
     const peers = games.filter(other => other.slug !== game.slug && other.category.some(category => game.category.includes(category)));
-    assert.deepEqual(new Set(targets.slice(0, peers.length)), new Set(peers.map(other => gamePath(other.slug))), `${game.slug}: all current category peers come first`);
-    const fillers = targets.slice(peers.length).map(path => games.find(other => gamePath(other.slug) === path));
+    const peerSlots = Math.min(peers.length, RELATED_GAME_LIMIT);
+    const peerPaths = new Set(peers.map(other => gamePath(other.slug)));
+    assert.ok(targets.slice(0, peerSlots).every(path => peerPaths.has(path)), `${game.slug}: category peers fill the available first slots`);
+    const fillers = targets.slice(peerSlots).map(path => games.find(other => gamePath(other.slug) === path));
     const winterPool = games.filter(other => other.slug !== game.slug && !peers.includes(other) && other.category.some(category => ['sledding-games', 'winter-games'].includes(category)));
-    const expectedWinterSlots = Math.min(winterPool.length, cards.length - peers.length);
+    const expectedWinterSlots = Math.min(winterPool.length, cards.length - peerSlots);
     assert.ok(fillers.slice(0, expectedWinterSlots).every(other => winterPool.includes(other)), `${game.slug}: winter games fill remaining slots before other categories`);
 
     cards.each((_, node) => {

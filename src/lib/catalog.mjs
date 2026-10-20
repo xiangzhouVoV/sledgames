@@ -11,7 +11,7 @@ export const categories = [
   { slug: 'sledding-games', path: '/', title: 'Sled Games', label: 'Sledding', symbol: '01', description: 'A little snow. A lot of momentum.' },
   { slug: 'snowboard-games', path: '/snowboard-games/', title: 'Snowboard Games', label: 'Snowboarding', symbol: '02', description: 'Find your line down the mountain.' },
   { slug: 'ski-games', path: '/ski-games/', title: 'Ski Games', label: 'Skiing', symbol: '03', description: 'Fresh tracks, right in your browser.' },
-  { slug: 'christmas-games', path: '/christmas-games/', title: 'Christmas Games', label: 'Christmas', symbol: '04', description: 'Catch gifts, fly with Santa, or combine festive snowballs in Merge Christmas. On mobile, try Merge Christmas or Crazy Christmas Fun.' },
+  { slug: 'christmas-games', path: '/christmas-games/', title: 'Christmas Games', label: 'Christmas', symbol: '04', description: 'Run with Santa, shoot gift blocks, match festive tiles, or spot hidden differences. Find your Christmas challenge, from sleigh adventures to picture puzzles.' },
 ];
 const gameCategories = [...categories, winterCollection];
 /** @param {import('./types').Game} game */

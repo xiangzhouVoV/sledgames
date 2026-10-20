@@ -322,6 +322,89 @@ const snowRidersDescriptionsByPage = {
   },
 };
 
+/** @type {Record<string, Record<string, string>>} */
+const christmasExpansionDescriptionsByPage = {
+  '/games': {
+    'xmas-triple-mahjong': "The three-tile matching choice is Xmas Triple Mahjong. Clear identical pictures in groups of three, choosing tiles with at least two adjacent sides open.",
+    'xmas-balls': "Xmas Balls turns present clearing into an aiming challenge from the bottom of the board. Shoot the gift blocks before they touch the ground and pick up extra balls.",
+    'xmas-memory-match': "Choose Xmas Memory Match for Christmas picture pairs in Easy or Medium mode. Flip cards and remember their positions to find each matching pair.",
+    'scroll-and-spot': "Scroll and Spot adds a Christmas observation puzzle to the winter collection. Drag to move two aligned pictures together, then select all five differences to advance.",
+    'subway-santa-runner-christmas': "Subway Santa Runner Christmas supplies an endless run through a snowy village. Help Santa after his presents scatter, using mouse or touch controls shown in the player.",
+  },
+  '/404': {
+    'xmas-triple-mahjong': "Find a new match in Xmas Triple Mahjong after this missing page. Select three identical festive tiles with at least two adjacent sides open to clear them.",
+    'xmas-balls': "Aim for another game with Xmas Balls and its falling gift blocks. Shoot from the bottom, collect additional balls, and clear the blocks before they reach the ground.",
+    'xmas-memory-match': "Turn over a fresh card in Xmas Memory Match to continue your visit. Choose Easy or Medium and remember the Christmas pictures to uncover matching pairs.",
+    'scroll-and-spot': "Look for a different route in Scroll and Spot's paired Christmas scenes. Drag the aligned pictures together and find five differences to reach the next level.",
+    'subway-santa-runner-christmas': "Return to a snowy village with Subway Santa Runner Christmas. Santa's scattered presents set the scene for an endless run with mouse or touch input.",
+  },
+  '/christmas-games': {
+    'xmas-triple-mahjong': "Xmas Triple Mahjong brings groups of three to the Christmas puzzle selection. Match identical festive pictures while checking that each tile has two adjacent sides open.",
+    'xmas-balls': "Keep the Christmas gifts off the ground in Xmas Balls. Aim upward from the bottom to break falling blocks and collect extra balls for later shots.",
+    'xmas-memory-match': "Xmas Memory Match offers a festive memory challenge with Easy and Medium modes. Reveal the cards, remember the Christmas pictures, and find their matching partners.",
+    'scroll-and-spot': "Explore two Christmas scenes side by side in Scroll and Spot. Drag to scroll both pictures in sync, then select five differences to complete each level.",
+    'subway-santa-runner-christmas': "Take Santa through a snowy village in Subway Santa Runner Christmas. This endless runner follows his scattered presents and supports mouse or touch play.",
+  },
+};
+
+/** @type {Record<string, { title: string; challenge: string; detail: string }>} */
+const christmasRecommendationFacts = {
+  'santa-collecting-gifts': {
+    title: 'Santa Collecting Gifts',
+    challenge: 'catching falling presents while avoiding bombs',
+    detail: 'Use keyboard movement to guide the sleigh and protect Santa’s three lives as the pace increases.',
+  },
+  'crazy-christmas-fun': {
+    title: 'Crazy Christmas Fun',
+    challenge: 'flying Santa’s sleigh through a balloon-filled sky',
+    detail: 'Click or tap to rise, gather presents, and reach the Christmas tree to advance.',
+  },
+  'merge-christmas': {
+    title: 'Merge Christmas',
+    challenge: 'dropping matching snowballs into a festive merge box',
+    detail: 'Position each piece with mouse or touch input and combine matching pieces into larger snowballs or Christmas characters.',
+  },
+  'xmas-triple-mahjong': {
+    title: 'Xmas Triple Mahjong',
+    challenge: 'clearing festive tiles in identical groups of three',
+    detail: 'Check for at least two adjacent open sides before choosing a tile for the next match.',
+  },
+  'xmas-balls': {
+    title: 'Xmas Balls',
+    challenge: 'aiming balls at falling gift blocks from the bottom of the board',
+    detail: 'Break the blocks before they touch the ground and pick up extra balls to expand your shots.',
+  },
+  'xmas-memory-match': {
+    title: 'Xmas Memory Match',
+    challenge: 'remembering Christmas pictures and finding matching card pairs',
+    detail: 'Choose Easy or Medium, flip the cards, and use remembered positions to uncover each pair.',
+  },
+  'scroll-and-spot': {
+    title: 'Scroll and Spot',
+    challenge: 'finding five differences between aligned Christmas pictures',
+    detail: 'Drag to scroll both scenes together and select the differences to reach the next level.',
+  },
+  'subway-santa-runner-christmas': {
+    title: 'Subway Santa Runner Christmas',
+    challenge: 'an endless run through Santa’s snowy village',
+    detail: 'Help Santa after his presents scatter and follow the mouse or touch controls inside the player.',
+  },
+};
+
+/**
+ * Keep new Christmas recommendations specific to both their source and destination.
+ * @param {import('./types').Game} game
+ * @param {string} page
+ * @returns {string | undefined}
+ */
+function christmasRecommendationDescription(game, page) {
+  const sourceSlug = page.slice(1);
+  const source = christmasRecommendationFacts[sourceSlug];
+  const target = christmasRecommendationFacts[game.slug];
+  if (!source || !target || sourceSlug === game.slug) return undefined;
+  return `After ${source.title}, try ${target.title} for ${target.challenge}. ${target.detail}`;
+}
+
 /**
  * Return copy for the card's page context without reusing its SEO description.
  * @param {import('./types').Game} game
@@ -331,7 +414,7 @@ const snowRidersDescriptionsByPage = {
 export function gameCardDescription(game, pathname) {
   const path = pathname.replace(/\/+$/, '') || '/';
   const page = path === '/404.html' ? '/404' : path;
-  const description = descriptionsByPage[page]?.[game.slug] ?? sledExpansionDescriptionsByPage[page]?.[game.slug] ?? waddlePeaksDescriptionsByPage[page]?.[game.slug] ?? snowRidersDescriptionsByPage[page]?.[game.slug];
+  const description = descriptionsByPage[page]?.[game.slug] ?? sledExpansionDescriptionsByPage[page]?.[game.slug] ?? waddlePeaksDescriptionsByPage[page]?.[game.slug] ?? snowRidersDescriptionsByPage[page]?.[game.slug] ?? christmasExpansionDescriptionsByPage[page]?.[game.slug] ?? christmasRecommendationDescription(game, page);
   if (description) return description;
 
   // New catalog entries remain useful before their contextual copy is written.

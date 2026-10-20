@@ -794,7 +794,11 @@
       }
     ],
     "similar": [
-      "crazy-christmas-fun"
+      "crazy-christmas-fun",
+      "subway-santa-runner-christmas",
+      "xmas-balls",
+      "xmas-memory-match",
+      "xmas-triple-mahjong"
     ],
     "embed": {
       "provider": "gamemonetize",
@@ -879,7 +883,11 @@
       }
     ],
     "similar": [
-      "santa-collecting-gifts"
+      "santa-collecting-gifts",
+      "subway-santa-runner-christmas",
+      "xmas-balls",
+      "scroll-and-spot",
+      "xmas-triple-mahjong"
     ],
     "embed": {
       "provider": "gamemonetize",
@@ -968,7 +976,10 @@
       }
     ],
     "similar": [
-      "santa-collecting-gifts",
+      "xmas-triple-mahjong",
+      "xmas-memory-match",
+      "scroll-and-spot",
+      "xmas-balls",
       "crazy-christmas-fun"
     ],
     "embed": {
@@ -993,6 +1004,435 @@
       "developer": "https://gamedistribution.com/games/merge-christmas/",
       "released": "https://gamedistribution.com/games/merge-christmas/",
       "thumbnail": "https://img.gamedistribution.com/3c25a8f0c83b46e19bf2358c01a0c699-512x384.jpg"
+    }
+  },
+  {
+    "slug": "xmas-triple-mahjong",
+    "title": "Xmas Triple Mahjong",
+    "seoTitle": "Xmas Triple Mahjong - Play Free Christmas Tile Matching Online",
+    "genres": [
+      "Christmas",
+      "Mahjong"
+    ],
+    "description": "Play Xmas Triple Mahjong online for free. Match three identical Christmas tiles, find pieces with two adjacent sides open, and clear the festive board.",
+    "intro": "Xmas Triple Mahjong is a festive tile puzzle from LofGames.com. Remove three matching tiles at a time, choosing pieces that have at least two adjacent sides open.\n\nLook for a complete set before selecting. Clearing one group changes which tiles you can reach, so each match can open another part of the board.",
+    "howToPlay": [
+      "Start: Use the play control inside the game window.",
+      "Find a triple: Look for three tiles with the same Christmas picture.",
+      "Check access: Choose tiles with at least two adjacent sides open.",
+      "Clear: Click or tap each tile in the matching group, then look for the next available triple."
+    ],
+    "tips": [
+      "Count first: Locate all three matching pictures before starting a selection.",
+      "Open space: Prefer a triple that exposes more tiles around it.",
+      "Scan again: Recheck the board after each match because available choices can change."
+    ],
+    "controls": [
+      {
+        "action": "Select a tile / use menus",
+        "input": "Mouse click or tap"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I match pairs or triples?",
+        "a": "Select three identical tiles to remove a group."
+      },
+      {
+        "q": "Why can I not select a tile?",
+        "a": "A tile must have at least two adjacent sides open. Look for accessible pieces around the edges."
+      },
+      {
+        "q": "Can I use touch controls?",
+        "a": "Yes. The publisher lists mouse and touch controls for selecting tiles."
+      },
+      {
+        "q": "Is Xmas Triple Mahjong free?",
+        "a": "You can play in the browser window without a Sled Games account. The game platform may show advertisements."
+      },
+      {
+        "q": "How is this different from Merge Christmas?",
+        "a": "Here you remove groups from a tile board. Merge Christmas asks you to drop and combine matching snowballs."
+      }
+    ],
+    "similar": [
+      "xmas-memory-match",
+      "merge-christmas",
+      "scroll-and-spot",
+      "xmas-balls",
+      "santa-collecting-gifts"
+    ],
+    "category": [
+      "christmas-games"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/9xkacv3717u8lgbshnkg888l3xzuy0j8/",
+      "width": 800,
+      "height": 450
+    },
+    "developer": "LofGames.com",
+    "released": "2020-12-22",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/9xkacv3717u8lgbshnkg888l3xzuy0j8/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "howToPlay": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "tips": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "controls": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "faqs": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "embed": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "developer": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "released": "https://gamemonetize.com/xmas-triple-mahjong-game",
+      "thumbnail": "https://img.gamemonetize.com/9xkacv3717u8lgbshnkg888l3xzuy0j8/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "xmas-balls",
+    "title": "Xmas Balls",
+    "seoTitle": "Xmas Balls - Play the Free Christmas Ball Shooting Game",
+    "genres": [
+      "Christmas",
+      "Brick breaker"
+    ],
+    "description": "Play Xmas Balls online for free. Aim and fire balls at falling gift blocks, collect extra balls, and clear the presents before they reach the ground.",
+    "intro": "Xmas Balls is a Christmas ball-shooting game from Mapi Games. Aim from the bottom of the board and break gift blocks before they reach the ground.\n\nExtra balls and special pickups can strengthen a shot. Choose an angle that reaches several blocks while keeping the lowest presents under control.",
+    "howToPlay": [
+      "Start: Select play inside the game window.",
+      "Aim: Use the mouse or touch controls to line up a shot toward the gift blocks.",
+      "Shoot: Send balls into the presents and break them before they reach the ground.",
+      "Collect: Aim for extra balls and special pickups when they fit your shot."
+    ],
+    "tips": [
+      "Watch below: Check the blocks closest to the ground before choosing a target.",
+      "Use angles: Look for a path that can hit more than one gift block.",
+      "Plan pickups: Include extra balls in your shot when you can still reach the urgent blocks."
+    ],
+    "controls": [
+      {
+        "action": "Aim / shoot / use menus",
+        "input": "Mouse or touch"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the goal in Xmas Balls?",
+        "a": "Break the falling gift blocks before they touch the ground."
+      },
+      {
+        "q": "What do extra-ball pickups do?",
+        "a": "They add balls to help you hit more blocks."
+      },
+      {
+        "q": "Does Xmas Balls support phones?",
+        "a": "The publisher lists mobile support and mouse or tap controls."
+      },
+      {
+        "q": "Is Xmas Balls free to play?",
+        "a": "The browser player is free to use without a Sled Games account. The game platform may show advertisements."
+      },
+      {
+        "q": "Is this a matching puzzle?",
+        "a": "You aim and shoot balls at blocks. For picture matching, try Xmas Triple Mahjong or Xmas Memory Match."
+      }
+    ],
+    "similar": [
+      "crazy-christmas-fun",
+      "santa-collecting-gifts",
+      "subway-santa-runner-christmas",
+      "merge-christmas",
+      "xmas-triple-mahjong"
+    ],
+    "category": [
+      "christmas-games"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/az4fzkv1ynqr09w0fknfnv7ptwtpp8ii/",
+      "width": 720,
+      "height": 1280
+    },
+    "developer": "Mapi Games",
+    "released": "2024-12-17",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/az4fzkv1ynqr09w0fknfnv7ptwtpp8ii/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/xmas-balls-game",
+      "howToPlay": "https://gamemonetize.com/xmas-balls-game",
+      "tips": "https://gamemonetize.com/xmas-balls-game",
+      "controls": "https://gamemonetize.com/xmas-balls-game",
+      "faqs": "https://gamemonetize.com/xmas-balls-game",
+      "embed": "https://gamemonetize.com/xmas-balls-game",
+      "developer": "https://gamemonetize.com/xmas-balls-game",
+      "released": "https://gamemonetize.com/xmas-balls-game",
+      "thumbnail": "https://img.gamemonetize.com/az4fzkv1ynqr09w0fknfnv7ptwtpp8ii/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "xmas-memory-match",
+    "title": "Xmas Memory Match",
+    "seoTitle": "Xmas Memory Match - Play the Free Christmas Card Puzzle",
+    "genres": [
+      "Christmas",
+      "Memory"
+    ],
+    "description": "Play Xmas Memory Match online for free. Flip festive cards, remember each picture, and find matching pairs in Easy or Medium mode with mouse or touch.",
+    "intro": "Xmas Memory Match is a Christmas card puzzle from Mapi Games. Turn over cards to reveal festive pictures, then use what you remember to find matching pairs.\n\nChoose Easy or Medium mode. Remembering the position of an unmatched picture gives you a useful lead when its partner appears later.",
+    "howToPlay": [
+      "Choose: Select Easy or Medium inside the game window.",
+      "Reveal: Click or tap a card to see its Christmas picture.",
+      "Match: Turn over another card and look for the same picture.",
+      "Remember: Keep track of unmatched pictures as you continue finding pairs."
+    ],
+    "tips": [
+      "Use a pattern: Explore cards in a consistent order to remember their positions.",
+      "Recall first: Check whether you have already seen a picture before revealing a new card.",
+      "Start small: Try Easy before moving to Medium."
+    ],
+    "controls": [
+      {
+        "action": "Flip a card / choose a mode",
+        "input": "Mouse click or tap"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do I make a match?",
+        "a": "Reveal two cards with the same Christmas picture."
+      },
+      {
+        "q": "Which modes are available?",
+        "a": "The game offers Easy and Medium modes."
+      },
+      {
+        "q": "Does it use a keyboard?",
+        "a": "The listed controls are mouse clicks or taps for cards and menus."
+      },
+      {
+        "q": "Can I play on my phone?",
+        "a": "Yes. The publisher marks the game as mobile ready with tap controls."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "No Sled Games account or app installation is needed. Open the browser player; the platform may show advertisements."
+      }
+    ],
+    "similar": [
+      "xmas-triple-mahjong",
+      "scroll-and-spot",
+      "merge-christmas",
+      "santa-collecting-gifts",
+      "xmas-balls"
+    ],
+    "category": [
+      "christmas-games"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/hm8cers6azm5r8txkwezpakvprcf7aaj/",
+      "width": 1024,
+      "height": 768
+    },
+    "developer": "Mapi Games",
+    "released": "2024-11-14",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/hm8cers6azm5r8txkwezpakvprcf7aaj/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/xmas-memory-match-game",
+      "howToPlay": "https://gamemonetize.com/xmas-memory-match-game",
+      "tips": "https://gamemonetize.com/xmas-memory-match-game",
+      "controls": "https://gamemonetize.com/xmas-memory-match-game",
+      "faqs": "https://gamemonetize.com/xmas-memory-match-game",
+      "embed": "https://gamemonetize.com/xmas-memory-match-game",
+      "developer": "https://gamemonetize.com/xmas-memory-match-game",
+      "released": "https://gamemonetize.com/xmas-memory-match-game",
+      "thumbnail": "https://img.gamemonetize.com/hm8cers6azm5r8txkwezpakvprcf7aaj/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "scroll-and-spot",
+    "title": "Scroll and Spot",
+    "seoTitle": "Scroll and Spot - Play the Free Christmas Difference Game",
+    "genres": [
+      "Christmas",
+      "Spot the difference"
+    ],
+    "description": "Play Scroll and Spot online for free. Scroll two Christmas scenes together, spot five differences, and tap each change to move to the next puzzle level.",
+    "intro": "Scroll and Spot is a Christmas observation puzzle from LofGames.com. Compare two festive scenes and find five differences to finish a level.\n\nDragging scrolls both pictures together, keeping corresponding details aligned. Work through a small area at a time, then move along the scene to inspect the next section.",
+    "howToPlay": [
+      "Start: Click or tap inside the game window to begin loading, then open a level.",
+      "Scroll: Drag the scene to move both pictures together.",
+      "Compare: Look at the same area in each picture.",
+      "Spot: Click or tap differences and find all five to advance."
+    ],
+    "tips": [
+      "Compare sections: Finish checking one area before scrolling farther.",
+      "Follow landmarks: Use a tree, gift, or decoration to locate the corresponding spot in the other picture.",
+      "Check details: Compare shapes and colors as well as missing objects."
+    ],
+    "controls": [
+      {
+        "action": "Scroll both pictures",
+        "input": "Mouse drag or touch drag"
+      },
+      {
+        "action": "Mark a difference / use menus",
+        "input": "Mouse click or tap"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How many differences are in each level?",
+        "a": "Find five differences to advance to the next level."
+      },
+      {
+        "q": "Why do both pictures scroll?",
+        "a": "The pictures move together so the parts you are comparing stay aligned."
+      },
+      {
+        "q": "How do I mark a difference?",
+        "a": "Click or tap the detail that differs between the pictures."
+      },
+      {
+        "q": "Can I use touch controls?",
+        "a": "The publisher describes dragging to scroll and tapping differences. Check that the player fits your screen."
+      },
+      {
+        "q": "Is Scroll and Spot free?",
+        "a": "You can use the browser player without a Sled Games account or app installation. The game platform may show advertisements."
+      }
+    ],
+    "similar": [
+      "xmas-memory-match",
+      "xmas-triple-mahjong",
+      "merge-christmas",
+      "crazy-christmas-fun",
+      "xmas-balls"
+    ],
+    "category": [
+      "christmas-games"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/8jxfjtyj3zka0yqz6i8qvr04lmcg8hb8/",
+      "width": 600,
+      "height": 800
+    },
+    "developer": "LofGames.com",
+    "released": "2024-12-11",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/8jxfjtyj3zka0yqz6i8qvr04lmcg8hb8/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/scroll-and-spot-game",
+      "howToPlay": "https://gamemonetize.com/scroll-and-spot-game",
+      "tips": "https://gamemonetize.com/scroll-and-spot-game",
+      "controls": "https://gamemonetize.com/scroll-and-spot-game",
+      "faqs": "https://gamemonetize.com/scroll-and-spot-game",
+      "embed": "https://gamemonetize.com/scroll-and-spot-game",
+      "developer": "https://gamemonetize.com/scroll-and-spot-game",
+      "released": "https://gamemonetize.com/scroll-and-spot-game",
+      "thumbnail": "https://img.gamemonetize.com/8jxfjtyj3zka0yqz6i8qvr04lmcg8hb8/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
+    }
+  },
+  {
+    "slug": "subway-santa-runner-christmas",
+    "title": "Subway Santa Runner Christmas",
+    "seoTitle": "Subway Santa Runner Christmas - Play Free Santa Running Online",
+    "genres": [
+      "Christmas",
+      "Endless runner"
+    ],
+    "description": "Play Subway Santa Runner Christmas online for free. Help Santa through a snowy village in an endless running adventure using mouse or touch controls.",
+    "intro": "Subway Santa Runner Christmas is an endless runner from LEOGAMESINC. Santa needs help after his sleigh loses its presents across a snowy North Pole village.\n\nFollow the route and react to the obstacles ahead. The publisher lists mouse controls on a computer and touch on mobile; follow any control prompts shown in the player.",
+    "howToPlay": [
+      "Load: Let the game finish loading, then use its play prompt.",
+      "Learn: Follow the mouse or touch control prompts shown in the player.",
+      "Run: Follow Santa through the snowy village and respond to upcoming obstacles.",
+      "Retry: Use the game's restart control when available to begin another attempt."
+    ],
+    "tips": [
+      "Look ahead: Watch the next stretch of the route instead of focusing only on Santa.",
+      "Practice inputs: Learn the gestures before trying to extend a run.",
+      "Keep room: Favor an open route when a collectible would leave little space to react."
+    ],
+    "controls": [
+      {
+        "action": "Running actions / menus",
+        "input": "Mouse on desktop; touch on mobile. Follow the controls shown in the player."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What kind of game is this?",
+        "a": "It is a Santa-themed endless runner set in a snowy village."
+      },
+      {
+        "q": "Which controls should I use?",
+        "a": "The publisher lists mouse on a computer and touch on mobile. Follow any control prompts shown in the player."
+      },
+      {
+        "q": "Can I play on a phone?",
+        "a": "The publisher marks the game as mobile ready and lists touch controls."
+      },
+      {
+        "q": "Does Santa drive a sleigh?",
+        "a": "The story begins after his sleigh loses its presents. This game focuses on Santa running through the village."
+      },
+      {
+        "q": "Do I need to install anything?",
+        "a": "No separate app is needed. Allow the browser player to finish loading; the game platform may show advertisements."
+      }
+    ],
+    "similar": [
+      "crazy-christmas-fun",
+      "santa-collecting-gifts",
+      "xmas-balls",
+      "scroll-and-spot",
+      "xmas-memory-match"
+    ],
+    "category": [
+      "christmas-games"
+    ],
+    "embed": {
+      "provider": "gamemonetize",
+      "iframeSrc": "https://html5.gamemonetize.co/yojqzj372a7bvuxli6zcawswdtj8ueix/",
+      "width": 600,
+      "height": 960
+    },
+    "developer": "LEOGAMESINC",
+    "released": "2021-12-27",
+    "rating": null,
+    "playCount": null,
+    "items": [],
+    "thumbnail": "https://img.gamemonetize.com/yojqzj372a7bvuxli6zcawswdtj8ueix/512x384.jpg",
+    "sources": {
+      "intro": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "howToPlay": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "tips": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "controls": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "faqs": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "embed": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "developer": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "released": "https://gamemonetize.com/subway-santa-runner-christmas-game",
+      "thumbnail": "https://img.gamemonetize.com/yojqzj372a7bvuxli6zcawswdtj8ueix/512x384.jpg",
+      "publishing": "https://gamemonetize.com/faq",
+      "terms": "https://gamemonetize.com/termofuse.php"
     }
   },
   {

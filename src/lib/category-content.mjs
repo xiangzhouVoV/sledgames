@@ -68,17 +68,19 @@ export const categoryContent = {
     ]
   },
   "christmas-games": {
-    "description": "Play Christmas games online for free. Try Merge Christmas, catch gifts with Santa, or fly a reindeer sleigh, with controls and tips for each festive game.",
+    "description": "Play free Christmas games online: Santa runners, gift-catching, snowball merging, festive mahjong, memory cards, and spot-the-difference puzzles.",
     "paragraphs": [
-      "Find your festive challenge. Choose Merge Christmas for a snowball puzzle, Santa Collecting Gifts for a gift-catching challenge, or Crazy Christmas Fun for a flying sleigh adventure. Each game page starts with the player and includes controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed.",
+      "Choose from eight Christmas games, with action challenges and picture puzzles to explore. Fly a sleigh in Crazy Christmas Fun, catch presents in Santa Collecting Gifts, or run through a snowy village in Subway Santa Runner Christmas. Each card opens a dedicated player with controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed.",
       "Santa Collecting Gifts is a keyboard score challenge: catch falling presents, avoid bombs, and protect your three lives as the pace increases. Crazy Christmas Fun sends Santa and his reindeer through a sky full of balloons, collecting gifts as you work toward the Christmas tree and the next level. Use click or tap controls in Crazy Christmas Fun; Santa Collecting Gifts needs arrow keys or WASD on a computer.",
-      "Merge Christmas offers a different pace: position and drop snowballs into a box, bringing matching pieces together to create bigger snowballs and festive characters. Use the mouse on a computer or drag and release on a phone. Watch where each piece settles before choosing the next drop. For a snowy mountain run, try our snowboard and ski games, or open the dedicated Sled Rider game page."
+      "Xmas Balls adds an aiming challenge: shoot balls at gift blocks and break them before they reach the ground. Subway Santa Runner Christmas follows an endless route through a snowy village; follow the mouse or touch controls shown in the player. These offer different ways to react and plan after a sleigh adventure.",
+      "For matching puzzles, try Merge Christmas, Xmas Triple Mahjong, or Xmas Memory Match. Merge Christmas combines matching snowballs inside a box. Xmas Triple Mahjong removes groups of three identical tiles with at least two adjacent sides open. Xmas Memory Match uses face-down cards and matching pairs, with Easy and Medium modes. All three support mouse or touch controls.",
+      "Scroll and Spot tests observation: click or tap to start, drag two aligned Christmas pictures together, then find five differences to advance. Compare one section at a time before scrolling farther. For a snowy mountain run after the festive puzzles, try our snowboard and ski games, or open the dedicated Sled Rider game page."
     ],
     "relatedLink": { "href": "/ski-games/", "text": "Play Ski Games" },
     "faqs": [
       {
         "q": "Which Christmas games are available here?",
-        "a": "Choose Merge Christmas, Santa Collecting Gifts, or Crazy Christmas Fun from the cards above. Merge Christmas is a snowball merge puzzle; the other games feature Santa’s sleigh."
+        "a": "Choose from eight games: Santa Collecting Gifts, Crazy Christmas Fun, Merge Christmas, Xmas Triple Mahjong, Xmas Balls, Xmas Memory Match, Scroll and Spot, and Subway Santa Runner Christmas. The collection includes sleigh adventures, a Santa runner, gift-block shooting, and several puzzle styles."
       },
       {
         "q": "Are these Christmas games free?",
@@ -86,15 +88,15 @@ export const categoryContent = {
       },
       {
         "q": "Which controls do these Christmas games use?",
-        "a": "Merge Christmas uses mouse positioning and release on desktop, or touch and drag followed by release on mobile. Santa Collecting Gifts uses arrow keys or WASD, while Crazy Christmas Fun uses clicks or taps."
+        "a": "Controls vary by game. Use mouse or touch for Xmas Triple Mahjong, Xmas Memory Match, and Xmas Balls. Scroll and Spot uses dragging to scroll and clicks or taps to mark differences. Merge Christmas uses mouse positioning or touch dragging followed by release. Crazy Christmas Fun uses clicks or taps to rise. Santa Collecting Gifts uses arrow keys or WASD. Subway Santa Runner Christmas lists mouse and touch controls; follow the controls shown in the player."
       },
       {
         "q": "Which game has levels?",
-        "a": "Crazy Christmas Fun advances when you reach the Christmas tree. Santa Collecting Gifts shows a level counter as the falling objects speed up."
+        "a": "Crazy Christmas Fun advances when you reach the Christmas tree. Scroll and Spot advances after you find five differences. Santa Collecting Gifts shows a level counter as the falling objects speed up. Xmas Memory Match lets you choose Easy or Medium mode."
       },
       {
         "q": "Can I play on a phone?",
-        "a": "Merge Christmas supports iOS and Android browsers with drag-and-release controls. Crazy Christmas Fun also supports mobile play with taps. Santa Collecting Gifts requires a keyboard and is intended for computer play."
+        "a": "Merge Christmas, Crazy Christmas Fun, Xmas Triple Mahjong, Xmas Balls, Xmas Memory Match, and Subway Santa Runner Christmas are listed with mobile support. Scroll and Spot describes touch dragging and tapping; check its player on your screen. Santa Collecting Gifts requires a keyboard and is intended for computer play."
       }
     ]
   }

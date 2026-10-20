@@ -26,7 +26,7 @@ Choose a sledding game on the homepage, or use Play now to open one of the sled 
 - **[Sled Games](https://sledgames.com/)** — Choose downhill runs in Sled Rider and Snow Rider 2, ice-track time trials in Gnome Bobsled, route drawing in Sled Line, or gift balancing in Sleigh O’Balance.
 - **[Snowboard Games](https://sledgames.com/snowboard-games/)** — Compare five board rides: Downhill Snowboard's survival runs, SnowBoard Game's 3D tracks, Snowboard King 2024's avalanche courses, Snowboard Game Party's obstacle racing, and Snowboard Girl's side-scrolling levels.
 - **[Ski Games](https://sledgames.com/ski-games/)** — Follow course flags in Ski King, survive downhill runs in Ski Rush, explore Waddle Peaks' penguin events, or race other skiers in Snow Riders. Waddle Peaks starts on skis with snowboards to unlock. Snow Riders adds gems, gear upgrades, and snowy maps. Waddle Peaks opens on its official site; Snow Riders opens on Poki.
-- **[Christmas Games](https://sledgames.com/christmas-games/)** — Combine matching snowballs in Merge Christmas, catch presents in Santa Collecting Gifts, or fly Santa’s reindeer sleigh past balloons in Crazy Christmas Fun.
+- **[Christmas Games](https://sledgames.com/christmas-games/)** — Choose eight festive games: snowball merging in Merge Christmas, gift catching in Santa Collecting Gifts, sleigh flying in Crazy Christmas Fun, tile matching in Xmas Triple Mahjong, block breaking in Xmas Balls, card pairs in Xmas Memory Match, finding differences in Scroll and Spot, or village running in Subway Santa Runner Christmas.
 
 ### Enjoy a little winter atmosphere
 
@@ -47,7 +47,7 @@ Sled Games 是一个以雪地、冬季运动和圣诞雪橇冒险为主题的免
 - **[雪橇游戏](https://sledgames.com/)** — 在 Sled Rider 和 Snow Rider 2 中挑战下坡滑行，在 Gnome Bobsled 中进行冰槽计时竞速，在 Sled Line 中画出道路，或在 Sleigh O’Balance 中装载礼物、保持配重平衡。
 - **[单板滑雪游戏](https://sledgames.com/snowboard-games/)** — 比较五种挑战：Downhill Snowboard 的生存滑行、SnowBoard Game 的 3D 赛道、Snowboard King 2024 的雪崩追逐关卡、Snowboard Game Party 的障碍竞速，以及 Snowboard Girl 的横版关卡。
 - **[双板滑雪游戏](https://sledgames.com/ski-games/)** — 在 Ski King 中按照旗标完成赛道，在 Ski Rush 中挑战下坡生存，在 Waddle Peaks 中体验企鹅山地项目，或在 Snow Riders 中与其他滑雪者竞速。Waddle Peaks 初始使用双板，可解锁单板；Snow Riders 提供宝石收集、装备升级和雪地地图解锁。Waddle Peaks 通过官方站试玩入口打开，Snow Riders 前往 Poki 游玩。
-- **[圣诞游戏](https://sledgames.com/christmas-games/)** — 在 Merge Christmas 中合成相同雪球，在 Santa Collecting Gifts 中接住礼物、避开炸弹，或在 Crazy Christmas Fun 中驾驶驯鹿雪橇穿过气球障碍。
+- **[圣诞游戏](https://sledgames.com/christmas-games/)** — 八款节日游戏包括 Merge Christmas 的雪球合成、Santa Collecting Gifts 的接礼物挑战、Crazy Christmas Fun 的雪橇飞行、Xmas Triple Mahjong 的三张麻将消除、Xmas Balls 的弹球打礼物块、Xmas Memory Match 的翻牌配对、Scroll and Spot 的滚动找不同，以及 Subway Santa Runner Christmas 的雪地村庄跑酷。
 
 ### 感受冬日与圣诞氛围
 
