@@ -11,7 +11,7 @@ export function getStaticPaths() {
 }
 interface Props {
   category: (typeof categories)[number];
-  content: (typeof categoryContent)['ski-games'];
+  content: (typeof categoryContent)[keyof typeof categoryContent];
 }
 const { category, content } = Astro.props;
 const games = categoryGames(category.slug);
@@ -21,7 +21,9 @@ const christmas = category.slug === 'christmas-games';
 const gameLinks = new Map(allGames.map(game => [game.title, gamePath(game.slug)]));
 const gameNames = [...gameLinks.keys()].sort((left, right) => right.length - left.length).map(name => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
 const gameNamePattern = new RegExp(`(${gameNames.join('|')})`, 'g');
-const proseParagraphs = content.paragraphs.map(paragraph => (christmas ? paragraph.split(gameNamePattern) : [paragraph]).map(text => ({ text, href: christmas ? gameLinks.get(text) : undefined })));
+const proseParts = (paragraph: string) => (christmas ? paragraph.split(gameNamePattern) : [paragraph]).map(text => ({ text, href: christmas ? gameLinks.get(text) : undefined }));
+const proseParagraphs = content.paragraphs.map(proseParts);
+const proseSections = 'sections' in content ? content.sections.map(section => ({ heading: section.heading, parts: proseParts(section.paragraph) })) : [];
 const collectionHeadingId = `${category.slug}-collection`;
 const collectionHeading = `Choose your ${christmas ? 'Christmas' : category.title.replace(/ Games$/, '').toLowerCase()} game`;
 const title = christmas ? 'Christmas Games - Play Free Santa & Sleigh Games Online' : `${category.title} - Free Online ${category.label} Games`;
@@ -32,8 +34,17 @@ const title = christmas ? 'Christmas Games - Play Free Santa & Sleigh Games Onli
     <div class="section-heading"><div>{christmas && <span class="eyebrow">UNWRAP A LITTLE FUN</span>}<h2 id={collectionHeadingId}>{collectionHeading}</h2></div></div>
     <GameGrid games={games} />
   </section>}
-  <section class="content-section prose"><h2>Explore {category.title}</h2>{proseParagraphs.map(parts => <p>{parts.map(part => part.href ? <a href={part.href}>{part.text}</a> : part.text)}</p>)}<a class="text-link" href={content.relatedLink.href}>{content.relatedLink.text} <span aria-hidden="true">→</span></a></section>
+  <section class="content-section prose category-guide">
+    <h2>Explore {category.title}</h2>
+    {proseParagraphs.map(parts => <p>{parts.map(part => part.href ? <a href={part.href}>{part.text}</a> : part.text)}</p>)}
+    {proseSections.map(section => <Fragment><h3>{section.heading}</h3><p>{section.parts.map(part => part.href ? <a href={part.href}>{part.text}</a> : part.text)}</p></Fragment>)}
+    {content.relatedLink && <a class="text-link" href={content.relatedLink.href}>{content.relatedLink.text} <span aria-hidden="true">→</span></a>}
+  </section>
   {winterRecommendations.length > 0 && <section class="content-section" aria-labelledby="other-winter-games"><div class="section-heading"><div><h2 id="other-winter-games">Explore More Winter Games</h2></div></div><GameGrid games={winterRecommendations} /></section>}
   <Faq faqs={content.faqs} />
   <CategoryLinks />
 </Layout>
+
+<style>
+  .category-guide > h3 { margin-block: 24px 10px; }
+</style>

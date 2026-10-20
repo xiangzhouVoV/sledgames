@@ -70,13 +70,27 @@ export const categoryContent = {
   "christmas-games": {
     "description": "Play free Christmas games online: Santa runners, gift-catching, snowball merging, festive mahjong, memory cards, and spot-the-difference puzzles.",
     "paragraphs": [
-      "Choose from eight Christmas games, with action challenges and picture puzzles to explore. Fly a sleigh in Crazy Christmas Fun, catch presents in Santa Collecting Gifts, or run through a snowy village in Subway Santa Runner Christmas. Each card opens a dedicated player with controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed.",
-      "Santa Collecting Gifts is a keyboard score challenge: catch falling presents, avoid bombs, and protect your three lives as the pace increases. Crazy Christmas Fun sends Santa and his reindeer through a sky full of balloons, collecting gifts as you work toward the Christmas tree and the next level. Use click or tap controls in Crazy Christmas Fun; Santa Collecting Gifts needs arrow keys or WASD on a computer.",
-      "Xmas Balls adds an aiming challenge: shoot balls at gift blocks and break them before they reach the ground. Subway Santa Runner Christmas follows an endless route through a snowy village; follow the mouse or touch controls shown in the player. These offer different ways to react and plan after a sleigh adventure.",
-      "For matching puzzles, try Merge Christmas, Xmas Triple Mahjong, or Xmas Memory Match. Merge Christmas combines matching snowballs inside a box. Xmas Triple Mahjong removes groups of three identical tiles with at least two adjacent sides open. Xmas Memory Match uses face-down cards and matching pairs, with Easy and Medium modes. All three support mouse or touch controls.",
-      "Scroll and Spot tests observation: click or tap to start, drag two aligned Christmas pictures together, then find five differences to advance. Compare one section at a time before scrolling farther. For a snowy mountain run after the festive puzzles, try our snowboard and ski games, or open the dedicated Sled Rider game page."
+      "Choose from eight Christmas games, with action challenges and picture puzzles to explore. Fly a sleigh in Crazy Christmas Fun, catch presents in Santa Collecting Gifts, or run through a snowy village in Subway Santa Runner Christmas. Each card opens a dedicated player with controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed."
     ],
-    "relatedLink": { "href": "/ski-games/", "text": "Play Ski Games" },
+    "sections": [
+      {
+        "heading": "Santa sleigh and gift-catching games",
+        "paragraph": "Santa Collecting Gifts is a keyboard score challenge: catch falling presents, avoid bombs, and protect your three lives as the pace increases. Crazy Christmas Fun sends Santa and his reindeer through a sky full of balloons, collecting gifts as you work toward the Christmas tree and the next level. Use click or tap controls in Crazy Christmas Fun; Santa Collecting Gifts needs arrow keys or WASD on a computer."
+      },
+      {
+        "heading": "Santa runners and aiming games",
+        "paragraph": "Xmas Balls adds an aiming challenge: shoot balls at gift blocks and break them before they reach the ground. Subway Santa Runner Christmas follows an endless route through a snowy village; follow the mouse or touch controls shown in the player. These offer different ways to react and plan after a sleigh adventure."
+      },
+      {
+        "heading": "Festive merge, mahjong and memory games",
+        "paragraph": "For matching puzzles, try Merge Christmas, Xmas Triple Mahjong, or Xmas Memory Match. Merge Christmas combines matching snowballs inside a box. Xmas Triple Mahjong removes groups of three identical tiles with at least two adjacent sides open. Xmas Memory Match uses face-down cards and matching pairs, with Easy and Medium modes. All three support mouse or touch controls."
+      },
+      {
+        "heading": "Christmas spot-the-difference games",
+        "paragraph": "Scroll and Spot tests observation: click or tap to start, drag two aligned Christmas pictures together, then find five differences to advance. Compare one section at a time before scrolling farther."
+      }
+    ],
+    "relatedLink": null,
     "faqs": [
       {
         "q": "Which Christmas games are available here?",
