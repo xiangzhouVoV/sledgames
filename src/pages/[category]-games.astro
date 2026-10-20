@@ -18,10 +18,14 @@ const games = categoryGames(category.slug);
 const snowfall = ['snowboard-games', 'ski-games'].includes(category.slug);
 const winterRecommendations = allGames.filter(game => game.category.some(slug => slug === 'sledding-games' || slug === winterCollection.slug));
 const christmas = category.slug === 'christmas-games';
-const gameLinks = new Map(allGames.map(game => [game.title, gamePath(game.slug)]));
-const gameNames = [...gameLinks.keys()].sort((left, right) => right.length - left.length).map(name => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-const gameNamePattern = new RegExp(`(${gameNames.join('|')})`, 'g');
-const proseParts = (paragraph: string) => (christmas ? paragraph.split(gameNamePattern) : [paragraph]).map(text => ({ text, href: christmas ? gameLinks.get(text) : undefined }));
+const unlinkedGameSlugs = 'unlinkedGameSlugs' in content ? content.unlinkedGameSlugs : [];
+const gameLinks = new Map(allGames.filter(game => !unlinkedGameSlugs.includes(game.slug)).map(game => [game.title, gamePath(game.slug)]));
+if ('gameLinkAliases' in content) {
+  for (const [text, slug] of Object.entries(content.gameLinkAliases)) gameLinks.set(text, gamePath(slug));
+}
+const anchorTexts = [...gameLinks.keys()].sort((left, right) => right.length - left.length).map(text => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+const gameAnchorPattern = new RegExp(`(${anchorTexts.join('|')})`, 'g');
+const proseParts = (paragraph: string) => (christmas ? paragraph.split(gameAnchorPattern) : [paragraph]).map(text => ({ text, href: christmas ? gameLinks.get(text) : undefined }));
 const proseParagraphs = content.paragraphs.map(proseParts);
 const proseSections = 'sections' in content ? content.sections.map(section => ({ heading: section.heading, parts: proseParts(section.paragraph) })) : [];
 const collectionHeadingId = `${category.slug}-collection`;

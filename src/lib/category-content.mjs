@@ -69,6 +69,13 @@ export const categoryContent = {
   },
   "christmas-games": {
     "description": "Play free Christmas games online: Santa runners, gift-catching, snowball merging, festive mahjong, memory cards, and spot-the-difference puzzles.",
+    "gameLinkAliases": {
+      "christmas runner": "subway-santa-runner-christmas",
+      "christmas mahjong": "xmas-triple-mahjong",
+      "christmas memory game": "xmas-memory-match",
+      "spot the difference": "scroll-and-spot"
+    },
+    "unlinkedGameSlugs": ["xmas-balls"],
     "paragraphs": [
       "Choose from eight Christmas games, with action challenges and picture puzzles to explore. Fly a sleigh in Crazy Christmas Fun, catch presents in Santa Collecting Gifts, or run through a snowy village in Subway Santa Runner Christmas. Each card opens a dedicated player with controls, instructions, tips, and answers to common questions. No Sled Games account or app installation is needed."
     ],
@@ -79,15 +86,15 @@ export const categoryContent = {
       },
       {
         "heading": "Santa runners and aiming games",
-        "paragraph": "Xmas Balls adds an aiming challenge: shoot balls at gift blocks and break them before they reach the ground. Subway Santa Runner Christmas follows an endless route through a snowy village; follow the mouse or touch controls shown in the player. These offer different ways to react and plan after a sleigh adventure."
+        "paragraph": "Xmas Balls adds an aiming challenge: shoot balls at gift blocks and break them before they reach the ground. Our christmas runner game follows an endless route through a snowy village; follow the mouse or touch controls shown in the player. These offer different ways to react and plan after a sleigh adventure."
       },
       {
         "heading": "Festive merge, mahjong and memory games",
-        "paragraph": "For matching puzzles, try Merge Christmas, Xmas Triple Mahjong, or Xmas Memory Match. Merge Christmas combines matching snowballs inside a box. Xmas Triple Mahjong removes groups of three identical tiles with at least two adjacent sides open. Xmas Memory Match uses face-down cards and matching pairs, with Easy and Medium modes. All three support mouse or touch controls."
+        "paragraph": "For matching puzzles, try Merge Christmas, our christmas mahjong game, or a christmas memory game. Merge Christmas combines matching snowballs inside a box. Xmas Triple Mahjong removes groups of three identical tiles with at least two adjacent sides open. Xmas Memory Match uses face-down cards and matching pairs, with Easy and Medium modes. All three support mouse or touch controls."
       },
       {
         "heading": "Christmas spot-the-difference games",
-        "paragraph": "Scroll and Spot tests observation: click or tap to start, drag two aligned Christmas pictures together, then find five differences to advance. Compare one section at a time before scrolling farther."
+        "paragraph": "This spot the difference game tests observation: click or tap to start, drag two aligned Christmas pictures together, then find five differences to advance. Compare one section at a time before scrolling farther."
       }
     ],
     "relatedLink": null,
