@@ -20,7 +20,7 @@ const collection = category?.path === '/' ? winterCollection : category;
 const christmas = game.category.includes('christmas-games');
 const focusedGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl', 'gnome-bobsled', 'sled-line', 'sleigh-o-balance', 'waddle-peaks', 'snow-riders', 'xmas-triple-mahjong', 'xmas-balls', 'xmas-memory-match', 'scroll-and-spot', 'subway-santa-runner-christmas'].includes(game.slug);
 const title = game.seoTitle ?? game.title;
-const heading = game.slug === 'snow-riders' ? title : game.title;
+const heading = ['snow-riders', 'scroll-and-spot', 'xmas-triple-mahjong'].includes(game.slug) ? title : game.title;
 const alternativeGame = game.slug === 'snow-riders'
   ? games.find(entry => entry.slug === 'snow-rider-2')
   : game.slug === 'snow-rider-2' ? games.find(entry => entry.slug === 'snow-riders') : undefined;

@@ -45,7 +45,7 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 1280, height: 800 
         const target = planned[0];
         await cards.first().click();
         await expect(page).toHaveURL(`http://127.0.0.1:4321${gamePath(target.slug)}`);
-        await expect(page.locator('main h1')).toHaveText(target.title);
+        await expect(page.locator('main h1')).toHaveText(['snow-riders', 'scroll-and-spot', 'xmas-triple-mahjong'].includes(target.slug) ? target.seoTitle! : target.title);
       }
     } finally {
       await context.close();
