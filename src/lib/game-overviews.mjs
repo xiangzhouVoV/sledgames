@@ -1,0 +1,28 @@
+// Short page introductions based on each game's sourced guide in the catalog.
+/** @type {Record<string, string>} */
+export const gameOverviews = {
+  'sled-rider': 'Keep your run alive on a snowy downhill course. Steer around obstacles, jump across gaps, and collect gift boxes to work toward another sled. Use the guides below to learn the controls and plan your next unlock.',
+  'downhill-snowboard': 'Stay on your board through a 2D downhill run and collect coins along the slope. Between attempts, work toward new characters and boards while improving the route that keeps you riding.',
+  'snowboard-game': 'Follow a snowboarder through a snowy 3D course toward the finish. Pick a route around barriers and use the separate grab control as you learn the track.',
+  'snowboard-king-2024': 'An avalanche gives this snowboard descent an extra reason to keep moving. Carve past trees and rocks, use boost when the route allows it, and collect coins for ability upgrades.',
+  'snowboard-game-party': 'Take on snow racing tracks filled with snowballs, fences, and changes in terrain. Keep a clear line through each challenge and work toward equipment unlocks between rides.',
+  'snowboard-girl': 'Watch each obstacle approach from the side, then time your jump and landing. On-screen riding buttons guide you through the levels as you collect coins along the slope.',
+  'ski-king': 'Find a faster line through marked ski courses without missing the required side of a flag. Trees, rocks, and icy ground turn every descent into a balance of speed and control.',
+  'ski-rush': 'Keep skiing for as long as you can while obstacles interrupt the downhill route. Flags offer extra points, so choose which ones you can reach without giving up a clear path.',
+  'santa-collecting-gifts': 'Move Santa’s sleigh beneath falling presents and steer clear of bombs. This Christmas score challenge uses keyboard controls, making a computer the place to start.',
+  'crazy-christmas-fun': 'Guide Santa and his reindeer through a sky filled with balloons. Collect presents while keeping the flying sleigh clear of hazards, then reach the Christmas tree to advance.',
+  'merge-christmas': 'Choose where each snowball lands inside the box. Matching pieces combine into larger snowballs and festive characters, so leave space for the merges you want to make next.',
+  'xmas-triple-mahjong': 'Clear the Christmas board by finding sets of three identical tiles. Look for pieces with at least two sides open before deciding which matching set to remove.',
+  'xmas-balls': 'Aim from the bottom of the board and send balls into falling gift blocks. Break the presents before they reach the ground, using extra balls to help clear the next wave.',
+  'xmas-memory-match': 'Reveal festive pictures one card at a time and remember where each match belongs. Choose Easy or Medium mode, then work through the board until the pairs are cleared.',
+  'scroll-and-spot': 'Move two Christmas pictures together and search for five differences in each level. Scan one part of the scene at a time, then mark a change when you find it.',
+  'subway-santa-runner-christmas': 'Help Santa recover presents scattered through a snowy North Pole village. Follow the running controls shown in the player and keep the endless journey going through the course.',
+  'snow-rider-2': 'Ride the Snow Rider 3D sleigh game featured on this Snow Rider 2 page. Steer through an endless snowy track, jump past hazards, and collect gifts while trying to extend your run.',
+  'snowball-io': 'Build a larger snowball as you move through the arena, then choose when to challenge another character. The goal is to eliminate opponents while keeping yourself in the fight.',
+  'moto-x3m-winter': 'Take a stunt bike across icy ramps, loops, and trap-filled courses. Learn the obstacles on each route and improve your finish time with a more controlled ride.',
+  'gnome-bobsled': 'Start with pushes timed to the crew’s footsteps, then lean and brake through an ice track. Race toward the finish and use your best-record ghost to judge the next attempt.',
+  'sled-line': 'Draw the ground that your sleigh will travel across. Shape ramps and bridges with a mouse or finger, then adjust the route to carry the ride through gaps and obstacles.',
+  'sleigh-o-balance': 'Keep Santa’s sleigh balanced as gifts change the weight on each side. Let a load settle, watch the tilt, and decide how to respond when an anvil threatens the next drop.',
+  'waddle-peaks': 'Take a penguin onto snowy mountain routes with carving, jumps, and aerial tricks. Race through gates or tackle chase challenges, and collect fish toward equipment unlocks.',
+  'snow-riders': 'Race other skiers down snowy courses while gathering gems and avoiding obstacles. Use your rewards to unlock equipment, levels, and mountain maps in this game from Sleepless Games.',
+};

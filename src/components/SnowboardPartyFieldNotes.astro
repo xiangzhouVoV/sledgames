@@ -1,0 +1,47 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="cornering-and-mouse-control" class="content-section game-guide party-notes" aria-labelledby="party-tips-heading">
+  <span class="eyebrow">FROM THE SITE EDITOR</span>
+  <h2 id="party-tips-heading">My Tips for Cleaner Turns</h2>
+  <p>In Snowboard Game Party, I pay attention to two things when a bend approaches: the line I want to take and how far I move the mouse. Here are my two tips to try on your next race.</p>
+
+  <div class="party-tips">
+    <div>
+      <span class="tip-number" aria-hidden="true">01</span>
+      <h3>Take the inside line when it is clear</h3>
+      <p>As I approach a bend, I try to stay toward the <strong>inside of the curve</strong> instead of drifting around the outer edge. Start moving into position before the corner, then use small corrections to follow it.</p>
+      <p>Leave room between your rider and the edge of the course. If a fence or snowball blocks the inside, take the clearer route. The aim is a controlled turn, not the tightest possible squeeze.</p>
+    </div>
+    <div>
+      <span class="tip-number" aria-hidden="true">02</span>
+      <h3>Try a lower mouse sensitivity on desktop</h3>
+      <p>My desktop tip is to <strong>lower your mouse sensitivity</strong> if a small hand movement sends the rider farther than you intended. Reduce your mouse’s DPI or your computer’s pointer speed a little at a time, then return to the game to check the feel.</p>
+      <p>Choose a familiar bend for comparison. Aim for a smooth turn with fewer back-and-forth corrections, while keeping enough movement to get around obstacles. There is no single sensitivity that suits every mouse and player.</p>
+    </div>
+  </div>
+
+  <aside class="practice-note" aria-labelledby="party-practice-heading">
+    <h3 id="party-practice-heading">Try one change per run</h3>
+    <p>First keep your usual mouse settings and practice a clear inside line. On the next attempt, try a slightly lower sensitivity. Compare how often you overshoot the turn or have to steer back across the track; changing both at once makes it harder to tell what helped.</p>
+  </aside>
+  <p class="editor-note">Playing tips shared by the Sled Games site editor.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .party-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  strong { color: var(--ink); }
+  .party-tips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
+  .tip-number { display: inline-block; margin-bottom: 12px; color: #176dde; font-size: .8125rem; font-weight: 800; letter-spacing: .08em; }
+  h3 { font-size: 1.0625rem; line-height: 1.5; margin-bottom: 10px; }
+  .practice-note { margin-top: 24px; padding: 20px 24px; border-left: 3px solid #176dde; border-radius: 0 10px 10px 0; background: #f1f6fc; }
+  .practice-note p { margin-bottom: 0; }
+  .editor-note { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  @media (max-width: 640px) {
+    .party-tips { grid-template-columns: 1fr; gap: 20px; }
+    .practice-note { padding: 18px; }
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import type { Game } from '../lib/types';
+import { externalPlayLabel, gameCategory, hasSource, winterCollection } from '../lib/catalog.mjs';
+import { gameOverviews } from '../lib/game-overviews.mjs';
+
+interface Props { game: Game }
+const { game } = Astro.props;
+const category = gameCategory(game);
+const controls = hasSource(game, 'controls') ? game.controls ?? [] : [];
+const summary = hasSource(game, 'intro') ? gameOverviews[game.slug] : undefined;
+const provider = externalPlayLabel(game);
+---
+
+<section id="game-overview" class="content-section game-guide game-overview" aria-labelledby="game-overview-heading">
+  <span class="eyebrow">ABOUT THIS GAME</span>
+  <h2 id="game-overview-heading">{game.title} overview</h2>
+
+  <dl class="overview-facts">
+    {game.developer.trim() && <div>
+      <dt>Developer</dt>
+      <dd>{game.developer}</dd>
+    </div>}
+    <div>
+      <dt>Classification</dt>
+      <dd class="overview-categories">
+        {category && category.path !== winterCollection.path && <a href={category.path}>{category.title}</a>}
+        <a href={winterCollection.path}>Winter Games</a>
+      </dd>
+    </div>
+    {(game.embed.iframeSrc || game.externalPlayUrl) && <div>
+      <dt>Platform</dt>
+      <dd>Web browser · Free to play{provider && <span class="overview-provider">Opens on {provider}</span>}</dd>
+    </div>}
+    {controls.length > 0 && <div>
+      <dt>Controls</dt>
+      <dd><ul class="overview-controls">{controls.map(control => <li><span>{control.action}:</span> {control.input}</li>)}</ul></dd>
+    </div>}
+  </dl>
+
+  {summary && <p>{summary}</p>}
+  {(controls.length > 0 || (hasSource(game, 'howToPlay') && game.howToPlay.length > 0)) && <p class="overview-links"><a href="#how-to-play">How to play {game.title}</a>{game.slug === 'sled-rider' && <a href="#unlock-sleds">Unlock more sleds</a>}</p>}
+</section>
+
+<style>
+  .game-overview { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; }
+  .overview-facts { margin: 24px 0; }
+  .overview-facts > div { display: grid; grid-template-columns: 140px minmax(0, 1fr); align-items: baseline; gap: 20px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+  .overview-facts > div:first-child { padding-top: 0; }
+  dt { color: var(--muted); font-size: .875rem; }
+  dd { margin: 0; color: var(--ink); font-size: .9375rem; font-weight: 600; }
+  .overview-categories { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .overview-provider { display: block; margin-top: 4px; color: var(--muted); font-size: .8125rem; font-weight: 400; }
+  .overview-controls { list-style: none; margin: 0; padding: 0; }
+  .overview-controls li + li { margin-top: 8px; }
+  .overview-controls span { font-weight: 400; color: var(--muted); }
+  .overview-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 14px; }
+  a { color: #1559b3; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #0d438b; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  @media (max-width: 640px) {
+    .overview-facts > div { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>

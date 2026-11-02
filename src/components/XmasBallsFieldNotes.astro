@@ -1,0 +1,55 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="plan-your-shot" class="content-section game-guide balls-notes" aria-labelledby="plan-your-shot-heading">
+  <span class="eyebrow">ONE SHOT, ONE EXTRA BALL</span>
+  <h2 id="plan-your-shot-heading">Turn a Green Pickup into an Extra Ball</h2>
+  <p>The green dot is worth recognizing before you aim. In this opening shot, collecting the central green pickup increased the ball count from <strong>1 to 2</strong>. These two captures show where to look for the change.</p>
+
+  <div class="shot-options">
+    <section>
+      <h3>Before: aim at the central green dot</h3>
+      <p>The white-ball counter in the upper-right corner reads 1, and the launcher shows x1. The central green dot has an open path from the ball below.</p>
+      <figure>
+        <a class="balls-capture" href="/images/guides/xmas-balls/opening-shot.jpg" target="_blank" rel="noopener" aria-label="Open the full Xmas Balls screenshot before the shot">
+          <img src="/images/guides/xmas-balls/opening-shot.jpg" alt="Xmas Balls before the shot: the central gift contains a green dot, with 1 beside the upper-right ball icon and x1 near the launcher." width="4096" height="2060" loading="lazy" decoding="async" />
+        </a>
+        <figcaption>The green pickup is in the middle of the gift row.</figcaption>
+      </figure>
+    </section>
+    <section>
+      <h3>After: check the next volley</h3>
+      <p>The central pickup is gone. The counter now reads 2 and the launcher shows x2. The remaining gifts have moved down and a new row has appeared, so reassess the lowest gifts before aiming again.</p>
+      <figure>
+        <a class="balls-capture" href="/images/guides/xmas-balls/extra-ball-result.jpg" target="_blank" rel="noopener" aria-label="Open the full Xmas Balls screenshot after collecting the extra ball">
+          <img src="/images/guides/xmas-balls/extra-ball-result.jpg" alt="Xmas Balls after the shot: the central pickup has disappeared, the upper-right ball count is 2, and x2 appears near the launcher." width="4096" height="2060" loading="lazy" decoding="async" />
+        </a>
+        <figcaption>Both ball indicators confirm the increase.</figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <p class="pickup-note">The <a href="/images/guides/xmas-balls/powerup-guide.jpg" target="_blank" rel="noopener">in-game instructions</a> distinguish this green extra-ball pickup from the white ring, which creates many balls immediately. This example shows the green pickup.</p>
+  <p class="notes-source">Screenshots captured from the official player for <a href="https://gamemonetize.com/xmas-balls-game" target="_blank" rel="noopener">Mapi Games’ Xmas Balls</a> on <time datetime="2026-11-01">November 1, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .balls-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  .shot-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+  .shot-options section { border-top: 2px solid #c9a564; padding-top: 16px; }
+  h3 { margin: 0 0 10px; font-size: 1.0625rem; line-height: 1.5; }
+  strong { color: var(--ink); }
+  figure { margin: 18px 0 0; }
+  .balls-capture { display: block; position: relative; aspect-ratio: 1158 / 2060; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #9b1e2a; }
+  .balls-capture img { position: absolute; display: block; width: calc(4096 / 1158 * 100%); max-width: none; height: auto; left: calc(-1469 / 1158 * 100%); top: 0; }
+  .balls-capture:focus-visible { outline: 3px solid #f2ce87; outline-offset: 4px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .pickup-note { margin-top: 24px; }
+  .pickup-note a { color: #f3d395; }
+  .notes-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  .notes-source a { color: #f3d395; }
+  @media (max-width: 640px) { .shot-options { grid-template-columns: 1fr; } }
+</style>

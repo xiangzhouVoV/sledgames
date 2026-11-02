@@ -1,0 +1,59 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="choose-your-event" class="content-section game-guide waddle-events" aria-labelledby="choose-your-event-heading">
+  <span class="eyebrow">ONE MOUNTAIN, DIFFERENT GOALS</span>
+  <h2 id="choose-your-event-heading">Pick an Event Before Choosing Your Line</h2>
+  <p>The Sunny Slopes menu begins with <strong>Race 1, a 560 m course</strong>. In this screenshot, it is selectable while the later events show padlocks. Look ahead at <strong>Fish Feast 2 (690 m)</strong> and <strong>Trick Run 3 (710 m)</strong>: the event type changes along with the distance.</p>
+
+  <figure>
+    <a class="event-capture" href="/images/guides/waddle-peaks/sunny-slopes-events.jpg" target="_blank" rel="noopener" aria-label="Open the complete Waddle Peaks Sunny Slopes event menu screenshot">
+      <img src="/images/guides/waddle-peaks/sunny-slopes-events.jpg" alt="Waddle Peaks Sunny Slopes menu with Race 1 selected at 560 metres, followed by locked Fish Feast 2 at 690 metres and Trick Run 3 at 710 metres." width="4096" height="2304" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>A closer view of the event menu, showing 0/63 stars on Sunny Slopes. Captured on <time datetime="2026-11-01">November 1, 2026</time>. Select the image to inspect the complete menu.</figcaption>
+  </figure>
+
+  <div class="event-grid">
+    <section>
+      <h3>Slalom: account for every gate</h3>
+      <p>A missed gate adds <strong>three seconds</strong>. Practice reaching every gate before tightening your turns; a shorter route can lose its advantage when penalties add up.</p>
+    </section>
+    <section>
+      <h3>Race: watch the other three penguins</h3>
+      <p>Races put you against <strong>three rivals</strong>. Before following another skier, check where that lane leads. Keep a clear route to the finish in view.</p>
+    </section>
+    <section>
+      <h3>Time Trial: use the golden ghost</h3>
+      <p>The golden ghost provides a pace reference. Pick a recognizable turn and compare your position relative to it on repeated attempts.</p>
+    </section>
+    <section>
+      <h3>Fish Feasts: follow the collection goal</h3>
+      <p>These events focus on gathering fish. Plan a line through reachable pickups and check the space beyond them so collecting leaves room to steer.</p>
+    </section>
+  </div>
+
+  <p class="event-source">Event details checked against the <a href="https://benelgames.com/en/g/waddle-peaks" target="_blank" rel="noopener">official Waddle Peaks guide</a> on <time datetime="2026-11-01">November 1, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .waddle-events { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  .event-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+  .event-grid section { padding: 20px; background: #edf5fe; border: 1px solid var(--line); border-radius: 10px; }
+  h3 { margin: 0 0 10px; font-size: 1.0625rem; line-height: 1.5; }
+  strong { color: var(--ink); }
+  figure { margin: 22px 0 0; }
+  .event-capture { display: block; position: relative; aspect-ratio: 1850 / 860; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #e5f0fc; }
+  .event-capture img { position: absolute; display: block; width: calc(4096 / 1850 * 100%); max-width: none; height: auto; left: 0; top: 0; }
+  .event-capture:focus-visible { outline: 3px solid #176dde; outline-offset: 4px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .event-source { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  @media (max-width: 640px) {
+    .event-grid { grid-template-columns: 1fr; }
+    .event-grid section { padding: 18px; }
+    .event-capture { aspect-ratio: 1120 / 860; }
+    .event-capture img { width: calc(4096 / 1120 * 100%); }
+  }
+</style>

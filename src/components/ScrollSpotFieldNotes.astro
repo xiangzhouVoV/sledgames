@@ -1,0 +1,39 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="compare-scenes" class="content-section game-guide spot-notes" aria-labelledby="compare-scenes-heading">
+  <span class="eyebrow">A LANDMARK FOR BOTH PICTURES</span>
+  <h2 id="compare-scenes-heading">Use the Cabin Door as Your Reference</h2>
+  <p>The Level 1 cabin appears in two pictures, one above the other. Both have a heart-shaped decoration on the door and windows on either side. Start with that shared door: it gives your eyes a reliable place to return to.</p>
+
+  <ol class="comparison-route">
+    <li><strong>Locate the same heart twice.</strong> Find the door decoration in the upper picture, then its counterpart below. Compare matching locations before moving outward.</li>
+    <li><strong>Check one window at a time.</strong> Move from the door to the right-hand window in each picture. Compare the hanging decorations, then return to the door and repeat on the left.</li>
+    <li><strong>Reset your reference after dragging.</strong> The publisher describes both pictures scrolling together. After a drag, find one shared object again and compare its surroundings before moving farther.</li>
+  </ol>
+
+  <details class="scene-clue">
+    <summary>A detail to inspect at the right-hand window</summary>
+    <p>In the scene inspected, the upper picture showed a red stocking-shaped decoration at this window; it was absent from the matching spot below. This was a visual comparison, without a confirmed selection. Check the same location in your own level.</p>
+  </details>
+
+  <p class="notes-source">Level 1 scene observed on <time datetime="2026-11-01">November 1, 2026</time>. Scrolling controls are described in <a href="https://gamemonetize.com/scroll-and-spot-game" target="_blank" rel="noopener">LofGames’ Scroll and Spot listing</a>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .spot-notes { scroll-margin-top: 24px; }
+  h2 { margin: 8px 0 18px; }
+  p, li { font-size: .9375rem; line-height: 1.8; }
+  .comparison-route { margin: 24px 0; padding-left: 24px; }
+  .comparison-route li { padding-left: 6px; }
+  .comparison-route li + li { margin-top: 18px; }
+  .comparison-route li::marker { color: #ebca8b; font-weight: 700; }
+  strong { color: var(--ink); }
+  .scene-clue { margin-top: 24px; padding: 16px 18px; border: 1px solid #c9a56470; border-radius: 10px; background: #c9a5640a; }
+  summary { color: #f3d395; cursor: pointer; font-weight: 700; font-size: .9375rem; line-height: 1.6; }
+  summary:focus-visible { outline: 3px solid #f2ce87; outline-offset: 5px; }
+  .scene-clue p { margin: 14px 0 0; }
+  .notes-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  .notes-source a { color: #f3d395; }
+</style>

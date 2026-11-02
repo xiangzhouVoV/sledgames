@@ -1014,12 +1014,12 @@
       "Christmas",
       "Mahjong"
     ],
-    "description": "Play Xmas Triple Mahjong online for free. Match three identical Christmas tiles, find pieces with two adjacent sides open, and clear the festive board.",
-    "intro": "Xmas Triple Mahjong is a festive tile puzzle from LofGames.com. Remove three matching tiles at a time, choosing pieces that have at least two adjacent sides open.\n\nLook for a complete set before selecting. Clearing one group changes which tiles you can reach, so each match can open another part of the board.",
+    "description": "Play Xmas Triple Mahjong online for free. Match three identical Christmas tiles, find pieces with two sides open, and clear the festive board.",
+    "intro": "Xmas Triple Mahjong is a festive tile puzzle from LofGames.com. Remove three matching tiles at a time, choosing pieces that have at least two sides open.\n\nLook for a complete set before selecting. Clearing one group changes which tiles you can reach, so each match can open another part of the board.",
     "howToPlay": [
       "Start: Use the play control inside the game window.",
       "Find a triple: Look for three tiles with the same Christmas picture.",
-      "Check access: Choose tiles with at least two adjacent sides open.",
+      "Check access: Choose tiles with at least two sides open.",
       "Clear: Click or tap each tile in the matching group, then look for the next available triple."
     ],
     "tips": [
@@ -1040,7 +1040,7 @@
       },
       {
         "q": "Why can I not select a tile?",
-        "a": "A tile must have at least two adjacent sides open. Look for accessible pieces around the edges."
+        "a": "A tile must have at least two sides open. Look for accessible pieces around the edges."
       },
       {
         "q": "Can I use touch controls?",

@@ -1,0 +1,69 @@
+---
+import AboutEditor from './AboutEditor.astro';
+import { editor } from '../lib/editor.mjs';
+---
+<AboutEditor />
+
+<section>
+  <h2>Why this site exists</h2>
+  <p>Winter games can be hard to find among the many unrelated titles on large arcade portals. I built Sled Games to bring sledding, snowboarding, skiing, and Christmas games together, with a dedicated page for each game.</p>
+  <p>The guides focus on details that help with the next attempt: which controls to use, what a score display means, how a shop works, or what to watch for at a difficult turn. Where a detail has been checked, the page includes the observation or source behind it.</p>
+</section>
+
+<section id="how-we-check-games">
+  <h2>How the game guides are checked</h2>
+  <ul>
+    <li><strong>Describe the check that was actually completed.</strong> A menu inspection, a short gameplay session, and a full run show different things. The notes explain what was observed. Desktop observations do not establish that the same controls work on a phone; mobile advice identifies publisher guidance where that is the source.</li>
+    <li><strong>Keep the evidence and its date together.</strong> The <a href="/sled-rider/#unlock-sleds">Sled Rider shop and mission notes</a> record a check on 1 November 2026: Metal Sleds cost 100 gifts, and a task offered 10 bonus gifts for collecting 50. Screenshots accompany those details so you can compare them with your current game.</li>
+    <li><strong>Separate playing tips from measured results.</strong> Personal suggestions are labelled as tips. Advice based on official descriptions names the source. Details that cannot be verified are left out rather than filled in with invented scores, ratings, or play counts.</li>
+  </ul>
+  <p>Some screenshots were captured in October 2026 and others in November. The date a page is updated is separate from the date its screenshots were captured or its game details were checked. Current in-game prices and requirements take precedence if the game changes.</p>
+</section>
+
+<section>
+  <h2>How the games are embedded</h2>
+  <p>Playable games are provided through publisher embeds from their developers and distribution platforms. Some pages link to the official game instead. Sled Games does not download, reupload, or mirror game files, or frame an entire third-party website.</p>
+  <p>Game names, artwork, and the games themselves belong to their respective owners. Developers and rights holders can <a href="/copyright/">send a removal or copyright request</a>; I review those reports and remove embeds where appropriate.</p>
+</section>
+
+<section>
+  <h2>Editorial standards</h2>
+  <ul>
+    <li><strong>Make each guide useful for its own game.</strong> Controls, examples, and tips are selected for the title on that page. A shared page layout helps navigation; the advice should address the game’s actual mechanics.</li>
+    <li><strong>Make corrections visible.</strong> Email the page URL, the detail that appears wrong, and a reliable source or screenshot. I check the report, correct confirmed errors, and record substantive changes in the update log.</li>
+    <li><strong>Keep attribution clear.</strong> Developer credits, publisher descriptions, screenshot observations, and personal tips are identified separately. Sean is responsible for the site’s guide content; that credit does not imply authorship of the embedded games.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Advertising</h2>
+  <p>Website advertising sits outside the game window and may help cover the cost of running the site. Sled Games uses Google AdSense for website advertising. Advertising inside a game is controlled by that game’s publishing platform. See the <a href="/privacy-policy/">Privacy Policy</a> for details on third-party content and advertising.</p>
+</section>
+
+<section>
+  <h2>What this site does not offer</h2>
+  <p>Sled Games does not offer downloaded, hacked, or reuploaded versions of games. It does not invent player reviews, ratings, or play counts. Where comments are available, player submissions are reviewed before publication.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>For questions, corrections, or removal requests, email <a href={`mailto:${editor.email}`}>{editor.email}</a> or use the <a href="/contact/">contact form</a>. I aim to reply to game issues and correction reports within a few days. Including the game page, browser, and device helps me investigate.</p>
+</section>
+
+<section id="update-log">
+  <h2>Update log</h2>
+  <ul class="update-log">
+    <li><time datetime="2026-11-02">2 November 2026</time> — Added Sean’s author profile, editorial responsibility links on game guides, and the explanation of screenshot and source-check dates.</li>
+    <li><time datetime="2026-11-01">1 November 2026</time> — Expanded game guides with screenshot notes, source checks, and shop examples, including the Sled Rider gift costs and mission reward.</li>
+    <li><time datetime="2026-10-09">9 October 2026</time> — Sled Games launched.</li>
+  </ul>
+</section>
+
+<style>
+  section { margin-block: 32px; }
+  section[id] { scroll-margin-top: 24px; }
+  a { color: #1559b3; text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  strong { color: var(--ink); }
+  .update-log time { color: var(--ink); font-weight: 650; }
+</style>

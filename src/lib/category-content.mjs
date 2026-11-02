@@ -90,7 +90,7 @@ export const categoryContent = {
       },
       {
         "heading": "Festive merge, mahjong and memory games",
-        "paragraph": "For matching puzzles, try Merge Christmas, our christmas mahjong game, or a christmas memory game. Merge Christmas combines matching snowballs inside a box. Xmas Triple Mahjong removes groups of three identical tiles with at least two adjacent sides open. Xmas Memory Match uses face-down cards and matching pairs, with Easy and Medium modes. All three support mouse or touch controls."
+        "paragraph": "For matching puzzles, try Merge Christmas, our christmas mahjong game, or a christmas memory game. Merge Christmas combines matching snowballs inside a box. Xmas Triple Mahjong removes groups of three identical tiles with at least two sides open. Xmas Memory Match uses face-down cards and matching pairs, with Easy and Medium modes. All three support mouse or touch controls."
       },
       {
         "heading": "Christmas spot-the-difference games",

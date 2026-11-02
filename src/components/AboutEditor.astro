@@ -1,0 +1,21 @@
+---
+import { editor } from '../lib/editor.mjs';
+---
+<section id="editor" class="about-editor" aria-labelledby="editor-heading">
+  <span class="eyebrow">BEHIND THE GUIDES</span>
+  <h2 id="editor-heading">Who runs this site</h2>
+  <p>My name is <strong>{editor.name}</strong>, and I build and maintain Sled Games. I share tips from my own browser-game sessions, including taking the inside line in Snowboard Game Party and collecting coins from jumps in Downhill Snowboard. My favorite character in Downhill Snowboard is the snowman with the top hat and red scarf.</p>
+  <p>I choose the games, take responsibility for the guides, and handle questions and corrections at <a href={`mailto:${editor.email}`}>{editor.email}</a>. If something on a page is wrong, I am the person to contact.</p>
+  <p class="production-note">This About page and the game pages’ screenshot notes were compiled and edited by {editor.name} in <time datetime="2026-11">November 2026</time>. Original screenshot capture dates and source-check dates remain listed with the relevant guides.</p>
+</section>
+
+<style>
+  .about-editor { scroll-margin-top: 24px; padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: #f1f6fc; }
+  h2 { margin-top: 10px; }
+  strong { color: var(--ink); }
+  .production-note { padding-top: 16px; border-top: 1px solid var(--line); font-size: .875rem; }
+  p:last-child { margin-bottom: 0; }
+  a { color: #1559b3; text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  @media (max-width: 640px) { .about-editor { padding: 22px; } }
+</style>

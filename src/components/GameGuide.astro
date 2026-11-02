@@ -1,8 +1,9 @@
 ---
 import type { Game } from '../lib/types';
+import EditorCredit from './EditorCredit.astro';
 import { hasSource } from '../lib/catalog.mjs';
-interface Props { game: Game; stepsFirst?: boolean; focusedHeadings?: boolean }
-const { game, stepsFirst = false, focusedHeadings = false } = Astro.props;
+interface Props { game: Game; stepsFirst?: boolean; focusedHeadings?: boolean; extraSections?: { id: string; label: string }[] }
+const { game, stepsFirst = false, focusedHeadings = false, extraSections = [] } = Astro.props;
 const paragraphs = hasSource(game, 'intro') ? game.intro.split(/\n\s*\n/).filter(Boolean) : [];
 const steps = hasSource(game, 'howToPlay') ? game.howToPlay : [];
 const tips = hasSource(game, 'tips') ? game.tips : [];
@@ -12,6 +13,7 @@ const sections = [
   ...(paragraphs.length ? [{ id: 'about-game', label: 'About the game' }] : []),
   ...(steps.length || controls.length ? [{ id: 'how-to-play', label: 'How to play' }] : []),
   ...(tips.length ? [{ id: 'game-tips', label: 'Tips and strategy' }] : []),
+  ...extraSections,
 ];
 const split = (text: string) => {
   const divider = text.indexOf(': ');
@@ -20,6 +22,7 @@ const split = (text: string) => {
 ---
 {sections.length > 0 && <article class="game-guide content-section" aria-label={`${game.title} playing guide`}>
   <div class="guide-heading"><div><span class="eyebrow">GET TO KNOW THE GAME</span><h2>{focusedHeadings ? `${game.title}: How to Play, Controls and Tips` : `${game.title}: how to play and improve`}</h2></div></div>
+  <EditorCredit compact />
   <nav class="guide-nav" aria-label="Game guide sections">{sections.map(section => <a href={`#${section.id}`}>{section.label}</a>)}</nav>
   {paragraphs.length > 0 && <section id="about-game" class="guide-section prose"><h3>What is {game.title}?</h3>{paragraphs.map(paragraph => <p>{paragraph}</p>)}<p class="guide-meta">{game.developer && <>Developer: <strong>{game.developer}</strong></>}{game.genres.length > 0 && <span>{game.genres.join(' · ')}</span>}{game.released && <span>Released: {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(`${game.released}T00:00:00Z`))}</span>}</p></section>}
   {(steps.length > 0 || controls.length > 0) && <section id="how-to-play" class="guide-section prose"><h3>{focusedHeadings ? `How to Play ${game.title}` : `How to play ${game.title}`}</h3>

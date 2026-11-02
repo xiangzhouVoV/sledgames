@@ -1,0 +1,15 @@
+---
+import { editor } from '../lib/editor.mjs';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<p class:list={['editor-credit', { 'editor-credit--compact': compact }]}>
+  {compact ? 'Content editor: ' : 'Notes compiled by '}<a href={editor.profilePath} rel="author">{editor.name}</a>{compact ? '.' : <> in <time datetime="2026-11">November 2026</time>.</>}
+</p>
+
+<style>
+  .editor-credit { margin: 20px 0 0; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .editor-credit--compact { margin: 0 0 18px; }
+  a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+</style>

@@ -45,12 +45,13 @@ test('all pages have static content, unique metadata, and working internal links
     assert.equal($('head script').first().get(0), googleTag.get(0), `${path}: Google tag precedes other scripts`);
     if (!$('.game-stage').length) {
       const scripts = $('script:not([type="application/ld+json"])').not(adSense).not(googleTag).not(googleTagConfig);
-      assert.equal(scripts.length, path === '/' ? 1 : 0, `${path}: only the home random-game navigation needs a client script`);
+      assert.equal(scripts.length, path === '/' || path === '/contact/' ? 1 : 0, `${path}: only home navigation and the contact form need a client script`);
     }
     assert.ok($('[data-ad-slot]').length <= 3);
     $('a[href^="/"]').each((_, link) => {
       const target = $(link).attr('href').split('#')[0];
-      assert.ok(allPaths.includes(target), `${path}: broken internal link ${target}`);
+      const imageFile = /^\/images\/.+\.(?:png|jpe?g|webp|svg)$/.test(target) && existsSync(`dist${target}`);
+      assert.ok(allPaths.includes(target) || imageFile, `${path}: broken internal link ${target}`);
     });
   }
 });
@@ -459,7 +460,7 @@ test('winter categories link to their playable games with matching official artw
       assert.ok(detail('.guide-steps li').length >= 3);
       assert.ok(detail('.guide-tips li').length >= 3);
       assert.ok(detail('.guide-controls tbody tr').length > 0);
-      assert.equal(detail('details').length, game.faqs.length);
+      assert.equal(detail('.faq details').length, game.faqs.length);
       assert.ok(entries.some(other => other.slug !== game.slug && detail(`.game-card[href="${gamePath(other.slug)}"]`).length));
     }
   }
@@ -510,7 +511,8 @@ test('Sled Rider is an indexable dedicated page without any homepage redirect me
   assert.equal(allPaths.length, games.length + 10);
   assert.equal(new Set(allPaths).size, allPaths.length);
   const $ = load(readFileSync(pageFile('/sled-rider/'), 'utf8'));
-  assert.equal($('iframe, .game-guide').length, 2);
+  assert.equal($('iframe').length, 1);
+  assert.equal($('article.game-guide').length, 1);
   assert.equal($('link[rel="canonical"]').attr('href'), canonical('/sled-rider/'));
   assert.equal($('meta[http-equiv="refresh"]').length, 0);
   assert.equal($('meta[name="robots"]').filter((_, node) => /noindex/i.test($(node).attr('content'))).length, 0);

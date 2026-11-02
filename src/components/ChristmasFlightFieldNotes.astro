@@ -1,0 +1,43 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="balloon-route" class="content-section game-guide flight-notes" aria-labelledby="balloon-route-heading">
+  <span class="eyebrow">LEARN THE SLEIGH’S SIDE VIEW</span>
+  <h2 id="balloon-route-heading">Give the Lead Reindeer Room to Rise</h2>
+  <p>Crazy Christmas Fun draws Santa at the back of a long reindeer team. In the first-level view below, the front reindeer is much farther to the right than the sleigh. Watch the space ahead of that leading animal when planning a height change, so your attention stays on the approaching route.</p>
+
+  <figure>
+    <a class="flight-capture" href="/images/guides/crazy-christmas-fun/first-level.png" target="_blank" rel="noopener" aria-label="Open the full Crazy Christmas Fun first-level screenshot">
+      <img src="/images/guides/crazy-christmas-fun/first-level.png" alt="Crazy Christmas Fun first level showing Santa’s sleigh behind five reindeer, with five red hearts and a pause button at the upper right." width="1280" height="900" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>The opening view shows the length of the team and five red hearts. Select either image for a larger view.</figcaption>
+  </figure>
+
+  <h3>Practice the rise before the gap closes</h3>
+  <p>The later view shows a large mouse prompt near the lower-right corner and a yellow exclamation marker ahead of the reindeer. Use the click-to-rise control on a clear approach to learn how the height changes. Then aim for an opening before the team reaches the crowded part of the screen.</p>
+  <figure>
+    <a class="flight-capture" href="/images/guides/crazy-christmas-fun/flight-prompt.png" target="_blank" rel="noopener" aria-label="Open the full Crazy Christmas Fun flight prompt screenshot">
+      <img src="/images/guides/crazy-christmas-fun/flight-prompt.png" alt="Crazy Christmas Fun with a mouse prompt at the lower right, a yellow exclamation marker ahead of the reindeer and a partly gray leftmost heart." width="1280" height="900" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>The flight view includes an input prompt and a partly gray leftmost heart.</figcaption>
+  </figure>
+
+  <h3>Use the hearts as feedback</h3>
+  <p>Check the hearts after a difficult passage. On another attempt, change where you begin rising and watch that same approach again. Compare the route and health display together to decide whether the earlier adjustment helped.</p>
+  <p class="capture-date">First-level screenshots captured in this page’s player on <time datetime="2026-10-10">October 10, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .flight-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  h3 { margin-top: 26px; margin-bottom: 10px; font-size: 1.0625rem; line-height: 1.5; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  figure { margin: 22px 0 0; }
+  .flight-capture { display: block; position: relative; aspect-ratio: 1071 / 598; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #76c9ed; }
+  .flight-capture img { position: absolute; display: block; width: calc(1280 / 1071 * 100%); max-width: none; height: auto; left: calc(-104 / 1071 * 100%); top: calc(-89 / 598 * 100%); }
+  .flight-capture:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+  figcaption, .capture-date { color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  figcaption { margin-top: 10px; }
+  .capture-date { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); }
+</style>

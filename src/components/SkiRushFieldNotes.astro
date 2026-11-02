@@ -1,0 +1,53 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="ski-rush-steering" class="content-section game-guide ski-rush-notes" aria-labelledby="ski-rush-steering-heading">
+  <span class="eyebrow">READ THE ROUTE</span>
+  <h2 id="ski-rush-steering-heading">Look Past the Flag Before You Turn</h2>
+  <p>Ski Rush’s desktop instruction screen asks you to move the mouse from side to side. In the captured run below, the skier is near the top of the view, leaving the slope below available for planning your next move.</p>
+
+  <div class="rush-examples">
+    <div>
+      <h3>Check what follows a yellow flag</h3>
+      <p>In this 88-point snapshot, both yellow flags are left of the skier. A wooden fence sits to the right of the lower flag, and a tree is farther downhill on the left. Look at that whole group before turning: reaching a flag still leaves the next obstacle to deal with. After a leftward approach, reassess the open snow instead of continuing toward the tree.</p>
+      <figure>
+        <a class="rush-capture" href="/images/guides/ski-rush/flags-and-obstacles.png" target="_blank" rel="noopener" aria-label="Open the full Ski Rush flag and obstacle screenshot">
+          <img src="/images/guides/ski-rush/flags-and-obstacles.png" alt="Ski Rush at 88 points: the skier is near the top, two yellow flags lie to the left, a wooden fence is right of the lower flag, and a tree is farther down on the left." width="1280" height="800" loading="lazy" decoding="async" />
+        </a>
+        <figcaption>Read the space beyond a pickup as well as the approach to it. Select the image for a larger view.</figcaption>
+      </figure>
+    </div>
+    <div>
+      <h3>Use the result panel to compare attempts</h3>
+      <p>The second screenshot shows the <strong>YOU LOST</strong> panel with a final score of <strong>337</strong>. Its circular-arrow button is at the lower right. Note the score before retrying, then choose one thing to change: an earlier turn, a smaller mouse movement, or skipping a crowded flag. Compare the next result with the decision you changed.</p>
+      <figure>
+        <a class="rush-capture" href="/images/guides/ski-rush/run-result.png" target="_blank" rel="noopener" aria-label="Open the full Ski Rush result screenshot">
+          <img src="/images/guides/ski-rush/run-result.png" alt="Ski Rush result panel reading You Lost, Your Score Is 337, with a circular retry arrow in its lower-right corner." width="1280" height="800" loading="lazy" decoding="async" />
+        </a>
+        <figcaption>The result panel records this attempt’s score. Use its circular arrow when you are ready for another run.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <p class="capture-date">Screenshots captured in this page’s Ski Rush player on <time datetime="2026-10-10">October 10, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .ski-rush-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  .rush-examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 24px; }
+  h3 { font-size: 1.0625rem; line-height: 1.5; margin-bottom: 10px; }
+  strong { color: var(--ink); }
+  figure { margin: 20px 0 0; }
+  .rush-capture { display: block; position: relative; aspect-ratio: 492 / 598; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #eaf3f8; }
+  .rush-capture img { position: absolute; display: block; width: calc(1280 / 492 * 100%); max-width: none; height: auto; left: calc(-394 / 492 * 100%); top: calc(-90 / 598 * 100%); }
+  .rush-capture:focus-visible { outline: 3px solid #176dde; outline-offset: 4px; }
+  figcaption, .capture-date { color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  figcaption { margin-top: 10px; }
+  .capture-date { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); }
+  @media (max-width: 640px) {
+    .rush-examples { grid-template-columns: 1fr; }
+    figure { max-width: 380px; margin-inline: auto; }
+  }
+</style>

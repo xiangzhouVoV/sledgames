@@ -1,0 +1,122 @@
+---
+interface Props { email: string }
+const { email } = Astro.props;
+---
+<section class="contact-form-box" aria-labelledby="contact-form-heading" data-contact-email={email}>
+  <h2 id="contact-form-heading">Write to us</h2>
+  <p>Use this form to prepare an email to Sean, the Sled Games editor. You will review and send it in your own email app. Nothing is sent when you prepare a draft.</p>
+  <form id="contact-form" hidden>
+    <div class="contact-fields">
+      <div class="contact-field">
+        <label for="contact-name">Your name <span>(optional)</span></label>
+        <input id="contact-name" name="name" autocomplete="name" maxlength="100" />
+      </div>
+      <div class="contact-field">
+        <label for="contact-topic">Topic</label>
+        <select id="contact-topic" name="topic">
+          <option>Game or website issue</option>
+          <option>Correction or suggestion</option>
+          <option>Privacy question</option>
+          <option>Copyright concern</option>
+          <option>Other question</option>
+        </select>
+      </div>
+    </div>
+    <div class="contact-field">
+      <label for="contact-page">Page URL <span>(optional)</span></label>
+      <input id="contact-page" name="page" type="url" placeholder="https://sledgames.com/sled-rider/" maxlength="500" />
+    </div>
+    <div class="contact-field">
+      <label for="contact-message">Message <span>(required)</span></label>
+      <textarea id="contact-message" name="message" rows="7" required maxlength="3000" aria-describedby="contact-message-help"></textarea>
+      <p id="contact-message-help" class="contact-help">For game issues, include your browser and device. Please do not include passwords or sensitive account information.</p>
+    </div>
+    <button class="button" type="submit">Prepare email</button>
+    <p class="contact-help">Read our <a href="/privacy-policy/">Privacy Policy</a> to learn how we handle messages.</p>
+  </form>
+  <noscript><p>You can email <a href={`mailto:${email}`}>{email}</a> directly, or enable JavaScript to prepare a draft with this form.</p></noscript>
+  <section id="contact-draft" class="contact-draft" hidden aria-labelledby="contact-draft-heading">
+    <h3 id="contact-draft-heading" tabindex="-1">Your email draft is ready</h3>
+    <p>Open your email app and send the draft to <strong>{email}</strong>. If no email app opens, copy the draft into your webmail and send it to this address.</p>
+    <label for="contact-draft-text">Email draft</label>
+    <textarea id="contact-draft-text" rows="8" readonly></textarea>
+    <div class="contact-actions">
+      <a id="contact-open-email" class="button" href={`mailto:${email}`}>Open email app ↗</a>
+      <button id="contact-copy" class="button button--secondary" type="button">Copy draft</button>
+    </div>
+    <p id="contact-status" class="contact-help" role="status" aria-live="polite"></p>
+  </section>
+</section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#contact-form');
+  if (form) {
+    const email = form.closest<HTMLElement>('[data-contact-email]')!.dataset.contactEmail!;
+    const message = document.querySelector<HTMLTextAreaElement>('#contact-message')!;
+    const draft = document.querySelector<HTMLElement>('#contact-draft')!;
+    const draftText = document.querySelector<HTMLTextAreaElement>('#contact-draft-text')!;
+    const openEmail = document.querySelector<HTMLAnchorElement>('#contact-open-email')!;
+    const status = document.querySelector<HTMLElement>('#contact-status')!;
+
+    form.addEventListener('input', () => {
+      message.setCustomValidity('');
+      draft.hidden = true;
+      status.textContent = '';
+    });
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!message.value.trim()) {
+        message.setCustomValidity('Please enter a message.');
+        message.reportValidity();
+        return;
+      }
+      const data = new FormData(form);
+      const subject = `[Sled Games] ${data.get('topic')}`;
+      const body = [
+        data.get('name')?.toString().trim() && `Name: ${data.get('name')!.toString().trim()}`,
+        data.get('page')?.toString().trim() && `Page: ${data.get('page')!.toString().trim()}`,
+        '\n' + message.value.trim(),
+      ].filter(Boolean).join('\n');
+      openEmail.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      draftText.value = `To: ${email}\nSubject: ${subject}\n\n${body.trim()}`;
+      draft.hidden = false;
+      status.textContent = 'This draft has not been sent. Send it from your email app or webmail.';
+      document.querySelector<HTMLElement>('#contact-draft-heading')!.focus();
+    });
+    document.querySelector<HTMLButtonElement>('#contact-copy')!.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(draftText.value);
+        status.textContent = 'Draft copied. Paste it into your email app or webmail, then send it.';
+      } catch {
+        draftText.focus();
+        draftText.select();
+        status.textContent = 'Select and copy the draft above, then paste it into your email app or webmail.';
+      }
+    });
+    form.hidden = false;
+  }
+</script>
+
+<style>
+  .contact-form-box { padding: 26px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+  form { margin-top: 24px; }
+  .contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .contact-field { margin-bottom: 20px; }
+  label { display: block; margin-bottom: 8px; font-size: .875rem; font-weight: 650; }
+  label span { color: var(--muted); font-weight: 400; }
+  input, select, textarea { width: 100%; min-width: 0; min-height: 44px; padding: 11px 12px; border: 1px solid #a5b9d2; border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; font-size: 1rem; }
+  textarea { resize: vertical; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible, h3:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  .contact-help { margin-top: 10px; font-size: .8125rem; }
+  .button { cursor: pointer; }
+  a.button { color: #352010; text-decoration: none; }
+  .contact-draft { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .contact-draft h3 { margin-bottom: 12px; }
+  .contact-draft label { margin-top: 18px; }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+  @media (max-width: 600px) {
+    .contact-form-box { padding: 20px; }
+    .contact-fields { grid-template-columns: 1fr; gap: 0; }
+    .contact-actions > * { width: 100%; justify-content: center; }
+  }
+</style>

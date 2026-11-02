@@ -1,0 +1,64 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="runner-controls" class="content-section game-guide runner-notes" aria-labelledby="runner-controls-heading">
+  <span class="eyebrow">FROM THE MENU TO THE ROUTE</span>
+  <h2 id="runner-controls-heading">Start the Run, Then Learn One Action</h2>
+  <p>The opening menu uses the logo <strong>Santa Runner / Xmas Subway Surf</strong>. Select the large red <strong>Play</strong> button below Santa to enter the game. The blue <strong>More Apps</strong> button in the lower-right corner leads to other games.</p>
+  <p>After Play and the platform advertisement, this session reached <a class="character-example" href="/images/guides/subway-santa-runner-christmas/character-select.jpg" target="_blank" rel="noopener">Character Select, with Santa in the center</a>. This is a separate step before the run begins.</p>
+
+  <div class="runner-layout">
+    <div>
+  <p>The publisher lists mouse controls on a computer and touch controls on a phone. Follow the prompts in your player, then watch what Santa does after each input.</p>
+
+  <dl class="retry-observations">
+    <div>
+      <dt>No visible response</dt>
+      <dd>First check the on-screen instruction and try a single input in a clear part of the route. Focus on recognizing the action before combining several gestures.</dd>
+    </div>
+    <div>
+      <dt>The action happens, but an obstacle still catches you</dt>
+      <dd>On the next attempt, make the same action earlier. Use the approaching obstacle as your reference rather than waiting until it reaches Santa.</dd>
+    </div>
+    <div>
+      <dt>You clear one obstacle and meet another immediately</dt>
+      <dd>Look at where the first action leaves Santa. Plan the next stretch before moving toward a collectible, especially when the route gives you little time to adjust.</dd>
+    </div>
+  </dl>
+
+  <p class="retry-focus">Choose one of these observations after a short attempt. Changing one decision at a time makes it easier to tell whether the control, the timing, or the route needs more practice.</p>
+    </div>
+    <figure>
+      <a class="menu-capture" href="/images/guides/subway-santa-runner-christmas/menu.jpg" target="_blank" rel="noopener" aria-label="Open the full Subway Santa Runner Christmas menu screenshot">
+        <img src="/images/guides/subway-santa-runner-christmas/menu.jpg" alt="Santa Runner Xmas Subway Surf opening menu with Santa, a red Play button, a trophy icon, and a blue More Apps button." width="4096" height="2060" loading="lazy" decoding="async" />
+      </a>
+      <figcaption>The opening menu, captured on <time datetime="2026-11-01">November 1, 2026</time>. Select the image for a larger view of the buttons.</figcaption>
+    </figure>
+  </div>
+  <p class="note-source">A practice checklist based on the runner and device controls listed by <a href="https://gamemonetize.com/subway-santa-runner-christmas-game" target="_blank" rel="noopener">GameMonetize</a>, checked on <time datetime="2026-11-01">November 1, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .runner-notes { scroll-margin-top: 24px; }
+  .character-example { color: #f3d395; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p, dd { font-size: .9375rem; line-height: 1.8; }
+  .runner-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 28px; align-items: start; margin-top: 24px; }
+  .retry-observations { margin: 24px 0 0; }
+  .retry-observations div { padding: 18px 0; border-top: 1px solid var(--line); }
+  dt { font-size: 1.0625rem; font-weight: 700; line-height: 1.5; margin-bottom: 8px; }
+  dd { margin: 0; }
+  .retry-focus { margin-top: 20px; }
+  figure { margin: 0; min-width: 0; }
+  .menu-capture { display: block; position: relative; aspect-ratio: 1545 / 2060; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #193c32; }
+  .menu-capture img { position: absolute; display: block; width: calc(4096 / 1545 * 100%); max-width: none; height: auto; left: calc(-1276 / 1545 * 100%); top: 0; }
+  .menu-capture:focus-visible { outline: 3px solid #f2ce87; outline-offset: 4px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .note-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  .note-source a { color: #f3d395; }
+  @media (max-width: 640px) {
+    .runner-layout { grid-template-columns: 1fr; }
+    figure { width: 100%; max-width: 340px; margin-inline: auto; grid-row: 1; }
+  }
+</style>

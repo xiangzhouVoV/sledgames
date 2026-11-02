@@ -5,6 +5,24 @@ import GameStage from '../components/GameStage.astro';
 import GameGrid from '../components/GameGrid.astro';
 import GameGuide from '../components/GameGuide.astro';
 import SnowboardGameDetails from '../components/SnowboardGameDetails.astro';
+import SledUnlocks from '../components/SledUnlocks.astro';
+import GameOverview from '../components/GameOverview.astro';
+import DownhillTips from '../components/DownhillTips.astro';
+import SnowRiderFieldNotes from '../components/SnowRiderFieldNotes.astro';
+import SkiKingFieldNotes from '../components/SkiKingFieldNotes.astro';
+import SnowboardFieldNotes from '../components/SnowboardFieldNotes.astro';
+import SnowboardPartyFieldNotes from '../components/SnowboardPartyFieldNotes.astro';
+import SkiRushFieldNotes from '../components/SkiRushFieldNotes.astro';
+import WaddleFieldNotes from '../components/WaddleFieldNotes.astro';
+import SnowRidersFieldNotes from '../components/SnowRidersFieldNotes.astro';
+import SantaGiftFieldNotes from '../components/SantaGiftFieldNotes.astro';
+import ChristmasFlightFieldNotes from '../components/ChristmasFlightFieldNotes.astro';
+import MergeChristmasFieldNotes from '../components/MergeChristmasFieldNotes.astro';
+import XmasMahjongFieldNotes from '../components/XmasMahjongFieldNotes.astro';
+import XmasBallsFieldNotes from '../components/XmasBallsFieldNotes.astro';
+import XmasMemoryFieldNotes from '../components/XmasMemoryFieldNotes.astro';
+import ScrollSpotFieldNotes from '../components/ScrollSpotFieldNotes.astro';
+import SubwaySantaFieldNotes from '../components/SubwaySantaFieldNotes.astro';
 import GameComparison from '../components/GameComparison.astro';
 import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
@@ -21,6 +39,32 @@ const christmas = game.category.includes('christmas-games');
 const focusedGuide = ['snowboard-king-2024', 'snowboard-game-party', 'snowboard-girl', 'gnome-bobsled', 'sled-line', 'sleigh-o-balance', 'waddle-peaks', 'snow-riders', 'xmas-triple-mahjong', 'xmas-balls', 'xmas-memory-match', 'scroll-and-spot', 'subway-santa-runner-christmas'].includes(game.slug);
 const title = game.seoTitle ?? game.title;
 const heading = ['snow-riders', 'scroll-and-spot', 'xmas-triple-mahjong'].includes(game.slug) ? title : game.title;
+const guideSections: Record<string, { id: string; label: string }[]> = {
+  'sled-rider': [{ id: 'unlock-sleds', label: 'Unlock more sleds' }],
+  'downhill-snowboard': [
+    { id: 'my-tips', label: 'My Tips' },
+    { id: 'customize-character', label: 'Customize Your Character' },
+  ],
+  'snow-rider-2': [
+    { id: 'snow-rider-modes', label: 'Versions and modes' },
+    { id: 'metal-sleigh', label: 'The 50-gift Metal Sleigh' },
+  ],
+  'ski-king': [{ id: 'bald-mountain-map', label: 'Bald Mountain map' }],
+  'snowboard-game': [{ id: 'snowboard-screen-guide', label: 'Setup and downhill display' }],
+  'snowboard-game-party': [{ id: 'cornering-and-mouse-control', label: 'Cornering and mouse control' }],
+  'ski-rush': [{ id: 'ski-rush-steering', label: 'Flags and steering' }],
+  'waddle-peaks': [{ id: 'choose-your-event', label: 'Choose your event' }],
+  'snow-riders': [{ id: 'race-preparation', label: 'Plan your next race' }],
+  'santa-collecting-gifts': [{ id: 'gift-or-bomb', label: 'Gifts and bombs' }],
+  'crazy-christmas-fun': [{ id: 'balloon-route', label: 'First-level flight' }],
+  'merge-christmas': [{ id: 'plan-your-drop', label: 'Plan a merge' }],
+  'xmas-triple-mahjong': [{ id: 'open-corners', label: 'Tree triple example' }],
+  'xmas-balls': [{ id: 'plan-your-shot', label: 'Choose a shot' }],
+  'xmas-memory-match': [{ id: 'remember-the-grid', label: 'Remember card positions' }],
+  'scroll-and-spot': [{ id: 'compare-scenes', label: 'Compare scene details' }],
+  'subway-santa-runner-christmas': [{ id: 'runner-controls', label: 'Learn the running actions' }],
+};
+const extraGuideSections = guideSections[game.slug] ?? [];
 const alternativeGame = game.slug === 'snow-riders'
   ? games.find(entry => entry.slug === 'snow-rider-2')
   : game.slug === 'snow-rider-2' ? games.find(entry => entry.slug === 'snow-riders') : undefined;
@@ -36,12 +80,30 @@ const number = new Intl.NumberFormat('en-US');
   {(game.rating !== null || game.playCount !== null) && <div class="info-bar">{game.rating && <span>Rating: {game.rating.value}/5 · {number.format(game.rating.count)} votes</span>}{game.playCount !== null && <span>{number.format(game.playCount)} plays</span>}</div>}
   {alternativeGame && <p class="game-disambiguation prose">Not the game you’re looking for? <a href={gamePath(alternativeGame.slug)}><span aria-hidden="true">→ </span>{alternativeGame.title}</a></p>}
   <AdSlot position="below" />
-  <GameGuide game={game} stepsFirst={game.slug === 'snowboard-game'} focusedHeadings={focusedGuide}>
+  <GameOverview game={game} />
+  <GameGuide game={game} stepsFirst={game.slug === 'snowboard-game'} focusedHeadings={focusedGuide} extraSections={extraGuideSections}>
     <Fragment slot="after-controls">
       {game.slug === 'snowboard-game' && <p class="guide-mobile"><strong>Playing on a phone:</strong> Turn your phone sideways for a wider view, tap GO, and check the game's instructions for touch controls on your device. If the player offers no way to steer or grab by touch, use a computer with a keyboard.</p>}
       {game.slug === 'snowboard-game' && <p><strong>Using the player tools:</strong> Select Fullscreen below the game for a larger view when that button is available in your browser. This expands the game window and keeps you on this page. If the player stalls during loading, Reload refreshes just the game window. Reload restarts the embedded player, so use it when you are ready to start over. These buttons and the game need JavaScript enabled. A network block will still prevent loading after a reload; the unblocked section below explains that case.</p>}
     </Fragment>
   </GameGuide>
+  {game.slug === 'sled-rider' && <SledUnlocks />}
+  {game.slug === 'downhill-snowboard' && <DownhillTips />}
+  {game.slug === 'snow-rider-2' && <SnowRiderFieldNotes />}
+  {game.slug === 'ski-king' && <SkiKingFieldNotes />}
+  {game.slug === 'snowboard-game' && <SnowboardFieldNotes />}
+  {game.slug === 'snowboard-game-party' && <SnowboardPartyFieldNotes />}
+  {game.slug === 'ski-rush' && <SkiRushFieldNotes />}
+  {game.slug === 'waddle-peaks' && <WaddleFieldNotes />}
+  {game.slug === 'snow-riders' && <SnowRidersFieldNotes />}
+  {game.slug === 'santa-collecting-gifts' && <SantaGiftFieldNotes />}
+  {game.slug === 'crazy-christmas-fun' && <ChristmasFlightFieldNotes />}
+  {game.slug === 'merge-christmas' && <MergeChristmasFieldNotes />}
+  {game.slug === 'xmas-triple-mahjong' && <XmasMahjongFieldNotes />}
+  {game.slug === 'xmas-balls' && <XmasBallsFieldNotes />}
+  {game.slug === 'xmas-memory-match' && <XmasMemoryFieldNotes />}
+  {game.slug === 'scroll-and-spot' && <ScrollSpotFieldNotes />}
+  {game.slug === 'subway-santa-runner-christmas' && <SubwaySantaFieldNotes />}
   {game.slug === 'snowboard-game' && <SnowboardGameDetails />}
   <GameComparison game={game} />
   {game.items.length > 0 && hasSource(game, 'items') && <section class="content-section prose"><h2>Items and prices</h2><div class="table-scroll"><table><thead><tr><th scope="col">Item</th><th scope="col">Price</th></tr></thead><tbody>{game.items.map(item => <tr><td>{item.name}</td><td>{item.price}</td></tr>)}</tbody></table></div></section>}

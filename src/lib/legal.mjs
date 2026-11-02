@@ -1,17 +1,14 @@
 // Describe current website operation and third-party services.
 export const legalContent = [
   {
-    slug: 'about', title: 'About Us', description: 'Learn about Sled Games, our winter browser game collection, how we publish dedicated game pages, and our approach to official embeds and sourced information.',
-    intro: 'A small place for winter browser adventures.',
-    sections: [
-      { title: 'What we are building', paragraphs: ['Sled Games is an English-language collection of winter browser game pages. Our categories cover sledding, snowboarding, and skiing. Each game has its own page, and our catalog and navigation help you find another title without searching through unrelated content.'] },
-      { title: 'How games are published', paragraphs: ['Playable games are provided through authorized publisher embeds. We do not download game files, host copied games, or embed an entire third-party website.'] },
-      { title: 'Our information standards', paragraphs: ['We publish game-specific instructions, tips, ratings, and play counts only when a source is available. We leave out details that have not been verified.'] },
-      { title: 'Supporting the website', paragraphs: ['Advertising may help support this website. Advertising inside a game is controlled by its publishing platform. Any website advertising is displayed outside the game window. We use Google AdSense for website advertising. See our Privacy Policy for information about third-party content and advertising.'] },
-    ],
+    slug: 'about', title: 'About Sled Games', seoTitle: 'About Sled Games — Who Makes It, How We Check the Games',
+    description: 'Sled Games is an independent winter game site run by Sean. Learn how game details are checked, where the embeds come from, and how corrections are handled.',
+    intro: 'Sled Games is a small, independent site about winter browser games: sledding, snowboarding, skiing, and Christmas games. One person, Sean, builds and maintains the site and is responsible for its guides.',
+    published: '2026-10-09', updated: '2026-11-02',
+    sections: [],
   },
   {
-    slug: 'contact', title: 'Contact Us', description: 'Contact the Sled Games team about game issues, corrections, privacy questions, or copyright concerns. Learn which details help us investigate your request.',
+    slug: 'contact', title: 'Contact Us', description: 'Contact Sean, the Sled Games editor, about game issues, corrections, privacy or copyright. Find the email address and details to include in your report.',
     intro: 'Have a question or found something we should fix?',
     sections: [
       { title: 'Game and website issues', paragraphs: ['When reporting a problem, include the page URL, a brief description of what happened, and your browser and device type. If a game does not load, let us know whether the issue occurs before or after the game window appears. Please do not send passwords or sensitive account information.'] },
@@ -24,7 +21,7 @@ export const legalContent = [
     intro: 'Information about this website and third-party content.',
     sections: [
       { title: 'Website visits', paragraphs: ['This version of Sled Games does not offer user accounts, comments, payments, or subscriptions. We use Google Analytics to understand visits and use of this website. Our hosting provider may process technical request data, such as an IP address, requested URL, browser information, and request time, to deliver the website and operate its service.'] },
-      { title: 'Messages you send us', paragraphs: ['If you email us, your message and email address are used to respond to your request and investigate the issue you report. Send only the information needed for that purpose.'] },
+      { title: 'Messages you send us', paragraphs: ['Our contact form prepares an email draft in your browser. Preparing or copying a draft does not submit it to us. You choose whether to send it using your email app or webmail. If you email us, your message and email address are used to respond to your request and investigate the issue you report. Send only the information needed for that purpose.'] },
       { title: 'Third-party game embeds', paragraphs: ['On its game page, Sled Rider loads automatically in an iframe from AZGames at gamea.azgame.io. Other configured games may use GameDistribution or GameMonetize. Loading an iframe connects your browser to the platform, which may receive technical request data and may use cookies, local storage, analytics, or advertising technologies according to its own policies. GameDistribution embeds include the URL of the game page as a referrer parameter. Third-party practices are governed by the platform and its advertising partners.'] },
       { title: 'Google AdSense and advertising cookies', paragraphs: ['We use Google AdSense to serve advertising outside the game window. Google and its advertising partners may use cookies or similar technologies to serve, personalise and measure advertisements. You can manage cookies through your browser settings.'] },
       { title: 'Your choices', paragraphs: ['Your browser settings can restrict cookies and clear stored data. Restricting third-party storage may affect embedded games. You can avoid loading third-party game content by leaving a game page before a configured iframe loads. Use the contact address on our Contact Us page for questions about information you have sent to us.'] },

@@ -1,0 +1,52 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="my-tips" class="content-section game-guide downhill-tips" aria-labelledby="my-tips-heading">
+  <h2 id="my-tips-heading">My Tips</h2>
+  <div class="tips-layout">
+    <div class="tips-copy">
+      <h3>Use a light tap to dodge trees</h3>
+      <p>In my runs, a quick tap of the left or right arrow key is usually enough to steer around an approaching tree. Aim for the open side and make a small correction as you get close.</p>
+
+      <h3>Use ramps to collect coins in the air</h3>
+      <p>When I see a ramp like the one in the screenshot, I check the route ahead and the landing space before riding onto it. If the way is clear, take the jump: you can still collect coins while you are in the air.</p>
+    </div>
+    <figure>
+      <img src="/images/guides/downhill-snowboard/ramp-and-coins.png" alt="Downhill Snowboard gameplay showing an airborne rider, a ramp at the upper right, and trees and coins along the slope." width="692" height="1202" loading="lazy" decoding="async" />
+      <figcaption>A screenshot from my run: the ramp, the airborne rider, and coins along the slope.</figcaption>
+    </figure>
+  </div>
+  <EditorCredit />
+</section>
+
+<section id="customize-character" class="content-section game-guide downhill-tips" aria-labelledby="customize-character-heading">
+  <h2 id="customize-character-heading">Customize Your Character</h2>
+  <div class="tips-layout">
+    <div class="tips-copy">
+      <p>Use the coins you collect during a run to buy new characters and snowboards in the shop. Browse both selections and check the price before choosing what to unlock next.</p>
+      <p>My favorite is the snowman, with its top hat and bright red scarf.</p>
+    </div>
+    <figure>
+      <img src="/images/guides/downhill-snowboard/snowman-shop.png" alt="Downhill Snowboard shop showing a snowman character with a top hat and red scarf, plus a green snowboard, each priced at 500 coins." width="688" height="1212" loading="lazy" decoding="async" />
+      <figcaption>The shop in my screenshot lists the snowman character and green snowboard at 500 coins each.</figcaption>
+    </figure>
+  </div>
+  <EditorCredit />
+</section>
+
+<style>
+  .downhill-tips { scroll-margin-top: 24px; }
+  h2 { margin-bottom: 24px; }
+  .tips-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 280px); gap: 32px; align-items: start; }
+  h3 { font-size: 1.0625rem; line-height: 1.6; margin-bottom: 10px; }
+  p { font-size: .9375rem; line-height: 1.9; }
+  p + p { margin-top: 16px; }
+  p + h3 { margin-top: 28px; }
+  figure { margin: 0; min-width: 0; }
+  img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  @media (max-width: 640px) {
+    .tips-layout { grid-template-columns: 1fr; gap: 24px; }
+    figure { width: 100%; max-width: 320px; margin-inline: auto; }
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="plan-your-drop" class="content-section game-guide merge-notes" aria-labelledby="plan-your-drop-heading">
+  <span class="eyebrow">CHOOSE A LANDING TARGET</span>
+  <h2 id="plan-your-drop-heading">Which Matching Snowball Can You Actually Reach?</h2>
+  <p>Finding the same picture is only the first part of a Merge Christmas move. Before releasing a snowball, trace its path from the top of the box to the piece you want it to meet.</p>
+
+  <div class="drop-options">
+    <section>
+      <h3>A match with a clear approach</h3>
+      <p>If a matching snowball is exposed, line up above it and inspect the pieces beside it. Release one snowball, then watch where the resulting piece settles. That new position helps you choose a target for your next drop.</p>
+    </section>
+    <section>
+      <h3>A match covered by another piece</h3>
+      <p>If another snowball sits between your drop and its intended match, consider a different landing spot. A matching picture deeper in the pile is not necessarily the easiest target to reach.</p>
+    </section>
+  </div>
+
+  <p class="drop-check"><strong>A useful check:</strong> Before dropping, name both your target and what the falling snowball is likely to touch first. If those are different pieces, reconsider the position. This gives each move a clear reason and makes an unexpected landing easier to learn from.</p>
+  <p class="note-source">Placement advice based on the matching and drop controls in the <a href="https://gamedistribution.com/games/merge-christmas/" target="_blank" rel="noopener">official Merge Christmas description</a>, checked on <time datetime="2026-11-01">November 1, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .merge-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  .drop-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 24px; }
+  .drop-options section { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: #ebca8b0a; }
+  h3 { margin: 0 0 10px; font-size: 1.0625rem; line-height: 1.5; }
+  .drop-check { margin-top: 24px; }
+  .note-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  .note-source a { color: #f3d395; }
+  @media (max-width: 640px) { .drop-options { grid-template-columns: 1fr; } }
+</style>

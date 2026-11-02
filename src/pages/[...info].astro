@@ -1,16 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import AboutContent from '../components/AboutContent.astro';
 import { legalContent } from '../lib/legal.mjs';
+import { canonical } from '../lib/catalog.mjs';
+import { editor } from '../lib/editor.mjs';
 export function getStaticPaths() { return legalContent.map(page => ({ params: { info: page.slug }, props: { page } })); }
 const { page } = Astro.props;
-const email = import.meta.env.PUBLIC_CONTACT_EMAIL?.trim();
+const email = import.meta.env.PUBLIC_CONTACT_EMAIL?.trim() || 'sean1998312@gmail.com';
 if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('PUBLIC_CONTACT_EMAIL must be a valid email address');
+const aboutUrl = canonical('/about/');
+const editorId = `${aboutUrl}#editor`;
+const schema = page.slug === 'about' ? [
+  { '@context': 'https://schema.org', '@type': 'Person', '@id': editorId, name: editor.name, url: aboutUrl, email: editor.email },
+  { '@context': 'https://schema.org', '@type': 'AboutPage', '@id': aboutUrl, url: aboutUrl, name: page.title, description: page.description, datePublished: page.published, dateModified: page.updated, author: { '@id': editorId }, mainEntity: { '@id': editorId } },
+] : [];
+const displayDate = (date: string) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));
 ---
-<Layout title={`${page.title} - Sled Games`} description={page.description}>
+<Layout title={page.seoTitle ?? `${page.title} - Sled Games`} description={page.description} schema={schema}>
   <section class="page-intro"><span class="eyebrow">THE DETAILS / SLED GAMES</span><h1>{page.title}</h1><p>{page.intro}</p></section>
   <article class="legal-content prose">
+    {page.slug === 'about' && <>
+      <p class="page-dates">
+        {page.published && <span>Published: <time datetime={page.published}>{displayDate(page.published)}</time></span>}
+        {page.updated && <span>Last updated: <time datetime={page.updated}>{displayDate(page.updated)}</time></span>}
+      </p>
+      <AboutContent />
+    </>}
     {page.slug === 'contact' && email && <section class="contact-box"><h2>Get in touch</h2><p>Email us at <a href={`mailto:${email}`}>{email}</a>.</p></section>}
+    {page.slug === 'contact' && <ContactForm email={email} />}
     {page.sections.map(section => <section><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}
-    {page.slug !== 'contact' && <p><a class="text-link" href="/contact/">Contact Us ↗</a></p>}
+    {!['contact', 'about'].includes(page.slug) && <p><a class="text-link" href="/contact/">Contact Us ↗</a></p>}
   </article>
 </Layout>
+
+<style>
+  .page-dates { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: .875rem; }
+</style>

@@ -325,24 +325,24 @@ const snowRidersDescriptionsByPage = {
 /** @type {Record<string, Record<string, string>>} */
 const christmasExpansionDescriptionsByPage = {
   '/games': {
-    'xmas-triple-mahjong': "The three-tile matching choice is Xmas Triple Mahjong. Clear identical pictures in groups of three, choosing tiles with at least two adjacent sides open.",
+    'xmas-triple-mahjong': "The three-tile matching choice is Xmas Triple Mahjong. Clear identical pictures in groups of three, choosing tiles with at least two sides open.",
     'xmas-balls': "Xmas Balls turns present clearing into an aiming challenge from the bottom of the board. Shoot the gift blocks before they touch the ground and pick up extra balls.",
     'xmas-memory-match': "Choose Xmas Memory Match for Christmas picture pairs in Easy or Medium mode. Flip cards and remember their positions to find each matching pair.",
     'scroll-and-spot': "Scroll and Spot adds a Christmas observation puzzle to the winter collection. Drag to move two aligned pictures together, then select all five differences to advance.",
     'subway-santa-runner-christmas': "Subway Santa Runner Christmas supplies an endless run through a snowy village. Help Santa after his presents scatter, using mouse or touch controls shown in the player.",
   },
   '/404': {
-    'xmas-triple-mahjong': "Find a new match in Xmas Triple Mahjong after this missing page. Select three identical festive tiles with at least two adjacent sides open to clear them.",
+    'xmas-triple-mahjong': "Find a new match in Xmas Triple Mahjong after this missing page. Select three identical festive tiles with at least two sides open to clear them.",
     'xmas-balls': "Aim for another game with Xmas Balls and its falling gift blocks. Shoot from the bottom, collect additional balls, and clear the blocks before they reach the ground.",
     'xmas-memory-match': "Turn over a fresh card in Xmas Memory Match to continue your visit. Choose Easy or Medium and remember the Christmas pictures to uncover matching pairs.",
     'scroll-and-spot': "Look for a different route in Scroll and Spot's paired Christmas scenes. Drag the aligned pictures together and find five differences to reach the next level.",
     'subway-santa-runner-christmas': "Return to a snowy village with Subway Santa Runner Christmas. Santa's scattered presents set the scene for an endless run with mouse or touch input.",
   },
   '/christmas-games': {
-    'xmas-triple-mahjong': "Xmas Triple Mahjong brings groups of three to the Christmas puzzle selection. Match identical festive pictures while checking that each tile has two adjacent sides open.",
+    'xmas-triple-mahjong': "Xmas Triple Mahjong brings groups of three to the Christmas puzzle selection. Match identical festive pictures while checking that each tile has two sides open.",
     'xmas-balls': "Keep the Christmas gifts off the ground in Xmas Balls. Aim upward from the bottom to break falling blocks and collect extra balls for later shots.",
     'xmas-memory-match': "Xmas Memory Match offers a festive memory challenge with Easy and Medium modes. Reveal the cards, remember the Christmas pictures, and find their matching partners.",
-    'scroll-and-spot': "Explore two Christmas scenes side by side in Scroll and Spot. Drag to scroll both pictures in sync, then select five differences to complete each level.",
+    'scroll-and-spot': "Explore two paired Christmas scenes in Scroll and Spot. Drag to scroll both pictures in sync, then select five differences to complete each level.",
     'subway-santa-runner-christmas': "Take Santa through a snowy village in Subway Santa Runner Christmas. This endless runner follows his scattered presents and supports mouse or touch play.",
   },
 };
@@ -367,7 +367,7 @@ const christmasRecommendationFacts = {
   'xmas-triple-mahjong': {
     title: 'Xmas Triple Mahjong',
     challenge: 'clearing festive tiles in identical groups of three',
-    detail: 'Check for at least two adjacent open sides before choosing a tile for the next match.',
+    detail: 'Check for at least two open sides before choosing a tile for the next match.',
   },
   'xmas-balls': {
     title: 'Xmas Balls',

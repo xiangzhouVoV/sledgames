@@ -1,0 +1,44 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="snowboard-screen-guide" class="content-section game-guide snowboard-field-notes" aria-labelledby="snowboard-screen-guide-heading">
+  <span class="eyebrow">A CLOSER LOOK AT THE PLAYER</span>
+  <h2 id="snowboard-screen-guide-heading">The GO Screen and the Downhill Display</h2>
+  <p>SnowBoard Game puts its setup options on the opening screen and its score and speed on the slope. These two views show where to look before a run and what to read once the rider is moving.</p>
+
+  <h3>Find the quality buttons before you start</h3>
+  <p>Low Quality, Medium Quality, and High Quality sit across the top of the opening screen. If the animation feels choppy on your computer, try a lower setting and compare how the course runs. The GO button is near the centre; the movement and grab key reminders are along the bottom.</p>
+  <figure>
+    <a class="game-capture" href="/images/guides/snowboard-game/quality-and-controls.png" target="_blank" rel="noopener" aria-label="Open the full SnowBoard Game setup screenshot">
+      <img src="/images/guides/snowboard-game/quality-and-controls.png" alt="SnowBoard Game opening screen with Low, Medium and High Quality buttons, GO, and reminders for WASD or arrow-key movement and V to grab." width="1280" height="800" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>The quality controls are above the rider preview; the key reminders are below it. Select the image to open the full screenshot.</figcaption>
+  </figure>
+
+  <h3>Read score and speed as separate numbers</h3>
+  <p>The downhill view places two readouts at the bottom centre. In the captured run below, the score is 3,316 and the speed line reads 50 km/h. The score is not the speed: check the lower line when judging how quickly the rider is moving through a section.</p>
+  <p>For another attempt, look for the game’s Restart button in the upper-right corner. Exit is on the opposite side. These controls sit inside the course view, so they are easy to distinguish from this page’s Reload and Fullscreen buttons below the player.</p>
+  <figure>
+    <a class="game-capture" href="/images/guides/snowboard-game/speed-and-score.png" target="_blank" rel="noopener" aria-label="Open the full SnowBoard Game downhill screenshot">
+      <img src="/images/guides/snowboard-game/speed-and-score.png" alt="SnowBoard Game rider on a banked downhill course, with Exit at the upper left, Restart at the upper right, Score 3316, and Going fast - 50km/h at the bottom." width="1280" height="800" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>One moment during a run, showing the score and speed display. Select the image for a closer look at the numbers.</figcaption>
+  </figure>
+
+  <p class="capture-date">Desktop screenshots captured in this page’s game player on <time datetime="2026-10-10">October 10, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .snowboard-field-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  h3 { margin-top: 28px; margin-bottom: 10px; font-size: 1.0625rem; line-height: 1.6; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  p + p { margin-top: 14px; }
+  figure { margin: 20px 0 0; }
+  .game-capture { display: block; position: relative; aspect-ratio: 1198 / 598; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #dbe8ee; }
+  .game-capture img { position: absolute; width: 106.844741%; max-width: none; height: auto; left: -3.422371%; top: -15.050167%; }
+  .game-capture:focus-visible { outline: 3px solid #176dde; outline-offset: 4px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .capture-date { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+</style>

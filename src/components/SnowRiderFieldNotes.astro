@@ -1,0 +1,55 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="snow-rider-modes" class="content-section game-guide rider-field-notes" aria-labelledby="snow-rider-modes-heading">
+  <span class="eyebrow">CHECK THE START SCREEN</span>
+  <h2 id="snow-rider-modes-heading">Know Which Snow Rider Mode You’re Starting</h2>
+  <p>The Snow Rider 3D player linked from this Snow Rider 2 page includes a version label and mode switches. Before starting a run, read the wooden sign on the left: our screenshot shows <strong>NEW VERSION – NORMAL MODE</strong>.</p>
+  <p>The top-left buttons offer <strong>Switch to Hard Mode</strong> and <strong>Switch to 2 Player</strong>. A separate <strong>Switch to Old Version</strong> preview sits in the top-right corner. If your menu looks different from a walkthrough, check this label first. For a first attempt, stay on the shown Normal Mode screen and select <strong>Tap here to slide</strong>.</p>
+  <figure>
+    <a class="rider-capture" href="/images/guides/snow-rider-2/version-menu.jpg" target="_blank" rel="noopener" aria-label="Open the full Snow Rider version and mode menu screenshot">
+      <img src="/images/guides/snow-rider-2/version-menu.jpg" alt="Snow Rider 3D start screen labelled New Version – Normal Mode, with Hard Mode and 2 Player switches at the top left, Old Version at the top right, and a shopping cart at the bottom right." width="4096" height="2060" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>The mode label is on the wooden sign. The shopping cart in the lower-right corner opens the sleigh selection. Select the image for a larger view.</figcaption>
+  </figure>
+  <p class="capture-source">Menu and shop checked in <a href="https://gamedistribution.com/games/snow-rider-3d/" target="_blank" rel="noopener">GameDistribution’s public Snow Rider 3D demo</a> on <time datetime="2026-11-01">November 1, 2026</time>. These screenshots show the New Version; the Old Version may have a different menu.</p>
+  <EditorCredit />
+</section>
+
+<section id="metal-sleigh" class="content-section game-guide rider-field-notes" aria-labelledby="metal-sleigh-heading">
+  <span class="eyebrow">A GIFT-COLLECTING GOAL</span>
+  <h2 id="metal-sleigh-heading">Save 50 Gifts for the Metal Sleigh</h2>
+  <p>Gifts collected on the slope can be spent on sleighs. One concrete target in the checked shop is the <strong>Metal Sleigh</strong>: its BUY button shows a gift icon and a price of <strong>50</strong>.</p>
+  <ol>
+    <li>Open the shopping cart from the start screen.</li>
+    <li>Use the left and right arrows to browse until <strong>METAL SLEIGH</strong> appears above the model.</li>
+    <li>Compare the gift balance in the upper-left corner with the price beside BUY. The screenshot shows a balance of 0, so that player still needs 50 gifts.</li>
+    <li>Use the back arrow in the lower-left corner to return and start another run. Come back to the shop when you have enough gifts.</li>
+  </ol>
+  <figure>
+    <a class="rider-capture" href="/images/guides/snow-rider-2/metal-sleigh-shop.jpg" target="_blank" rel="noopener" aria-label="Open the full Metal Sleigh shop screenshot">
+      <img src="/images/guides/snow-rider-2/metal-sleigh-shop.jpg" alt="Metal Sleigh in the Snow Rider 3D shop, with a gift balance of 0, browse arrows on either side, and a BUY button priced at 50 gifts." width="4096" height="2060" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>The 50-gift price belongs to the displayed Metal Sleigh. Check each sleigh’s own BUY label as you browse. Captured on <time datetime="2026-11-01">November 1, 2026</time>.</figcaption>
+  </figure>
+  <p class="gift-tip"><strong>Plan the next run:</strong> Choose gifts you can reach while keeping a clear path past obstacles. Check your balance again afterward to see how much closer you are to the sleigh you want.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .rider-field-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p, li { font-size: .9375rem; line-height: 1.8; }
+  p + p { margin-top: 14px; }
+  ol { padding-left: 22px; margin: 18px 0; }
+  li + li { margin-top: 10px; }
+  strong { color: var(--ink); }
+  figure { margin: 22px 0 0; }
+  .rider-capture { display: block; position: relative; aspect-ratio: 4096 / 1975; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #e8f6fa; }
+  .rider-capture img { position: absolute; display: block; width: 100%; height: auto; top: calc(-85 / 1975 * 100%); }
+  .rider-capture:focus-visible { outline: 3px solid #176dde; outline-offset: 4px; }
+  figcaption, .capture-source { color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  figcaption { margin-top: 10px; }
+  .capture-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .gift-tip { margin-top: 22px; }
+</style>

@@ -13,6 +13,8 @@ Cloudflare Workers uses `wrangler.jsonc` to publish only `dist/`, preserve trail
 
 For local validation without publishing, run `npm run deploy:check`. To build and publish from an authenticated local environment, run `npm run deploy`.
 
+The contact page uses `sean1998312@gmail.com` by default. Set `PUBLIC_CONTACT_EMAIL` at build time to override the public inbox. Its form prepares an email draft locally; visitors open their email app or copy the draft into webmail to send it. No form backend or mail-service credentials are required.
+
 Waddle Peaks currently uses its [official play page](https://play.benerits.com/en/g/waddle-peaks). Checked on 2026-10-19: its embed wrapper loads, but the actual game's `Content-Security-Policy: frame-ancestors https://play.benerits.com` blocks embedding from sledgames.com or localhost. Keep the official external play option until that policy supports external sites.
 
 ## English

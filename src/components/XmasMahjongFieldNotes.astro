@@ -1,0 +1,42 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="open-corners" class="content-section game-guide mahjong-notes" aria-labelledby="open-corners-heading">
+  <span class="eyebrow">FOLLOW WHAT A TRIPLE UNCOVERS</span>
+  <h2 id="open-corners-heading">Three Trees Reveal the Next Layer</h2>
+  <p>A match in Xmas Triple Mahjong can uncover another layer of tiles. In this Level 1 example, removing three Christmas trees revealed two stars and an owl underneath. Compare the same positions in the two screenshots to see how one triple changes the next search.</p>
+
+  <h3>Before: find the three separate trees</h3>
+  <p>One tree sits directly below the upper-left globe. Another projects from the far-left edge halfway down the board. The third is on the right side of the central opening, between the two Santa tiles. These pictures are spread across the layout, so scan beyond the first matching pair. Use the game’s selection feedback to confirm each choice.</p>
+  <figure>
+    <a class="mahjong-capture" href="/images/guides/xmas-triple-mahjong/level-one.jpg" target="_blank" rel="noopener" aria-label="Open the full Xmas Triple Mahjong board before the tree match">
+      <img src="/images/guides/xmas-triple-mahjong/level-one.jpg" alt="Xmas Triple Mahjong Level 1 with three tree tiles below the upper-left globe, on the far-left projection and between the two Santa tiles. The score is 0." width="4096" height="2060" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>Before the match: locate all three tree pictures. Select either image to enlarge it.</figcaption>
+  </figure>
+
+  <h3>After: revisit the uncovered pictures</h3>
+  <p>The two left-hand trees now reveal stars; the tree between the Santas reveals an owl. The score changed from 0 to 270 in this attempt. Look back at those newly exposed positions before searching elsewhere: there is already another star at the lower right and another owl beside the central opening. They give you candidates to check for the next triple, subject to the game’s selection feedback.</p>
+  <figure>
+    <a class="mahjong-capture" href="/images/guides/xmas-triple-mahjong/after-tree-triple.jpg" target="_blank" rel="noopener" aria-label="Open the full Xmas Triple Mahjong board after the tree match">
+      <img src="/images/guides/xmas-triple-mahjong/after-tree-triple.jpg" alt="The same Level 1 board after removing the three trees, revealing two stars on the left and an owl between the Santa tiles. The score reads 270." width="4096" height="2060" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>After the match: two stars and one owl are visible in the former tree positions.</figcaption>
+  </figure>
+  <p class="note-source">Level 1 screenshots captured on <time datetime="2026-11-01">November 1, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .mahjong-notes { scroll-margin-top: 24px; }
+  h2 { margin: 8px 0 18px; }
+  h3 { margin: 26px 0 10px; font-size: 1.0625rem; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  figure { margin: 22px 0 0; }
+  .mahjong-capture { display: block; position: relative; aspect-ratio: 3662 / 2060; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #bee4f3; }
+  .mahjong-capture img { position: absolute; display: block; width: calc(4096 / 3662 * 100%); max-width: none; height: auto; left: calc(-217 / 3662 * 100%); top: 0; }
+  .mahjong-capture:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .note-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  a { color: #f3d395; }
+</style>

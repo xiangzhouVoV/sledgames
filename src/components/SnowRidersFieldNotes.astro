@@ -1,0 +1,43 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="race-preparation" class="content-section game-guide race-notes" aria-labelledby="race-preparation-heading">
+  <span class="eyebrow">POSITION OR PICKUPS?</span>
+  <h2 id="race-preparation-heading">Give Each Snow Riders Run a Clear Goal</h2>
+  <p>Snow Riders combines racing against other skiers with collecting gems for progression. Those goals can pull you toward different lines. Decide what you want to learn from the next attempt before following every pickup.</p>
+
+  <div class="race-decisions">
+    <section>
+      <span class="decision-label">LEARN THE COURSE</span>
+      <h3>Make the next turn your reference point</h3>
+      <p>On an unfamiliar course, use A/D or the left and right arrows to learn the steering response. Pick a recognizable obstacle and notice where you begin turning. On the next attempt, adjust that approach while keeping the rest of your plan similar.</p>
+    </section>
+    <section>
+      <span class="decision-label">COLLECT WITH A ROUTE IN MIND</span>
+      <h3>Check the exit from a gem detour</h3>
+      <p>For a gem already on your line, keep watching the next turn. For one across the course, first check the obstacles and other skiers between you and it. If reaching it requires a rushed change of direction, leave it and continue your race.</p>
+    </section>
+    <section>
+      <span class="decision-label">SPEND BETWEEN ATTEMPTS</span>
+      <h3>Read the gear choice before upgrading</h3>
+      <p>Rewards support equipment upgrades and progression to more levels and maps. Check the current gear menu for each option’s cost and description. After a change, try a familiar course if available so you can compare how the same section feels.</p>
+    </section>
+  </div>
+
+  <p class="race-source">This practice plan uses the controls and progression described on <a href="https://poki.com/en/g/snow-riders" target="_blank" rel="noopener">Snow Riders’ official Poki page</a>, checked on <time datetime="2026-11-01">November 1, 2026</time>.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .race-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  .race-decisions { display: grid; gap: 18px; margin-top: 24px; }
+  .race-decisions section { padding: 20px 24px; background: #edf5fe; border-left: 3px solid #176dde; border-radius: 0 10px 10px 0; }
+  .decision-label { color: var(--muted); font-size: .6875rem; font-weight: 700; letter-spacing: .08em; }
+  h3 { margin: 8px 0; font-size: 1.0625rem; line-height: 1.5; }
+  .race-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  @media (max-width: 640px) {
+    .race-decisions section { padding: 18px; }
+  }
+</style>

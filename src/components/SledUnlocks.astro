@@ -1,0 +1,59 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="unlock-sleds" class="content-section game-guide prose sled-unlocks" aria-labelledby="unlock-sleds-heading">
+  <span class="eyebrow">BUILD YOUR COLLECTION</span>
+  <h2 id="unlock-sleds-heading">How to unlock more sleds in Sled Rider</h2>
+  <p>Gift boxes are the currency for new sleds. Collect them on the course, earn extra gifts from daily missions, then spend your balance in the sled shop. Here is where to look and how to plan your next unlock.</p>
+
+  <ol class="unlock-steps">
+    <li>
+      <strong>Collect gifts along a clear route</strong>
+      <p>Steer toward presents you can reach without a sudden turn across an obstacle. If a box leaves you with no safe landing or exit, skip it and keep the run going. Check your gift balance in the upper-right corner of the menu between attempts.</p>
+    </li>
+    <li>
+      <strong>Check the daily mission board</strong>
+      <p>Open the clipboard icon at the lower left of the main menu. Each task shows its progress, gift reward, and a Claim button. Choose a goal that fits your next run, then return to claim its reward when complete. Check the reset timer before working toward a longer task.</p>
+    </li>
+    <li>
+      <strong>Choose a sled in the shop</strong>
+      <p>Open the shopping-cart icon at the lower right of the main menu. Use the arrows to browse sleds and read the gift cost beside Buy. Pick a target, compare its price with your balance, and buy it once you have enough gifts.</p>
+    </li>
+  </ol>
+
+  <p class="unlock-example"><strong>A first savings target:</strong> In our shop check, Metal Sleds cost 100 gifts. If you have 70, you need 30 more. Saving for one chosen design gives you a clear goal before spending on another sled.</p>
+
+  <div class="unlock-gallery">
+    <figure>
+      <img src="/images/guides/sled-rider/metal-sleds-shop.jpg" alt="Sled Rider shop showing Metal Sleds with a Buy price of 100 gifts and arrows to browse the collection." width="1440" height="719" loading="lazy" decoding="async" />
+      <figcaption>The shop shows the selected sled’s price. The balance in the top-right corner belongs to the player.</figcaption>
+    </figure>
+    <figure>
+      <img src="/images/guides/sled-rider/daily-missions.jpg" alt="Sled Rider daily missions showing a collect 50 gifts task with a 10-gift reward, progress bars, Claim buttons, and a reset timer." width="1440" height="719" loading="lazy" decoding="async" />
+      <figcaption>One task in this check offered 10 bonus gifts for collecting 50. Your current mission board is the place to check today’s goals.</figcaption>
+    </figure>
+  </div>
+
+  <p class="unlock-check">Menu and shop checked in this page’s embedded AZGames player on <time datetime="2026-11-01">November 1, 2026</time>. Screenshots show that check; use the current in-game prices and mission requirements if they differ.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .sled-unlocks { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  .unlock-steps { margin: 24px 0; padding-left: 24px; }
+  .unlock-steps li { padding-left: 8px; margin-top: 20px; }
+  .unlock-steps li::marker { color: #1559b3; font-weight: 750; }
+  .unlock-steps strong { display: block; color: var(--ink); margin-bottom: 5px; }
+  .unlock-example { padding: 16px 18px; border-left: 3px solid #176dde; border-radius: 0 8px 8px 0; background: #edf5fe; }
+  .unlock-example strong { color: var(--ink); }
+  .unlock-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 24px; }
+  figure { margin: 0; min-width: 0; }
+  img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .unlock-check { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .8125rem; }
+  @media (max-width: 640px) {
+    .unlock-gallery { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="remember-the-grid" class="content-section game-guide memory-notes" aria-labelledby="remember-the-grid-heading">
+  <span class="eyebrow">PICTURES AND POSITIONS</span>
+  <h2 id="remember-the-grid-heading">Remember the Reindeer’s Row</h2>
+  <p>This board has <strong>24 cards in six rows</strong>: 2, 4, 6, 6, 4, and 2 cards from top to bottom. The different row widths provide useful landmarks. In the captured first reveal, the left card in the top pair shows a reindeer.</p>
+
+  <figure>
+    <a class="memory-capture" href="/images/guides/xmas-memory-match/first-card.jpg" target="_blank" rel="noopener" aria-label="Open the full Xmas Memory Match first-card screenshot">
+      <img src="/images/guides/xmas-memory-match/first-card.jpg" alt="Xmas Memory Match board with 24 cards arranged in six rows of 2, 4, 6, 6, 4, and 2; the left card in the top row is revealed as a reindeer." width="4096" height="2060" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>The first revealed card gives you one picture and one location to remember. Select the image for a larger view.</figcaption>
+  </figure>
+
+  <ol class="memory-routine">
+    <li><strong>Name the place.</strong> For this reveal, use a cue such as “reindeer, top row, left.” When another reindeer appears, that cue points back to a specific card.</li>
+    <li><strong>Explore one row at a time.</strong> After checking the top pair, work across the four-card row below it. Give each new picture a position before moving to another part of the board.</li>
+    <li><strong>Recall before the next flip.</strong> If you remember a revealed picture’s partner, select that location. Otherwise, use an unchecked card and remember both positions if they differ.</li>
+  </ol>
+
+  <p class="notes-source">Screenshot captured from the official player for <a href="https://gamemonetize.com/xmas-memory-match-game" target="_blank" rel="noopener">Mapi Games’ Xmas Memory Match</a> on <time datetime="2026-11-01">November 1, 2026</time>. Use the row method with the arrangement shown in your own game.</p>
+  <EditorCredit />
+</section>
+
+<style>
+  .memory-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p, li { font-size: .9375rem; line-height: 1.8; }
+  .memory-routine { padding-left: 24px; margin: 24px 0; }
+  .memory-routine li { padding-left: 6px; }
+  .memory-routine li + li { margin-top: 18px; }
+  .memory-routine li::marker { color: #ebca8b; font-weight: 700; }
+  strong { color: var(--ink); }
+  figure { margin: 22px 0 0; }
+  .memory-capture { display: block; position: relative; aspect-ratio: 2746 / 2060; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #234a38; }
+  .memory-capture img { position: absolute; display: block; width: calc(4096 / 2746 * 100%); max-width: none; height: auto; left: calc(-674 / 2746 * 100%); top: 0; }
+  .memory-capture:focus-visible { outline: 3px solid #f2ce87; outline-offset: 4px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .notes-source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
+  .notes-source a { color: #f3d395; }
+</style>

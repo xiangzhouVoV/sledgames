@@ -1,0 +1,46 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="bald-mountain-map" class="content-section game-guide ski-map-guide" aria-labelledby="bald-mountain-map-heading">
+  <span class="eyebrow">BEFORE THE START</span>
+  <h2 id="bald-mountain-map-heading">Reading the Bald Mountain Course Map</h2>
+  <p>The mountain map is your starting point for a timed run. Use it to select a course, check the time labels, and find the upgrade menu before heading back onto the snow.</p>
+
+  <div class="map-layout">
+    <div class="map-notes">
+      <h3>Follow the marker to your selected course</h3>
+      <p>This Bald Mountain screen shows numbered stops from 1 to 10. The orange marker sits above course 1 in the screenshot. Check which course is selected, then use the yellow <strong>PLAY</strong> button to begin.</p>
+
+      <h3>Read both time labels</h3>
+      <p><strong>BEST TIME</strong> and <strong>YOUR TIME</strong> are separate fields. Here, BEST TIME reads 0:39.84, while YOUR TIME has no recorded value. When comparing attempts, return to the same course and check your own result.</p>
+
+      <h3>Find upgrades beside the start button</h3>
+      <p>The green <strong>UPGRADE</strong> button is immediately to the left of PLAY. Use your upgrade points between attempts. For a useful comparison, repeat the same course after an upgrade so you can judge the change on a familiar route.</p>
+    </div>
+    <figure>
+      <div class="map-screen">
+        <img src="/images/guides/ski-king/bald-mountain-map.png" alt="Ski King’s Bald Mountain map with course 1 selected, numbered courses up to 10, separate Best Time and Your Time fields, and Upgrade and Play buttons." width="1280" height="800" loading="lazy" decoding="async" />
+      </div>
+      <figcaption>The course-selection screen captured on <time datetime="2026-10-10">October 10, 2026</time>. BEST TIME is displayed while YOUR TIME has no recorded value.</figcaption>
+    </figure>
+  </div>
+  <EditorCredit />
+</section>
+
+<style>
+  .ski-map-guide { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  .map-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px); gap: 28px; align-items: start; margin-top: 24px; }
+  h3 { font-size: 1.0625rem; line-height: 1.5; margin-bottom: 8px; }
+  p + h3 { margin-top: 22px; }
+  strong { color: var(--ink); }
+  figure { margin: 0; min-width: 0; }
+  .map-screen { position: relative; aspect-ratio: 522 / 598; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #edf5fe; }
+  .map-screen img { position: absolute; display: block; width: calc(1280 / 522 * 100%); max-width: none; height: auto; left: calc(-379 / 522 * 100%); top: calc(-90 / 598 * 100%); }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  @media (max-width: 640px) {
+    .map-layout { grid-template-columns: 1fr; gap: 24px; }
+    figure { width: 100%; max-width: 380px; margin-inline: auto; }
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+import EditorCredit from './EditorCredit.astro';
+---
+<section id="gift-or-bomb" class="content-section game-guide gift-notes" aria-labelledby="gift-or-bomb-heading">
+  <span class="eyebrow">READ THE FALLING PATTERN</span>
+  <h2 id="gift-or-bomb-heading">Check the Bomb Above Your Next Present</h2>
+  <p>The screenshot below puts Santa near the lower-right corner, with a present just above and to his right. Farther up that same area, another present has a red bomb beside it. Treat those objects as a sequence: a clear approach to the nearest gift does not settle where you should move afterward.</p>
+
+  <figure>
+    <a class="gift-capture" href="/images/guides/santa-collecting-gifts/gifts-and-bombs.png" target="_blank" rel="noopener" aria-label="Open the full Santa Collecting Gifts gameplay screenshot">
+      <img src="/images/guides/santa-collecting-gifts/gifts-and-bombs.png" alt="Santa Collecting Gifts with Santa at the lower right, green presents and red bombs falling above him, and a top-left readout of Score 10, Lives 2, Level 1 and Speed 2.00." width="1280" height="900" loading="lazy" decoding="async" />
+    </a>
+    <figcaption>Captured in this page’s game player on <time datetime="2026-10-10">October 10, 2026</time>. Select the image to inspect the objects and status line.</figcaption>
+  </figure>
+
+  <div class="gift-checks">
+    <div>
+      <h3>Plan the second movement too</h3>
+      <p>Before moving under a gift, identify an open area you can return to. In this scene, continuing straight upward toward the higher pair would bring Santa closer to the bomb. Recheck their positions after collecting the nearer present instead of committing to the whole column.</p>
+    </div>
+    <div>
+      <h3>Read lives alongside score</h3>
+      <p>The upper-left display reads <strong>Score: 10</strong> and <strong>Lives: 2</strong>, with Level and Speed beside them. For your next attempt, try comparing both the score and remaining lives at a similar point. That gives you a useful way to judge whether a gift detour was worth taking.</p>
+    </div>
+  </div>
+  <EditorCredit />
+</section>
+
+<style>
+  .gift-notes { scroll-margin-top: 24px; }
+  h2 { margin-top: 8px; margin-bottom: 18px; }
+  p { font-size: .9375rem; line-height: 1.8; }
+  figure { margin: 22px 0 0; }
+  .gift-capture { display: block; position: relative; aspect-ratio: 1198 / 598; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #07182b; }
+  .gift-capture img { position: absolute; display: block; width: calc(1280 / 1198 * 100%); max-width: none; height: auto; left: calc(-41 / 1198 * 100%); top: calc(-89 / 598 * 100%); }
+  .gift-capture:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+  figcaption { margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+  .gift-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+  h3 { margin: 0 0 10px; font-size: 1.0625rem; line-height: 1.5; }
+  strong { color: var(--ink); }
+  @media (max-width: 640px) {
+    .gift-checks { grid-template-columns: 1fr; }
+  }
+</style>
