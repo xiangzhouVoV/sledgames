@@ -1,10 +1,31 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sledgames",
+  "account_id": "3d8d0e849d5e1ee4e18a56ff1e25472a",
+  "main": "worker/index.mjs",
   "compatibility_date": "2026-10-16",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    {
+      "pattern": "sledgames.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api",
+      "/api/*"
+    ],
     "directory": "./dist",
     "html_handling": "force-trailing-slash",
     "not_found_handling": "404-page"
-  }
+  },
+  "services": [
+    {
+      "binding": "COMMENTS_API",
+      "service": "sled-games-server"
+    }
+  ]
 }

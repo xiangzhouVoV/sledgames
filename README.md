@@ -6,12 +6,24 @@
 
 Use Node.js 24 (`.nvmrc`), then run `npm ci` and `npm run build`. The static website is generated in `dist/`.
 
-Cloudflare Workers uses `wrangler.jsonc` to publish only `dist/`, preserve trailing slashes, and serve the custom 404 page. The Cloudflare build settings are:
+Cloudflare Workers uses `wrangler.jsonc` to publish the static files in `dist/` with a small routing Worker in `worker/index.mjs`. Static pages keep trailing slashes and the custom 404 page. The Worker forwards `/api/*` to the separate `sled-games-server` project through its `COMMENTS_API` service binding. The backend owns the D1 database, migrations, moderation, and private secrets. The production domain `sledgames.com` is attached to the `sledgames` Worker in the account pinned by `wrangler.jsonc`. Follow the [comment deployment steps](docs/comments.md#production-configuration-and-deployment) when releasing either project. The Cloudflare build settings are:
 
 - Build command: `npm run build`
 - Deploy command: `npx wrangler deploy`
 
-For local validation without publishing, run `npm run deploy:check`. To build and publish from an authenticated local environment, run `npm run deploy`.
+For local validation without publishing, run `npm run deploy:check`. `npm run deploy` builds and publishes the frontend when a release is authorized; it does not deploy `sled-games-server` or apply its migrations. The ignored `.env.production` supplies `PUBLIC_TURNSTILE_SITE_KEY` for builds on this machine. Set the same public key in the build environment when using CI or another machine; the ignored file is not transferred by Git. Backend secrets must never be added to frontend build settings.
+
+## Game comments
+
+Every game detail page includes an English comment list and submission form at `#comments`. Visitors can use a nickname without an account. The list loads approved comments and owner replies, with pagination and retry states. A successful submission confirms that the comment is awaiting review; it does not add the pending comment to the public list.
+
+The owner reviews comments at [the administrator page](https://sledgames.com/admin/comments/), using the single `admin` account. It supports status/game filters, approval, rejection, replies, and deletion. See [administrator access and operation](docs/admin-comments.md) for credentials, session behavior, and release notes.
+
+Start the sibling `sled-games-server` project on port 8788, then run `npm run dev` here to use the website and same-origin API at `http://127.0.0.1:4321`. `PUBLIC_TURNSTILE_SITE_KEY= npm run dev:worker` serves the built site on port 8787 through the local Worker service binding, overriding the production build key so the local challenge bypass can be used. Only the public `PUBLIC_TURNSTILE_SITE_KEY` belongs in the frontend environment; administrator and verification secrets belong in the backend.
+
+See [Comments: local setup, API, and moderation](docs/comments.md) for configuration and request examples. `npm run verify` checks the static site and API proxy; `npm run test:browser -- tests/browser/comments.spec.ts` checks the comment interface. Run the database-backed tests from `sled-games-server`. These commands do not create Cloudflare resources or publish either project.
+
+Production comments and owner replies are stored in Cloudflare D1 database `sledgames-comments`, whose primary region was reported as WNAM (Western North America) at creation. In the Cloudflare dashboard, open **Storage & databases → D1 → sledgames-comments** to inspect its tables. Local development uses a separate database under the backend's `.wrangler/state` directory.
 
 The contact page uses `sean1998312@gmail.com` by default. Set `PUBLIC_CONTACT_EMAIL` at build time to override the public inbox. Its form prepares an email draft locally; visitors open their email app or copy the draft into webmail to send it. No form backend or mail-service credentials are required.
 

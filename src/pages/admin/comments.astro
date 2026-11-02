@@ -1,0 +1,75 @@
+---
+import { games } from '../../lib/catalog.mjs';
+import '../../styles/admin-comments.css';
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? '';
+const gameOptions = [...games].sort((a, b) => a.title.localeCompare(b.title));
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Comment moderation | Sled Games</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="admin-skip" href="#admin-main">Skip to content</a>
+    <div class="admin-app" data-admin-comments data-turnstile-site-key={siteKey}>
+      <header class="admin-header">
+        <a class="admin-brand" href="/" aria-label="Sled Games home"><span class="admin-brand-mark" aria-hidden="true">S</span><span>Sled Games<span class="admin-brand-caption">OWNER WORKSPACE</span></span></a>
+        <a class="admin-site-link" href="/">View website <span aria-hidden="true">↗</span></a>
+      </header>
+      <main id="admin-main" class="admin-main">
+        <section class="admin-start" data-session-loading aria-label="Checking your session">
+          <p class="admin-eyebrow">COMMENT MODERATION</p>
+          <h1>Welcome back.</h1>
+          <p data-session-status role="status">Checking your session…</p>
+          <button class="admin-button admin-button--primary" type="button" data-session-retry hidden>Try again</button>
+        </section>
+        <section class="admin-login" data-login-panel aria-labelledby="login-heading" hidden>
+          <div class="admin-login-intro">
+            <p class="admin-eyebrow">COMMENT MODERATION</p>
+            <h1 id="login-heading">A good conversation<br />starts here.</h1>
+            <p>Review player comments, share a helpful reply, and keep the community welcoming.</p>
+            <div class="admin-login-note"><span aria-hidden="true">✓</span><p>New comments stay private until you approve them.</p></div>
+          </div>
+          <div class="admin-login-card">
+            <h2>Owner sign in</h2>
+            <p class="admin-muted">Use your administrator account to continue.</p>
+            <form data-login-form method="post" action="/api/admin/login/">
+              <label class="admin-field" for="admin-username"><span>Username</span><input id="admin-username" name="username" autocomplete="username" value="admin" maxlength="80" required /></label>
+              <label class="admin-field" for="admin-password"><span>Password</span><input id="admin-password" name="password" type="password" autocomplete="current-password" maxlength="256" required /></label>
+              <div class="admin-challenge" data-admin-challenge></div>
+              <p class="admin-help" data-challenge-status role="status"></p>
+              <button class="admin-text-button" type="button" data-challenge-retry hidden>Retry security check</button>
+              <button class="admin-button admin-button--primary admin-sign-in" type="submit" data-login-submit disabled>Sign in</button>
+              <p class="admin-feedback" data-login-status role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+        <section data-workspace aria-labelledby="moderation-heading" hidden>
+          <div class="admin-title-row">
+            <div><p class="admin-eyebrow">OWNER WORKSPACE</p><h1 id="moderation-heading">Comment moderation</h1><p class="admin-muted">Your review makes a comment visible to everyone.</p></div>
+            <div class="admin-account"><span>Signed in as <strong data-admin-name></strong></span><button class="admin-button" type="button" data-logout>Sign out</button></div>
+          </div>
+          <div class="admin-toolbar">
+            <label class="admin-filter" for="admin-status-filter"><span>Status</span><select id="admin-status-filter" data-status-filter><option value="pending">Pending</option><option value="approved">Approved</option><option value="rejected">Rejected</option><option value="all">All comments</option></select></label>
+            <label class="admin-filter admin-game-filter" for="admin-game-filter"><span>Game</span><select id="admin-game-filter" data-game-filter><option value="">All games</option>{gameOptions.map(game => <option value={game.slug}>{game.title}</option>)}</select></label>
+            <button class="admin-button admin-refresh" type="button" data-refresh>Refresh</button>
+          </div>
+          <div class="admin-list-heading"><h2 data-list-heading>Pending comments</h2><p class="admin-help" data-list-count></p></div>
+          <p class="admin-feedback" data-workspace-status role="status" aria-live="polite"></p>
+          <div class="admin-list-message" data-list-message role="status" aria-live="polite"></div>
+          <button class="admin-button" type="button" data-list-retry hidden>Try again</button>
+          <ol class="admin-comment-list" data-comment-list aria-label="Comments to review"></ol>
+          <div class="admin-pagination"><button class="admin-button" type="button" data-load-more hidden>Load more comments</button></div>
+        </section>
+        <noscript><p class="admin-noscript">JavaScript is required to sign in and review comments. Enable it, then reload this page.</p></noscript>
+      </main>
+      <footer class="admin-footer">Sled Games <span aria-hidden="true">·</span> Private owner workspace</footer>
+    </div>
+    <script>import '../../scripts/admin-comments';</script>
+  </body>
+</html>

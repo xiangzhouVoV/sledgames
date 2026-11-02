@@ -6,6 +6,9 @@
   "engines": { "node": ">=22.19.0" },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
+    "dev:worker": "npm run build && wrangler dev --local --ip 127.0.0.1 --port 8787",
+    "test:comments": "node --test tests/comments-proxy.test.mjs",
+    "verify:comments:local": "node scripts/verify-comments-local.mjs",
     "check": "astro check",
     "build": "astro build",
     "deploy": "npm run build && wrangler deploy",

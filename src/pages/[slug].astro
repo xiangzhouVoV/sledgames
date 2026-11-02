@@ -26,6 +26,7 @@ import SubwaySantaFieldNotes from '../components/SubwaySantaFieldNotes.astro';
 import GameComparison from '../components/GameComparison.astro';
 import Faq from '../components/Faq.astro';
 import CategoryLinks from '../components/CategoryLinks.astro';
+import GameComments from '../components/GameComments.astro';
 import { games, gameCategory, winterCollection, relatedGames, gameFaqs, gameSchema, faqSchema, breadcrumbSchema, hasSource, gamePath } from '../lib/catalog.mjs';
 import type { Game } from '../lib/types';
 export function getStaticPaths() { return games.map(game => ({ params: { slug: game.slug }, props: { game } })); }
@@ -109,5 +110,6 @@ const number = new Intl.NumberFormat('en-US');
   {game.items.length > 0 && hasSource(game, 'items') && <section class="content-section prose"><h2>Items and prices</h2><div class="table-scroll"><table><thead><tr><th scope="col">Item</th><th scope="col">Price</th></tr></thead><tbody>{game.items.map(item => <tr><td>{item.name}</td><td>{item.price}</td></tr>)}</tbody></table></div></section>}
   {related.length > 0 && <section class="content-section related-games" id="related-games" aria-labelledby="related-games-heading"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2 id="related-games-heading">Explore More Winter Games</h2></div></div><GameGrid games={related} /></section>}
   <Faq faqs={faqs} title={focusedGuide ? `${game.title} FAQ` : undefined} />
+  <GameComments gameSlug={game.slug} gameTitle={game.title} />
   <CategoryLinks headings={!focusedGuide} />
 </Layout>
