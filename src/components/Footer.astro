@@ -10,4 +10,15 @@ const links = [['about', 'About Us'], ['contact', 'Contact Us'], ['privacy-polic
     <nav aria-label="Site information"><span class="eyebrow">THE DETAILS</span>{links.map(([slug, label]) => <a href={`/${slug}/`}>{label}</a>)}</nav>
   </div>
   <div class="container footer-bottom"><span>© {new Date().getUTCFullYear()} Sled Games</span><span>Games belong to their respective owners.</span><a href="#main">Back to top ↑</a></div>
+  {Astro.url.pathname === '/' && (
+    <div class="container footer-badge">
+      <a href="https://fazier.com/launches/sledgames.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=neutral" width="50" alt="Fazier badge" />
+      </a>
+    </div>
+  )}
 </footer>
+
+<style>
+  .footer-badge { display: flex; justify-content: flex-end; padding-bottom: 18px; }
+</style>
